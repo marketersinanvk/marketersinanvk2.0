@@ -4,10 +4,10 @@
 @theme {
   --color-midnight: #021F16;
   --color-matte-black: #0a0a0a;
-  --color-teal: #008080;
-  --color-teal-light: #20b2aa;
-  --color-neon-blue: #00f3ff;
-  --color-neon-blue-dim: rgba(0, 243, 255, 0.2);
+  --color-neon-green: #39FF14;
+  --color-neon-green-dim: rgba(57, 255, 20, 0.2);
+  --color-neon-blue: #00E5FF;
+  --color-neon-blue-dim: rgba(0, 229, 255, 0.2);
   --color-neon-red: #ff003c;
   --color-titanium: #B4B4B4;
   --color-silver: #C0C0C0;
@@ -40,22 +40,27 @@
     box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.3);
   }
   
-  .glass-blue {
-    @apply bg-neon-blue/[0.02] backdrop-blur-[12px] border-[0.5px] border-neon-blue/20;
-    box-shadow: 0 4px 24px 0 rgba(0, 243, 255, 0.05);
+  .glass-green {
+    @apply bg-neon-green/[0.02] backdrop-blur-[12px] border-[0.5px] border-neon-green/20;
+    box-shadow: 0 4px 24px 0 rgba(57, 255, 20, 0.05);
   }
 
   /* Optimized Glows using Filters for better performance */
   .text-neon-glow {
-    filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.3));
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.3));
+  }
+
+  .text-elegant-glow {
+    filter: drop-shadow(0 0 2px rgba(57, 255, 20, 0.2));
+    text-shadow: 0 0 1px rgba(57, 255, 20, 0.1);
+  }
+
+  .text-neon-blue-glow {
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.3));
   }
 
   .text-neon-red-glow {
     filter: drop-shadow(0 0 8px rgba(255, 0, 60, 0.3));
-  }
-
-  .text-teal-glow {
-    filter: drop-shadow(0 0 8px rgba(0, 128, 128, 0.3));
   }
 
   .bento-grid {
@@ -72,7 +77,7 @@
     @apply mb-6;
   }
   .blog-content strong {
-    @apply text-neon-blue font-bold;
+    @apply text-neon-green font-bold;
   }
 }
 
@@ -98,8 +103,8 @@
   @apply bg-midnight;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-neon-blue/20 rounded-full border-2 border-midnight;
+  @apply bg-neon-green/20 rounded-full border-2 border-midnight;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neon-blue/40;
+  @apply bg-neon-green/40;
 }

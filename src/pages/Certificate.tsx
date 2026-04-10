@@ -20,7 +20,7 @@ export default function Certificate() {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-teal-light text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-neon-blue-dim text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Validation
           </motion.p>
@@ -31,11 +31,11 @@ export default function Certificate() {
             className="text-6xl md:text-8xl font-serif tracking-tighter text-white leading-[0.85]"
           >
             Verified <br />
-            <span className="italic text-teal">Excellence.</span>
+            <span className="italic text-neon-blue text-neon-blue-glow">Excellence.</span>
           </motion.h1>
         </div>
 
-        <div className="glass-2 rounded-[60px] overflow-hidden border border-teal/10 shadow-2xl">
+        <div className="glass-2 rounded-[60px] overflow-hidden border border-neon-blue/10 shadow-2xl">
           <CinemaReel />
         </div>
 

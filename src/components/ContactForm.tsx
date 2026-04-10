@@ -65,7 +65,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               type="text" 
-              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-teal focus:shadow-[0_0_15px_rgba(0,128,128,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
+              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-neon-green focus:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
               placeholder="Your Name"
             />
           </div>
@@ -77,7 +77,7 @@ export default function ContactForm() {
               value={formData.mobile}
               onChange={handleChange}
               type="tel" 
-              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-teal focus:shadow-[0_0_15px_rgba(0,128,128,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
+              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-neon-green focus:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
               placeholder="+91 00000 00000"
             />
           </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               type="email" 
-              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-teal focus:shadow-[0_0_15px_rgba(0,128,128,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
+              className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-neon-green focus:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-light placeholder:text-silver/10 text-sm sm:text-base"
               placeholder="Your Email"
             />
           </div>
@@ -104,14 +104,14 @@ export default function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-teal focus:shadow-[0_0_15px_rgba(0,128,128,0.3)] transition-all font-light appearance-none cursor-pointer text-sm sm:text-base"
+                className="w-full bg-midnight/20 border border-white/5 rounded-full px-6 py-4 text-white focus:outline-none focus:border-neon-green focus:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-light appearance-none cursor-pointer text-sm sm:text-base"
               >
                 <option value="" className="bg-midnight">Select a Service</option>
                 {services.map(service => (
                   <option key={service} value={service} className="bg-midnight">{service}</option>
                 ))}
               </select>
-              <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-teal/50">
+              <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-neon-green/50">
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
@@ -127,7 +127,7 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={4}
-            className="w-full bg-midnight/20 border border-white/5 rounded-[20px] sm:rounded-[30px] px-6 py-4 text-white focus:outline-none focus:border-teal focus:shadow-[0_0_15px_rgba(0,128,128,0.3)] transition-all font-light resize-none placeholder:text-silver/10 text-sm sm:text-base"
+            className="w-full bg-midnight/20 border border-white/5 rounded-[20px] sm:rounded-[30px] px-6 py-4 text-white focus:outline-none focus:border-neon-green focus:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-light resize-none placeholder:text-silver/10 text-sm sm:text-base"
             placeholder="Tell us about your project..."
           />
         </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
         <div className="space-y-4">
           <button 
             disabled={isSubmitting}
-            className="w-full py-5 sm:py-6 bg-teal text-midnight font-bold rounded-full flex items-center justify-center gap-4 group hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 shadow-[0_0_40px_rgba(0,128,128,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-5 sm:py-6 bg-neon-green text-midnight font-bold rounded-full flex items-center justify-center gap-4 group hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 shadow-[0_0_40px_rgba(57,255,20,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <Loader2 className="w-5 h-5 animate-spin" />
@@ -147,7 +147,7 @@ export default function ContactForm() {
             )}
           </button>
           
-          <div className="flex items-center justify-center gap-2 text-teal/40">
+          <div className="flex items-center justify-center gap-2 text-neon-green/40">
             <ShieldCheck size={12} />
             <span className="text-[8px] font-bold uppercase tracking-[0.2em]">Secure & Private</span>
           </div>

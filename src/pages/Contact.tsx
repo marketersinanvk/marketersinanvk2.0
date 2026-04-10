@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Facebook, Ghost } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Pin, Ghost, Youtube } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import SEO from "../components/SEO";
 
@@ -22,7 +22,7 @@ export default function Contact() {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-teal-light text-[9px] font-bold uppercase tracking-[0.5em]"
+              className="text-neon-blue-dim text-[9px] font-bold uppercase tracking-[0.5em]"
             >
               The Initiation
             </motion.p>
@@ -33,7 +33,7 @@ export default function Contact() {
               className="text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[0.85]"
             >
               Let's <br />
-              <span className="italic text-teal">Connect.</span>
+              <span className="italic text-neon-blue text-neon-blue-glow">Connect.</span>
             </motion.h1>
           </div>
 
@@ -50,7 +50,7 @@ export default function Contact() {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-center gap-8 group"
               >
-                <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-midnight transition-all duration-700">
+                <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-neon-blue group-hover:bg-neon-blue group-hover:text-midnight transition-all duration-700">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
@@ -61,21 +61,24 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="pt-12 border-t border-white/5 flex gap-6">
+          <div className="pt-12 border-t border-white/5 flex flex-wrap gap-6">
             {/* Social Icons for Contact Page */}
             {[
-              { Icon: Instagram, label: "Instagram" },
-              { Icon: Ghost, label: "Snapchat", isSnap: true },
-              { Icon: Twitter, label: "X" },
-              { Icon: Linkedin, label: "LinkedIn" },
-              { Icon: Facebook, label: "Facebook" }
-            ].map(({ Icon, label, isSnap }, i) => (
+              { Icon: Twitter, label: "X", href: "https://twitter.com/sinan246810" },
+              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/muhammed_sinan_vk_85" },
+              { Icon: Ghost, label: "Snapchat", href: "https://www.snapchat.com/add/muhammed_sinan_vk_85", isSnap: true },
+              { Icon: Pin, label: "Pinterest", href: "https://www.pinterest.com/sinan246810111214" },
+              { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@DigitalMark-l3q" },
+              { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/sinan-vk" }
+            ].map(({ Icon, label, href, isSnap }, i) => (
               <motion.a 
                 key={label} 
-                href="#" 
+                href={href} 
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
                 transition={isSnap ? { type: "spring", stiffness: 400, damping: 10 } : { duration: 0.3 }}
-                className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-teal hover:border-teal/30 hover:shadow-[0_0_20px_rgba(0,128,128,0.3)] transition-all duration-500 group"
+                className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-blue hover:border-neon-blue/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-500 group"
               >
                 <Icon size={20} className="group-hover:scale-110 transition-transform" />
               </motion.a>

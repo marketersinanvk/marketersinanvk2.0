@@ -15,10 +15,10 @@ export default function Navbar() {
         className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between"
       >
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-neon-blue/10 border border-neon-blue/20 rounded-full flex items-center justify-center group-hover:border-neon-blue/50 transition-all duration-700">
-            <span className="text-neon-blue font-serif italic text-lg">S</span>
+          <div className="w-8 h-8 bg-neon-green/10 border border-neon-green/20 rounded-full flex items-center justify-center group-hover:border-neon-green/50 transition-all duration-700">
+            <span className="text-neon-green font-serif italic text-lg">S</span>
           </div>
-          <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-neon-blue transition-colors duration-700 uppercase">Marketer Sinan VK</span>
+          <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-neon-green transition-colors duration-700 uppercase">Marketer Sinan VK</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -43,7 +43,7 @@ export default function Navbar() {
                   {item.badge}
                 </span>
               )}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-blue transition-all duration-500 group-hover/link:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-green transition-all duration-500 group-hover/link:w-full" />
             </Link>
           ))}
         </div>
@@ -65,7 +65,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] bg-midnight/95 backdrop-blur-2xl md:hidden flex flex-col items-center justify-center gap-8 p-8"
           >
             <button 
-              className="absolute top-10 right-10 text-neon-blue hover:scale-110 transition-transform"
+              className="absolute top-10 right-10 text-neon-green hover:scale-110 transition-transform"
               onClick={() => setIsOpen(false)}
             >
               <X size={32} />
@@ -89,7 +89,7 @@ export default function Navbar() {
                 >
                   <Link 
                     to={item.path}
-                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-neon-blue transition-colors"
+                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-neon-green transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -99,15 +99,21 @@ export default function Navbar() {
             </div>
 
             <div className="absolute bottom-20 flex gap-8">
-              <div className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-blue/40">
-                <span className="text-[10px] font-bold">IG</span>
-              </div>
-              <div className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-blue/40">
-                <span className="text-[10px] font-bold">LI</span>
-              </div>
-              <div className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-blue/40">
-                <span className="text-[10px] font-bold">TW</span>
-              </div>
+              {[
+                { label: "IG", href: "https://www.instagram.com/muhammed_sinan_vk_85" },
+                { label: "LI", href: "https://www.linkedin.com/in/sinan-vk" },
+                { label: "X", href: "https://twitter.com/sinan246810" }
+              ].map((social) => (
+                <a 
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-blue/60 hover:text-neon-blue hover:border-neon-blue/50 transition-all duration-500"
+                >
+                  <span className="text-[10px] font-bold">{social.label}</span>
+                </a>
+              ))}
             </div>
           </motion.div>
         )}

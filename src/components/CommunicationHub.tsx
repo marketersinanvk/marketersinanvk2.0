@@ -16,7 +16,7 @@ export default function CommunicationHub() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
-        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 w-14 h-14 sm:w-16 sm:h-16 bg-teal text-midnight rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,128,128,0.4)] pointer-events-auto group"
+        className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 w-14 h-14 sm:w-16 sm:h-16 bg-neon-blue text-midnight rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,229,255,0.4)] pointer-events-auto group"
       >
         <MessageCircle size={28} className="sm:w-8 sm:h-8" />
         <span className="absolute right-full mr-4 px-4 py-2 glass-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">
@@ -34,14 +34,14 @@ export default function CommunicationHub() {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="absolute bottom-20 left-0 w-80 glass-2 rounded-[30px] overflow-hidden shadow-2xl"
             >
-              <div className="p-6 bg-teal/10 border-b border-white/5 flex items-center justify-between">
+              <div className="p-6 bg-neon-blue/10 border-b border-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-teal/20 rounded-full flex items-center justify-center">
-                    <MessageSquare size={16} className="text-teal" />
+                  <div className="w-8 h-8 bg-neon-blue/20 rounded-full flex items-center justify-center">
+                    <MessageSquare size={16} className="text-neon-blue" />
                   </div>
                   <div>
                     <h4 className="text-white text-[10px] font-bold uppercase tracking-widest">Sinan AI</h4>
-                    <p className="text-teal-light text-[8px] uppercase tracking-widest">Online</p>
+                    <p className="text-neon-blue-dim text-[8px] uppercase tracking-widest">Online</p>
                   </div>
                 </div>
                 <button onClick={() => setIsChatOpen(false)} className="text-silver/40 hover:text-white transition-colors">
@@ -63,9 +63,9 @@ export default function CommunicationHub() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Ask anything..."
-                  className="flex-1 bg-white/5 border border-white/5 rounded-full px-4 py-2 text-xs text-white focus:outline-none focus:border-teal/30 transition-all"
+                  className="flex-1 bg-white/5 border border-white/5 rounded-full px-4 py-2 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all"
                 />
-                <button className="w-8 h-8 bg-teal text-midnight rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                <button className="w-8 h-8 bg-neon-blue text-midnight rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                   <Send size={14} />
                 </button>
               </div>
@@ -78,7 +78,7 @@ export default function CommunicationHub() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           whileHover={{ scale: 1.1 }}
-          className="w-14 h-14 sm:w-16 sm:h-16 glass-2 rounded-full flex items-center justify-center text-teal shadow-[0_0_30px_rgba(0,128,128,0.2)] group"
+          className="w-14 h-14 sm:w-16 sm:h-16 glass-2 rounded-full flex items-center justify-center text-neon-blue shadow-[0_0_30px_rgba(0,229,255,0.2)] group"
         >
           <MessageSquare size={20} className="sm:w-6 sm:h-6" />
           <span className="absolute left-full ml-4 px-4 py-2 glass-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden sm:block">

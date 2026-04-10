@@ -55,12 +55,15 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     
     const schemaData = {
       "@context": "https://schema.org",
-      "@type": article ? "BlogPosting" : "LocalBusiness",
-      "name": "Marketer Sinan VK",
+      "@type": article ? "BlogPosting" : "ProfessionalService",
+      "name": "Muhammed Sinan VK | Best AI Digital Marketer in Palakkad, Kerala",
+      "alternateName": "Marketer Sinan VK",
       "image": image || "https://picsum.photos/seed/sinan/1200/630",
       "@id": "https://marketersinanvk.in",
       "url": "https://marketersinanvk.in",
+      "description": "Muhammed Sinan VK is the Best AI Digital Marketer in Palakkad, Kerala. Expert in Meta Ads, SEO, and Brand Scaling for businesses in India and UAE.",
       "telephone": "+918590181381",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Palakkad",
@@ -90,8 +93,7 @@ export default function SEO({ title, description, image, article }: SEOProps) {
       "sameAs": [
         "https://www.instagram.com/marketersinanvk",
         "https://www.linkedin.com/in/marketersinanvk"
-      ],
-      "description": description
+      ]
     };
 
     if (!schemaScript) {

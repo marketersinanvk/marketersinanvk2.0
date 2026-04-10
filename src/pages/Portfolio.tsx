@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
-import { collection, onSnapshot, query } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowUpRight, X, ExternalLink } from "lucide-react";
 import SEO from "../components/SEO";
+import { PROJECTS } from "../constants/data";
 
 export default function Portfolio() {
-  const [projects, setProjects] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const q = query(collection(db, "portfolio"));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setProjects(items);
-      setLoading(false);
-    });
-    return unsubscribe;
-  }, []);
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
   return (
     <motion.main
@@ -28,8 +16,8 @@ export default function Portfolio() {
       className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32 grainy"
     >
       <SEO 
-        title="Portfolio of Selected Works | Marketer Sinan VK"
-        description="Explore the selected digital marketing projects by Muhammed Sinan VK. Case studies including MincoKids, KL Gadgetix, and Luxavya. Proven results in Meta Ads and Brand Growth."
+        title="Portfolio of Selected Works | Best Digital Marketer in Palakkad, Kerala"
+        description="Explore the selected digital marketing projects by Muhammed Sinan VK. Best Digital Marketer in Palakkad, Kerala. Proven results in Meta Ads and Brand Growth."
       />
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-24 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
@@ -37,7 +25,7 @@ export default function Portfolio() {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-neon-blue text-[9px] font-bold uppercase tracking-[0.5em]"
+              className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]"
             >
               The Archive
             </motion.p>
@@ -48,51 +36,115 @@ export default function Portfolio() {
               className="text-5xl sm:text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[1.1] md:leading-[0.85]"
             >
               Selected <br />
-              <span className="italic text-neon-blue">Works.</span>
+              <span className="italic text-neon-green">Works.</span>
             </motion.h1>
           </div>
         </div>
 
-        {loading && projects.length === 0 ? (
-          <div className="flex items-center justify-center py-40">
-            <div className="w-12 h-12 border-2 border-neon-blue/20 border-t-neon-blue rounded-full animate-spin" />
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {projects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative aspect-[4/3] glass-2 rounded-[40px] md:rounded-[60px] overflow-hidden border border-white/5 hover:border-neon-blue/30 transition-all duration-700 shadow-2xl"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.map((project, i) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => setSelectedProject(project)}
+              className="group relative aspect-[4/5] glass-2 rounded-[40px] overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-700 shadow-2xl cursor-pointer"
+            >
+              <img 
+                src={project.image} 
+                alt={`${project.title} - Best Digital Marketer in Palakkad, Kerala`}
+                className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-[2000ms] scale-110 group-hover:scale-100"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent opacity-80" />
+              
+              <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
+                <div className="space-y-3">
+                  <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.4em]">{project.category}</p>
+                  <h3 className="text-white text-2xl font-serif italic">{project.title}</h3>
+                  <p className="text-silver/50 text-xs font-light leading-relaxed line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    {project.description}
+                  </p>
+                </div>
+                <button className="absolute top-8 right-8 w-12 h-12 glass-2 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700 scale-50 group-hover:scale-100">
+                  <ArrowUpRight className="w-5 h-5" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Project Case Study Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-midnight/90 backdrop-blur-xl"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="max-w-4xl w-full glass-2 rounded-[40px] border border-neon-green/20 relative overflow-hidden flex flex-col md:flex-row"
+            >
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-8 right-8 z-50 text-white/40 hover:text-white transition-colors bg-midnight/50 p-2 rounded-full backdrop-blur-md"
               >
+                <X size={24} />
+              </button>
+              
+              <div className="w-full md:w-1/2 aspect-square md:aspect-auto relative">
                 <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-[2000ms] scale-110 group-hover:scale-100"
+                  src={selectedProject.image} 
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-midnight/50 hidden md:block" />
+              </div>
+
+              <div className="w-full md:w-1/2 p-10 md:p-16 space-y-8 overflow-y-auto max-h-[60vh] md:max-h-auto">
+                <div className="space-y-4">
+                  <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]">{selectedProject.category}</p>
+                  <h2 className="text-4xl md:text-5xl font-serif italic text-white">{selectedProject.title}</h2>
+                </div>
                 
-                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
-                  <div className="space-y-3 md:space-y-4">
-                    <p className="text-neon-blue text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em]">{project.category}</p>
-                    <h3 className="text-white text-3xl md:text-4xl font-serif italic">{project.title}</h3>
-                    <p className="text-silver/50 text-xs md:text-sm font-light leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                      {project.description || project.desc}
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <p className="text-silver/30 text-[10px] uppercase tracking-widest font-bold">The Challenge</p>
+                    <p className="text-silver/60 text-base font-light leading-relaxed">
+                      {selectedProject.description}
                     </p>
                   </div>
-                  <button className="absolute top-8 right-8 md:top-12 md:right-12 w-12 h-12 md:w-16 md:h-16 glass-2 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-neon-blue group-hover:text-midnight transition-all duration-700 scale-50 group-hover:scale-100">
-                    <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-                  </button>
+                  
+                  <div className="space-y-2">
+                    <p className="text-neon-green text-[10px] uppercase tracking-widest font-bold">The Result (Case Study)</p>
+                    <p className="text-white/80 text-lg font-light leading-relaxed italic">
+                      {selectedProject.caseStudy}
+                    </p>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                
+                <a 
+                  href="https://marketersinanvk.in" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-neon-green text-[10px] font-bold uppercase tracking-[0.3em] hover:gap-5 transition-all"
+                >
+                  View Live Project <ExternalLink size={14} />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </motion.main>
   );
 }
