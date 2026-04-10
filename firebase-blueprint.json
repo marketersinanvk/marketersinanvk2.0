@@ -1,0 +1,92 @@
+{
+  "entities": {
+    "portfolio": {
+      "title": "Portfolio Project",
+      "description": "A project in the agency portfolio",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Project title" },
+        "category": { "type": "string", "description": "Project category" },
+        "client": { "type": "string", "description": "Client name" },
+        "image": { "type": "string", "description": "Image URL" },
+        "description": { "type": "string", "description": "Project description" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "category", "image"]
+    },
+    "service": {
+      "title": "Service",
+      "description": "An agency service offering",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["title", "description"]
+    },
+    "post": {
+      "title": "Blog Post",
+      "description": "A journal entry or article",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "date": { "type": "string" },
+        "image": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "seoAlt": { "type": "string" }
+      },
+      "required": ["title", "content", "image"]
+    },
+    "testimonial": {
+      "title": "Testimonial",
+      "description": "Client feedback",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "brand": { "type": "string" },
+        "companyType": { "type": "string" },
+        "review": { "type": "string" },
+        "glow": { "type": "string" }
+      },
+      "required": ["name", "review"]
+    },
+    "user": {
+      "title": "User",
+      "description": "Admin user profile",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "editor"] }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/portfolio/{projectId}": {
+      "schema": "portfolio",
+      "description": "Collection of portfolio projects"
+    },
+    "/services/{serviceId}": {
+      "schema": "service",
+      "description": "Collection of agency services"
+    },
+    "/posts/{postId}": {
+      "schema": "post",
+      "description": "Collection of blog posts"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "testimonial",
+      "description": "Collection of client testimonials"
+    },
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Collection of admin users"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+import { motion } from "motion/react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Facebook, Ghost } from "lucide-react";
+import ContactForm from "../components/ContactForm";
+import SEO from "../components/SEO";
+
+export default function Contact() {
+  return (
+    <motion.main
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+      className="min-h-screen pt-48 px-8 pb-32 grainy"
+    >
+      <SEO 
+        title="Contact Muhammed Sinan VK | Hire the Best AI Digital Marketer"
+        description="Ready to scale your brand? Contact Muhammed Sinan VK for premium Meta Ads, SEO, and Branding services. Serving clients in Palakkad, Kerala, Dubai, and worldwide."
+      />
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 relative z-10">
+        <div className="space-y-16">
+          <div className="space-y-6">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-teal-light text-[9px] font-bold uppercase tracking-[0.5em]"
+            >
+              The Initiation
+            </motion.p>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              className="text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[0.85]"
+            >
+              Let's <br />
+              <span className="italic text-teal">Connect.</span>
+            </motion.h1>
+          </div>
+
+          <div className="space-y-12">
+            {[
+              { icon: Mail, label: "Email", value: "marketersinanvk@gmail.com" },
+              { icon: Phone, label: "WhatsApp", value: "+91 8590181381" },
+              { icon: MapPin, label: "Base", value: "Palakkad, Kerala" }
+            ].map((item, i) => (
+              <motion.div 
+                key={item.label}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center gap-8 group"
+              >
+                <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-midnight transition-all duration-700">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-silver/30 text-[9px] font-bold uppercase tracking-[0.3em] mb-1">{item.label}</p>
+                  <p className="text-white text-xl font-serif italic">{item.value}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="pt-12 border-t border-white/5 flex gap-6">
+            {/* Social Icons for Contact Page */}
+            {[
+              { Icon: Instagram, label: "Instagram" },
+              { Icon: Ghost, label: "Snapchat", isSnap: true },
+              { Icon: Twitter, label: "X" },
+              { Icon: Linkedin, label: "LinkedIn" },
+              { Icon: Facebook, label: "Facebook" }
+            ].map(({ Icon, label, isSnap }, i) => (
+              <motion.a 
+                key={label} 
+                href="#" 
+                whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
+                transition={isSnap ? { type: "spring", stiffness: 400, damping: 10 } : { duration: 0.3 }}
+                className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-teal hover:border-teal/30 hover:shadow-[0_0_20px_rgba(0,128,128,0.3)] transition-all duration-500 group"
+              >
+                <Icon size={20} className="group-hover:scale-110 transition-transform" />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+
+        <ContactForm />
+      </div>
+    </motion.main>
+  );
+}
