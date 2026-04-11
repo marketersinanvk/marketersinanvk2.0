@@ -33,7 +33,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
-                transition={isSnap ? { type: "spring", stiffness: 400, damping: 10 } : { duration: 0.3 }}
+                transition={isSnap ? { duration: 0.4, ease: "easeInOut" } : { duration: 0.3 }}
                 className="w-10 h-10 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-green hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-500 group"
               >
                 <Icon size={16} className="group-hover:scale-110 transition-transform" />
