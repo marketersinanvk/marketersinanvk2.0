@@ -13,8 +13,8 @@ export default function Contact() {
       className="min-h-screen pt-48 px-8 pb-32 grainy"
     >
       <SEO 
-        title="Contact Muhammed Sinan VK | Hire the Best AI Digital Marketer"
-        description="Ready to scale your brand? Contact Muhammed Sinan VK for premium Meta Ads, SEO, and Branding services. Serving clients in Palakkad, Kerala, Dubai, and worldwide."
+        title="Contact Marketer Sinan VK | Hire the Best Freelance Digital Marketer in Kerala"
+        description="Ready to scale your brand? Contact Marketer Sinan VK for premium Meta Ads, SEO, and Branding services. Serving clients in Palakkad, Kerala, Dubai, and worldwide."
       />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 relative z-10">
         <div className="space-y-16">
@@ -22,7 +22,7 @@ export default function Contact() {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-neon-blue-dim text-[9px] font-bold uppercase tracking-[0.5em]"
+              className="text-neon-green/40 text-[9px] font-bold uppercase tracking-[0.5em]"
             >
               The Initiation
             </motion.p>
@@ -33,7 +33,7 @@ export default function Contact() {
               className="text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[0.85]"
             >
               Let's <br />
-              <span className="italic text-neon-blue text-neon-blue-glow">Connect.</span>
+              <span className="italic text-neon-green text-neon-glow">Connect.</span>
             </motion.h1>
           </div>
 
@@ -50,7 +50,7 @@ export default function Contact() {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-center gap-8 group"
               >
-                <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-neon-blue group-hover:bg-neon-blue group-hover:text-midnight transition-all duration-700">
+                <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
                 transition={isSnap ? { type: "spring", stiffness: 400, damping: 10 } : { duration: 0.3 }}
-                className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-blue hover:border-neon-blue/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-500 group"
+                className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-green hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-500 group"
               >
                 <Icon size={20} className="group-hover:scale-110 transition-transform" />
               </motion.a>

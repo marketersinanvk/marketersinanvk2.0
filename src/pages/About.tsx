@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import { getImageSrcSet } from "../lib/imageUtils";
 
 export default function About() {
   return (
@@ -76,13 +77,17 @@ export default function About() {
             transition={{ duration: 2 }}
             className="relative"
           >
-            <div className="aspect-[3/4] glass-2 rounded-[40px] md:rounded-[80px] overflow-hidden group border border-white/10 backdrop-blur-md shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+            <div className="aspect-[3/4] glass-2 rounded-[24px] overflow-hidden group border border-neon-green/20 backdrop-blur-md shadow-[0_0_30px_rgba(57,255,20,0.2)] bg-white/5 relative">
               <img 
-                src="https://i.ibb.co/35nygCJh/4468012d-b185-4c55-99b5-5f868fd30429.webp" 
-                alt="Sinan VK - Freelance Digital Marketing Expert" 
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
+                src="https://i.ibb.co/27wJkvQ8/jacket-photo.jpg" 
+                alt="Muhammed Sinan VK - Freelance Digital Marketer in Kerala" 
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
                 referrerPolicy="no-referrer"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width="600"
+                height="800"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-40" />
             </div>
@@ -96,7 +101,7 @@ export default function About() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="md:col-span-2 glass-2 p-8 md:p-12 rounded-[30px] md:rounded-[40px] hover:border-neon-green/50 transition-all duration-700"
+            className="md:col-span-2 glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <h3 className="text-neon-green text-2xl md:text-3xl font-serif italic tracking-tight mb-6 md:mb-8">The Journey</h3>
             <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide">
@@ -116,7 +121,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="glass-2 p-8 md:p-12 rounded-[30px] md:rounded-[40px] hover:border-neon-green/50 transition-all duration-700 flex flex-col justify-between group"
+            className="glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 flex flex-col justify-between group hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <div className="space-y-4">
               <div className="w-10 h-10 bg-neon-green/10 rounded-xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700">
@@ -144,7 +149,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="glass-2 p-8 md:p-12 rounded-[30px] md:rounded-[40px] hover:border-neon-green/50 transition-all duration-700 flex flex-col justify-between group"
+            className="glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 flex flex-col justify-between group hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <div>
               <h3 className="text-neon-green text-xl font-serif italic tracking-tight mb-4">Base</h3>
@@ -162,7 +167,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glass-2 p-8 md:p-12 rounded-[30px] md:rounded-[40px] hover:border-neon-green/50 transition-all duration-700"
+            className="glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <h3 className="text-neon-green text-xl font-serif italic tracking-tight mb-6">Expertise</h3>
             <ul className="space-y-3 md:space-y-4">
@@ -180,7 +185,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="md:col-span-2 glass-2 p-8 md:p-12 rounded-[30px] md:rounded-[40px] hover:border-neon-green/50 transition-all duration-700"
+            className="md:col-span-2 glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <h3 className="text-neon-green text-2xl md:text-3xl font-serif italic tracking-tight mb-6 md:mb-8">The Vision</h3>
             <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide">
@@ -190,6 +195,79 @@ export default function About() {
             </p>
           </motion.div>
         </div>
+        {/* SEO Content Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="space-y-12 md:space-y-16 border-t border-white/5 pt-24"
+        >
+          <div className="max-w-4xl mx-auto space-y-12">
+            <h2 className="text-4xl md:text-6xl font-serif italic text-white tracking-tight leading-tight">
+              The Premier <span className="text-neon-green">Freelance Digital Marketer in Kerala</span> for AI-Driven Growth
+            </h2>
+            
+            <div className="prose prose-invert prose-silver max-w-none space-y-8 text-silver/60 font-light leading-relaxed text-lg">
+              <p>
+                In the rapidly evolving digital landscape of South India, finding a <span className="text-white font-medium">Freelance digital marketer in Kerala</span> who understands the nuances of both traditional branding and cutting-edge technology is crucial. 
+                <span className="text-neon-green font-bold">Marketer Sinan VK</span> stands at this intersection, offering a unique blend of human creativity and artificial intelligence to scale businesses effectively. 
+                As the <span className="text-white font-medium">Best AI digital marketer in Palakkad</span>, my mission is to provide transformative results through data-driven strategies that resonate with modern audiences.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-serif text-white italic">Why Choose a Freelance Digital Marketer in Kerala?</h3>
+              <p>
+                The digital economy in Kerala is booming, from the tech hubs of Kochi and Trivandrum to the growing business sectors in Palakkad. 
+                A <span className="text-white font-medium">Freelance digital marketer in Kerala</span> offers the flexibility and personalized attention that a large <span className="text-white font-medium">digital marketing agency in Kerala</span> might lack. 
+                By working directly with a <span className="text-white font-medium">digital marketing consultant in Kerala</span>, business owners can ensure their vision is translated perfectly into digital campaigns. 
+                Whether you are looking for <span className="text-white font-medium">affordable digital marketing Kerala</span> or high-end premium branding, the freelance model provides the best ROI for growing enterprises.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-serif text-white italic">AI-Integrated Digital Marketing Services: The Future of Growth</h3>
+              <p>
+                Traditional marketing is no longer enough. To stay ahead, businesses need <span className="text-white font-medium">AI-integrated digital marketing services</span>. 
+                As the <span className="text-white font-medium">Best digital marketer in Kerala</span>, I leverage advanced AI tools to analyze consumer behavior, automate repetitive tasks, and optimize ad spend in real-time. 
+                This approach is particularly effective for <span className="text-white font-medium">small business marketing Kerala</span>, where every rupee spent must deliver measurable value. 
+                From predictive analytics to AI-generated content optimization, my methodology ensures your brand stays at the forefront of innovation.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-serif text-white italic">Dominating Local Search: Local SEO Expert in Palakkad</h3>
+              <p>
+                For businesses targeting a specific geographic area, local visibility is everything. 
+                As a <span className="text-white font-medium">Local SEO expert in Palakkad</span>, I help businesses appear at the top of Google Search and Maps when local customers are looking for their services. 
+                Providing the <span className="text-white font-medium">Best SEO services in Palakkad</span> involves more than just keywords; it requires a deep understanding of local search intent, Google Business Profile optimization, and high-quality local citations. 
+                A <span className="text-white font-medium">Freelance digital marketer in Kerala</span> with local expertise can bridge the gap between your physical store and your digital presence.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-serif text-white italic">Comprehensive Digital Solutions for Modern Brands</h3>
+              <p>
+                My expertise isn't limited to just one channel. A holistic strategy is required for true market dominance. 
+                As a <span className="text-white font-medium">social media expert in Kerala</span>, I craft engaging narratives across Meta, Instagram, and LinkedIn that drive community growth and conversions. 
+                Furthermore, I believe that a great marketing strategy must be supported by a great user experience. 
+                That's why I offer <span className="text-white font-medium">UI/UX design for small businesses</span>, ensuring that your website isn't just a digital brochure, but a high-converting sales machine. 
+                To complete the visual experience, my team provides <span className="text-white font-medium">professional video editing services Kerala</span>, creating cinematic content that captures attention in seconds.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-serif text-white italic">The Marketer Sinan VK Advantage</h3>
+              <p>
+                When you partner with <span className="text-white font-medium">Marketer Sinan VK</span>, you aren't just hiring a service provider; you are gaining a growth partner. 
+                Being a <span className="text-white font-medium">Freelance digital marketer in Kerala</span> allows me to stay agile and adapt to the latest algorithm changes faster than any traditional <span className="text-white font-medium">digital marketing agency in Kerala</span>. 
+                My focus is on transparency, data, and most importantly, your success. 
+                Whether you need the <span className="text-white font-medium">Best AI digital marketer in Palakkad</span> to overhaul your tech stack or a <span className="text-white font-medium">digital marketing consultant in Kerala</span> to guide your long-term strategy, I am here to deliver excellence.
+              </p>
+
+              <p>
+                In conclusion, the journey to becoming the <span className="text-white font-medium">Best digital marketer in Kerala</span> is paved with successful client outcomes and a relentless pursuit of innovation. 
+                If you are ready to scale your brand with <span className="text-white font-medium">AI-integrated digital marketing services</span> and the expertise of a dedicated <span className="text-white font-medium">Freelance digital marketer in Kerala</span>, let's connect. 
+                From <span className="text-white font-medium">affordable digital marketing Kerala</span> to premium global scaling, your digital legacy starts here.
+              </p>
+              
+              <div className="pt-12 border-t border-white/5">
+                <p className="text-xs uppercase tracking-[0.3em] text-silver/30">
+                  Keywords: Freelance digital marketer in Kerala, Best AI digital marketer in Palakkad, Digital marketing agency in Kerala, Local SEO expert in Palakkad, AI-integrated digital marketing services, Small business marketing Kerala, Best digital marketer in Kerala, UI/UX design for small businesses, Professional video editing services Kerala, Marketer Sinan VK, Digital marketing consultant in Kerala, Best SEO services in Palakkad, Social media expert in Kerala, Affordable digital marketing Kerala.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
       </div>
     </motion.main>
   );

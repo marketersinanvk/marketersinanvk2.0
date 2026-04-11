@@ -17,8 +17,8 @@ export default function Home() {
       className="min-h-screen grainy"
     >
       <SEO 
-        title="Best AI Digital Marketer in Palakkad, Kerala | Marketer Sinan VK"
-        description="Elevate your business with Muhammed Sinan VK, the best AI digital marketer in Palakkad, Kerala. Expert in Meta Ads, SEO, and AI-driven growth strategies for brands in India and Dubai."
+        title="Marketer Sinan VK | Freelance Digital Marketer in Kerala"
+        description="Best AI digital marketer in Palakkad, Kerala specializing in SEO, Meta Ads, and UI/UX design."
         image="https://picsum.photos/seed/sinan-hero/1200/630"
       />
       <Hero />
@@ -58,9 +58,9 @@ export default function Home() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="group relative"
               >
-                <Link to={stat.link} className="block p-8 glass-2 rounded-[30px] border border-white/5 hover:border-neon-green/30 transition-all duration-500">
+                <Link to={stat.link} className="block p-8 glass-2 rounded-[24px] border border-white/5 hover:border-neon-green/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-neon-green/10 rounded-2xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-500">
+                    <div className="w-12 h-12 bg-neon-green/5 border border-white/5 rounded-2xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-500">
                       <stat.icon size={24} />
                     </div>
                     <p className="text-neon-green text-3xl md:text-4xl font-serif italic tracking-tighter">{stat.value}</p>
@@ -104,7 +104,10 @@ export default function Home() {
               <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">SEO Analyst</Link>, 
               we engineer every interaction as an intentional step towards market dominance in <Link to="/contact" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">Palakkad, Kerala</Link> and Dubai.
             </p>
-            <button className="px-10 py-5 md:px-12 md:py-6 glass-2 border border-neon-green/20 text-neon-green font-bold rounded-full hover:bg-neon-green hover:text-midnight transition-all duration-700 uppercase tracking-[0.2em] text-[10px] w-full sm:w-auto">
+            <button 
+              aria-label="Read the Manifesto"
+              className="px-10 py-5 md:px-12 md:py-6 glass-2 border border-neon-green/20 text-neon-green font-bold rounded-full hover:bg-neon-green hover:text-midnight transition-all duration-700 uppercase tracking-[0.2em] text-[10px] w-full sm:w-auto"
+            >
               The Manifesto
             </button>
           </motion.div>
@@ -116,14 +119,16 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-[4/5] glass-2 rounded-[40px] sm:rounded-[80px] overflow-hidden group shadow-[0_0_50px_rgba(57,255,20,0.1)] border border-neon-green/5">
+            <div className="aspect-[4/5] glass-2 rounded-[24px] sm:rounded-[48px] overflow-hidden group shadow-[0_0_50px_rgba(57,255,20,0.1)] border border-neon-green/5">
               <img 
                 src="https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png" 
-                alt="Muhammed Sinan VK - Digital Excellence Portrait" 
+                alt="Marketer Sinan VK - Best AI Digital Marketer in Palakkad and Kerala" 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
+                width="600"
+                height="750"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-60" />
             </div>
@@ -170,7 +175,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     aria-label={label}
                     whileHover={{ scale: 1.1, y: -5 }}
-                    className="w-12 h-12 glass-2 rounded-2xl flex items-center justify-center text-neon-blue hover:border-neon-blue/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-500"
+                    className="w-12 h-12 glass-2 rounded-2xl flex items-center justify-center text-neon-green hover:border-neon-green/50 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-500"
                   >
                     <Icon size={20} />
                   </motion.a>

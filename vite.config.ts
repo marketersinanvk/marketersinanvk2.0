@@ -10,6 +10,21 @@ export default defineConfig(({mode}) => {
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+            'vendor-motion': ['motion/react'],
+            'vendor-lucide': ['lucide-react'],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 1000,
+      minify: 'esbuild',
+      cssMinify: true,
+      reportCompressedSize: false,
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

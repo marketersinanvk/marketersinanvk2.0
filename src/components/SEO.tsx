@@ -56,12 +56,12 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     const schemaData = {
       "@context": "https://schema.org",
       "@type": article ? "BlogPosting" : "ProfessionalService",
-      "name": "Muhammed Sinan VK | Best AI Digital Marketer in Palakkad, Kerala",
-      "alternateName": "Marketer Sinan VK",
+      "name": "Marketer Sinan VK | Freelance Digital Marketer in Kerala",
+      "alternateName": "Muhammed Sinan VK",
       "image": image || "https://picsum.photos/seed/sinan/1200/630",
       "@id": "https://marketersinanvk.in",
       "url": "https://marketersinanvk.in",
-      "description": "Muhammed Sinan VK is the Best AI Digital Marketer in Palakkad, Kerala. Expert in Meta Ads, SEO, and Brand Scaling for businesses in India and UAE.",
+      "description": description || "Marketer Sinan VK is the Best Freelance Digital Marketer in Kerala. Expert in AI-integrated digital marketing, local SEO, and brand scaling for businesses in India and UAE.",
       "telephone": "+918590181381",
       "priceRange": "$$$",
       "address": {
@@ -77,6 +77,7 @@ export default function SEO({ title, description, image, article }: SEOProps) {
         "latitude": 10.7867,
         "longitude": 76.6547
       },
+      "areaServed": ["Kerala", "Palakkad", "India", "Dubai"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -89,6 +90,11 @@ export default function SEO({ title, description, image, article }: SEOProps) {
         ],
         "opens": "09:00",
         "closes": "18:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128"
       },
       "sameAs": [
         "https://www.instagram.com/marketersinanvk",

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, X, ExternalLink } from "lucide-react";
 import SEO from "../components/SEO";
 import { PROJECTS } from "../constants/data";
+import { getImageSrcSet } from "../lib/imageUtils";
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
@@ -16,8 +17,8 @@ export default function Portfolio() {
       className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32 grainy"
     >
       <SEO 
-        title="Portfolio of Selected Works | Best Digital Marketer in Palakkad, Kerala"
-        description="Explore the selected digital marketing projects by Muhammed Sinan VK. Best Digital Marketer in Palakkad, Kerala. Proven results in Meta Ads and Brand Growth."
+        title="Portfolio of Selected Works | Freelance Digital Marketer in Kerala"
+        description="Explore the selected digital marketing projects by Marketer Sinan VK, the best freelance digital marketer in Kerala. Proven results in Meta Ads and Brand Growth."
       />
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-24 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
@@ -50,26 +51,30 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               onClick={() => setSelectedProject(project)}
-              className="group relative aspect-[4/5] glass-2 rounded-[40px] overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-700 shadow-2xl cursor-pointer"
+              className="group relative aspect-[4/5] glass-2 rounded-[24px] overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-700 shadow-2xl cursor-pointer hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(57,255,20,0.1)] bg-white/5"
             >
               <img 
                 src={project.image} 
-                alt={`${project.title} - Best Digital Marketer in Palakkad, Kerala`}
+                srcSet={getImageSrcSet(project.image)}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                alt={`${project.title} - Freelance Digital Marketer in Kerala Project`}
                 className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-[2000ms] scale-110 group-hover:scale-100"
                 referrerPolicy="no-referrer"
                 loading="lazy"
+                width="400"
+                height="500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent opacity-80" />
               
               <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
                 <div className="space-y-3">
-                  <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.4em]">{project.category}</p>
-                  <h3 className="text-white text-2xl font-serif italic">{project.title}</h3>
-                  <p className="text-silver/50 text-xs font-light leading-relaxed line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]">{project.category}</p>
+                  <h3 className="text-white text-2xl font-serif italic tracking-wide">{project.title}</h3>
+                  <p className="text-silver/40 text-xs font-light leading-relaxed line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 tracking-wide">
                     {project.description}
                   </p>
                 </div>
-                <button className="absolute top-8 right-8 w-12 h-12 glass-2 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700 scale-50 group-hover:scale-100">
+                <button className="absolute top-8 right-8 w-12 h-12 glass-2 border border-white/10 rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700 scale-50 group-hover:scale-100 shadow-xl">
                   <ArrowUpRight className="w-5 h-5" />
                 </button>
               </div>

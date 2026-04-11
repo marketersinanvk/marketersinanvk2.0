@@ -12,9 +12,12 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between"
+        className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between border border-neon-green/10 shadow-[0_0_20px_rgba(57,255,20,0.05)] relative overflow-hidden"
       >
-        <Link to="/" className="flex items-center gap-3 group">
+        {/* Scanline Effect */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
+        
+        <Link to="/" className="flex items-center gap-3 group relative z-10">
           <div className="w-8 h-8 bg-neon-green/10 border border-neon-green/20 rounded-full flex items-center justify-center group-hover:border-neon-green/50 transition-all duration-700">
             <span className="text-neon-green font-serif italic text-lg">S</span>
           </div>
@@ -49,8 +52,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-white/70" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+        <button 
+          className="md:hidden text-white/70 p-4 -mr-4" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </motion.div>
 
@@ -89,7 +96,7 @@ export default function Navbar() {
                 >
                   <Link 
                     to={item.path}
-                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-neon-green transition-colors"
+                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-neon-green transition-colors py-4 px-8 block"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -100,16 +107,17 @@ export default function Navbar() {
 
             <div className="absolute bottom-20 flex gap-8">
               {[
-                { label: "IG", href: "https://www.instagram.com/muhammed_sinan_vk_85" },
-                { label: "LI", href: "https://www.linkedin.com/in/sinan-vk" },
-                { label: "X", href: "https://twitter.com/sinan246810" }
+                { label: "IG", href: "https://www.instagram.com/muhammed_sinan_vk_85", aria: "Instagram" },
+                { label: "LI", href: "https://www.linkedin.com/in/sinan-vk", aria: "LinkedIn" },
+                { label: "X", href: "https://twitter.com/sinan246810", aria: "Twitter" }
               ].map((social) => (
                 <a 
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-blue/60 hover:text-neon-blue hover:border-neon-blue/50 transition-all duration-500"
+                  aria-label={social.aria}
+                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-green/60 hover:text-neon-green hover:border-neon-green/50 transition-all duration-500"
                 >
                   <span className="text-[10px] font-bold">{social.label}</span>
                 </a>

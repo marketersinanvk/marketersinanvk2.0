@@ -15,7 +15,7 @@ export default function Footer() {
           </Link>
           <p className="text-silver/40 text-sm leading-relaxed font-light tracking-wide max-w-xs">
             The definitive destination for AI-powered digital mastery. 
-            Crafting digital legacies for the world's most ambitious entities.
+            As the premier <span className="text-white font-medium">Freelance digital marketer in Kerala</span>, I craft digital legacies for ambitious brands.
           </p>
           <div className="flex flex-wrap gap-4">
             {[
@@ -34,7 +34,7 @@ export default function Footer() {
                 aria-label={label}
                 whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
                 transition={isSnap ? { type: "spring", stiffness: 400, damping: 10 } : { duration: 0.3 }}
-                className="w-10 h-10 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-blue hover:border-neon-blue/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-500 group"
+                className="w-10 h-10 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-neon-green hover:border-neon-green/30 hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all duration-500 group"
               >
                 <Icon size={16} className="group-hover:scale-110 transition-transform" />
               </motion.a>
@@ -95,7 +95,10 @@ export default function Footer() {
               placeholder="Email Address" 
               className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white placeholder:text-silver/20 focus:outline-none focus:border-neon-green/30 transition-all duration-700"
             />
-            <button className="absolute right-2 top-2 bottom-2 bg-neon-green text-midnight px-8 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform duration-500">
+            <button 
+              aria-label="Join Newsletter"
+              className="absolute right-2 top-2 bottom-2 bg-neon-green text-midnight px-8 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform duration-500"
+            >
               Join
             </button>
           </div>

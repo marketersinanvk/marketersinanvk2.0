@@ -65,9 +65,25 @@
         "role": { "type": "string", "enum": ["admin", "editor"] }
       },
       "required": ["email", "role"]
+    },
+    "hero": {
+      "title": "Hero Section",
+      "description": "Configuration for the hero section",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string", "description": "URL for the hero section image" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["imageUrl"]
     }
   },
   "firestore": {
+    "/hero/{heroId}": {
+      "schema": "hero",
+      "description": "Hero section configuration"
+    },
     "/portfolio/{projectId}": {
       "schema": "portfolio",
       "description": "Collection of portfolio projects"

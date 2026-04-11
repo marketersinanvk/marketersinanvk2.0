@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
 import CommunicationHub from "./components/CommunicationHub";
+import StickyContactButton from "./components/StickyContactButton";
 
 // Lazy Load Pages for Performance
 const Home = lazy(() => import("./pages/Home"));
@@ -30,7 +31,7 @@ function ScrollToTop() {
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-midnight">
-    <div className="w-12 h-12 border-2 border-neon-blue/20 border-t-neon-blue rounded-full animate-spin" />
+    <div className="w-12 h-12 border-2 border-neon-green/20 border-t-neon-green rounded-full animate-spin" />
   </div>
 );
 
@@ -39,9 +40,10 @@ function AppContent() {
   const isAdminPage = location.pathname.startsWith('/admin') || location.pathname === '/login';
 
   return (
-    <div className="min-h-screen selection:bg-neon-blue selection:text-midnight">
+    <div className="min-h-screen selection:bg-neon-green selection:text-midnight">
       {!isAdminPage && <Navbar />}
       <CommunicationHub />
+      <StickyContactButton />
       <Suspense fallback={<PageLoader />}>
         <AnimatePresence mode="wait">
           <Routes location={location}>

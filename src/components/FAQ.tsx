@@ -35,7 +35,7 @@ export default function FAQ() {
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-neon-blue-dim text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-neon-green-dim text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Inquiries
           </motion.p>
@@ -44,7 +44,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-serif tracking-tight text-white"
           >
-            Curated <span className="italic text-neon-blue text-neon-blue-glow">Knowledge.</span>
+            Curated <span className="italic text-neon-green text-neon-glow">Knowledge.</span>
           </motion.h2>
         </div>
 
@@ -55,19 +55,19 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="glass-2 rounded-[30px] overflow-hidden border border-white/5 hover:border-neon-blue/20 transition-all duration-700"
+              className="glass-2 rounded-[30px] overflow-hidden border border-white/5 hover:border-neon-green/20 transition-all duration-700"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full p-8 flex items-center justify-between text-left group"
               >
                 <span className={`text-xl font-serif italic tracking-tight transition-colors duration-500 ${
-                  openIndex === i ? "text-neon-blue" : "text-white group-hover:text-neon-blue-dim"
+                  openIndex === i ? "text-neon-green" : "text-white group-hover:text-neon-green-dim"
                 }`}>
                   {faq.question}
                 </span>
                 <div className={`w-10 h-10 glass-2 rounded-full flex items-center justify-center transition-all duration-500 ${
-                  openIndex === i ? "bg-neon-blue text-midnight" : "text-silver/40"
+                  openIndex === i ? "bg-neon-green text-midnight" : "text-silver/40"
                 }`}>
                   {openIndex === i ? <Minus size={16} /> : <Plus size={16} />}
                 </div>

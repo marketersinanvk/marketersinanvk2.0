@@ -12,15 +12,15 @@ export default function Certificate() {
       className="min-h-screen pt-48 px-8 pb-32 grainy"
     >
       <SEO 
-        title="Professional Certifications | Marketer Sinan VK"
-        description="Industry-validated expertise from Google, Meta, HubSpot, and HP. Verified digital marketing excellence by Muhammed Sinan VK."
+        title="Professional Certifications | Freelance Digital Marketer in Kerala"
+        description="Industry-validated expertise from Google, Meta, HubSpot, and HP. Verified digital marketing excellence by Marketer Sinan VK, the best freelance digital marketer in Kerala."
       />
       <div className="max-w-7xl mx-auto space-y-20 relative z-10">
         <div className="space-y-6 text-center">
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-neon-blue-dim text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-neon-green/40 text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Validation
           </motion.p>
@@ -31,11 +31,11 @@ export default function Certificate() {
             className="text-6xl md:text-8xl font-serif tracking-tighter text-white leading-[0.85]"
           >
             Verified <br />
-            <span className="italic text-neon-blue text-neon-blue-glow">Excellence.</span>
+            <span className="italic text-neon-green text-neon-glow">Excellence.</span>
           </motion.h1>
         </div>
 
-        <div className="glass-2 rounded-[60px] overflow-hidden border border-neon-blue/10 shadow-2xl">
+        <div className="glass-2 rounded-[60px] overflow-hidden border border-neon-green/10 shadow-2xl">
           <CinemaReel />
         </div>
 

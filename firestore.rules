@@ -2,6 +2,13 @@
 // Assumed Data Model
 // ===============================================================
 //
+// Collection: hero
+// Fields:
+//   - imageUrl: string (required)
+//   - title: string (optional)
+//   - subtitle: string (optional)
+//   - description: string (optional)
+//
 // Collection: portfolio
 // Fields:
 //   - title: string (required)
@@ -105,6 +112,11 @@ service cloud.firestore {
              isValidString(data.review, 1, 1000);
     }
 
+    function isValidHero(data) {
+      return data.keys().hasAll(['imageUrl']) &&
+             isValidUrl(data.imageUrl);
+    }
+
     // ===============================================================
     // Rules
     // ===============================================================
@@ -135,6 +147,12 @@ service cloud.firestore {
     match /testimonials/{testimonialId} {
       allow read: if true;
       allow create, update: if isAdmin() && isValidTestimonial(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /hero/{heroId} {
+      allow read: if true;
+      allow create, update: if isAdmin() && isValidHero(request.resource.data);
       allow delete: if isAdmin();
     }
   }

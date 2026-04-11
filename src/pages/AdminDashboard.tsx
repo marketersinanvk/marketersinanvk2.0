@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../lib/firebase';
 import { signOut } from 'firebase/auth';
 
-type Tab = 'portfolio' | 'services' | 'posts' | 'testimonials';
+type Tab = 'hero' | 'portfolio' | 'services' | 'posts' | 'testimonials';
 
 export default function AdminDashboard() {
   const { user, loading, isAdmin } = useAuth();
@@ -33,7 +33,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     if (!user || !isAdmin) return;
 
-    const tabs: Tab[] = ['portfolio', 'services', 'posts', 'testimonials'];
+    const tabs: Tab[] = ['hero', 'portfolio', 'services', 'posts', 'testimonials'];
     const unsubscribes = tabs.map(tab => {
       const q = query(collection(db, tab));
       return onSnapshot(q, (snapshot) => {
@@ -96,7 +96,7 @@ export default function AdminDashboard() {
   if (loading || !user || !isAdmin) return null;
 
   const stats = [
-    { label: 'Active Projects', value: allData.portfolio?.length || 0, icon: Briefcase, color: 'text-neon-blue' },
+    { label: 'Active Projects', value: allData.portfolio?.length || 0, icon: Briefcase, color: 'text-neon-green' },
     { label: 'Core Services', value: allData.services?.length || 0, icon: Zap, color: 'text-yellow-400' },
     { label: 'Journal Entries', value: allData.posts?.length || 0, icon: FileText, color: 'text-purple-400' },
     { label: 'Global Reach', value: '12+', icon: Globe, color: 'text-green-400' },
@@ -107,22 +107,23 @@ export default function AdminDashboard() {
       <SEO title="Master Admin OS | Elite Agency" description="Neural interface for agency content management." />
       
       {/* Sidebar */}
-      <aside className="w-full md:w-80 bg-black/60 border-r border-neon-blue/10 p-8 flex flex-col justify-between relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-transparent via-neon-blue/20 to-transparent" />
+      <aside className="w-full md:w-80 bg-black/60 border-r border-neon-green/10 p-8 flex flex-col justify-between relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-transparent via-neon-green/20 to-transparent" />
         
         <div className="space-y-12 relative z-10">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-neon-blue/10 border border-neon-blue/20 rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(0,243,255,0.1)]">
-              <Activity className="text-neon-blue w-6 h-6 animate-pulse" />
+            <div className="w-12 h-12 bg-neon-green/10 border border-neon-green/20 rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(57,255,20,0.1)]">
+              <Activity className="text-neon-green w-6 h-6 animate-pulse" />
             </div>
             <div>
-              <p className="text-white font-serif tracking-widest text-sm uppercase">Admin <span className="text-neon-blue font-sans font-black">OS</span></p>
+              <p className="text-white font-serif tracking-widest text-sm uppercase">Admin <span className="text-neon-green font-sans font-black">OS</span></p>
               <p className="text-silver/20 text-[8px] font-bold uppercase tracking-[0.3em]">System.Active // MSVK-2026</p>
             </div>
           </div>
 
           <nav className="space-y-2">
             {[
+              { id: 'hero', label: 'Hero Section', icon: Zap },
               { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
               { id: 'services', label: 'Services', icon: LayoutDashboard },
               { id: 'posts', label: 'Journal', icon: FileText },
@@ -132,13 +133,13 @@ export default function AdminDashboard() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as Tab)}
                 className={`w-full flex items-center gap-4 px-6 py-4 rounded-2xl transition-all duration-500 group relative ${
-                  activeTab === tab.id ? 'bg-neon-blue/10 text-neon-blue border border-neon-blue/20' : 'text-silver/40 hover:text-white hover:bg-white/5'
+                  activeTab === tab.id ? 'bg-neon-green/10 text-neon-green border border-neon-green/20' : 'text-silver/40 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {activeTab === tab.id && (
-                  <motion.div layoutId="activeTab" className="absolute left-0 w-1 h-6 bg-neon-blue rounded-full" />
+                  <motion.div layoutId="activeTab" className="absolute left-0 w-1 h-6 bg-neon-green rounded-full" />
                 )}
-                <tab.icon size={18} className={activeTab === tab.id ? 'text-neon-blue' : 'text-silver/20 group-hover:text-neon-blue/40'} />
+                <tab.icon size={18} className={activeTab === tab.id ? 'text-neon-green' : 'text-silver/20 group-hover:text-neon-green/40'} />
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{tab.label}</span>
                 {activeTab === tab.id && <ChevronRight size={14} className="ml-auto opacity-40" />}
               </button>
@@ -179,9 +180,9 @@ export default function AdminDashboard() {
 
           <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <div className="space-y-4">
-              <p className="text-neon-blue text-[9px] font-bold uppercase tracking-[0.5em]">Neural Interface</p>
+              <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]">Neural Interface</p>
               <h1 className="text-5xl md:text-7xl font-serif tracking-tighter text-white leading-tight">
-                Refining <span className="italic text-neon-blue">{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</span>
+                Refining <span className="italic text-neon-green">{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</span>
               </h1>
             </div>
             <button 
@@ -190,7 +191,7 @@ export default function AdminDashboard() {
                 setFormData({});
                 setIsModalOpen(true);
               }}
-              className="px-10 py-5 bg-neon-blue text-midnight font-bold rounded-full flex items-center gap-3 shadow-[0_0_40px_rgba(0,243,255,0.3)] hover:scale-105 transition-all uppercase tracking-widest text-[10px]"
+              className="px-10 py-5 bg-neon-green text-midnight font-bold rounded-full flex items-center gap-3 shadow-[0_0_40px_rgba(57,255,20,0.3)] hover:scale-105 transition-all uppercase tracking-widest text-[10px]"
             >
               <Plus size={16} /> New Entry
             </button>
@@ -222,7 +223,7 @@ export default function AdminDashboard() {
                         setFormData(item);
                         setIsModalOpen(true);
                       }}
-                      className="flex-1 py-3 glass-2 border border-neon-blue/20 text-neon-blue text-[9px] font-bold uppercase tracking-widest rounded-full hover:bg-neon-blue hover:text-midnight transition-all"
+                      className="flex-1 py-3 glass-2 border border-neon-green/20 text-neon-green text-[9px] font-bold uppercase tracking-widest rounded-full hover:bg-neon-green hover:text-midnight transition-all"
                     >
                       Edit
                     </button>
@@ -255,7 +256,7 @@ export default function AdminDashboard() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl glass-2 p-10 md:p-16 rounded-[60px] border border-neon-blue/20 max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-2xl glass-2 p-10 md:p-16 rounded-[60px] border border-neon-green/20 max-h-[90vh] overflow-y-auto"
             >
               <button 
                 onClick={() => setIsModalOpen(false)}
@@ -265,20 +266,20 @@ export default function AdminDashboard() {
               </button>
 
               <h2 className="text-4xl font-serif italic text-white mb-12">
-                {editingItem ? 'Modify' : 'Initialize'} <span className="text-neon-blue not-italic font-sans font-black uppercase tracking-tighter">{activeTab.slice(0, -1)}</span>
+                {editingItem ? 'Modify' : 'Initialize'} <span className="text-neon-green not-italic font-sans font-black uppercase tracking-tighter">{activeTab.slice(0, -1)}</span>
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-6">
                   {/* Common Fields */}
                   <div className="space-y-2">
-                    <label className="text-silver/40 text-[9px] font-bold uppercase tracking-widest ml-4">Identifier</label>
+                    <label className="text-silver/40 text-[9px] font-bold uppercase tracking-widest ml-4">Identifier / Title</label>
                     <input 
                       type="text" 
                       value={formData.title || formData.name || ''}
                       onChange={(e) => setFormData({ ...formData, [activeTab === 'testimonials' ? 'name' : 'title']: e.target.value })}
-                      className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all"
-                      required
+                      className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-green/30 transition-all"
+                      required={activeTab !== 'hero'}
                     />
                   </div>
 
@@ -290,7 +291,7 @@ export default function AdminDashboard() {
                           type="text" 
                           value={formData.category || ''}
                           onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                          className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all"
+                          className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-green/30 transition-all"
                         />
                       </div>
                       <div className="space-y-2">
@@ -299,7 +300,7 @@ export default function AdminDashboard() {
                           type="text" 
                           value={formData.client || ''}
                           onChange={(e) => setFormData({ ...formData, client: e.target.value })}
-                          className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all"
+                          className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-green/30 transition-all"
                         />
                       </div>
                     </div>
@@ -310,7 +311,7 @@ export default function AdminDashboard() {
                     <textarea 
                       value={formData.description || formData.review || formData.excerpt || ''}
                       onChange={(e) => setFormData({ ...formData, [activeTab === 'testimonials' ? 'review' : activeTab === 'posts' ? 'excerpt' : 'description']: e.target.value })}
-                      className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-[30px] px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all min-h-[120px]"
+                      className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-[30px] px-8 py-5 text-xs text-white focus:outline-none focus:border-neon-green/30 transition-all min-h-[120px]"
                       required
                     />
                   </div>
@@ -319,54 +320,59 @@ export default function AdminDashboard() {
                   <div className="space-y-2">
                     <label className="text-silver/40 text-[9px] font-bold uppercase tracking-widest ml-4">Visual Asset URL</label>
                     <div className="relative">
-                      <ImageIcon className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-neon-blue/40" />
+                      <ImageIcon className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-neon-green/40" />
                       <input 
                         type="url" 
-                        value={formData.image || ''}
-                        onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                        value={formData.image || formData.imageUrl || ''}
+                        onChange={(e) => setFormData({ ...formData, [activeTab === 'hero' ? 'imageUrl' : 'image']: e.target.value })}
                         placeholder="https://external-hosting.com/image.webp"
-                        className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full pl-14 pr-8 py-5 text-xs text-white focus:outline-none focus:border-neon-blue/30 transition-all"
+                        className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full pl-14 pr-8 py-5 text-xs text-white focus:outline-none focus:border-neon-green/30 transition-all"
+                        required
                       />
                     </div>
                   </div>
 
-                  {/* Optional File Upload */}
-                  <div className="flex items-center gap-4">
-                    <div className="h-[1px] flex-1 bg-white/5" />
-                    <span className="text-[8px] text-silver/20 font-bold uppercase tracking-widest">OR UPLOAD</span>
-                    <div className="h-[1px] flex-1 bg-white/5" />
-                  </div>
+                  {activeTab !== 'hero' && (
+                    <>
+                      {/* Optional File Upload */}
+                      <div className="flex items-center gap-4">
+                        <div className="h-[1px] flex-1 bg-white/5" />
+                        <span className="text-[8px] text-silver/20 font-bold uppercase tracking-widest">OR UPLOAD</span>
+                        <div className="h-[1px] flex-1 bg-white/5" />
+                      </div>
 
-                  <div className="flex gap-6 items-center">
-                    <div className="w-24 h-24 glass-2 rounded-2xl border border-white/5 flex items-center justify-center overflow-hidden shrink-0 bg-black/40">
-                      {formData.image ? (
-                        <img src={formData.image} className="w-full h-full object-cover" />
-                      ) : (
-                        <ImageIcon className="text-silver/10 w-6 h-6" />
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <input 
-                        type="file" 
-                        id="file-upload" 
-                        className="hidden" 
-                        onChange={handleFileChange}
-                        accept="image/*"
-                      />
-                      <label 
-                        htmlFor="file-upload"
-                        className="inline-flex items-center gap-3 px-6 py-3 glass-2 border border-neon-blue/20 text-neon-blue text-[8px] font-bold uppercase tracking-widest rounded-full cursor-pointer hover:bg-neon-blue/10 transition-all"
-                      >
-                        {uploading ? 'Processing...' : 'Direct Upload'}
-                      </label>
-                    </div>
-                  </div>
+                      <div className="flex gap-6 items-center">
+                        <div className="w-24 h-24 glass-2 rounded-2xl border border-white/5 flex items-center justify-center overflow-hidden shrink-0 bg-black/40">
+                          {formData.image ? (
+                            <img src={formData.image} className="w-full h-full object-cover" />
+                          ) : (
+                            <ImageIcon className="text-silver/10 w-6 h-6" />
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <input 
+                            type="file" 
+                            id="file-upload" 
+                            className="hidden" 
+                            onChange={handleFileChange}
+                            accept="image/*"
+                          />
+                          <label 
+                            htmlFor="file-upload"
+                            className="inline-flex items-center gap-3 px-6 py-3 glass-2 border border-neon-green/20 text-neon-green text-[8px] font-bold uppercase tracking-widest rounded-full cursor-pointer hover:bg-neon-green/10 transition-all"
+                          >
+                            {uploading ? 'Processing...' : 'Direct Upload'}
+                          </label>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <button 
                   type="submit"
                   disabled={uploading}
-                  className="w-full py-6 bg-neon-blue text-midnight font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(0,243,255,0.3)] hover:scale-[1.02] transition-all disabled:opacity-50"
+                  className="w-full py-6 bg-neon-green text-midnight font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(57,255,20,0.3)] hover:scale-[1.02] transition-all disabled:opacity-50"
                 >
                   <span className="flex items-center justify-center gap-3">
                     <Save size={14} /> {editingItem ? 'Update Neural Link' : 'Commit to Database'}
