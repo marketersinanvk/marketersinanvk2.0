@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
 import CommunicationHub from "./components/CommunicationHub";
-import StickyContactButton from "./components/StickyContactButton";
+import Layout from "./components/Layout";
 
 // Lazy Load Pages for Performance
 const Home = lazy(() => import("./pages/Home"));
@@ -31,7 +31,7 @@ function ScrollToTop() {
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-midnight">
-    <div className="w-12 h-12 border-2 border-neon-green/20 border-t-neon-green rounded-full animate-spin" />
+    <div className="w-12 h-12 border-2 border-arctic-blue/20 border-t-arctic-blue rounded-full animate-spin" />
   </div>
 );
 
@@ -40,29 +40,30 @@ function AppContent() {
   const isAdminPage = location.pathname.startsWith('/admin') || location.pathname === '/login';
 
   return (
-    <div className="min-h-screen selection:bg-neon-green selection:text-midnight">
-      {!isAdminPage && <Navbar />}
-      <CommunicationHub />
-      <StickyContactButton />
-      <Suspense fallback={<PageLoader />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/certificate" element={<Certificate />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
-      {!isAdminPage && <Footer />}
-    </div>
+    <Layout>
+      <div className="min-h-screen selection:bg-arctic-blue selection:text-midnight">
+        {!isAdminPage && <Navbar />}
+        <CommunicationHub />
+        <Suspense fallback={<PageLoader />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/certificate" element={<Certificate />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
+        {!isAdminPage && <Footer />}
+      </div>
+    </Layout>
   );
 }
 

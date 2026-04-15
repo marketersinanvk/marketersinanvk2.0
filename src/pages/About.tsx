@@ -46,13 +46,13 @@ export default function About() {
           >
             <div className="space-y-6 md:space-y-8">
               <h2 className="text-2xl md:text-3xl font-serif italic text-white tracking-tight">The Neural Genesis</h2>
-              <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide">
-                <span className="text-white font-medium">Muhammed Sinan VK</span> (Marketer Sinan VK) is the <span className="text-neon-green font-bold">Best AI Digital Marketer</span> based in Mappattukara, Koppam, <Link to="/contact" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">Palakkad, Kerala</Link>. 
-                Specialized in AI-Driven Growth Strategies, <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">Meta Ads Expert</Link> services, and Premium Branding, 
+              <p className="text-lg md:text-xl font-light leading-relaxed tracking-wide" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
+                <span className="text-white font-medium">Muhammed Sinan VK</span> (Marketer Sinan VK) is the <span className="text-neon-green font-bold">Best AI Digital Marketer</span> based in Mappattukara, Koppam, <Link to="/contact" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Palakkad, Kerala</Link>. 
+                Specialized in AI-Driven Growth Strategies, <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Meta Ads Expert</Link> services, and Premium Branding, 
                 he serves a global clientele from India to Dubai. 
                 Our methodology is a synthesis of human intuition and machine-learned precision, delivering excellence as an 
-                <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">SEO Analyst</Link> and 
-                <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">Web Development</Link> specialist.
+                <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SEO Analyst</Link> and 
+                <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Web Development</Link> specialist.
               </p>
             </div>
             
@@ -65,7 +65,7 @@ export default function About() {
               ].map((stat, i) => (
                 <div key={i} className="space-y-2 md:space-y-3">
                   <p className="text-neon-green text-4xl md:text-5xl font-serif italic tracking-tighter">{stat.value}</p>
-                  <p className="text-silver/30 text-[8px] md:text-[9px] font-bold uppercase tracking-[0.3em]">{stat.label}</p>
+                  <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(192, 192, 192, 0.3)" }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -75,13 +75,21 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 2 }}
-            className="relative"
+            className="relative group/photo"
           >
-            <div className="aspect-[3/4] glass-2 rounded-[24px] overflow-hidden group border border-neon-green/20 backdrop-blur-md shadow-[0_0_30px_rgba(57,255,20,0.2)] bg-white/5 relative">
-              <img 
+            <motion.div 
+              className="aspect-[3/4] glass-2 rounded-[24px] overflow-hidden border backdrop-blur-md shadow-[0_0_30px_rgba(57,255,20,0.2)] relative"
+              style={{ borderColor: "rgba(57, 255, 20, 0.2)", backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.img 
                 src="https://i.ibb.co/27wJkvQ8/jacket-photo.jpg" 
                 alt="Muhammed Sinan VK - Freelance Digital Marketer in Kerala" 
-                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
+                className="w-full h-full object-cover transition-all duration-[1200ms] ease-[0.16,1,0.3,1]"
+                initial={{ filter: "grayscale(100%) blur(4px)", scale: 1.05 }}
+                whileHover={{ filter: "grayscale(0%) blur(0px)", scale: 1 }}
+                whileTap={{ filter: "grayscale(0%) blur(0px)", scale: 1 }}
                 referrerPolicy="no-referrer"
                 loading="eager"
                 fetchPriority="high"
@@ -89,9 +97,12 @@ export default function About() {
                 width="600"
                 height="800"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-40" />
-            </div>
-            <div className="absolute -top-12 -right-12 md:-top-16 md:-right-16 w-32 h-32 md:w-48 md:h-48 border-[0.5px] border-neon-green/20 rounded-full animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-40 group-hover/photo:opacity-20 transition-opacity duration-1000" />
+              
+              {/* Glowing Border Overlay */}
+              <div className="absolute inset-0 border border-neon-green/0 group-hover/photo:border-neon-green/40 group-hover/photo:shadow-[inset_0_0_20px_rgba(57,255,20,0.2)] transition-all duration-1000 rounded-[24px] pointer-events-none" />
+            </motion.div>
+            <div className="absolute -top-12 -right-12 md:-top-16 md:-right-16 w-32 h-32 md:w-48 md:h-48 border-[0.5px] rounded-full animate-pulse group-hover/photo:border-neon-green/50 transition-colors duration-1000" style={{ borderColor: "rgba(57, 255, 20, 0.2)" }} />
           </motion.div>
         </div>
 
@@ -104,14 +115,14 @@ export default function About() {
             className="md:col-span-2 glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <h3 className="text-neon-green text-2xl md:text-3xl font-serif italic tracking-tight mb-6 md:mb-8">The Journey</h3>
-            <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide">
+            <p className="text-lg md:text-xl font-light leading-relaxed tracking-wide" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
               My path in the digital realm began with a fascination for the intersection of technology and human psychology. 
               As an AI Digital Marketer, I specialize in leveraging advanced neural architectures to craft marketing strategies 
               that don't just reach audiences—they resonate with them on a fundamental level. 
-              My expertise spans across <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">SEO</Link>, 
-              <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">SEM</Link>, 
-              <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">SMM</Link>, and 
-              <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">Web Development</Link>, 
+              My expertise spans across <Link to="/services" className="text-neon-green hover:underline underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SEO</Link>, 
+              <Link to="/services" className="text-neon-green hover:underline underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SEM</Link>, 
+              <Link to="/services" className="text-neon-green hover:underline underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SMM</Link>, and 
+              <Link to="/services" className="text-neon-green hover:underline underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Web Development</Link>, 
               ensuring a holistic approach to brand scaling.
             </p>
           </motion.div>
@@ -124,20 +135,20 @@ export default function About() {
             className="glass-2 p-8 md:p-12 rounded-[24px] md:rounded-[32px] hover:border-neon-green/30 transition-all duration-700 flex flex-col justify-between group hover:scale-[1.01] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
           >
             <div className="space-y-4">
-              <div className="w-10 h-10 bg-neon-green/10 rounded-xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700" style={{ backgroundColor: "rgba(57, 255, 20, 0.1)" }}>
                 <GraduationCap size={20} />
               </div>
               <div>
                 <h3 className="text-neon-green text-xl font-serif italic tracking-tight mb-2">Foundation</h3>
                 <p className="text-white font-serif italic text-lg leading-tight">Digital Marketing Specialist Training</p>
-                <p className="text-silver/40 text-[10px] uppercase tracking-widest mt-2">
+                <p className="text-[10px] uppercase tracking-widest mt-2" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
                   YES UQ Mogam & Oxdu Media School <br />
-                  <span className="text-neon-green/60">(Specialized in AI-Integrated Marketing)</span>
+                  <span style={{ color: "rgba(57, 255, 20, 0.6)" }}>(Specialized in AI-Integrated Marketing)</span>
                 </p>
               </div>
             </div>
-            <div className="pt-6 border-t border-white/5 mt-6">
-              <p className="text-silver/50 text-xs font-light leading-relaxed">
+            <div className="pt-6 border-t mt-6" style={{ borderColor: "rgba(255, 255, 255, 0.05)" }}>
+              <p className="text-xs font-light leading-relaxed" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
                 Gained hands-on experience in high-impact Meta Ads, advanced SEO, and brand growth strategies. 
                 This foundation shaped my expertise in scaling brands like MincoKids and KL Gadgetix with data-driven marketing.
               </p>
@@ -153,11 +164,11 @@ export default function About() {
           >
             <div>
               <h3 className="text-neon-green text-xl font-serif italic tracking-tight mb-4">Base</h3>
-              <Link to="/contact" className="text-silver/40 text-sm font-light leading-relaxed hover:text-neon-green transition-colors">
+              <Link to="/contact" className="text-sm font-light leading-relaxed hover:text-neon-green transition-colors" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
                 Mappattukara, Koppam, Palakkad
               </Link>
             </div>
-            <div className="pt-6 md:pt-8 border-t border-white/5 mt-8 md:mt-0">
+            <div className="pt-6 md:pt-8 border-t mt-8 md:mt-0" style={{ borderColor: "rgba(255, 255, 255, 0.05)" }}>
               <p className="text-white font-serif italic text-xl md:text-2xl">Kerala, India & Dubai</p>
             </div>
           </motion.div>
@@ -172,7 +183,7 @@ export default function About() {
             <h3 className="text-neon-green text-xl font-serif italic tracking-tight mb-6">Expertise</h3>
             <ul className="space-y-3 md:space-y-4">
               {["AI Growth Strategy", "High-ROI Meta Ads", "Premium Branding", "Data Analytics"].map((skill) => (
-                <li key={skill} className="flex items-center gap-3 text-silver/50 text-sm font-light">
+                <li key={skill} className="flex items-center gap-3 text-sm font-light" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
                   <div className="w-1.5 h-1.5 bg-neon-green rounded-full" />
                   {skill}
                 </li>

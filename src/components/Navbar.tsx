@@ -12,16 +12,16 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between border border-neon-green/10 shadow-[0_0_20px_rgba(57,255,20,0.05)] relative overflow-hidden"
+        className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between border border-arctic-blue/10 shadow-[0_0_20px_rgba(0,229,255,0.05)] relative overflow-hidden"
       >
         {/* Scanline Effect */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
         
         <Link to="/" className="flex items-center gap-3 group relative z-10">
-          <div className="w-8 h-8 bg-neon-green/10 border border-neon-green/20 rounded-full flex items-center justify-center group-hover:border-neon-green/50 transition-all duration-700">
-            <span className="text-neon-green font-serif italic text-lg">S</span>
+          <div className="w-8 h-8 bg-arctic-blue/10 border border-arctic-blue/20 rounded-full flex items-center justify-center group-hover:border-arctic-blue/50 transition-all duration-700">
+            <span className="text-arctic-blue font-serif italic text-lg">S</span>
           </div>
-          <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-neon-green transition-colors duration-700 uppercase">Marketer Sinan VK</span>
+          <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-arctic-blue transition-colors duration-700 uppercase">Marketer Sinan VK</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -42,11 +42,11 @@ export default function Navbar() {
             >
               {item.name}
               {item.badge && (
-                <span className="absolute -top-4 -right-4 bg-neon-red text-white text-[6px] px-1.5 py-0.5 rounded-full font-bold animate-pulse text-neon-red-glow">
+                <span className="absolute -top-4 -right-4 bg-arctic-blue text-midnight text-[6px] px-1.5 py-0.5 rounded-full font-bold animate-pulse shadow-[0_0_10px_#00E5FF]">
                   {item.badge}
                 </span>
               )}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-green transition-all duration-500 group-hover/link:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-arctic-blue transition-all duration-500 group-hover/link:w-full" />
             </Link>
           ))}
         </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] bg-midnight/95 backdrop-blur-2xl md:hidden flex flex-col items-center justify-center gap-8 p-8"
           >
             <button 
-              className="absolute top-10 right-10 text-neon-green hover:scale-110 transition-transform"
+              className="absolute top-10 right-10 text-arctic-blue hover:scale-110 transition-transform"
               onClick={() => setIsOpen(false)}
             >
               <X size={32} />
@@ -96,7 +96,7 @@ export default function Navbar() {
                 >
                   <Link 
                     to={item.path}
-                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-neon-green transition-colors py-4 px-8 block"
+                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-arctic-blue transition-colors py-4 px-8 block"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -117,7 +117,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.aria}
-                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-neon-green/60 hover:text-neon-green hover:border-neon-green/50 transition-all duration-500"
+                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-arctic-blue/60 hover:text-arctic-blue hover:border-arctic-blue/50 transition-all duration-500"
                 >
                   <span className="text-[10px] font-bold">{social.label}</span>
                 </a>

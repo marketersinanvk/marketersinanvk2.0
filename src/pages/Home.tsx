@@ -3,6 +3,8 @@ import Hero from "../components/Hero";
 import CinemaReel from "../components/CinemaReel";
 import ContactForm from "../components/ContactForm";
 import Testimonials from "../components/Testimonials";
+import FAQ from "../components/FAQ";
+import CaseStudies from "../components/CaseStudies";
 import { Link } from "react-router-dom";
 import { Briefcase, Award, Globe, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import SEO from "../components/SEO";
@@ -24,7 +26,7 @@ export default function Home() {
       <Hero />
 
       {/* Trust & Impact Metrics - Counter Section */}
-      <section className="py-20 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-20 border-y" style={{ borderColor: "rgba(255, 255, 255, 0.05)", backgroundColor: "rgba(255, 255, 255, 0.01)" }}>
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -58,15 +60,15 @@ export default function Home() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="group relative"
               >
-                <Link to={stat.link} className="block p-8 glass-2 rounded-[24px] border border-white/5 hover:border-neon-green/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                <Link to={stat.link} className="block p-8 glass-2 rounded-[24px] border hover:border-neon-green/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]" style={{ borderColor: "rgba(255, 255, 255, 0.05)" }}>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-neon-green/5 border border-white/5 rounded-2xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-500">
+                    <div className="w-12 h-12 border rounded-2xl flex items-center justify-center text-neon-green group-hover:bg-neon-green group-hover:text-midnight transition-all duration-500" style={{ backgroundColor: "rgba(57, 255, 20, 0.05)", borderColor: "rgba(255, 255, 255, 0.05)" }}>
                       <stat.icon size={24} />
                     </div>
                     <p className="text-neon-green text-3xl md:text-4xl font-serif italic tracking-tighter">{stat.value}</p>
                   </div>
                   <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-2">{stat.label}</h4>
-                  <p className="text-silver/40 text-xs font-light tracking-wide">{stat.desc}</p>
+                  <p className="text-xs font-light tracking-wide" style={{ color: "rgba(192, 192, 192, 0.4)" }}>{stat.desc}</p>
                 </Link>
               </motion.div>
             ))}
@@ -80,6 +82,8 @@ export default function Home() {
         subtitle="CINEMATIC NARRATIVES" 
         refCode="REF. MSVK-8590181381 // KERALA, INDIA // 2026"
       />
+
+      <CaseStudies />
       
       {/* Brand Philosophy - The Intro */}
       <section className="py-24 md:py-40 px-6 sm:px-8 relative overflow-hidden">
@@ -97,16 +101,17 @@ export default function Home() {
               <span className="italic text-neon-green">Digital</span> <br />
               Legacies.
             </h3>
-            <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide max-w-lg">
+            <p className="text-lg md:text-xl font-light leading-relaxed tracking-wide max-w-lg" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
               We transcend traditional marketing. Marketer Sinan VK is a laboratory of digital excellence, 
               where AI meets the refined aesthetics of premium branding. 
-              Specializing as a <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">Meta Ads Expert</Link> and 
-              <Link to="/services" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all">SEO Analyst</Link>, 
-              we engineer every interaction as an intentional step towards market dominance in <Link to="/contact" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4">Palakkad, Kerala</Link> and Dubai.
+              Specializing as a <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Meta Ads Expert</Link> and 
+              <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SEO Analyst</Link>, 
+              we engineer every interaction as an intentional step towards market dominance in <Link to="/contact" className="text-neon-green hover:underline underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Palakkad, Kerala</Link> and Dubai.
             </p>
             <button 
               aria-label="Read the Manifesto"
-              className="px-10 py-5 md:px-12 md:py-6 glass-2 border border-neon-green/20 text-neon-green font-bold rounded-full hover:bg-neon-green hover:text-midnight transition-all duration-700 uppercase tracking-[0.2em] text-[10px] w-full sm:w-auto"
+              className="px-10 py-5 md:px-12 md:py-6 glass-2 border text-neon-green font-bold rounded-full hover:bg-neon-green hover:text-midnight transition-all duration-700 uppercase tracking-[0.2em] text-[10px] w-full sm:w-auto"
+              style={{ borderColor: "rgba(57, 255, 20, 0.2)" }}
             >
               The Manifesto
             </button>
@@ -119,7 +124,7 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="aspect-[4/5] glass-2 rounded-[24px] sm:rounded-[48px] overflow-hidden group shadow-[0_0_50px_rgba(57,255,20,0.1)] border border-neon-green/5">
+            <div className="aspect-[4/5] glass-2 rounded-[24px] sm:rounded-[48px] overflow-hidden group shadow-[0_0_50px_rgba(57,255,20,0.1)] border" style={{ borderColor: "rgba(57, 255, 20, 0.05)" }}>
               <img 
                 src="https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png" 
                 alt="Marketer Sinan VK - Best AI Digital Marketer in Palakkad and Kerala" 
@@ -133,7 +138,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-60" />
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 sm:-bottom-12 sm:-right-12 w-40 h-40 sm:w-56 sm:h-56 glass-2 rounded-full border border-neon-green/10 flex items-center justify-center p-6 sm:p-10 animate-pulse">
+            <div className="absolute -bottom-6 -right-6 sm:-bottom-12 sm:-right-12 w-40 h-40 sm:w-56 sm:h-56 glass-2 rounded-full border flex items-center justify-center p-6 sm:p-10 animate-pulse" style={{ borderColor: "rgba(57, 255, 20, 0.1)" }}>
               <p className="text-neon-green text-[7px] sm:text-[8px] font-bold uppercase tracking-[0.4em] text-center leading-loose">
                 Crafted for the <br /> 0.1%
               </p>
@@ -143,6 +148,7 @@ export default function Home() {
       </section>
  
       <Testimonials />
+      <FAQ />
 
       {/* Let's Collaborate - Contact Section */}
       <section className="py-24 md:py-40 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
@@ -156,7 +162,7 @@ export default function Home() {
                   <span className="italic text-neon-green">Collaborate.</span>
                 </h2>
               </div>
-              <p className="text-silver/40 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-md">
+              <p className="text-base md:text-lg font-light leading-relaxed tracking-wide max-w-md" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
                 Ready to scale your brand with AI-driven precision? 
                 Initiate the connection and let's engineer your digital legacy in Palakkad and beyond.
               </p>

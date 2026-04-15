@@ -21,6 +21,7 @@ import {
   X
 } from "lucide-react";
 import SEO from "../components/SEO";
+import FAQ from "../components/FAQ";
 import { SERVICES } from "../constants/data";
 
 const iconMap: Record<string, any> = {
@@ -50,7 +51,7 @@ export default function ServicesPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32 grainy"
+      className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32"
     >
       <SEO 
         title="Freelance Digital Marketer in Kerala | Best AI-Integrated Marketing Services"
@@ -61,7 +62,7 @@ export default function ServicesPage() {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Capabilities
           </motion.p>
@@ -72,10 +73,10 @@ export default function ServicesPage() {
             className="text-5xl sm:text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[1.1] md:leading-[0.85]"
           >
             Freelance <br />
-            <span className="italic text-neon-green">Digital Marketer.</span>
+            <span className="italic text-arctic-blue">Digital Marketer.</span>
           </motion.h1>
           <p className="text-silver/50 text-lg md:text-xl font-light leading-relaxed tracking-wide max-w-2xl">
-            As a premier <span className="text-white font-medium">Freelance digital marketer in Kerala</span>, I offer <span className="text-white font-medium">AI-integrated digital marketing services</span> designed to scale your business with precision and elite branding.
+            As a premier <span className="text-white font-medium">Best Digital Marketer in Kerala & Bahrain</span>, I offer <span className="text-white font-medium">AI-integrated digital marketing services</span> designed to scale your business with precision and elite branding.
           </p>
         </div>
 
@@ -90,10 +91,10 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => setSelectedService(service)}
-                className="glass-2 p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-white/5 hover:border-neon-green/30 transition-all duration-700 group flex flex-col justify-between cursor-pointer hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_rgba(57,255,20,0.1)]"
+                className="glass-2 p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-white/5 hover:border-arctic-blue/30 transition-all duration-700 group flex flex-col justify-between cursor-pointer hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_20px_rgba(0,229,255,0.1)] border-beam"
               >
                 <div>
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-neon-green/5 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-neon-green group-hover:text-midnight transition-all duration-700 border border-white/5 group-hover:border-neon-green/50">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-arctic-blue/5 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-arctic-blue group-hover:text-midnight transition-all duration-700 border border-white/5 group-hover:border-arctic-blue/50">
                     <IconComponent className="w-6 h-6 md:w-7 md:h-7" />
                   </div>
                   <h3 className="text-white text-xl md:text-2xl font-serif italic mb-4 tracking-wide">{service.title}</h3>
@@ -104,7 +105,7 @@ export default function ServicesPage() {
                 
                 <div className="flex flex-col gap-3">
                   <button 
-                    className="w-full py-4 glass-2 border border-white/10 text-neon-green text-[10px] font-bold uppercase tracking-[0.3em] rounded-full hover:bg-neon-green hover:text-midnight transition-all flex items-center justify-center gap-2"
+                    className="w-full py-4 glass-2 border border-white/10 text-arctic-blue text-[10px] font-bold uppercase tracking-[0.3em] rounded-full hover:bg-arctic-blue hover:text-midnight transition-all flex items-center justify-center gap-2"
                   >
                     View Report <ArrowRight size={12} />
                   </button>
@@ -114,6 +115,8 @@ export default function ServicesPage() {
           })}
         </div>
       </div>
+
+      <FAQ />
 
       {/* Detailed Service Report Modal */}
       <AnimatePresence>
@@ -128,7 +131,7 @@ export default function ServicesPage() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="max-w-2xl w-full glass-2 p-10 md:p-16 rounded-[40px] border border-neon-green/20 relative"
+              className="max-w-2xl w-full glass-2 p-10 md:p-16 rounded-[40px] border border-arctic-blue/20 relative"
             >
               <button 
                 onClick={() => setSelectedService(null)}
@@ -139,7 +142,7 @@ export default function ServicesPage() {
               
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]">Service Report</p>
+                  <p className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.5em]">Service Report</p>
                   <h2 className="text-4xl md:text-6xl font-serif italic text-white">{selectedService.title}</h2>
                 </div>
                 
@@ -149,7 +152,7 @@ export default function ServicesPage() {
                 
                 <button 
                   onClick={() => handleConsultation(selectedService.title)}
-                  className="w-full py-5 bg-neon-green text-midnight text-[10px] font-bold uppercase tracking-[0.3em] rounded-full hover:scale-[1.02] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(57,255,20,0.3)]"
+                  className="w-full py-5 bg-arctic-blue text-midnight text-[10px] font-bold uppercase tracking-[0.3em] rounded-full hover:scale-[1.02] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(0,229,255,0.3)]"
                 >
                   Initiate Consultation <MessageCircle size={14} />
                 </button>

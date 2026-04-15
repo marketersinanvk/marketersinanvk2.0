@@ -56,28 +56,42 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     const schemaData = {
       "@context": "https://schema.org",
       "@type": article ? "BlogPosting" : "ProfessionalService",
-      "name": "Marketer Sinan VK | Freelance Digital Marketer in Kerala",
+      "name": "Sinan VK | Best AI Digital Marketer in Kerala & Bahrain",
       "alternateName": "Muhammed Sinan VK",
-      "image": image || "https://picsum.photos/seed/sinan/1200/630",
+      "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
       "@id": "https://marketersinanvk.in",
       "url": "https://marketersinanvk.in",
-      "description": description || "Marketer Sinan VK is the Best Freelance Digital Marketer in Kerala. Expert in AI-integrated digital marketing, local SEO, and brand scaling for businesses in India and UAE.",
+      "description": description || "Sinan VK is the Best Digital Marketer in Kerala and SEO Specialist in Bahrain. Providing AI-driven freelance digital marketing in Palakkad, Malappuram, and Bahrain.",
       "telephone": "+918590181381",
       "priceRange": "$$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Palakkad",
-        "addressLocality": "Palakkad",
-        "addressRegion": "Kerala",
-        "postalCode": "678001",
-        "addressCountry": "IN"
-      },
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Palakkad",
+          "addressLocality": "Palakkad",
+          "addressRegion": "Kerala",
+          "postalCode": "678001",
+          "addressCountry": "IN"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Manama",
+          "addressCountry": "BH"
+        }
+      ],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 10.7867,
         "longitude": 76.6547
       },
-      "areaServed": ["Kerala", "Palakkad", "India", "Dubai"],
+      "areaServed": [
+        { "@type": "City", "name": "Palakkad" },
+        { "@type": "City", "name": "Malappuram" },
+        { "@type": "State", "name": "Kerala" },
+        { "@type": "Country", "name": "Bahrain" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "City", "name": "Dubai" }
+      ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -98,7 +112,8 @@ export default function SEO({ title, description, image, article }: SEOProps) {
       },
       "sameAs": [
         "https://www.instagram.com/marketersinanvk",
-        "https://www.linkedin.com/in/marketersinanvk"
+        "https://www.linkedin.com/in/marketersinanvk",
+        "https://twitter.com/sinan246810"
       ]
     };
 
