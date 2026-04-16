@@ -56,12 +56,12 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     const schemaData = {
       "@context": "https://schema.org",
       "@type": article ? "BlogPosting" : "ProfessionalService",
-      "name": "Sinan VK | Best AI Digital Marketer in Kerala & Bahrain",
+      "name": "Sinan VK | Best Digital Marketer in Kerala",
       "alternateName": "Muhammed Sinan VK",
       "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
       "@id": "https://marketersinanvk.in",
       "url": "https://marketersinanvk.in",
-      "description": description || "Sinan VK is the Best Digital Marketer in Kerala and SEO Specialist in Bahrain. Providing AI-driven freelance digital marketing in Palakkad, Malappuram, and Bahrain.",
+      "description": description || "Sinan VK is the Best Digital Marketer in Kerala and Freelance Digital Marketer in Kerala. Providing AI-driven marketing and SEO Specialist in Kerala services.",
       "telephone": "+918590181381",
       "priceRange": "$$$",
       "address": [

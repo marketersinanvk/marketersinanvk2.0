@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 pt-32 pb-16 px-8 overflow-hidden relative">
+    <footer className="border-t border-white/5 pt-16 md:pt-32 pb-12 md:pb-16 px-8 overflow-hidden relative">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 relative z-10">
         <div className="space-y-10">
           <Link to="/" className="flex items-center gap-3 group">
@@ -14,8 +14,8 @@ export default function Footer() {
             <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-arctic-blue transition-colors duration-700 uppercase">Marketer Sinan VK</span>
           </Link>
           <p className="text-silver/40 text-sm leading-relaxed font-light tracking-wide max-w-xs">
-            The definitive destination for AI-powered digital mastery. 
-            As the premier <span className="text-white font-medium">Best Digital Marketer in Kerala & Bahrain</span>, I craft digital legacies for ambitious brands.
+            Marketer Sinan VK is the <span className="text-white font-medium">Best Digital Marketer in Kerala</span>, specializing in AI-driven growth and elite digital solutions. 
+            Based in <span className="text-white font-medium">Palakkad, Kerala</span>, I help businesses scale with precision and excellence.
           </p>
           <div className="flex flex-wrap gap-4">
             {[

@@ -2,10 +2,13 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /login
+Disallow: /_next/
+Disallow: /api/
 
-# Strategic Keywords for Bahrain & Kerala
+# Strategic Keywords for Kerala
 # Best Digital Marketer in Kerala
-# SEO Specialist in Bahrain
-# AI Digital Marketing Palakkad
+# Freelance Digital Marketer in Kerala
+# SEO Specialist in Kerala
+# Social Media Specialist in Kerala
 
 Sitemap: https://marketersinanvk.in/sitemap.xml

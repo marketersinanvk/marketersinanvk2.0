@@ -5,46 +5,53 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "Why should I choose the best AI digital marketer in Palakkad?",
-    answer: "Choosing the best AI digital marketer in Palakkad ensures your brand leverages cutting-edge neural strategies that traditional agencies miss. AI-driven growth offers 10x faster scaling by predicting consumer behavior. You can see my results in my portfolio or check out my specialized services.",
+    question: "Why should I hire a freelance digital marketer in Kerala?",
+    answer: "Hiring a freelance digital marketer in Kerala offers personalized attention and cost-effective solutions tailored to your business. Unlike large agencies, a freelancer like myself provides agile strategies and direct communication, ensuring your brand's unique needs are met with precision and AI-driven insights.",
     links: [
-      { text: "View Portfolio", path: "/portfolio" },
-      { text: "Explore Services", path: "/services" }
+      { text: "About My Journey", path: "/about" },
+      { text: "View Success Stories", path: "/portfolio" }
     ]
   },
   {
-    question: "How does AI-integrated marketing improve my ROI?",
-    answer: "AI-integrated marketing optimizes your ad spend in real-time, ensuring every rupee delivers maximum value. By using predictive analytics and automated behavior tracking, we achieve higher conversion rates compared to standard methods. Learn more about our high-ROI Meta Ads on our services page.",
+    question: "Who is the best digital marketer in Kerala for AI growth?",
+    answer: "Muhammed Sinan VK (Marketer Sinan VK) is widely recognized as the best digital marketer in Kerala for AI-integrated growth. By combining Oxdu Media School expertise with advanced AI tools, I help businesses in Palakkad and across Kerala achieve 10x scaling through data-driven strategies.",
     links: [
-      { text: "Our Services", path: "/services" }
+      { text: "Explore AI Services", path: "/services" }
     ]
   },
   {
-    question: "What makes your digital marketing consultancy unique in Kerala?",
-    answer: "Unlike a standard digital marketing agency in Kerala, my consultancy focuses on a synthesis of human intuition and machine-learned precision. I provide personalized, agile strategies that adapt to algorithm changes instantly. Read more about my methodology in the about section.",
+    question: "What makes you a top SEO specialist in Kerala?",
+    answer: "As an SEO specialist in Kerala, I focus on 'Result-Oriented SEO'. This means going beyond just rankings to drive actual conversions. My process involves deep technical audits, AI-powered keyword research, and high-authority link building to ensure your business dominates local and global search results.",
     links: [
-      { text: "About My Process", path: "/about" }
+      { text: "SEO Methodology", path: "/about" }
     ]
   },
   {
-    question: "Can you help scale my business in Dubai or the UAE?",
-    answer: "Absolutely. I serve a global clientele from India to Dubai, helping brands achieve international market dominance. Whether you need local SEO in Palakkad or global scaling in the UAE, my AI strategies are built for cross-border success. Contact me to discuss your global vision.",
+    question: "How can a social media specialist in Kerala help my brand?",
+    answer: "A social media specialist in Kerala helps your brand build a loyal community and drive sales through platforms like Meta and Instagram. I specialize in high-ROI Meta Ads and cinematic content strategy that captures attention and converts followers into customers.",
     links: [
-      { text: "Initiate Connection", path: "/contact" }
+      { text: "Social Media Strategy", path: "/services" }
     ]
   },
   {
-    question: "Do you provide custom UI/UX design for small businesses?",
-    answer: "Yes, I believe a great marketing strategy must be supported by a high-converting user experience. I offer premium UI/UX design for small businesses, ensuring your website is a high-performance sales machine that reflects your brand's elite status.",
+    question: "Do you offer digital marketing services in Palakkad?",
+    answer: "Yes, I am based in Palakkad, Kerala, and offer comprehensive digital marketing services to local businesses. From local SEO to premium branding, I help Palakkad-based entrepreneurs compete on a global scale using the latest digital tools.",
     links: [
-      { text: "UI/UX Services", path: "/services" }
+      { text: "Contact Me", path: "/contact" }
     ]
   },
   {
-    question: "How can I start a project with Marketer Sinan VK?",
-    answer: "Starting a project is simple. You can reach out via my contact form or use the quick-access WhatsApp button on the home page. We'll begin with a brand audit to identify your growth potential and engineer your digital legacy.",
+    question: "What are the benefits of AI-integrated marketing for small businesses?",
+    answer: "AI-integrated marketing allows small businesses in Kerala to automate data analysis, personalize customer experiences, and optimize ad spend with surgical precision. This ensures that even with a limited budget, you can achieve results that rival much larger competitors.",
     links: [
-      { text: "Contact Now", path: "/contact" }
+      { text: "AI Solutions", path: "/services" }
+    ]
+  },
+  {
+    question: "How long does it take to see results from SEO in Kerala?",
+    answer: "While SEO is a long-term strategy, most businesses in Kerala start seeing significant improvements in local search visibility within 3 to 6 months. As a dedicated SEO specialist in Kerala, I provide monthly reports to track progress and adjust strategies for maximum ROI.",
+    links: [
+      { text: "View Portfolio", path: "/portfolio" }
     ]
   }
 ];

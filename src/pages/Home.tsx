@@ -5,6 +5,8 @@ import ContactForm from "../components/ContactForm";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import CaseStudies from "../components/CaseStudies";
+import WhyChooseMe from "../components/WhyChooseMe";
+import MarketingProcess from "../components/MarketingProcess";
 import { Link } from "react-router-dom";
 import { Briefcase, Award, Globe, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import SEO from "../components/SEO";
@@ -19,16 +21,16 @@ export default function Home() {
       className="min-h-screen grainy"
     >
       <SEO 
-        title="Marketer Sinan VK | Freelance Digital Marketer in Kerala"
-        description="Best AI digital marketer in Palakkad, Kerala specializing in SEO, Meta Ads, and UI/UX design."
+        title="Marketer Sinan VK | Best Digital Marketer in Kerala & Bahrain"
+        description="Best AI digital marketer in Palakkad, Kerala specializing in SEO, Meta Ads, and Social Media Specialist in Kerala services."
         image="https://picsum.photos/seed/sinan-hero/1200/630"
       />
       <Hero />
 
       {/* Trust & Impact Metrics - Counter Section */}
-      <section className="py-20 border-y" style={{ borderColor: "rgba(255, 255, 255, 0.05)", backgroundColor: "rgba(255, 255, 255, 0.01)" }}>
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-12 md:py-16 border-y" style={{ borderColor: "rgba(255, 255, 255, 0.05)", backgroundColor: "rgba(255, 255, 255, 0.01)" }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
             {[
               { 
                 label: "Projects Delivered", 
@@ -85,9 +87,12 @@ export default function Home() {
 
       <CaseStudies />
       
+      <WhyChooseMe />
+      <MarketingProcess />
+      
       {/* Brand Philosophy - The Intro */}
-      <section className="py-24 md:py-40 px-6 sm:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+      <section className="py-12 md:py-16 px-6 sm:px-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-24 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -151,9 +156,9 @@ export default function Home() {
       <FAQ />
 
       {/* Let's Collaborate - Contact Section */}
-      <section className="py-24 md:py-40 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
+      <section className="py-12 md:py-24 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-24 items-start">
             <div className="space-y-8 md:space-y-12 lg:sticky lg:top-40">
               <div className="space-y-4 md:space-y-6">
                 <p className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em]">The Initiation</p>

@@ -3,6 +3,8 @@ import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { getImageSrcSet } from "../lib/imageUtils";
+import WhyChooseMe from "../components/WhyChooseMe";
+import MarketingProcess from "../components/MarketingProcess";
 
 export default function About() {
   return (
@@ -11,7 +13,7 @@ export default function About() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32 grainy"
+      className="min-h-screen pt-24 md:pt-32 px-6 sm:px-8 pb-24 grainy"
     >
       <SEO 
         title="About Muhammed Sinan VK | Best AI Digital Marketer in Palakkad"
@@ -47,12 +49,13 @@ export default function About() {
             <div className="space-y-6 md:space-y-8">
               <h2 className="text-2xl md:text-3xl font-serif italic text-white tracking-tight">The Neural Genesis</h2>
               <p className="text-lg md:text-xl font-light leading-relaxed tracking-wide" style={{ color: "rgba(192, 192, 192, 0.5)" }}>
-                <span className="text-white font-medium">Muhammed Sinan VK</span> (Marketer Sinan VK) is the <span className="text-neon-green font-bold">Best AI Digital Marketer</span> based in Mappattukara, Koppam, <Link to="/contact" className="text-neon-green hover:underline decoration-neon-green/30 underline-offset-4 font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Palakkad, Kerala</Link>. 
-                Specialized in AI-Driven Growth Strategies, <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Meta Ads Expert</Link> services, and Premium Branding, 
-                he serves a global clientele from India to Dubai. 
-                Our methodology is a synthesis of human intuition and machine-learned precision, delivering excellence as an 
-                <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>SEO Analyst</Link> and 
-                <Link to="/services" className="text-neon-green hover:underline underline-offset-4 hover:shadow-[0_0_15px_rgba(57,255,20,0.3)] transition-all font-bold" style={{ textDecorationColor: "rgba(57, 255, 20, 0.3)" }}>Web Development</Link> specialist.
+                My journey as a <span className="text-white font-medium">Freelance Digital Marketer in Kerala</span> began with a relentless pursuit of digital excellence. 
+                Educated at the prestigious <span className="text-neon-green font-bold">Oxdu Media School</span>, I mastered the art of high-impact marketing, 
+                blending traditional strategies with the power of Artificial Intelligence. 
+                Today, I am recognized as the <span className="text-neon-green font-bold">Best Digital Marketer in Kerala</span>, 
+                helping businesses in Palakkad and beyond achieve unprecedented growth. 
+                My mission is to provide businesses with a competitive edge through <span className="text-white font-medium">AI-Integrated Marketing</span>, 
+                ensuring every campaign is a masterpiece of precision and results.
               </p>
             </div>
             
@@ -85,7 +88,7 @@ export default function About() {
             >
               <motion.img 
                 src="https://i.ibb.co/27wJkvQ8/jacket-photo.jpg" 
-                alt="Muhammed Sinan VK - Freelance Digital Marketer in Kerala" 
+                alt="Muhammed Sinan VK - Best Digital Marketer in Kerala" 
                 className="w-full h-full object-cover transition-all duration-[1200ms] ease-[0.16,1,0.3,1]"
                 initial={{ filter: "grayscale(100%) blur(4px)", scale: 1.05 }}
                 whileHover={{ filter: "grayscale(0%) blur(0px)", scale: 1 }}
@@ -206,6 +209,10 @@ export default function About() {
             </p>
           </motion.div>
         </div>
+
+        <WhyChooseMe />
+        <MarketingProcess />
+
         {/* SEO Content Section */}
         <motion.section 
           initial={{ opacity: 0, y: 20 }}

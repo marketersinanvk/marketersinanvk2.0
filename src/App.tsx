@@ -42,7 +42,11 @@ function AppContent() {
   return (
     <Layout>
       <div className="min-h-screen selection:bg-arctic-blue selection:text-midnight">
-        {!isAdminPage && <Navbar />}
+        {!isAdminPage && (
+          <header>
+            <Navbar />
+          </header>
+        )}
         <CommunicationHub />
         <Suspense fallback={<PageLoader />}>
           <AnimatePresence mode="wait">

@@ -30,9 +30,9 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-32 px-8 relative grainy">
+    <section className="py-16 md:py-24 px-6 md:px-8 relative grainy">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 space-y-4">
+        <div className="mb-12 md:mb-16 space-y-4">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

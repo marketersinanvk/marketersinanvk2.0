@@ -19,9 +19,9 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 md:py-40 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
+    <section className="py-16 md:py-24 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20 space-y-4">
+        <div className="text-center mb-12 md:mb-16 space-y-4">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

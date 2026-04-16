@@ -109,6 +109,11 @@
     from { --beam-angle: 0deg; }
     to { --beam-angle: 360deg; }
   }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
 }
 
 @property --beam-angle {

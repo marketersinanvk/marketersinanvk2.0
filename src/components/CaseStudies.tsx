@@ -77,7 +77,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-32 px-8 relative overflow-hidden border-t" style={{ borderColor: "rgba(0, 229, 255, 0.05)" }}>
+    <section className="py-16 md:py-24 px-6 md:px-8 relative overflow-hidden border-t" style={{ borderColor: "rgba(0, 229, 255, 0.05)" }}>
       {/* SEO Schema Injection */}
       {caseStudies.map((study, idx) => (
         <script key={idx} type="application/ld+json">

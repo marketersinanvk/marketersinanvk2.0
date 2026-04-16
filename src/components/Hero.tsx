@@ -27,30 +27,30 @@ export default function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-arctic-blue/10 blur-[150px] rounded-full" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-10"
+          className="space-y-8 md:space-y-10"
         >
           <div className="flex flex-col gap-2">
             <div className="inline-flex items-center gap-3 px-5 py-2 glass-2 rounded-full border border-arctic-blue/20 w-fit">
               <Sparkles className="w-3 h-3 text-arctic-blue" />
-              <span className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.4em]">{heroData?.subtitle || "The Future of Digital"}</span>
+              <span className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.4em]">{heroData?.subtitle || "AI-Powered Growth"}</span>
             </div>
             <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] ml-5" style={{ color: "rgba(0, 229, 255, 0.3)" }}>
               Best Digital Marketer in Kerala & Bahrain
             </h2>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-serif font-normal tracking-tighter leading-[1.1] md:leading-[0.85] text-white">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif font-normal tracking-tighter leading-[1.1] md:leading-[0.85] text-white">
             {heroData?.title ? (
               heroData.title
             ) : (
               <>
-                Marketer <br />
-                <span className="italic text-arctic-blue text-elegant-glow">Sinan VK.</span>
+                Elevate Your Brand with the <br />
+                <span className="italic text-arctic-blue text-elegant-glow">Best Digital Marketer in Kerala.</span>
               </>
             )}
           </h1>
@@ -58,10 +58,8 @@ export default function Hero() {
           <p className="text-silver/40 text-lg md:text-xl max-w-2xl font-light leading-relaxed tracking-wide">
             {heroData?.description || (
               <>
-                The <span className="text-white font-medium">Best Digital Marketer in Kerala</span> and <span className="text-white font-medium">SEO Specialist in Bahrain</span>. 
-                Engineering digital legacies across <span className="text-white font-medium">Palakkad, Malappuram, and Bahrain</span> through 
-                <Link to="/services" className="text-arctic-blue hover:underline decoration-arctic-blue/30 underline-offset-4"> High-ROI Meta Ads</Link> and 
-                <Link to="/services" className="text-arctic-blue hover:underline decoration-arctic-blue/30 underline-offset-4"> SEO Mastery</Link>.
+                As a premier <span className="text-white font-medium">Freelance Digital Marketer in Kerala</span>, I leverage cutting-edge <span className="text-white font-medium">AI Integration</span> to transform businesses. 
+                From <span className="text-white font-medium">SEO Specialist in Kerala</span> services to high-performance <span className="text-white font-medium">Social Media Specialist in Kerala</span> strategies, I engineer digital legacies that dominate the market in Palakkad and beyond.
               </>
             )}
           </p>
@@ -95,10 +93,11 @@ export default function Hero() {
             {heroData?.imageUrl ? (
               <img 
                 src={heroData.imageUrl} 
-                alt={heroData.title || "Freelance Digital Marketer in Kerala - Marketer Sinan VK"} 
+                alt={heroData.title || "Best Digital Marketer in Kerala - Marketer Sinan VK"} 
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-[2000ms] scale-105 group-hover:scale-100"
                 referrerPolicy="no-referrer"
                 fetchPriority="high"
+                loading="eager"
                 width="800"
                 height="1000"
               />
