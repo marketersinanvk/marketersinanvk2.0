@@ -1,34 +1,22 @@
 {
   "entities": {
-    "portfolio": {
+    "project": {
       "title": "Portfolio Project",
-      "description": "A project in the agency portfolio",
+      "description": "A creative project showcasing my expertise",
       "type": "object",
       "properties": {
         "title": { "type": "string", "description": "Project title" },
-        "category": { "type": "string", "description": "Project category" },
-        "client": { "type": "string", "description": "Client name" },
-        "image": { "type": "string", "description": "Image URL" },
-        "description": { "type": "string", "description": "Project description" },
-        "createdAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["title", "category", "image"]
-    },
-    "service": {
-      "title": "Service",
-      "description": "An agency service offering",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
+        "category": { "type": "string", "enum": ["Web", "Graphics", "Video Editing"] },
         "description": { "type": "string" },
-        "image": { "type": "string" },
-        "order": { "type": "number" }
+        "imageUrl": { "type": "string" },
+        "link": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
       },
-      "required": ["title", "description"]
+      "required": ["title", "category", "imageUrl"]
     },
-    "post": {
+    "blogPost": {
       "title": "Blog Post",
-      "description": "A journal entry or article",
+      "description": "An insight-rich article about digital marketing and AI",
       "type": "object",
       "properties": {
         "title": { "type": "string" },
@@ -37,72 +25,74 @@
         "category": { "type": "string" },
         "author": { "type": "string" },
         "date": { "type": "string" },
-        "image": { "type": "string" },
-        "tags": { "type": "array", "items": { "type": "string" } },
-        "seoAlt": { "type": "string" }
+        "imageUrl": { "type": "string" },
+        "slug": { "type": "string" }
       },
-      "required": ["title", "content", "image"]
+      "required": ["title", "content", "slug"]
     },
-    "testimonial": {
-      "title": "Testimonial",
-      "description": "Client feedback",
+    "service": {
+      "title": "Service Offering",
+      "description": "A high-impact service for scaling brands",
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
-        "brand": { "type": "string" },
-        "companyType": { "type": "string" },
-        "review": { "type": "string" },
-        "glow": { "type": "string" }
-      },
-      "required": ["name", "review"]
-    },
-    "user": {
-      "title": "User",
-      "description": "Admin user profile",
-      "type": "object",
-      "properties": {
-        "email": { "type": "string" },
-        "role": { "type": "string", "enum": ["admin", "editor"] }
-      },
-      "required": ["email", "role"]
-    },
-    "hero": {
-      "title": "Hero Section",
-      "description": "Configuration for the hero section",
-      "type": "object",
-      "properties": {
-        "imageUrl": { "type": "string", "description": "URL for the hero section image" },
         "title": { "type": "string" },
-        "subtitle": { "type": "string" },
-        "description": { "type": "string" }
+        "description": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "icon": { "type": "string" }
       },
-      "required": ["imageUrl"]
+      "required": ["title", "description"]
+    },
+    "seoContent": {
+      "title": "SEO Configuration",
+      "description": "Dynamic SEO text for page-level optimization",
+      "type": "object",
+      "properties": {
+        "page": { "type": "string" },
+        "h1": { "type": "string" },
+        "metaTitle": { "type": "string" },
+        "metaDesc": { "type": "string" },
+        "fullContent": { "type": "string" }
+      },
+      "required": ["page"]
+    },
+    "certification": {
+      "title": "Professional Certification",
+      "description": "Verified credentials and industry certifications",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "issuer": { "type": "string" },
+        "date": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "required": ["title", "issuer", "imageUrl"]
     }
   },
   "firestore": {
-    "/hero/{heroId}": {
-      "schema": "hero",
-      "description": "Hero section configuration"
+    "/projects/{projectId}": {
+      "schema": "project",
+      "description": "Showcase of filterable projects"
     },
-    "/portfolio/{projectId}": {
-      "schema": "portfolio",
-      "description": "Collection of portfolio projects"
+    "/blog/{postId}": {
+      "schema": "blogPost",
+      "description": "Digital marketing and AI insights"
     },
     "/services/{serviceId}": {
       "schema": "service",
-      "description": "Collection of agency services"
+      "description": "Core business offerings"
     },
-    "/posts/{postId}": {
-      "schema": "post",
-      "description": "Collection of blog posts"
+    "/certification/{certId}": {
+      "schema": "certification",
+      "description": "Professional credentials"
     },
-    "/testimonials/{testimonialId}": {
-      "schema": "testimonial",
-      "description": "Collection of client testimonials"
+    "/cms/{contentId}": {
+      "schema": "seoContent",
+      "description": "Dynamic text management for SEO overhaul"
     },
-    "/users/{userId}": {
-      "schema": "user",
-      "description": "Collection of admin users"
+    "/settings/{docId}": {
+      "schema": "globalSettings",
+      "description": "Global website configurations and CMS metadata"
     }
   }
 }

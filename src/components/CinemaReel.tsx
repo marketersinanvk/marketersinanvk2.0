@@ -30,16 +30,16 @@ function LogoCard({ logo }: LogoCardProps) {
         rotateX: 5,
         z: 50
       }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-[180px] md:w-[240px] h-[90px] md:h-[120px] flex items-center justify-center glass-2 rounded-xl border border-white/5 group cursor-pointer transition-all duration-500 hover:border-neon-green/50 shrink-0 ${
+       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative w-[180px] md:w-[240px] h-[90px] md:h-[120px] flex items-center justify-center glass-2 rounded-xl border border-white/5 group cursor-pointer transition-all duration-500 hover:border-vibrant-indigo/50 shrink-0 ${
         logo.isMeta 
-          ? "shadow-[0_0_30px_rgba(57,255,20,0.2)] border-neon-green/30 hover:shadow-[0_0_60px_rgba(57,255,20,0.6)]" 
-          : "shadow-[0_0_20px_rgba(57,255,20,0.1)] hover:shadow-[0_0_50px_rgba(57,255,20,0.4)]"
+          ? "shadow-[0_0_30px_rgba(99,102,241,0.2)] border-vibrant-indigo/30 hover:shadow-[0_0_60px_rgba(99,102,241,0.6)]" 
+          : "shadow-[0_0_20px_rgba(99,102,241,0.1)] hover:shadow-[0_0_50px_rgba(99,102,241,0.4)]"
       }`}
     >
       {/* Meta Specific Active Glow */}
       {logo.isMeta && (
-        <div className="absolute inset-0 bg-neon-green/5 rounded-xl pointer-events-none" />
+        <div className="absolute inset-0 bg-vibrant-indigo/5 rounded-xl pointer-events-none" />
       )}
       
       {!isError ? (
@@ -49,8 +49,8 @@ function LogoCard({ logo }: LogoCardProps) {
           onError={() => setIsError(true)}
           className={`max-w-[100px] md:max-w-[140px] max-h-[40px] md:max-h-[60px] object-contain transition-all duration-500 opacity-100 grayscale-0 ${
             logo.isMeta 
-              ? "drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]" 
-              : "drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.5)]"
+              ? "drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]" 
+              : "drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
           }`}
           referrerPolicy="no-referrer"
           loading="lazy"
@@ -62,7 +62,7 @@ function LogoCard({ logo }: LogoCardProps) {
       )}
       
       <div className={`absolute inset-0 opacity-5 group-hover:opacity-20 transition-opacity duration-700 blur-2xl rounded-xl ${
-        logo.isMeta ? "bg-neon-green" : "bg-neon-green"
+        logo.isMeta ? "bg-vibrant-indigo" : "bg-vibrant-indigo"
       }`} />
 
       {/* Inner Shadow for Depth */}
@@ -91,7 +91,7 @@ export default function CinemaReel({
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-neon-green text-[9px] font-bold uppercase tracking-[0.5em] mb-4">{title}</h2>
+          <h2 className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em] mb-4">{title}</h2>
           <h3 className="text-4xl md:text-6xl font-serif italic tracking-tight text-white leading-tight">{subtitle}</h3>
         </motion.div>
         <div className="text-silver/20 font-mono text-[9px] uppercase tracking-[0.4em]">
@@ -136,10 +136,10 @@ export default function CinemaReel({
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="glass-2 p-6 rounded-full border border-neon-green/30 flex flex-col items-center gap-2 shadow-[0_0_40px_rgba(57,255,20,0.2)] animate-pulse"
+            className="glass-2 p-6 rounded-full border border-vibrant-indigo/30 flex flex-col items-center gap-2 shadow-[0_0_40px_rgba(99,102,241,0.2)] animate-pulse"
           >
-            <CheckCircle className="text-neon-green w-8 h-8" />
-            <p className="text-neon-green text-[7px] font-bold uppercase tracking-[0.3em] text-center leading-tight">
+            <CheckCircle className="text-vibrant-indigo w-8 h-8" />
+            <p className="text-vibrant-indigo text-[7px] font-bold uppercase tracking-[0.3em] text-center leading-tight">
               Verified <br /> Professional
             </p>
           </motion.div>

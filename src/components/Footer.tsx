@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 relative z-10">
         <div className="space-y-10">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-arctic-blue/10 border border-arctic-blue/20 rounded-full flex items-center justify-center group-hover:border-arctic-blue/50 transition-all duration-700">
-              <span className="text-arctic-blue font-serif italic text-lg">S</span>
+            <div className="w-8 h-8 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-full flex items-center justify-center group-hover:border-vibrant-indigo/50 transition-all duration-700">
+              <span className="text-vibrant-indigo font-serif italic text-lg">S</span>
             </div>
-            <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-arctic-blue transition-colors duration-700 uppercase">Marketer Sinan VK</span>
+            <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-vibrant-indigo transition-colors duration-700 uppercase">Marketer Sinan VK</span>
           </Link>
           <p className="text-silver/40 text-sm leading-relaxed font-light tracking-wide max-w-xs">
             Marketer Sinan VK is the <span className="text-white font-medium">Best Digital Marketer in Kerala</span>, specializing in AI-driven growth and elite digital solutions. 
@@ -34,7 +34,7 @@ export default function Footer() {
                 aria-label={label}
                 whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
                 transition={isSnap ? { duration: 0.4, ease: "easeInOut" } : { duration: 0.3 }}
-                className="w-10 h-10 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-arctic-blue hover:border-arctic-blue/30 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] transition-all duration-500 group"
+                className="w-10 h-10 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-vibrant-indigo hover:border-vibrant-indigo/30 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-500 group"
               >
                 <Icon size={16} className="group-hover:scale-110 transition-transform" />
               </motion.a>
@@ -46,16 +46,16 @@ export default function Footer() {
           <h4 className="text-white font-serif italic text-sm tracking-[0.2em] uppercase">Navigation</h4>
           <ul className="space-y-5">
             {[
-              { name: "Home", path: "/" },
-              { name: "About", path: "/about" },
-              { name: "Certificate", path: "/certificate" },
-              { name: "Services", path: "/services" },
-              { name: "Portfolio", path: "/portfolio" },
-              { name: "Posts", path: "/blog" },
-              { name: "Contact", path: "/contact" },
+              { name: "Home Market", path: "/" },
+              { name: "Best Marketer Kerala", path: "/about" },
+              { name: "Expert Certificates", path: "/certificate" },
+              { name: "Kerala Marketing Services", path: "/services" },
+              { name: "SEO specialist Portfolio", path: "/portfolio" },
+              { name: "Digital Strategy Blog", path: "/blog" },
+              { name: "Contact Best Marketer", path: "/contact" },
             ].map((item) => (
               <li key={item.name}>
-                <Link to={item.path} className="text-silver/40 hover:text-arctic-blue text-xs font-light tracking-widest transition-colors duration-500 uppercase">
+                <Link to={item.path} className="text-silver/40 hover:text-vibrant-indigo text-xs font-light tracking-widest transition-colors duration-500 uppercase">
                   {item.name}
                 </Link>
               </li>
@@ -67,18 +67,18 @@ export default function Footer() {
           <h4 className="text-white font-serif italic text-sm tracking-[0.2em] uppercase">Base</h4>
           <ul className="space-y-6">
             <li className="flex items-start gap-4">
-              <MapPin className="w-4 h-4 text-arctic-blue shrink-0 mt-1" />
-              <Link to="/contact" className="text-silver/40 text-xs font-light leading-relaxed tracking-wide hover:text-arctic-blue transition-colors">
+              <MapPin className="w-4 h-4 text-vibrant-indigo shrink-0 mt-1" />
+              <Link to="/contact" className="text-silver/40 text-xs font-light leading-relaxed tracking-wide hover:text-vibrant-indigo transition-colors">
                 Mappattukara, Koppam <br />
                 Palakkad, Kerala, India
               </Link>
             </li>
             <li className="flex items-center gap-4">
-              <Phone className="w-4 h-4 text-arctic-blue shrink-0" />
+              <Phone className="w-4 h-4 text-vibrant-indigo shrink-0" />
               <span className="text-silver/40 text-xs font-light tracking-wide">+91 8590181381</span>
             </li>
             <li className="flex items-center gap-4">
-              <Mail className="w-4 h-4 text-arctic-blue shrink-0" />
+              <Mail className="w-4 h-4 text-vibrant-indigo shrink-0" />
               <span className="text-silver/40 text-xs font-light tracking-wide">marketersinanvk@gmail.com</span>
             </li>
           </ul>
@@ -93,11 +93,11 @@ export default function Footer() {
             <input 
               type="email" 
               placeholder="Email Address" 
-              className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white placeholder:text-silver/20 focus:outline-none focus:border-arctic-blue/30 transition-all duration-700"
+              className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full px-8 py-5 text-xs text-white placeholder:text-silver/20 focus:outline-none focus:border-vibrant-indigo/30 transition-all duration-700"
             />
             <button 
               aria-label="Join Newsletter"
-              className="absolute right-2 top-2 bottom-2 bg-arctic-blue text-midnight px-8 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform duration-500"
+              className="absolute right-2 top-2 bottom-2 bg-vibrant-indigo text-white px-8 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform duration-500"
             >
               Join
             </button>
@@ -110,8 +110,8 @@ export default function Footer() {
           © 2026 MARKETER SINAN VK. ALL RIGHTS RESERVED.
         </p>
         <div className="flex gap-12">
-          <a href="#" className="text-silver/20 hover:text-arctic-blue text-[9px] font-bold uppercase tracking-[0.5em] transition-colors">Privacy</a>
-          <a href="#" className="text-silver/20 hover:text-arctic-blue text-[9px] font-bold uppercase tracking-[0.5em] transition-colors">Terms</a>
+          <a href="#" className="text-silver/20 hover:text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em] transition-colors">Privacy</a>
+          <a href="#" className="text-silver/20 hover:text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em] transition-colors">Terms</a>
         </div>
       </div>
 

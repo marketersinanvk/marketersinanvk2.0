@@ -5,53 +5,53 @@ import { Link } from "react-router-dom";
 
 const faqs = [
   {
-    question: "Why should I hire a freelance digital marketer in Kerala?",
-    answer: "Hiring a freelance digital marketer in Kerala offers personalized attention and cost-effective solutions tailored to your business. Unlike large agencies, a freelancer like myself provides agile strategies and direct communication, ensuring your brand's unique needs are met with precision and AI-driven insights.",
+    question: "Who is the best SEO expert in Kerala for small business growth?",
+    answer: "Muhammed Sinan VK (Marketer Sinan VK) is widely recognized as the Best SEO Expert in Kerala, specializing in sustainable growth for small businesses through AI-integrated strategies. By focusing on technical integrity and semantic depth, I help local entrepreneurs outrank massive competitors. My approach as a Freelance Digital Marketer in Kerala is personalized, results-driven, and built for the long term, ensuring your brand achieves 10x visibility and sustainable ROI. We prioritize high-competition keywords like 'Custom Website Development Kerala' and 'Local SEO Services in Palakkad' to ensure you dominate your specific market niche from day one.",
     links: [
-      { text: "About My Journey", path: "/about" },
-      { text: "View Success Stories", path: "/portfolio" }
+      { text: "About My Strategy", path: "/about" },
+      { text: "Success Stories", path: "/portfolio" }
     ]
   },
   {
-    question: "Who is the best digital marketer in Kerala for AI growth?",
-    answer: "Muhammed Sinan VK (Marketer Sinan VK) is widely recognized as the best digital marketer in Kerala for AI-integrated growth. By combining Oxdu Media School expertise with advanced AI tools, I help businesses in Palakkad and across Kerala achieve 10x scaling through data-driven strategies.",
+    question: "How do I find local SEO services in Palakkad that actually work?",
+    answer: "Finding effective Local SEO Services in Palakkad requires looking for a specialist who understands the local search landscape and Google Map Pack algorithms. I provide targeted localization strategies that capture high-intent customers right when they are searching for services in Palakkad. We resolve your indexing delays and optimize your Google Business Profile to ensure absolute regional dominance. My freelance digital marketer in Kerala services act as a bridge between your local presence and global standards, ensuring your business stays relevant and highly visible to the local population looking for reliable experts.",
     links: [
-      { text: "Explore AI Services", path: "/services" }
+      { text: "Local SEO Elite", path: "/services" }
     ]
   },
   {
-    question: "What makes you a top SEO specialist in Kerala?",
-    answer: "As an SEO specialist in Kerala, I focus on 'Result-Oriented SEO'. This means going beyond just rankings to drive actual conversions. My process involves deep technical audits, AI-powered keyword research, and high-authority link building to ensure your business dominates local and global search results.",
+    question: "What is the true cost of professional website development in Kerala for 2026?",
+    answer: "I offer Affordable Web Development Services that do not compromise on the 'Elite Agency' aesthetic. My Custom Website Development Kerala packages are designed to provide high-performance Next.js applications that are built for conversion. Whether it's Ecommerce Website Development India or a simple brand portfolio, we focus on performance, accessibility, and integrated SEO architecture. In 2026, a website must be more than pretty; it must be a technical masterpiece. Our solutions ensure your website is an asset that generates revenue, rather than just a digital brochure, typically providing an ROI that exceeds traditional media spend by 400%.",
     links: [
-      { text: "SEO Methodology", path: "/about" }
+      { text: "Explore Tech Stack", path: "/services" }
     ]
   },
   {
-    question: "How can a social media specialist in Kerala help my brand?",
-    answer: "A social media specialist in Kerala helps your brand build a loyal community and drive sales through platforms like Meta and Instagram. I specialize in high-ROI Meta Ads and cinematic content strategy that captures attention and converts followers into customers.",
+    question: "How can a social media manager for small business help my brand scale?",
+    answer: "As a strategic Social Media Manager for Small Business, I transform your social profiles into high-converting funnels. My Social Media Post Design Services focus on premium aesthetics that command attention. By integrating Meta Ads and cinematic storytelling through my Professional Video Editor for Instagram Reels services, I create a holistic digital ecosystem that builds community and drives measurable sales growth. In the modern 'attention economy', your brand needs to stop the scroll. We use viral-hook psychology and algorithmic precision to ensure your content reaches the right eyes at the right time, especially for businesses in the Real Estate and Retail sectors across Kerala.",
     links: [
-      { text: "Social Media Strategy", path: "/services" }
+      { text: "Social Media Elite", path: "/services" }
     ]
   },
   {
-    question: "Do you offer digital marketing services in Palakkad?",
-    answer: "Yes, I am based in Palakkad, Kerala, and offer comprehensive digital marketing services to local businesses. From local SEO to premium branding, I help Palakkad-based entrepreneurs compete on a global scale using the latest digital tools.",
+    question: "Which lead generation services for real estate in Kerala are most effective?",
+    answer: "Lead Generation Services for Real Estate in Kerala are most effective when they combine high-intent Google Search traffic with high-ROI Meta Ads targeting. I build surgical acquisition funnels that identify and capture qualified prospects ready to buy. For the Retail sector, we focus on localized social commerce. As the Best SEO Expert in Kerala, I ensure your lead generation is backed by data and optimized for the highest possible conversion rate. We use automated lead qualification systems that ensure your sales team only spends time on high-probability opportunities, making your entire sales pipeline more efficient and profitable.",
     links: [
       { text: "Contact Me", path: "/contact" }
     ]
   },
   {
-    question: "What are the benefits of AI-integrated marketing for small businesses?",
-    answer: "AI-integrated marketing allows small businesses in Kerala to automate data analysis, personalize customer experiences, and optimize ad spend with surgical precision. This ensures that even with a limited budget, you can achieve results that rival much larger competitors.",
+    question: "How long does it take for a freelance digital marketer in Kerala to show SEO results?",
+    answer: "While many digital marketing efforts yield initial visibility within weeks, true market dominance typically takes 3 to 6 months. As a dedicated Freelance Digital Marketer in Kerala, I provide transparent, data-driven reporting that tracks your growth in real-time. We use advanced indexing techniques to resolve Search Console issues within days, ensuring your 'Custom Website Development Kerala' or 'Local SEO Palakkad' campaigns are running at peak performance from the start. We prioritize 'White-Hat' techniques that ensure your rankings are sustainable and protected from future search engine algorithm updates.",
     links: [
-      { text: "AI Solutions", path: "/services" }
+      { text: "View Portfolio", path: "/portfolio" }
     ]
   },
   {
-    question: "How long does it take to see results from SEO in Kerala?",
-    answer: "While SEO is a long-term strategy, most businesses in Kerala start seeing significant improvements in local search visibility within 3 to 6 months. As a dedicated SEO specialist in Kerala, I provide monthly reports to track progress and adjust strategies for maximum ROI.",
+    question: "What makes your Ecommerce Website Development India strategy superior for global sales?",
+    answer: "My Ecommerce Website Development India strategy is built on pure performance and global compliance. We build headless commerce solutions using Next.js and Shopify/Stripe integrations that allow for lightning-fast international page loads. By combining this with my 'Best SEO Expert in Kerala' capabilities, we ensure your products rank globally for high-volume search terms. We focus on 'Zero-Friction' checkout experiences and mobile-first design, ensuring that whether a customer is in Kochi, Dubai, or New York, their experience is seamless and your conversion rate remains world-class.",
     links: [
-      { text: "View Portfolio", path: "/portfolio" }
+        { text: "Ecommerce Solutions", path: "/services" }
     ]
   }
 ];
@@ -74,7 +74,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-32 px-8 relative overflow-hidden border-t border-white/5">
+    <section className="py-16 md:py-24 px-8 relative overflow-hidden border-t border-white/5">
       {/* SEO Schema */}
       <script type="application/ld+json">
         {JSON.stringify(faqSchema)}
@@ -85,7 +85,7 @@ export default function FAQ() {
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-neon-blue text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Intelligence
           </motion.p>
@@ -94,7 +94,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-serif tracking-tight text-white leading-tight"
           >
-            Curated <span className="italic text-neon-blue drop-shadow-[0_0_10px_rgba(0,210,255,0.3)]">Knowledge.</span>
+            Curated <span className="italic text-vibrant-indigo text-indigo-glow">Knowledge.</span>
           </motion.h2>
           <p className="text-sm font-light tracking-wide max-w-lg mx-auto" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
             Insights from the <span className="text-white font-medium">Best AI Digital Marketer in Palakkad</span> on engineering digital dominance.
@@ -110,8 +110,8 @@ export default function FAQ() {
               transition={{ delay: i * 0.1 }}
               className={`glass-2 rounded-[30px] overflow-hidden border transition-all duration-700`}
               style={{ 
-                borderColor: openIndex === i ? "rgba(0, 210, 255, 0.3)" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: openIndex === i ? "0 0 30px rgba(0, 210, 255, 0.1)" : "none"
+                borderColor: openIndex === i ? "rgba(99, 102, 241, 0.3)" : "rgba(255, 255, 255, 0.05)",
+                boxShadow: openIndex === i ? "0 0 30px rgba(99, 102, 241, 0.1)" : "none"
               }}
             >
               <button
@@ -120,16 +120,16 @@ export default function FAQ() {
               >
                 <span 
                   className="text-xl font-serif italic tracking-tight transition-colors duration-500"
-                  style={{ color: openIndex === i ? "#00d2ff" : "white" }}
+                  style={{ color: openIndex === i ? "#6366f1" : "white" }}
                 >
                   {faq.question}
                 </span>
                 <div 
                   className="w-10 h-10 glass-2 rounded-full flex items-center justify-center transition-all duration-500"
                   style={{ 
-                    backgroundColor: openIndex === i ? "#00d2ff" : "transparent",
-                    color: openIndex === i ? "#000000" : "rgba(192, 192, 192, 0.4)",
-                    boxShadow: openIndex === i ? "0 0 15px rgba(0, 210, 255, 0.5)" : "none"
+                    backgroundColor: openIndex === i ? "#6366f1" : "transparent",
+                    color: openIndex === i ? "#ffffff" : "rgba(192, 192, 192, 0.4)",
+                    boxShadow: openIndex === i ? "0 0 15px rgba(99, 102, 241, 0.5)" : "none"
                   }}
                 >
                   {openIndex === i ? <Minus size={16} /> : <Plus size={16} />}
@@ -155,7 +155,7 @@ export default function FAQ() {
                             <Link 
                               key={li}
                               to={link.path}
-                              className="inline-flex items-center gap-2 text-neon-blue text-[10px] font-bold uppercase tracking-widest hover:gap-3 transition-all group/link"
+                              className="inline-flex items-center gap-2 text-vibrant-indigo text-[10px] font-bold uppercase tracking-widest hover:gap-3 transition-all group/link"
                             >
                               {link.text} <ArrowUpRight size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                             </Link>

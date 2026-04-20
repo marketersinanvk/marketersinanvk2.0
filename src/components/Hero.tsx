@@ -23,8 +23,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 px-8">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-arctic-blue/5 blur-[150px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-arctic-blue/10 blur-[150px] rounded-full" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-vibrant-indigo/5 blur-[150px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-vibrant-indigo/10 blur-[150px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -35,44 +35,43 @@ export default function Hero() {
           className="space-y-8 md:space-y-10"
         >
           <div className="flex flex-col gap-2">
-            <div className="inline-flex items-center gap-3 px-5 py-2 glass-2 rounded-full border border-arctic-blue/20 w-fit">
-              <Sparkles className="w-3 h-3 text-arctic-blue" />
-              <span className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.4em]">{heroData?.subtitle || "AI-Powered Growth"}</span>
+            <div className="inline-flex items-center gap-3 px-5 py-2 glass-2 rounded-full border border-vibrant-indigo/20 w-fit">
+              <Sparkles className="w-3 h-3 text-vibrant-indigo" />
+              <span className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.4em]">Expert Lead Generation for Real Estate</span>
             </div>
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] ml-5" style={{ color: "rgba(0, 229, 255, 0.3)" }}>
-              Best Digital Marketer in Kerala & Bahrain
+            <h2 className="text-[12px] md:text-[14px] font-bold uppercase tracking-[0.2em] ml-5 text-white/60">
+              Expert Next.js Web Development & Lead Generation
             </h2>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif font-normal tracking-tighter leading-[1.1] md:leading-[0.85] text-white">
-            {heroData?.title ? (
-              heroData.title
-            ) : (
-              <>
-                Elevate Your Brand with the <br />
-                <span className="italic text-arctic-blue text-elegant-glow">Best Digital Marketer in Kerala.</span>
-              </>
-            )}
+          <h1 className="text-5xl sm:text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[1.1] md:leading-[0.85]">
+            Best <br />
+            <span className="italic text-vibrant-indigo text-indigo-glow">SEO Expert</span> <br />
+            In Kerala.
           </h1>
 
-          <p className="text-silver/40 text-lg md:text-xl max-w-2xl font-light leading-relaxed tracking-wide">
-            {heroData?.description || (
-              <>
-                As a premier <span className="text-white font-medium">Freelance Digital Marketer in Kerala</span>, I leverage cutting-edge <span className="text-white font-medium">AI Integration</span> to transform businesses. 
-                From <span className="text-white font-medium">SEO Specialist in Kerala</span> services to high-performance <span className="text-white font-medium">Social Media Specialist in Kerala</span> strategies, I engineer digital legacies that dominate the market in Palakkad and beyond.
-              </>
-            )}
-          </p>
+          <div className="prose prose-silver prose-lg max-w-2xl font-light leading-relaxed tracking-wide space-y-6" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
+            <p>
+              Muhammed Sinan VK is the <span className="text-white font-medium">Best SEO Expert in Kerala</span> and a leading <span className="text-white font-medium">Freelance Digital Marketer in Kerala</span>. We focus on engineering digital dominance through surgical precision, AI-integrated strategies, and elite branding. Our expertise spans across <span className="text-white font-medium italic">Custom Website Development Kerala</span>, <span className="text-white font-medium">Local SEO Services in Palakkad</span>, and high-ROI <span className="text-white font-medium">Lead Generation Services for Real Estate & Retail</span>.
+            </p>
+            <p>
+              In the modern digital economy, visibility is the currency of success. As a premier <span className="text-white font-medium">Social Media Manager for Small Business</span>, I help brands transition from being hidden to becoming market leaders. Whether you need <span className="text-white font-medium">Ecommerce Website Development India</span> or a <span className="text-white font-medium">Professional Video Editor for Instagram Reels</span>, my mission is to deliver sustainable growth and absolute search dominance.
+            </p>
+            <p>
+              By leveraging <span className="text-white font-medium italic">Affordable Web Development Services</span> and surgical <span className="text-white font-medium">Social Media Post Design Services</span>, we build "Digital Legacies" for the elite 0.1%. Welcome to the laboratory of search mastery in Kerala.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 pt-6">
-            <button 
+            <Link 
+              to="/contact" 
               aria-label="Start Mission"
-              className="group relative px-10 py-5 bg-arctic-blue text-midnight font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-105 shadow-[0_0_40px_rgba(0,229,255,0.3)] w-full sm:w-auto border-b-4 border-arctic-blue/30 active:border-b-0 active:translate-y-1 magnetic"
+              className="group relative px-10 py-5 bg-vibrant-indigo text-white font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-105 shadow-[0_0_40px_rgba(99,102,241,0.3)] w-full sm:w-auto border-b-4 border-vibrant-indigo/30 active:border-b-0 active:translate-y-1 magnetic flex items-center justify-center"
             >
               <span className="relative z-10 flex items-center justify-center gap-3 uppercase tracking-[0.2em] text-[10px]">
                 Start Mission <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </Link>
             <Link 
               to="/portfolio" 
               aria-label="View Database"
@@ -89,7 +88,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="relative hidden lg:block min-h-[600px] w-full max-w-[480px] mx-auto aspect-[4/5]"
         >
-          <div className="relative z-10 w-full h-full glass-2 rounded-[60px] overflow-hidden group shadow-[0_0_60px_rgba(0,229,255,0.2)] border border-arctic-blue/10">
+          <div className="relative z-10 w-full h-full glass-2 rounded-[60px] overflow-hidden group shadow-[0_0_60px_rgba(99,102,241,0.2)] border border-vibrant-indigo/10">
             {heroData?.imageUrl ? (
               <img 
                 src={heroData.imageUrl} 
@@ -108,7 +107,7 @@ export default function Hero() {
           </div>
           
           {/* Minimalist Orbits */}
-          <div className="absolute -top-16 -right-16 w-64 h-64 border-[0.5px] border-arctic-blue/10 rounded-full animate-[spin_30s_linear_infinite]" />
+          <div className="absolute -top-16 -right-16 w-64 h-64 border-[0.5px] border-vibrant-indigo/10 rounded-full animate-[spin_30s_linear_infinite]" />
           <div className="absolute -bottom-16 -left-16 w-80 h-80 border-[0.5px] border-white/5 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
         </motion.div>
       </div>

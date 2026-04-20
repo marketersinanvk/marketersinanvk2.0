@@ -5,9 +5,10 @@ interface SEOProps {
   description: string;
   image?: string;
   article?: boolean;
+  keywords?: string[];
 }
 
-export default function SEO({ title, description, image, article }: SEOProps) {
+export default function SEO({ title, description, image, article, keywords }: SEOProps) {
   useEffect(() => {
     // Standard Metadata
     document.title = title;
@@ -27,6 +28,20 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     };
 
     updateMeta("description", description);
+    if (keywords) {
+      updateMeta("keywords", keywords.join(", "));
+    } else {
+      // Default strategic keywords
+      updateMeta("keywords", [
+        "Best SEO Expert in Kerala",
+        "Freelance Digital Marketer in Kerala",
+        "Local SEO Services in Palakkad",
+        "SMM Expert Kerala",
+        "Best AI Digital Marketing Agency",
+        "Web Development Specialist Kerala",
+        "Digital Growth Strategist"
+      ].join(", "));
+    }
     updateMeta("og:title", title, true);
     updateMeta("og:description", description, true);
     updateMeta("og:type", article ? "article" : "website", true);
@@ -39,13 +54,17 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     if (image) updateMeta("twitter:image", image);
 
     // Canonical
+    const rootUrl = "https://marketersinanvk.in";
+    const currentPath = window.location.pathname === "/" ? "" : window.location.pathname;
+    const canonicalUrl = `${rootUrl}${currentPath}`;
+    
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute("href", window.location.href);
+      canonical.setAttribute("href", canonicalUrl);
     } else {
       canonical = document.createElement("link");
       canonical.setAttribute("rel", "canonical");
-      canonical.setAttribute("href", window.location.href);
+      canonical.setAttribute("href", canonicalUrl);
       document.head.appendChild(canonical);
     }
 
@@ -55,65 +74,80 @@ export default function SEO({ title, description, image, article }: SEOProps) {
     
     const schemaData = {
       "@context": "https://schema.org",
-      "@type": article ? "BlogPosting" : "ProfessionalService",
-      "name": "Sinan VK | Best Digital Marketer in Kerala",
-      "alternateName": "Muhammed Sinan VK",
-      "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
-      "@id": "https://marketersinanvk.in",
-      "url": "https://marketersinanvk.in",
-      "description": description || "Sinan VK is the Best Digital Marketer in Kerala and Freelance Digital Marketer in Kerala. Providing AI-driven marketing and SEO Specialist in Kerala services.",
-      "telephone": "+918590181381",
-      "priceRange": "$$$",
-      "address": [
+      "@graph": [
         {
-          "@type": "PostalAddress",
-          "streetAddress": "Palakkad",
-          "addressLocality": "Palakkad",
-          "addressRegion": "Kerala",
-          "postalCode": "678001",
-          "addressCountry": "IN"
+          "@type": "ProfessionalService",
+          "@id": "https://marketersinanvk.in/#service",
+          "name": "Marketer Sinan VK | Best SEO Expert in Kerala",
+          "alternateName": "Freelance Digital Marketer in Kerala",
+          "url": "https://marketersinanvk.in",
+          "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+          "description": "Premium Digital Marketing Agency in Kerala specializing in Local SEO Services in Palakkad, Custom Website Development Kerala, and high-ROI Lead Generation.",
+          "telephone": "+918590181381",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Palakkad",
+            "addressLocality": "Palakkad",
+            "addressRegion": "Kerala",
+            "postalCode": "678001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 10.7867,
+            "longitude": 76.6547
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "21:00"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Marketing & Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Best SEO Services in Kerala",
+                  "description": "Surgical search engine optimization to dominate local rankings."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Website Development Kerala",
+                  "description": "High-performance Next.js web applications for modern brands."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Lead Generation for Real Estate & Retail",
+                  "description": "High-intent lead acquisition funnels for maximum ROI."
+                }
+              }
+            ]
+          }
         },
         {
-          "@type": "PostalAddress",
-          "addressLocality": "Manama",
-          "addressCountry": "BH"
+          "@type": "LocalBusiness",
+          "@id": "https://marketersinanvk.in/#business",
+          "name": "Marketer Sinan VK",
+          "image": "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Palakkad",
+            "addressRegion": "Kerala",
+            "addressCountry": "IN"
+          },
+          "url": "https://marketersinanvk.in"
         }
-      ],
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 10.7867,
-        "longitude": 76.6547
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Palakkad" },
-        { "@type": "City", "name": "Malappuram" },
-        { "@type": "State", "name": "Kerala" },
-        { "@type": "Country", "name": "Bahrain" },
-        { "@type": "Country", "name": "India" },
-        { "@type": "City", "name": "Dubai" }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "128"
-      },
-      "sameAs": [
-        "https://www.instagram.com/marketersinanvk",
-        "https://www.linkedin.com/in/marketersinanvk",
-        "https://twitter.com/sinan246810"
       ]
     };
 

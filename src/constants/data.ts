@@ -1,67 +1,59 @@
 export const SERVICES = [
   {
-    id: "ai-marketing",
-    title: "AI-Driven Digital Marketing",
-    description: "Leveraging cutting-edge AI to automate and optimize your marketing funnels for maximum ROI.",
-    icon: "Sparkles",
-    report: "Our AI-driven strategies focus on predictive analytics, automated content generation, and smart audience segmentation. We've helped brands reduce acquisition costs by up to 40% using machine learning models tailored for the Indian and UAE markets."
-  },
-  {
-    id: "meta-ads",
-    title: "Meta Ads Expert",
-    description: "High-ROI Facebook and Instagram ad campaigns designed for market dominance.",
-    icon: "Target",
-    report: "As a Meta Ads Expert in Palakkad, Kerala, we specialize in precision targeting and creative testing. Our campaigns are engineered to scale, focusing on ROAS and long-term brand equity."
-  },
-  {
-    id: "seo-analyst",
-    title: "SEO Analyst & Strategy",
-    description: "Dominating search results in Palakkad, Kerala, and beyond with data-backed SEO.",
+    id: "seo-specialist",
+    title: "Best SEO Expert in Kerala",
+    description: "Dominating search engine results with Local SEO Services in Palakkad and strategic global growth.",
     icon: "Search",
-    report: "Our SEO Analyst services involve deep keyword research, technical audits, and high-quality link building. We ensure your brand is the first thing potential clients see in Kerala and Dubai."
+    report: `As the recognized Best SEO Expert in Kerala, my approach to search engine optimization transcends basic keyword placement. I engineer digital dominance by performing exhaustive technical audits that resolve indexing bottlenecks, which is critical for businesses facing Search Console delays. My Local SEO Services in Palakkad are designed to capture high-intent traffic within the region, ensuring your business appears in the "Map Pack" and at the top of localized searches. 
+
+    The strategy involves deep integration of semantic terms like 'SEO Specialist Palakkad' and 'Digital Marketing Consultant Kerala'. We focus on high-authority backlink acquisition, mobile-first optimization as per Core Web Vitals, and semantic content layering. For Kerala-based enterprises, this means a 10x increase in organic reach and a significant boost in lead quality. My mastery as a Freelance Digital Marketer in Kerala allows me to provide personalized, agile SEO strategies that traditional agencies often miss, focusing strictly on high-ROI outcomes and long-term brand equity.
+
+    I specialize in 'White-Hat' SEO techniques that safeguard your brand's future from predatory algorithm updates. We focus on 'E-E-A-T' (Experience, Expertise, Authoritativeness, and Trustworthiness) to ensure your content is favored by Google's increasingly sophisticated neural networks. This include implementing schema markups (JSON-LD) that provide clear structured signals to search engines about your products, location, and services. By aligning with the latest search trends of 2026, we ensure your business doesn't just rank—it dominates the conversation in its niche.`
   },
   {
-    id: "google-ads",
-    title: "Google Ads (PPC)",
-    description: "Instant visibility and high-intent traffic through optimized Search and Display campaigns.",
-    icon: "MousePointerClick",
-    report: "We manage Google Ads with a focus on conversion rate optimization. From local search in Palakkad to global reach in Dubai, our PPC strategies deliver immediate impact."
-  },
-  {
-    id: "content-strategy",
-    title: "Content Strategy",
-    description: "Crafting compelling narratives that resonate with your target audience and drive engagement.",
-    icon: "PenTool",
-    report: "Content is the backbone of digital legacy. We develop comprehensive strategies that align with your brand voice and SEO goals, ensuring every piece of content serves a purpose."
+    id: "web-development",
+    title: "Custom Website Development Kerala",
+    description: "High-performance Ecommerce Website Development India using Next.js for surgical precision and speed.",
+    icon: "Code",
+    report: `In the realm of Custom Website Development Kerala, I specialize in building ultra-fast, search-optimized web applications using the Next.js framework. My services in Ecommerce Website Development India focus on creating frictionless shopping experiences that convert visitors into loyal customers. By leveraging the latest in headless commerce and server-side rendering, I ensure your site achieves a perfect 100 score on Google PageSpeed Insights.
+
+    These are not just websites; they are high-performance conversion machines. My Affordable Web Development Services ensure that even small businesses can access elite-level technology. Every project includes built-in SEO architecture, mobile-first responsive design, and Arctic Blue neon accents for that premium Elite Agency look. We integrate Web3Forms for seamless lead capture and ensure that your technical SEO—including dynamic sitemaps and robots.txt—is perfectly configured for rapid indexing and search dominance.
+
+    The architecture I build is designed for longevity. We use React and TypeScript to ensure a robust, maintainable codebase that can scale with your business. Whether you're launching a local retail store or a global SaaS platform, our 'Engineering Excellence' ensures that your digital infrastructure is as strong as your brand's vision. We also prioritize accessibility (A11y), ensuring that every potential customer, regardless of their technology or ability, can engage with your brand seamlessly. This is the new standard of web development in Kerala.`
   },
   {
     id: "social-media",
-    title: "Social Media Management",
-    description: "Building and nurturing communities across all major social platforms.",
-    icon: "Share2",
-    report: "We handle everything from scheduling to community management. Our approach ensures your brand stays relevant and engaging in the fast-paced social landscape of India and UAE."
+    title: "Social Media Manager for Small Business",
+    description: "Strategic Social Media Post Design Services and management for absolute market authority.",
+    icon: "TrendingUp",
+    report: `Operating as a top-tier Social Media Manager for Small Business, I transform static profiles into vibrant community hubs. My Social Media Post Design Services are engineered to stop the scroll, using high-end aesthetics that reflect a premium agency status. We focus on platforms like Meta, Instagram, and LinkedIn, tailoring the narrative to resonate with your specific audience in Palakkad, Kerala, and beyond.
+
+    The focus is on ROI-driven performance. We don't just post; we engineer viral potential through data-backed content pillars. As a Social Media Specialist in Kerala, I manage everything from high-ROI Meta Ads to organic community engagement. By choosing my freelance digital marketer in Kerala services, you get a dedicated partner who understands the nuances of local culture and global trends, ensuring your brand commands the attention it deserves in a crowded digital marketplace.
+
+    Our strategy involves a deep dive into social analytics to identify the optimal posting times, content formats, and engagement tactics for your niche. We use AI-driven tools to sentiment-map your audience, allowing us to pivot strategies instantly. By integrating 'Professional Video Editor for Instagram Reels' services, we ensure your feed is a mix of high-impact visuals and authentic storytelling. This is how we build 'Digital Legacies' for our clients—one post, one interaction, and one loyal customer at a time.`
   },
   {
-    id: "brand-identity",
-    title: "Brand Identity Design",
-    description: "Creating premium visual identities that command respect and trust.",
-    icon: "Layers",
-    report: "A brand is more than a logo. We design cohesive visual systems that reflect the 'Elite' nature of your business, ensuring consistency across all digital touchpoints."
+    id: "video-editing",
+    title: "Professional Video Editor for Instagram Reels",
+    description: "High-end cinematic storytelling for brands using Professional Video Editor for Instagram Reels services.",
+    icon: "Video",
+    report: `The modern attention span is less than 3 seconds. As your Professional Video Editor for Instagram Reels, I create cinematic short-form content that captures attention and drives action. Using advanced tools like Premiere Pro and the high-end features of CapCut, I blend visual effects, rhythmic cutting, and high-impact sound design to tell your brand story efficiently.
+
+    This niche focus is essential for modern brand growth. Whether it's for luxury real estate tours or retail product showcases, my professional video editing services Kerala ensure your content meets the highest standards of the 'Elite Agency' aesthetic. We optimize every reel for the Instagram and TikTok algorithms, ensuring maximum reach and engagement. This is where AI-driven strategy meets high-end creative production to deliver content that doesn't just look good, but converts followers into customers.
+
+    Our editing philosophy is rooted in 'Sensory Precision'. We synchronize visual transitions with sound cues to create a satisfying and immersive experience for the viewer. We offer full-cycle production support, including scriptwriting for short-form video and strategic captioning that improves accessibility and SEO. In the competitive Reels-driven economy of Kerala and the Middle East, high-quality video is no longer a luxury—it's the primary vehicle for brand discovery and community building. Let's make your brand go viral.`
   },
   {
-    id: "web-optimization",
-    title: "Web Development & Optimization",
-    description: "Ultra-fast, high-converting websites built for the modern digital era.",
-    icon: "Zap",
-    report: "Performance is a feature. We build websites that score 99+ on PageSpeed, providing a seamless user experience that drives conversions and improves SEO rankings."
+    id: "lead-generation",
+    title: "Lead Generation Services for Real Estate & Retail",
+    description: "Surgical lead acquisition focusing on Lead Generation Services for Real Estate & Retail sectors.",
+    icon: "Target",
+    report: `My Lead Generation Services for Real Estate & Retail are built on the foundation of precision and high-intent targeting. We don't just generate clicks; we deliver high-quality inquiries from individuals ready to buy. Using advanced Meta Ads funnels and Google Search strategies, I identify and capture your most valuable prospects.
+
+    For the Real Estate sector, this means connecting developers with qualified buyers through interactive lead forms and high-converting landing pages. In the Retail industry, we focus on driving foot traffic and online sales through localized social commerce. As the Best SEO Expert and Freelance Digital Marketer in Kerala, I consolidate these leads into manageable systems, ensuring your sales team can focus on closing deals rather than chasing cold prospects. This is aggressive, results-oriented marketing designed for business owners who demand excellence.
+
+    Our lead acquisition funnels are 'Self-Optimizing'. We use machine learning algorithms to analyze which creative assets and landing page variations are delivering the lowest 'Cost Per Qualified Lead'. We also implement automated nurturing sequences—via email and WhatsApp—to keep your brand top-of-mind during the prospect's decision-making journey. This cohesive ecosystem ensures that your marketing spend is not just an expense, but a strategic investment into your business's future pipeline and sustainable revenue growth.`
   },
-  {
-    id: "automation",
-    title: "Marketing Automation",
-    description: "Streamlining your business processes with intelligent automation workflows.",
-    icon: "Cpu",
-    report: "Free up your time to focus on growth. We implement automation tools that handle lead nurturing, email marketing, and CRM integration with surgical precision."
-  }
 ];
 
 export const PROJECTS = [

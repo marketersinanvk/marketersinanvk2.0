@@ -1,38 +1,39 @@
 import { motion } from "motion/react";
 import { Cpu, BarChart3, ShieldCheck, Headphones } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const reasons = [
   {
     title: "AI Integration",
-    description: "As the best digital marketer in Kerala, I leverage advanced AI tools to predict trends, automate workflows, and optimize campaigns for maximum efficiency.",
+    description: "As the best digital marketer in Kerala, I leverage advanced AI tools to predict trends, automate lead generation, and optimize campaigns for maximum efficiency.",
     icon: Cpu
   },
   {
-    title: "Result-Oriented SEO",
-    description: "Implementing data-driven strategies as an SEO specialist in Kerala that don't just increase traffic, but drive high-quality conversions.",
+    title: "Nex.js Lead Gen",
+    description: "Specializing in Next.js web development that doesn't just look good, but processes leads for real estate and retail at surgical precision.",
     icon: BarChart3
   },
   {
-    title: "Data Privacy",
-    description: "Your data is handled with the highest security standards by a professional freelance digital marketer in Kerala, ensuring complete confidentiality.",
+    title: "Search Dominance",
+    description: "Dominating Google Search results with Local SEO Palakkad strategies that place your business in front of high-intent customers instantly.",
     icon: ShieldCheck
   },
   {
-    title: "24/7 Support",
-    description: "Dedicated support around the clock from a top social media specialist in Kerala to ensure your digital presence is always performing at its peak.",
+    title: "Elite Production",
+    description: "Combining technical SEO with professional video editing for Reels to create a multi-channel presence that commands absolute authority.",
     icon: Headphones
   }
 ];
 
 export default function WhyChooseMe() {
   return (
-    <section className="py-16 md:py-24 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
+    <section className="py-12 md:py-16 px-6 sm:px-8 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 md:mb-16 space-y-4">
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-arctic-blue text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             The Advantage
           </motion.p>
@@ -42,7 +43,7 @@ export default function WhyChooseMe() {
             className="text-5xl md:text-7xl font-serif tracking-tighter text-white leading-tight"
           >
             Why Choose the <br />
-            <span className="italic text-arctic-blue">Best in Kerala?</span>
+            <span className="italic text-vibrant-indigo"><Link to="/services" className="hover:underline">Best Digital Marketer in Kerala?</Link></span>
           </motion.h2>
         </div>
 
@@ -53,14 +54,14 @@ export default function WhyChooseMe() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="glass-2 p-8 rounded-[32px] border border-white/5 hover:border-arctic-blue/30 transition-all duration-500 group"
+              className="glass-2 p-8 rounded-[32px] border border-white/5 hover:border-vibrant-indigo/30 transition-all duration-500 group"
             >
-              <div className="w-12 h-12 bg-arctic-blue/10 rounded-2xl flex items-center justify-center text-arctic-blue mb-6 group-hover:bg-arctic-blue group-hover:text-midnight transition-all duration-500">
+              <div className="w-12 h-12 bg-vibrant-indigo/10 rounded-2xl flex items-center justify-center text-vibrant-indigo mb-6 group-hover:bg-vibrant-indigo group-hover:text-white transition-all duration-500">
                 <reason.icon size={24} />
               </div>
               <h3 className="text-white text-xl font-serif italic mb-4">{reason.title}</h3>
               <p className="text-silver/40 text-sm font-light leading-relaxed">
-                {reason.description}
+                {reason.description} With result-driven strategies from a top <Link to="/contact" className="text-white/60 hover:text-white underline">SEO Specialist in Kerala</Link>, I ensure your brand stays ahead.
               </p>
             </motion.div>
           ))}

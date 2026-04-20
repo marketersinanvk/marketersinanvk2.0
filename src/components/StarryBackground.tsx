@@ -55,7 +55,7 @@ export default function StarryBackground() {
 
         ctx.beginPath();
         ctx.arc(star.x, finalY, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = `#00E5FF${Math.floor(star.opacity * 255).toString(16).padStart(2, '0')}`;
+        ctx.fillStyle = `#00F2FF${Math.floor(star.opacity * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
       });
 

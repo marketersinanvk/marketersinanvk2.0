@@ -31,7 +31,7 @@ function ScrollToTop() {
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-midnight">
-    <div className="w-12 h-12 border-2 border-arctic-blue/20 border-t-arctic-blue rounded-full animate-spin" />
+    <div className="w-12 h-12 border-2 border-vibrant-indigo/20 border-t-vibrant-indigo rounded-full animate-spin" />
   </div>
 );
 
@@ -41,7 +41,7 @@ function AppContent() {
 
   return (
     <Layout>
-      <div className="min-h-screen selection:bg-arctic-blue selection:text-midnight">
+      <div className="min-h-screen selection:bg-vibrant-indigo selection:text-white">
         {!isAdminPage && (
           <header>
             <Navbar />
