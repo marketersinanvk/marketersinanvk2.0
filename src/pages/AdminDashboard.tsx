@@ -121,10 +121,10 @@ export default function AdminDashboard() {
   if (loading || !user || !isAdmin) return null;
 
   const stats = [
-    { label: 'Active Projects', value: allData.projects?.length || 0, icon: Briefcase, color: 'text-vibrant-indigo' },
-    { label: 'Core Services', value: allData.services?.length || 0, icon: Zap, color: 'text-violet-400' },
-    { label: 'Journal Entries', value: allData.blog?.length || 0, icon: FileText, color: 'text-purple-400' },
-    { label: 'Global Reach', value: '12+', icon: Globe, color: 'text-green-400' },
+    { label: 'Active Projects', value: allData.projects?.length || 0, icon: Briefcase, color: 'text-white' },
+    { label: 'Core Services', value: allData.services?.length || 0, icon: Zap, color: 'text-white/60' },
+    { label: 'Journal Entries', value: allData.blog?.length || 0, icon: FileText, color: 'text-white/40' },
+    { label: 'Global Reach', value: '12+', icon: Globe, color: 'text-white/20' },
   ];
 
   return (
@@ -137,7 +137,7 @@ export default function AdminDashboard() {
         
         <div className="space-y-12 relative z-10">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.1)]">
+            <div className="w-12 h-12 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.05)]">
               <Activity className="text-vibrant-indigo w-6 h-6 animate-pulse" />
             </div>
             <div>
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
                   setFormData({});
                   setIsModalOpen(true);
                 }}
-                className="px-10 py-5 bg-vibrant-indigo text-white font-bold rounded-full flex items-center gap-3 shadow-[0_0_40px_rgba(99,102,241,0.3)] hover:scale-105 transition-all uppercase tracking-widest text-[10px]"
+                className="px-10 py-5 bg-vibrant-indigo text-black font-bold rounded-full flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-105 transition-all uppercase tracking-widest text-[10px]"
               >
                 <Plus size={16} /> New Entry
               </button>
@@ -293,7 +293,7 @@ export default function AdminDashboard() {
                 <div className="pt-8 border-t border-white/5">
                   <button 
                     type="submit"
-                    className="px-12 py-6 bg-vibrant-indigo text-white font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(99,102,241,0.3)] hover:scale-[1.02] transition-all"
+                    className="px-12 py-6 bg-vibrant-indigo text-black font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-[1.02] transition-all"
                   >
                     Sync Global Configuration
                   </button>
@@ -562,7 +562,7 @@ export default function AdminDashboard() {
                 <button 
                   type="submit"
                   disabled={uploading}
-                  className="w-full py-6 bg-vibrant-indigo text-white font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(99,102,241,0.3)] hover:scale-[1.02] transition-all disabled:opacity-50"
+                  className="w-full py-6 bg-vibrant-indigo text-black font-bold rounded-full uppercase tracking-[0.2em] text-[10px] shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-[1.02] transition-all disabled:opacity-50"
                 >
                   <span className="flex items-center justify-center gap-3">
                     <Save size={14} /> {editingItem ? 'Update Neural Link' : 'Commit to Database'}

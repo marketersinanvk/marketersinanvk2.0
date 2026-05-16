@@ -12,16 +12,16 @@ export default function Navbar() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl mx-auto glass-2 rounded-full px-8 py-4 flex items-center justify-between border border-vibrant-indigo/10 shadow-[0_0_20px_rgba(99,102,241,0.05)] relative overflow-hidden"
+        className="max-w-7xl mx-auto bg-dark-charcoal/80 backdrop-blur-2xl rounded-full px-8 py-4 flex items-center justify-between border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden"
       >
         {/* Scanline Effect */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(99,102,241,0.06),rgba(112,0,255,0.02),rgba(99,102,241,0.06))] bg-[length:100%_2px,3px_100%]" />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.05] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(106,13,173,0.06),rgba(212,175,55,0.02),rgba(106,13,173,0.06))] bg-[length:100%_2px,3px_100%]" />
         
         <Link to="/" className="flex items-center gap-3 group relative z-10">
-          <div className="w-8 h-8 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-full flex items-center justify-center group-hover:border-vibrant-indigo/50 transition-all duration-700">
-            <span className="text-vibrant-indigo font-serif italic text-lg">S</span>
+          <div className="w-8 h-8 bg-neon-purple/5 border border-neon-purple/20 rounded-full flex items-center justify-center group-hover:border-neon-purple/50 transition-all duration-700">
+            <span className="text-neon-purple font-serif italic text-lg">S</span>
           </div>
-          <span className="text-white font-serif tracking-[0.2em] text-sm group-hover:text-vibrant-indigo transition-colors duration-700 uppercase">Marketer Sinan VK</span>
+          <span className="text-white font-display tracking-[0.2em] text-sm group-hover:text-neon-purple transition-colors duration-700 uppercase">Marketer Sinan VK</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -38,15 +38,15 @@ export default function Navbar() {
             <Link 
               key={item.name} 
               to={item.path}
-              className="relative text-silver/60 hover:text-white text-[10px] font-medium tracking-[0.2em] uppercase transition-all duration-500 group/link"
+              className="relative text-white/40 hover:text-white text-[10px] font-bold tracking-[0.3em] uppercase transition-all duration-500 group/link"
             >
               {item.name}
               {item.badge && (
-                <span className="absolute -top-4 -right-4 bg-vibrant-indigo text-white text-[6px] px-1.5 py-0.5 rounded-full font-bold animate-pulse shadow-[0_0_10px_#6366f1]">
+                <span className="absolute -top-4 -right-4 bg-neon-purple text-white text-[6px] px-1.5 py-0.5 rounded-full font-bold animate-pulse shadow-[0_0_10px_rgba(106,13,173,0.5)]">
                   {item.badge}
                 </span>
               )}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-vibrant-indigo transition-all duration-500 group-hover/link:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-purple transition-all duration-500 group-hover/link:w-full shadow-[0_0_5px_rgba(157,39,176,0.5)]" />
             </Link>
           ))}
         </div>
@@ -69,10 +69,10 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-midnight/95 backdrop-blur-2xl md:hidden flex flex-col items-center justify-center gap-8 p-8"
+            className="fixed inset-0 z-[60] bg-obsidian/98 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8 p-8"
           >
             <button 
-              className="absolute top-10 right-10 text-vibrant-indigo hover:scale-110 transition-transform"
+              className="absolute top-10 right-10 text-neon-purple hover:scale-110 transition-transform"
               onClick={() => setIsOpen(false)}
             >
               <X size={32} />
@@ -96,7 +96,7 @@ export default function Navbar() {
                 >
                   <Link 
                     to={item.path}
-                    className="text-white text-3xl font-serif tracking-[0.2em] uppercase hover:text-vibrant-indigo transition-colors py-4 px-8 block"
+                    className="text-white text-3xl font-display tracking-[0.2em] uppercase hover:text-neon-purple transition-colors py-4 px-8 block text-center"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -117,7 +117,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.aria}
-                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-vibrant-indigo/60 hover:text-vibrant-indigo hover:border-vibrant-indigo/50 transition-all duration-500"
+                  className="w-12 h-12 bg-neon-purple/5 rounded-full flex items-center justify-center text-neon-purple/60 hover:text-neon-purple hover:border-neon-purple/30 transition-all duration-500 border border-neon-purple/10"
                 >
                   <span className="text-[10px] font-bold">{social.label}</span>
                 </a>

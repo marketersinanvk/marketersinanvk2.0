@@ -31,43 +31,45 @@ function ScrollToTop() {
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-midnight">
-    <div className="w-12 h-12 border-2 border-vibrant-indigo/20 border-t-vibrant-indigo rounded-full animate-spin" />
+    <div className="w-12 h-12 border-2 border-white/20 border-t-white rounded-full animate-spin" />
   </div>
 );
+
+import MagneticCursor from "./components/MagneticCursor";
+import AudioPlayer from "./components/AudioPlayer";
 
 function AppContent() {
   const location = useLocation();
   const isAdminPage = location.pathname.startsWith('/admin') || location.pathname === '/login';
 
   return (
-    <Layout>
-      <div className="min-h-screen selection:bg-vibrant-indigo selection:text-white">
-        {!isAdminPage && (
-          <header>
-            <Navbar />
-          </header>
-        )}
-        <CommunicationHub />
-        <Suspense fallback={<PageLoader />}>
-          <AnimatePresence mode="wait">
-            <Routes location={location}>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/certificate" element={<Certificate />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </AnimatePresence>
-        </Suspense>
-        {!isAdminPage && <Footer />}
-      </div>
-    </Layout>
+    <div className="min-h-screen selection:bg-white selection:text-black bg-obsidian">
+      {!isAdminPage && (
+        <header>
+          <Navbar />
+        </header>
+      )}
+      <AudioPlayer />
+      <CommunicationHub />
+      <Suspense fallback={<PageLoader />}>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/certificate" element={<Certificate />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </AnimatePresence>
+      </Suspense>
+      {!isAdminPage && <Footer />}
+    </div>
   );
 }
 
@@ -77,7 +79,7 @@ export default function App() {
       <AuthProvider>
         <Router>
           <ScrollToTop />
-          <CustomCursor />
+          <MagneticCursor />
           <AppContent />
         </Router>
       </AuthProvider>

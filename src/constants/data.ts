@@ -58,76 +58,57 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
-    id: "ecommerce-dubai",
-    title: "E-commerce Growth - Dubai",
-    category: "Meta Ads & Scaling",
-    image: "https://picsum.photos/seed/dubai-shop/800/600.webp",
-    description: "Scaling a luxury fashion brand in Dubai to 7-figure monthly revenue.",
-    caseStudy: "We implemented a full-funnel Meta Ads strategy, focusing on high-value lookalike audiences and dynamic product ads. The result was a 5.2x ROAS and a significant increase in brand awareness across the UAE."
+    id: "digisinans",
+    title: "Digisinans",
+    category: "Digital Marketing Agency",
+    image: "https://res.cloudinary.com/dam0azywj/image/upload/q_auto,f_auto/v1/marketersinan/portfolio-1.jpg",
+    description: "Global Digital Marketing Agency providing elite performance protocols.",
+    caseStudy: "Deployed a surgically dominant search protocol for Digisinans, achieving #1 placement across global nodes for high-competition digital marketing keywords.",
+    link: "https://digisinans.in/"
   },
   {
-    id: "realestate-palakkad",
-    title: "Real Estate Lead Gen - Palakkad",
-    category: "Lead Generation",
-    image: "https://picsum.photos/seed/palakkad-home/800/600.webp",
-    description: "Generating high-quality leads for a premium villa project in Palakkad.",
-    caseStudy: "By combining targeted Facebook Lead Forms with a localized SEO strategy, we delivered over 500 qualified leads in 3 months, resulting in a 30% increase in site visits and multiple successful closings."
+    id: "gadjenix",
+    title: "Gadjenix",
+    category: "Online Gadget Shop",
+    image: "https://res.cloudinary.com/dam0azywj/image/upload/q_auto,f_auto/v1/marketersinan/portfolio-2.jpg",
+    description: "Full-scale marketing and web development for a leading gadget retailer in Kerala.",
+    caseStudy: "Developed a high-conversion e-commerce platform with zero-latency response. Scaled the brand across India through integrated SEO, SMM, and performance marketing.",
+    link: "https://gadjenix-mr95.vercel.app/"
   },
   {
-    id: "healthcare-seo",
-    title: "Healthcare SEO - Kerala",
-    category: "SEO & Content",
-    image: "https://picsum.photos/seed/kerala-health/800/600.webp",
-    description: "Dominating local search for a multi-specialty hospital chain in Kerala.",
-    caseStudy: "We optimized over 100 service pages and implemented a robust local SEO strategy. The hospital now ranks #1 for critical healthcare keywords in Kerala, leading to a 60% increase in organic appointments."
+    id: "morvex-perfumes",
+    title: "Morvex",
+    category: "Perfume Brand",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    description: "Global perfume brand scaling across India, Qatar, Dubai, US, and UK.",
+    caseStudy: "Architected a premium visual identity and high-performance web architecture. Deployed a full-marketing stack including SEO and SMM to dominate global fragrance markets."
   },
   {
-    id: "tech-startup",
-    title: "Tech Startup Launch - India",
-    category: "Brand Launch",
-    image: "https://picsum.photos/seed/india-tech/800/600.webp",
-    description: "Strategic digital launch for a disruptive SaaS platform in the Indian market.",
-    caseStudy: "Our multi-channel approach included LinkedIn Ads, Google Search, and PR outreach. We secured 10,000+ beta signups within the first month of launch, establishing the brand as a key player in its niche."
+    id: "jamalullail-academy",
+    title: "Jamalullail Academy",
+    category: "Islamic Study Center",
+    image: "https://images.unsplash.com/photo-1523050853063-bd8012fec046?q=80&w=1000&auto=format&fit=crop",
+    description: "Digital infrastructure and SEO for a premier Islamic study center in Kerala.",
+    caseStudy: "Built a specialized educational node with deep local SEO and SMM integration. Secured authoritative search presence for spiritual education in the regional market.",
+    link: "https://jamalullail.vercel.app/"
   },
   {
-    id: "fashion-meta",
-    title: "Fashion Brand Meta Ads",
-    category: "E-commerce",
-    image: "https://picsum.photos/seed/fashion-ads/800/600.webp",
-    description: "Optimizing ad spend for a boutique fashion house to achieve consistent growth.",
-    caseStudy: "Through rigorous A/B testing of creatives and copy, we reduced the cost per purchase by 35% while increasing total sales volume by 150% over a 6-month period."
+    id: "minco-kids",
+    title: "Minco Kids",
+    category: "Kids Book Shop",
+    image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?q=80&w=1000&auto=format&fit=crop",
+    description: "Strategic SMM dominance for a leading kids book shop in India.",
+    caseStudy: "Implemented a parent-focused social media protocol utilizing cinematic storytelling. Achieved significant market share in the educational books sector through targeted SMM.",
+    link: "https://www.mincokids.com/"
   },
   {
-    id: "hospitality-transform",
-    title: "Hospitality Digital Transformation",
-    category: "Web & Marketing",
-    image: "https://picsum.photos/seed/hotel-digital/800/600.webp",
-    description: "Revamping the digital presence of a luxury resort for direct bookings.",
-    caseStudy: "We built a high-performance website and integrated a direct booking engine. Combined with targeted social media campaigns, direct bookings increased by 45%, reducing reliance on third-party OTAs."
-  },
-  {
-    id: "b2b-leads",
-    title: "B2B Lead Generation",
-    category: "LinkedIn & Email",
-    image: "https://picsum.photos/seed/b2b-growth/800/600.webp",
-    description: "Connecting a logistics firm with high-value corporate clients.",
-    caseStudy: "Using a combination of LinkedIn Sales Navigator outreach and automated email sequences, we generated a pipeline of $2M in potential contracts within the first quarter."
-  },
-  {
-    id: "local-seo-palakkad",
-    title: "Local Business SEO - Palakkad",
-    category: "Local SEO",
-    image: "https://picsum.photos/seed/palakkad-biz/800/600.webp",
-    description: "Helping a local retail chain outrank national competitors in Palakkad.",
-    caseStudy: "We focused on Google Business Profile optimization and local citations. The client saw a 200% increase in 'near me' search appearances and a significant boost in foot traffic."
-  },
-  {
-    id: "education-growth",
-    title: "Education Sector Growth",
-    category: "Performance Marketing",
-    image: "https://picsum.photos/seed/edu-growth/800/600.webp",
-    description: "Scaling student enrollments for an international coaching institute.",
-    caseStudy: "Our strategy involved highly targeted YouTube Ads and Search campaigns. We achieved a record-breaking enrollment season with a 25% lower cost per acquisition compared to previous years."
+    id: "luxavya",
+    title: "Luxavya",
+    category: "Luxury Perfume Brand",
+    image: "https://res.cloudinary.com/dam0azywj/image/upload/v1713511874/marketersinan/fashion.jpg",
+    description: "Luxury perfume branding and SMM for Dubai, Qatar, and Indian markets.",
+    caseStudy: "Engineered a prestige-driven SMM strategy that resonated with affluent demographics in the Middle East and India, driving high-value engagement.",
+    link: "https://www.luxavya.com/"
   }
 ];
 
@@ -157,12 +138,12 @@ export const BLOG_POSTS = [
     content: "Local search intent is skyrocketing. For businesses in Kerala, ranking for 'near me' searches is critical. We dive into the nuances of Malayalam keyword research, the importance of local citations, and how to optimize your Google Business Profile for maximum visibility in the Kerala market."
   },
   {
-    id: "scaling-uae",
-    title: "Scaling Brands in the UAE",
-    date: "March 15, 2026",
-    image: "https://picsum.photos/seed/uae-scaling/800/600.webp",
-    excerpt: "Insights from our successful campaigns in Dubai and across the Middle East.",
-    content: "The UAE market is unique, with a diverse population and high digital penetration. Scaling here requires a deep understanding of cultural nuances and platform preferences. We share our experience in managing high-budget campaigns in Dubai and how to effectively reach both expat and local audiences."
+    id: "morvex-growth",
+    title: "Morvex Fragrance Strategy",
+    date: "April 15, 2026",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+    excerpt: "Insights from our successful branding campaigns for premium perfume labels.",
+    content: "Luxury branding requires more than just aesthetics; it requires a deep understanding of sensory prestige. In this post, we showcase the roadmap we built for Morvex Fragrances, focusing on conversion-driven design and global search authority."
   },
   {
     id: "personal-branding",

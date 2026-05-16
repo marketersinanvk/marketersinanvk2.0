@@ -11,7 +11,7 @@ export default function Contact() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen pt-48 px-8 pb-32 grainy"
+      className="min-h-screen pt-48 px-8 pb-32 grainy bg-obsidian"
     >
       <SEO 
         title="Contact Marketer Sinan VK | Hire the Best Freelance Digital Marketer in Kerala"
@@ -25,7 +25,7 @@ export default function Contact() {
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-vibrant-indigo/40 text-[9px] font-bold uppercase tracking-[0.5em]"
+                className="text-neon-purple text-[9px] font-bold uppercase tracking-[0.5em]"
               >
                 The Initiation
               </motion.p>
@@ -36,7 +36,7 @@ export default function Contact() {
                 className="text-7xl md:text-9xl font-serif tracking-tighter text-white leading-[0.85]"
               >
                 Let's <br />
-                <span className="italic text-vibrant-indigo text-indigo-glow">Connect.</span>
+                <span className="italic text-neon-purple purple-text-glow">Connect.</span>
               </motion.h1>
             </div>
 
@@ -53,11 +53,11 @@ export default function Contact() {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-8 group"
                 >
-                  <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-vibrant-indigo group-hover:bg-vibrant-indigo group-hover:text-white transition-all duration-700">
+                  <div className="w-16 h-16 glass-2 rounded-2xl flex items-center justify-center text-neon-purple group-hover:bg-neon-purple group-hover:text-white transition-all duration-700">
                     <item.icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-silver/30 text-[9px] font-bold uppercase tracking-[0.3em] mb-1">{item.label}</p>
+                    <p className="text-slate-400/30 text-[9px] font-bold uppercase tracking-[0.3em] mb-1">{item.label}</p>
                     <p className="text-white text-xl font-serif italic">{item.value}</p>
                   </div>
                 </motion.div>
@@ -81,7 +81,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   whileHover={isSnap ? { scale: 1.2, rotate: [0, -10, 10, 0] } : { scale: 1.1 }}
                   transition={isSnap ? { duration: 0.4, ease: "easeInOut" } : { duration: 0.3 }}
-                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-silver/40 hover:text-vibrant-indigo hover:border-vibrant-indigo/30 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-500 group"
+                  className="w-12 h-12 glass-2 rounded-full flex items-center justify-center text-slate-400/40 hover:text-neon-purple hover:border-neon-purple/30 hover:shadow-[0_0_20px_rgba(157,39,176,0.3)] transition-all duration-500 group"
                 >
                   <Icon size={20} className="group-hover:scale-110 transition-transform" />
                 </motion.a>

@@ -39,7 +39,7 @@ export default function Certificate() {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]"
+            className="text-neon-purple text-[9px] font-bold uppercase tracking-[0.5em]"
           >
             Institutional Validation
           </motion.p>
@@ -49,25 +49,25 @@ export default function Certificate() {
             className="text-6xl md:text-9xl font-serif tracking-tighter text-white leading-[0.85]"
           >
             Neural <br />
-            <span className="italic text-vibrant-indigo text-indigo-glow">Accreditation.</span>
+            <span className="italic text-neon-purple purple-text-glow">Accreditation.</span>
           </motion.h1>
           <div className="max-w-2xl mx-auto">
-            <p className="text-silver/40 text-lg font-light leading-relaxed">
+            <p className="text-slate-400 text-lg font-light leading-relaxed">
                As the <span className="text-white">Best SEO Expert in Kerala</span>, my methodology is architected on verified principles. From semantic search mastery at HubSpot to technical performance engineering at Google.
             </p>
           </div>
         </div>
 
         <div className="glass-2 rounded-[60px] overflow-hidden border border-white/5 shadow-2xl relative group">
-          <div className="absolute inset-0 bg-vibrant-indigo/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-[100px]" />
+          <div className="absolute inset-0 bg-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-[100px]" />
           <CinemaReel subtitle="Strategic Partners" />
         </div>
 
         <div className="space-y-16">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8">
             <div className="space-y-4">
-              <h2 className="text-white text-4xl font-serif italic tracking-tight">The Credential <span className="text-vibrant-indigo">Grid.</span></h2>
-              <p className="text-silver/40 text-xs uppercase tracking-widest font-bold">Verified by global nodes.</p>
+              <h2 className="text-white text-4xl font-serif italic tracking-tight">The Credential <span className="text-neon-purple">Grid.</span></h2>
+              <p className="text-slate-400 text-xs uppercase tracking-widest font-bold">Verified by global nodes.</p>
             </div>
           </div>
 
@@ -83,10 +83,10 @@ export default function Certificate() {
                    />
                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-80" />
                    <div className="absolute bottom-6 left-6 right-6 space-y-2">
-                      <div className="flex items-center gap-2 text-vibrant-indigo text-[8px] font-bold uppercase tracking-widest">
+                      <div className="flex items-center gap-2 text-neon-purple text-[8px] font-bold uppercase tracking-widest">
                         <Award size={10} /> {cert.issuer}
                       </div>
-                      <h4 className="text-white text-lg font-serif italic leading-tight group-hover:text-vibrant-indigo transition-colors">{cert.title}</h4>
+                      <h4 className="text-white text-lg font-serif italic leading-tight group-hover:text-neon-purple transition-colors">{cert.title}</h4>
                    </div>
                    {cert.link && (
                      <a 

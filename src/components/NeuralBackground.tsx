@@ -3,12 +3,12 @@ import { motion } from "motion/react";
 
 export const NeuralBackground = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-20">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-10">
       {/* Grid Dots */}
       <div 
         className="absolute inset-0" 
         style={{ 
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.15) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(30, 58, 138, 0.1) 1px, transparent 0)`,
           backgroundSize: '40px 40px' 
         }} 
       />
@@ -18,7 +18,7 @@ export const NeuralBackground = () => {
         <defs>
           <linearGradient id="neural-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
-            <stop offset="50%" stopColor="rgba(99, 102, 241, 0.2)" />
+            <stop offset="50%" stopColor="rgba(30, 58, 138, 0.1)" />
             <stop offset="100%" stopColor="transparent" />
           </linearGradient>
         </defs>

@@ -74,11 +74,11 @@ export default function ServiceCards() {
           className="h-7 bg-black rounded-full flex items-center justify-center px-3 border border-white/5 shadow-lg relative"
         >
           <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 bg-vibrant-indigo rounded-full shadow-[0_0_8px_#6366f1] animate-pulse" />
+            <div className="w-1.5 h-1.5 bg-vibrant-indigo rounded-full shadow-[0_0_8px_#ffffff] animate-pulse" />
             <div className="w-1 h-1 bg-white/20 rounded-full" />
           </div>
           {/* AI Active Dot */}
-          <div className="absolute right-2 w-1 h-1 bg-vibrant-indigo rounded-full shadow-[0_0_5px_#6366f1]" />
+          <div className="absolute right-2 w-1 h-1 bg-vibrant-indigo rounded-full shadow-[0_0_5px_#ffffff]" />
         </motion.div>
 
         <div className="flex items-center gap-1.5">
@@ -98,18 +98,18 @@ export default function ServiceCards() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-[13px] font-medium tracking-wide"
-            style={{ color: "rgba(99, 102, 241, 0.8)" }}
+            style={{ color: "rgba(255, 255, 255, 0.8)" }}
           >
             Saturday, April 11
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-[84px] font-sans font-bold text-white tracking-tighter leading-none drop-shadow-[0_0_15px_rgba(99, 102, 241, 0.2)]"
+            className="text-[84px] font-sans font-bold text-white tracking-tighter leading-none drop-shadow-[0_0_15px_rgba(255, 255, 255, 0.1)]"
           >
             10:09
           </motion.h2>
-          <p className="text-[10px] font-arabic font-bold tracking-[0.3em] uppercase" style={{ color: "rgba(99, 102, 241, 0.4)" }}>
+          <p className="text-[10px] font-arabic font-bold tracking-[0.3em] uppercase" style={{ color: "rgba(255, 255, 255, 0.4)" }}>
             ١٠:٠٩
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function ServiceCards() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="w-full mb-6 glass-2 backdrop-blur-[30px] border-[0.5px] p-3 rounded-[20px] flex items-center gap-3 shadow-lg"
-          style={{ borderColor: "rgba(99, 102, 241, 0.3)" }}
+          style={{ borderColor: "rgba(255, 255, 255, 0.2)" }}
         >
           <div className="w-8 h-8 rounded-lg bg-vibrant-indigo flex items-center justify-center shrink-0">
             <Cpu size={16} className="text-white" />
@@ -227,7 +227,7 @@ export default function ServiceCards() {
 
                 <button 
                   type="submit"
-                  className="w-full py-5 bg-vibrant-indigo text-white font-bold rounded-full flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-[0.2em] text-[10px] mt-4"
+                  className="w-full py-5 bg-vibrant-indigo text-black font-bold rounded-full flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-[0.2em] text-[10px] mt-4"
                 >
                   Contact via WhatsApp <MessageSquare size={14} />
                 </button>

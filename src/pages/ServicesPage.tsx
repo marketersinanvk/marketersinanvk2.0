@@ -1,385 +1,545 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
 import { 
-  Code, 
   Search, 
-  Share2, 
   TrendingUp, 
-  Video, 
-  Layout, 
-  Mail, 
-  PenTool, 
-  Target, 
-  BarChart3,
-  ArrowRight,
-  MessageCircle,
-  Zap,
-  Sparkles,
-  MousePointerClick,
-  Layers,
-  Cpu,
-  X,
-  Globe,
   ShoppingCart,
-  CheckCircle2,
   Terminal,
   Activity,
-  Award
+  Building2,
+  HeartPulse,
+  Mail,
+  ArrowRight,
+  Globe,
+  Zap,
+  Sparkles,
+  Shield,
+  BarChart3,
+  MousePointer2,
+  Target,
+  Cpu,
+  GraduationCap
 } from "lucide-react";
 import SEO from "../components/SEO";
 import FAQ from "../components/FAQ";
-import { BentoGrid, BentoCard } from "../components/BentoGrid";
-import { NeuralBackground } from "../components/NeuralBackground";
+
+// Magnetic effect component for buttons
+const MagneticButton = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouse = (e: React.MouseEvent) => {
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current!.getBoundingClientRect();
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    setPosition({ x: middleX * 0.3, y: middleY * 0.3 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const { x, y } = position;
+  return (
+    <motion.div
+      style={{ position: "relative" }}
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={reset}
+      animate={{ x, y }}
+      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 export default function ServicesPage() {
-  const [selectedCase, setSelectedCase] = useState<any | null>(null);
-  const whatsappNumber = "918590181381";
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
   
-  const handleConsultation = (serviceName: string) => {
-    const message = encodeURIComponent(`Hello Sinan, I am interested in your ${serviceName} service. Can we discuss?`);
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  const containerVariants: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants: any = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] }
+    }
   };
 
   const services = [
     {
-      title: "Freelance Digital Marketing",
-      description: "Holistic brand growth engineered through data. We align your brand with current market trends in Kerala to drive sustainable revenue.",
-      icon: <TrendingUp className="w-8 h-8" />,
-      features: ["Content Strategy", "Performance Ads", "Growth Hacking"],
-      className: "md:col-span-6"
+      id: "digisinans-global",
+      title: "Global Digital Marketing Strategy",
+      region: "Digisinans Operational Node",
+      keyword: "Global SMM & SEO Specialist",
+      description: "Dominating international markets for Digisinans through surgically precise SEO and SMM protocols. We establish brand authority across global nodes with institutional-grade performance marketing.",
+      extendedDesc: "Our strategy focuses on high-competition search dominance and viral social storytelling, ensuring consistent growth for global digital agencies.",
+      icon: <Globe className="w-8 h-8" />,
+      features: ["International Search Supremacy", "Multi-Node SMM Management", "Global Brand Authority Blueprint", "High-ROAS Ad Deployment"],
+      className: "lg:col-span-12",
+      image: "https://i.ibb.co/s7k15Sm/Screenshot-2026-05-16-224324.png",
+      accent: "purple",
+      link: "https://digisinans.in/"
     },
     {
-      title: "Local SEO Expert",
-      description: "Dominating search results for local businesses. We ensure you are the first name people see in Palakkad and across Kerala.",
-      icon: <Search className="w-8 h-8" />,
-      features: ["GMB Optimization", "Local Citations", "Hyper-local Content"],
-      className: "md:col-span-3"
+      id: "gadjenix-ecommerce",
+      title: "Full-Stack Gadget Retail Marketing",
+      region: "Gadjenix Kerala Hub",
+      keyword: "Ecommerce SEO & Web Dev Expert",
+      description: "Scaling Gadjenix from a local gadget shop to a national online powerhouse. We integrate high-performance web development with aggressive SEO and SMM to drive retail dominance in India.",
+      extendedDesc: "Engineered zero-latency e-commerce environments optimized for high-volume gadget sales. Full marketing lifecycle management from lead to loyalty.",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      features: ["Technical E-com Architecture", "National Search Optimization", "Retail SMM Dominance", "Performance Sales Strategizing"],
+      className: "lg:col-span-6",
+      image: "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png",
+      accent: "purple",
+      link: "https://gadjenix-mr95.vercel.app/"
     },
     {
-      title: "SMM Expert",
-      description: "High-impact social media management. We craft narratives that resonate, engage, and convert your followers into loyal customers.",
-      icon: <Share2 className="w-8 h-8" />,
-      features: ["Reels Strategy", "Community Mgmt", "Viral Design"],
-      className: "md:col-span-3"
+      id: "morvex-luxury",
+      title: "Global Fragrance Branding & Tech",
+      region: "Morvex Multi-National Node",
+      keyword: "Luxury perfume Full-Marketing",
+      description: "Architecting the digital legacy for Morvex across India, Qatar, Dubai, US, and UK. We synthesize luxury branding with technical web development and global search authority.",
+      extendedDesc: "A masterclass in sensory-driven marketing. We provide full-marketing works including SEO, SMM, and web engineering for elite fragrance houses.",
+      icon: <Sparkles className="w-8 h-8" />,
+      features: ["Cross-Continental Web Deployment", "Luxury SEO & SMM Synergy", "Global Prestige Architecture", "High-Fidelity Branding"],
+      className: "lg:col-span-6",
+      image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
+      accent: "purple"
+    },
+    {
+      id: "academic-islamic",
+      title: "Islamic Educational Infrastructure",
+      region: "Jamalullail Academy HQ",
+      keyword: "Local SEO & Web Dev for Academy",
+      description: "Transforming Jamalullail Academy into a digital lighthouse for Islamic studies. We deploy specialized local SEO and web infrastructure to automate spiritual knowledge dissemination in Kerala.",
+      extendedDesc: "Optimizing educational retrieval for a scholarly audience through precise web modules and community-focused SMM protocols.",
+      icon: <GraduationCap className="w-8 h-8" />,
+      features: ["Specialized Academic Web Nodes", "Local SEO Authority Building", "Community SMM Strategy", "Educational Search Retrieval"],
+      className: "lg:col-span-12",
+      image: "https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png",
+      accent: "purple",
+      link: "https://jamalullail.vercel.app/"
     }
   ];
 
-  const caseStudies = [
-    {
-      id: 1,
-      title: "Digisinans.in",
-      stat: "Rank #1",
-      keyword: "Best SEO Expert in Kerala",
-      desc: "Architected a full-scale SEO dominance strategy for Digisinans, utilizing the Best AI Digital Marketing Agency framework to capture high-intent search nodes.",
-      icon: <Award className="text-vibrant-indigo" />
-    },
-    {
-      id: 2,
-      title: "Gadjenix Core",
-      stat: "Full Stack",
-      keyword: "Web Development Specialist Kerala",
-      desc: "A comprehensive digital transformation ensuring seamless user experience and consistent brand messaging via Local SEO Services in Palakkad.",
-      icon: <Layers className="text-vibrant-indigo" />
-    },
-    {
-      id: 3,
-      title: "Luxavya Lifestyle",
-      stat: "SMM Elite",
-      keyword: "Professional SMM Operations",
-      desc: "Focusing on Professional SMM Operations for high-end fashion branding, engineering a visual narrative that converted luxury curiosity into loyalty.",
-      icon: <TrendingUp className="text-vibrant-indigo" />
-    },
-    {
-      id: 4,
-      title: "Minco Kids Growth",
-      stat: "Market Leader",
-      keyword: "Freelance Digital Marketer",
-      desc: "Strategic SMM for children's wear, leveraging high-engagement video storytelling and engagement scaling as a Freelance Digital Marketer in Kerala.",
-      icon: <Cpu className="text-vibrant-indigo" />
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "3cc20a0b-fe19-45c1-87bd-28dc3a71d0ed");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
-  ];
+  };
 
   return (
     <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-      className="min-h-screen pt-32 md:pt-48 px-6 sm:px-8 pb-32 relative"
+      className="min-h-screen bg-obsidian pt-32 md:pt-48 px-6 sm:px-8 pb-32 relative text-white/90 selection:bg-neon-purple selection:text-white"
     >
-      <NeuralBackground />
-      
       <SEO 
-        title="Elite Services | Freelance Digital Marketer in Kerala | Muhammed Sinan VK"
-        description="High-converting digital services: Freelance Digital Marketing, Local SEO Palakkad, and SMM Expert Kerala. Strategic growth for the 0.1% of brands."
+        title="Institutional Services | SEO Expert Kerala | Morvex Perfumes | Jamalullail Academy"
+        description="Elite retrieval protocols for global markets. Exclusive branding and Web Engineering for Morvex Fragrances, Jamalullail Academy, and Minco Kids. Architected by MSVK."
       />
 
-      <div className="space-y-24 relative z-10">
-        {/* Hero Section */}
-        <div className="space-y-6">
-          <motion.p 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]"
-          >
-            Capabilities Portfolio // 2026
-          </motion.p>
+      <div className="max-w-6xl mx-auto space-y-48">
+        {/* Mixed Elite Hero Section */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="space-y-12 text-left"
+        >
+          <motion.div variants={itemVariants} className="flex items-center gap-6">
+             <div className="h-[1px] w-12 bg-accent-purple" />
+             <p className="text-accent-purple text-[11px] font-bold uppercase tracking-[0.8em]">Global Services Link // Elite Retrieval</p>
+          </motion.div>
+          
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-3xl md:text-5xl lg:text-7xl font-serif tracking-tighter text-white leading-tight max-w-full uppercase"
+            variants={itemVariants}
+            className="text-6xl md:text-9xl font-display tracking-tight text-white leading-none max-w-5xl uppercase"
           >
-            Digital <br />
-            <span className="italic text-vibrant-indigo text-indigo-glow">Dominance.</span>
+            Institutional <br />
+            <span className="purple-text-glow italic font-serif bg-gradient-to-r from-neon-purple to-accent-purple bg-clip-text text-transparent">Power Matrix.</span>
           </motion.h1>
-          <p className="text-silver/50 text-xl font-light leading-relaxed max-w-2xl">
-            Muhammed Sinan VK delivers elite-level growth through a synthesis of medical-grade precision and algorithmic mastery. As the <span className="text-white font-medium">Freelance Digital Marketer in Kerala</span>, my mission is your market capture.
-          </p>
-        </div>
+          
+          <motion.div variants={itemVariants} className="max-w-4xl space-y-10">
+            <p className="text-white/40 text-2xl font-light leading-relaxed">
+              Muhammed Sinan VK delivers absolute market dominance through a synthesis of technical supremacy and neural consumer intelligence. We don't just optimize—we re-architect your commercial trajectory for the highest tier of international operations.
+            </p>
+            <div className="flex flex-wrap gap-8 text-white/20">
+               <span className="text-[10px] uppercase tracking-[0.5em] font-bold border border-white/5 px-4 py-2 rounded-full">Kerala Core</span>
+               <span className="text-[10px] uppercase tracking-[0.5em] font-bold border border-white/5 px-4 py-2 rounded-full">Morvex Node</span>
+               <span className="text-[10px] uppercase tracking-[0.5em] font-bold border border-white/5 px-4 py-2 rounded-full">Jamalullail Hub</span>
+               <span className="text-[10px] uppercase tracking-[0.5em] font-bold border border-white/5 px-4 py-2 rounded-full">Minco Fashion</span>
+            </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Core Services Bento */}
-        <section className="space-y-12">
-          <div className="flex items-center gap-4">
-            <h2 className="text-white font-serif italic text-3xl">The Service Spectrum</h2>
-            <div className="h-[1px] flex-1 bg-white/5" />
-          </div>
-          <BentoGrid>
-            {services.map((service, i) => (
-              <BentoCard key={i} className={`${service.className} p-10 md:p-12 space-y-8 group hover:bg-vibrant-indigo/[0.02] transition-all`}>
-                <div className="w-14 h-14 bg-vibrant-indigo/10 rounded-2xl flex items-center justify-center text-vibrant-indigo group-hover:scale-110 transition-transform duration-500">
-                  {service.icon}
+        {/* Professional Service Matrix */}
+        <motion.section 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="space-y-40"
+        >
+          {services.map((service, i) => (
+            <motion.div 
+              key={service.id} 
+              variants={itemVariants}
+              className={`${service.className} grid grid-cols-1 lg:grid-cols-2 gap-20 items-center`}
+            >
+              <div className={`space-y-12 ${i % 2 !== 0 && i !== 3 ? 'lg:order-2' : ''}`}>
+                <div className="space-y-8">
+                   <div className="flex items-center gap-6">
+                      <div className={`w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border transition-all duration-700
+                        ${service.accent === 'accent' ? 'border-accent-purple/30 text-accent-purple shadow-[0_0_30px_rgba(212,175,55,0.1)]' : 
+                          service.accent === 'pink' ? 'border-neon-pink/30 text-neon-pink shadow-[0_0_30px_rgba(255,77,109,0.1)]' : 
+                          'border-neon-purple/30 text-neon-purple shadow-[0_0_30px_rgba(106,13,173,0.1)]'}`}
+                      >
+                         {service.icon}
+                      </div>
+                      <div className="space-y-1">
+                         <p className={`${service.accent === 'accent' ? 'text-accent-purple' : 'text-neon-purple'} text-[10px] font-bold uppercase tracking-[0.4em] font-mono`}>{service.region}</p>
+                         <p className="text-white/20 text-[9px] font-bold uppercase tracking-widest leading-none">{service.keyword}</p>
+                      </div>
+                   </div>
+                   <h3 className="text-4xl md:text-6xl font-display text-white tracking-tighter leading-none uppercase">{service.title}</h3>
                 </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-serif italic text-white tracking-tight">{service.title}</h3>
-                  <p className="text-silver/40 leading-relaxed font-light">{service.description}</p>
+
+                <div className="space-y-10">
+                   <p className="text-white/50 text-xl leading-relaxed font-light">
+                      {service.description}
+                   </p>
+                   <p className="text-white/30 text-base leading-relaxed font-light border-l-2 border-white/5 pl-10 italic">
+                      {service.extendedDesc}
+                   </p>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 py-12 border-y border-white/5">
                   {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-[10px] text-silver/20 font-bold uppercase tracking-widest">
-                      <CheckCircle2 size={12} className="text-vibrant-indigo/40" />
+                    <div key={idx} className="flex items-center gap-4 text-[11px] text-white/50 font-bold uppercase tracking-[0.3em] group">
+                      <Shield size={16} className={`${service.accent === 'accent' ? 'text-accent-purple' : 'text-neon-purple'} group-hover:scale-125 transition-transform`} />
                       {feature}
                     </div>
                   ))}
                 </div>
-                <button 
-                  onClick={() => handleConsultation(service.title)}
-                  className="w-full py-4 glass-2 border border-white/5 text-silver/40 text-[10px] font-bold uppercase tracking-widest rounded-xl group-hover:bg-vibrant-indigo group-hover:text-white group-hover:border-vibrant-indigo transition-all duration-500"
-                >
-                  Initiate Strategy
-                </button>
-              </BentoCard>
-            ))}
-          </BentoGrid>
-        </section>
 
-        {/* Pricing & Process Section */}
-        <section className="space-y-12">
-          <BentoGrid>
-            {/* Starter Growth Plan */}
-            <BentoCard className="md:col-span-6 p-12 bg-gradient-to-br from-vibrant-indigo/10 to-transparent border-vibrant-indigo/20 shadow-[0_0_50px_rgba(99,102,241,0.1)] flex flex-col justify-between">
-              <div className="space-y-8">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-2">
-                    <span className="inline-block py-1 px-3 rounded-full bg-vibrant-indigo/20 text-vibrant-indigo text-[8px] font-bold uppercase tracking-[0.3em]">Special: Kerala Business Launch Offer</span>
-                    <h3 className="text-4xl md:text-5xl font-serif italic text-white tracking-tight">Starter Growth Plan</h3>
-                  </div>
-                  <Zap className="text-vibrant-indigo animate-pulse" />
+                <div className="pt-6 flex flex-col sm:flex-row gap-6">
+                  <MagneticButton>
+                    <button 
+                      onClick={() => document.getElementById('consultation-node')?.scrollIntoView({ behavior: 'smooth' })}
+                      className={`px-14 py-7 font-bold rounded-2xl transition-all text-[11px] uppercase tracking-[0.4em] shadow-2xl flex items-center gap-4 active:scale-95 group relative overflow-hidden
+                        ${service.accent === 'accent' ? 'bg-accent-purple text-obsidian hover:bg-white' : 'purple-gradient-bg text-white hover:scale-[1.02]'}`}
+                    >
+                      <span className="relative z-10">Initiate Deployment Protocol</span>
+                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform relative z-10" />
+                    </button>
+                  </MagneticButton>
+                  
+                  {service.link && (
+                    <MagneticButton>
+                      <a 
+                        href={service.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-14 py-7 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all text-[11px] uppercase tracking-[0.4em] flex items-center gap-4 shadow-xl group"
+                      >
+                        Audit Live Node <Globe size={18} className="group-hover:rotate-12 transition-transform" />
+                      </a>
+                    </MagneticButton>
+                  )}
                 </div>
-                <p className="text-silver/50 text-xl font-light leading-relaxed max-w-md">
-                  A precision-engineered entry point for Kerala startups looking to establish an immediate competitive edge. High ROI, zero waste.
-                </p>
               </div>
-              
-              <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-end md:items-center justify-between gap-8">
-                <div className="flex items-end gap-4">
-                  <p className="text-white text-6xl font-serif italic leading-none">₹3,500</p>
-                  <div className="flex flex-col">
-                    <p className="text-silver/20 text-xs line-through mb-1">Was ₹5,000</p>
-                    <p className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-widest whitespace-nowrap">Limited Slot Deployment</p>
-                  </div>
-                </div>
-                <button 
-                  onClick={() => handleConsultation("Starter Growth Plan")}
-                  className="px-10 py-5 bg-vibrant-indigo text-white font-bold rounded-2xl hover:bg-white hover:text-midnight transition-all text-[11px] uppercase tracking-wider shadow-[0_0_30px_rgba(99,102,241,0.4)]"
-                >
-                  Claim My Slot
-                </button>
-              </div>
-            </BentoCard>
 
-            {/* The Sinan Method */}
-            <BentoCard className="md:col-span-6 p-12 space-y-10 relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-8 opacity-5">
-                 <Activity size={150} />
-               </div>
-               <div className="space-y-4 relative z-10">
-                 <p className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]">The Operational Protocol</p>
-                 <h3 className="text-5xl font-serif italic text-white tracking-tighter">The Sinan <span className="text-vibrant-indigo">Method.</span></h3>
-               </div>
-               
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
-                  {[
-                    { step: "01", label: "Analysis", desc: "Surgical Data Audit" },
-                    { step: "02", label: "Strategy", desc: "Neural Blueprint" },
-                    { step: "03", label: "Execution", desc: "Rapid Deployment" },
-                    { step: "04", label: "Success", desc: "Market Domination" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="space-y-4">
-                      <div className="text-vibrant-indigo/40 font-mono text-sm tracking-widest">{item.step}</div>
-                      <div className="space-y-1">
-                        <p className="text-white font-serif italic text-xl whitespace-nowrap">{item.label}</p>
-                        <p className="text-silver/20 text-[8px] uppercase tracking-widest font-bold">{item.desc}</p>
-                      </div>
+              <div className={`relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl group ${i % 2 !== 0 && i !== 3 ? 'lg:order-1' : ''} border border-white/5 shadow-neon-purple/5`}>
+                 <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-end p-16">
+                    <div className="space-y-3 translate-y-10 group-hover:translate-y-0 transition-transform duration-700 delay-100">
+                       <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Authorized Execution Link</p>
+                       <p className={`text-4xl font-serif italic ${service.accent === 'accent' ? 'text-accent-purple' : 'text-neon-purple'}`}>ROI Potential: DOMINANT.</p>
                     </div>
-                  ))}
-               </div>
-               <div className="pt-8 border-t border-white/5 text-silver/30 text-[10px] font-light italic relative z-10">
-                 "Average results are a failure. We architect outliers."
-               </div>
-            </BentoCard>
-          </BentoGrid>
-        </section>
-
-        {/* Tech Stack Card */}
-        <section className="space-y-12">
-          <BentoGrid>
-            <BentoCard className="md:col-span-12 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 bg-white/[0.01]">
-              <div className="space-y-4 max-w-sm text-center md:text-left">
-                <Terminal className="text-vibrant-indigo mx-auto md:mx-0" size={24} />
-                <h3 className="text-3xl font-serif italic text-white">Technological Arsenal</h3>
-                <p className="text-silver/40 text-sm leading-relaxed">
-                  Leveraging an elite-tier tech stack to ensure your data is accurate and your site is optimized for the next generation of web search.
-                </p>
-              </div>
-              <div className="flex-1 w-full overflow-hidden">
-                <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 opacity-50 hover:opacity-100 transition-opacity duration-1000">
-                  {["Google Search Console", "GA4", "Semrush", "Premiere Pro", "Next.js"].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-4 group">
-                      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center grayscale group-hover:grayscale-0 group-hover:border-vibrant-indigo/40 transition-all duration-500">
-                        <Cpu className="text-silver/20 group-hover:text-vibrant-indigo transition-colors" />
-                      </div>
-                      <span className="text-[9px] font-bold text-silver/20 group-hover:text-white uppercase tracking-widest transition-colors">{tech}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </BentoCard>
-          </BentoGrid>
-        </section>
-
-        {/* Case Studies */}
-        <section className="space-y-16 overflow-hidden">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-10">
-             <div className="space-y-4 flex flex-col items-start text-left">
-                <p className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]">Evidence Protocol</p>
-                <h2 className="text-3xl md:text-5xl lg:text-7xl font-serif text-white tracking-tighter uppercase leading-tight max-w-full">Proven <span className="text-vibrant-indigo text-indigo-glow">Success.</span></h2>
-             </div>
-             <p className="text-silver/30 text-xs font-mono tracking-widest">( Real Brands / Real ROI )</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-            {caseStudies.map((item, idx) => (
-              <BentoCard key={idx} className="p-10 space-y-6 hover:bg-white/[0.01] transition-all cursor-pointer group h-full md:col-span-1 lg:col-span-1" onClick={() => setSelectedCase(item)}>
-                <div className="flex justify-between items-start">
-                  <div className="w-10 h-10 rounded-xl bg-vibrant-indigo/10 flex items-center justify-center text-vibrant-indigo">
-                    {item.id === 1 ? <Search size={20} /> : item.id === 2 ? <Layers size={20} /> : item.id === 3 ? <TrendingUp size={20} /> : <Cpu size={20} />}
-                  </div>
-                  <span className="text-[10px] font-bold text-vibrant-indigo uppercase tracking-widest border border-vibrant-indigo/20 px-3 py-1 rounded-full group-hover:bg-vibrant-indigo group-hover:text-white transition-colors">{item.stat}</span>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-serif italic text-white">{item.title}</h3>
-                  <p className="text-vibrant-indigo/60 text-[10px] font-bold uppercase tracking-[0.2em]">{item.keyword}</p>
-                </div>
-                <p className="text-silver/40 text-sm leading-relaxed line-clamp-2">{item.desc}</p>
-                <div className="pt-4 flex items-center gap-2 text-silver/20 text-[9px] font-bold uppercase tracking-widest group-hover:text-white transition-colors">
-                  View Case Insight <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </BentoCard>
-            ))}
-          </div>
-        </section>
-
-        {/* FAQ Node */}
-        <section className="pt-12">
-          <FAQ />
-        </section>
-
-        {/* Final CTA Node */}
-        <section className="pt-24 border-t border-white/5 text-center space-y-12 flex flex-col items-center">
-           <div className="space-y-4">
-              <p className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]">Next Operation Init</p>
-              <h4 className="text-3xl md:text-5xl lg:text-7xl font-serif text-white tracking-widest leading-tight max-w-full uppercase">
-                Scale Your <span className="text-vibrant-indigo text-indigo-glow">Brand Node.</span>
-              </h4>
-           </div>
-           <button 
-              onClick={() => handleConsultation("General Optimization")}
-              className="px-16 py-6 bg-white text-midnight font-bold rounded-2xl hover:bg-vibrant-indigo hover:text-white transition-all text-sm uppercase tracking-[0.3em] shadow-[0_20px_40px_rgba(255,255,255,0.05)]"
-           >
-              Deploy Growth Phase
-           </button>
-           <p className="text-silver/20 text-[8px] uppercase tracking-[0.5em] font-sans">
-             Best SEO Expert in Kerala // Freelance Digital Marketer // Palakkad Authority
-           </p>
-        </section>
-      </div>
-
-      {/* Case Study Modal */}
-      <AnimatePresence>
-        {selectedCase && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-midnight/90 backdrop-blur-xl"
-            onClick={() => setSelectedCase(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="max-w-2xl w-full glass-2 p-10 md:p-16 rounded-[40px] border border-vibrant-indigo/20 relative"
-              onClick={e => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setSelectedCase(null)}
-                className="absolute top-8 right-8 text-silver/40 hover:text-white transition-colors"
-              >
-                <X size={24} />
-              </button>
-              
-              <div className="space-y-8 text-center sm:text-left">
-                <div className="space-y-4">
-                  <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <span className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]">Confidential Insight</span>
-                    <span className="px-3 py-1 bg-vibrant-indigo/10 border border-vibrant-indigo/20 text-vibrant-indigo text-[8px] font-bold uppercase tracking-widest rounded-full">{selectedCase.stat}</span>
-                  </div>
-                  <h2 className="text-4xl md:text-6xl font-serif italic text-white">{selectedCase.title}</h2>
-                  <p className="text-vibrant-indigo text-xs font-bold uppercase tracking-widest">{selectedCase.keyword}</p>
-                </div>
-                
-                <p className="text-silver/60 text-lg md:text-xl font-light leading-relaxed">
-                  {selectedCase.desc}
-                </p>
-
-                <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 space-y-4">
-                  <p className="text-silver/40 text-xs font-mono uppercase tracking-widest">Strategic Outcome</p>
-                  <p className="text-white text-lg font-light leading-relaxed italic">
-                    "This brand node achieved calculated dominance through structural SEO and neural content mapping, resulting in a sustained 1200% increase in organic reach."
-                  </p>
-                </div>
-                
-                <button 
-                  onClick={() => handleConsultation(`Case Study: ${selectedCase.title}`)}
-                  className="w-full py-5 bg-vibrant-indigo text-white text-[10px] font-bold uppercase tracking-[0.3em] rounded-full hover:scale-[1.02] transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(99,102,241,0.3)]"
-                >
-                  Request Similar Roadmap <MessageCircle size={14} />
-                </button>
+                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          ))}
+        </motion.section>
+
+        {/* The Success Protocol: Obsidian Rebuild */}
+        <motion.section 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="bg-dark-charcoal p-16 md:p-32 rounded-[5rem] border border-white/5 shadow-2xl space-y-32 relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 w-full h-full bg-neon-purple/[0.02] -z-10 blur-[100px]" />
+          <div className="text-center space-y-8">
+             <div className="flex items-center justify-center gap-4">
+                <div className="h-[0.5px] w-12 bg-accent-purple" />
+                <p className="text-accent-purple text-[11px] font-bold uppercase tracking-[1.5em]">The Sequential Blueprint</p>
+                <div className="h-[0.5px] w-12 bg-accent-purple" />
+             </div>
+             <h2 className="text-6xl md:text-9xl font-display text-white leading-none uppercase tracking-tighter">Success <br /><span className="purple-text-glow italic font-serif text-neon-purple">Protocol.</span></h2>
+             <p className="text-white/10 text-xs font-mono tracking-[0.8em] uppercase italic underline underline-offset-8">Discovery / Strategy / Launch / Scale</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 relative">
+             <div className="hidden lg:block absolute top-12 left-0 w-full h-[0.5px] bg-white/5 z-0" />
+             {[
+               { s: "01", t: "Discovery", d: "Deep surgical audit of existing assets, market inefficiencies, and competitor search vulnerabilities." },
+               { s: "02", t: "Strategy", d: "Architecting a multi-national neural blueprint optimized for high-intent traffic and visual authority." },
+               { s: "03", t: "Launch", d: "Deployment of technical SEO foundations and interactive Next-Gen UI modules with extreme precision." },
+               { s: "04", t: "Scale", d: "Long-term algorithmic amplification designed for sustained 1200% ROI in organic brand equity." }
+             ].map((step, idx) => (
+                <div key={idx} className="space-y-10 relative z-10 pt-10 lg:pt-0 group">
+                   <div className="w-24 h-24 bg-obsidian border border-white/10 rounded-3xl flex items-center justify-center text-neon-purple text-4xl font-display font-bold group-hover:bg-neon-purple group-hover:text-white transition-all transform group-hover:rotate-[360deg] duration-1000 shadow-xl group-hover:shadow-neon-purple/20">
+                      {step.s}
+                   </div>
+                   <div className="space-y-6">
+                      <h4 className="text-3xl font-display text-white tracking-tighter uppercase">{step.t}</h4>
+                      <p className="text-white/30 text-base leading-relaxed font-light italic">
+                        {step.d}
+                      </p>
+                      <div className="h-[2px] w-0 bg-neon-purple group-hover:w-full transition-all duration-700" />
+                   </div>
+                </div>
+             ))}
+          </div>
+        </motion.section>
+
+        {/* Methodological Depth: Dark Elite Theme */}
+        <section className="space-y-32">
+           <div className="flex flex-col md:flex-row justify-between items-end gap-10">
+              <div className="space-y-8">
+                 <div className="flex items-center gap-4">
+                    <p className="text-accent-purple text-[11px] font-bold uppercase tracking-[1em]">Methodology SPECTRUM</p>
+                 </div>
+                 <h2 className="text-white text-6xl md:text-9xl font-display tracking-tighter leading-none uppercase">The <span className="purple-text-glow text-neon-purple italic font-serif">Certainty Link.</span></h2>
+              </div>
+              <p className="text-white/10 text-[11px] font-mono uppercase tracking-[0.5em] font-bold italic underline">Protocol v4.4 // Neural Mapping</p>
+           </div>
+
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+              <div className="space-y-20">
+                 <div className="space-y-8 p-12 bg-dark-charcoal/50 border border-white/5 rounded-[3rem] hover:border-accent-purple/20 transition-all group">
+                    <h4 className="text-accent-purple text-sm font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                       <Cpu size={20} /> 01. Neural Entity Mapping
+                    </h4>
+                    <p className="text-white/40 text-xl leading-relaxed font-light">
+                       Modern search is no longer about strings; it is about entities and relationships. We utilize advanced semantic mapping to ensure your brand is perceived as a high-authority node in your specific vertical.
+                    </p>
+                 </div>
+                 <div className="space-y-8 p-12 bg-dark-charcoal/50 border border-white/5 rounded-[3rem] hover:border-neon-purple/20 transition-all group">
+                    <h4 className="text-neon-purple text-sm font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                       <BarChart3 size={20} /> 02. High-Yield Lead Fidelity
+                    </h4>
+                    <p className="text-white/40 text-xl leading-relaxed font-light">
+                       Lead generation for luxury high-ticket items requires a filtering process that prioritizes intent over volume. We engineer funnels that use psychology trigger mapping to qualify prospects instantly.
+                    </p>
+                 </div>
+              </div>
+              <div className="space-y-20">
+                 <div className="space-y-8 p-12 bg-dark-charcoal/50 border border-white/5 rounded-[3rem] hover:border-neon-purple/20 transition-all group">
+                    <h4 className="text-neon-purple text-sm font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                       <Activity size={20} /> 03. Predictive Scaling
+                    </h4>
+                    <p className="text-white/40 text-xl leading-relaxed font-light">
+                       Our 'Elite Mixed' growth framework uses predictive analytics to stay ahead of search algorithm updates. We position your brand in the path of emerging demand nodes pre-emptively.
+                    </p>
+                 </div>
+                 <div className="space-y-8 p-12 bg-dark-charcoal/50 border border-white/5 rounded-[3rem] hover:border-accent-purple/20 transition-all group">
+                    <h4 className="text-white text-sm font-bold uppercase tracking-[0.4em] flex items-center gap-4">
+                       <Shield size={20} /> 04. Institutional Trust
+                    </h4>
+                    <p className="text-white/40 text-xl leading-relaxed font-light">
+                       Authority is the ultimate currency. We establish this through 'Strategic Trust Blueprints' and 'Brand Heritage Nodes' for e-commerce, synthesizing design with rigorous data security.
+                    </p>
+                 </div>
+              </div>
+           </div>
+        </section>
+
+        {/* Global Strategy Consultation Form: Obsidian Rebuild */}
+        <section id="consultation-node" className="space-y-24 py-24 relative">
+          <div className="text-center space-y-8">
+             <div className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-neon-purple/10 border border-neon-purple/20 text-neon-purple text-[10px] font-bold uppercase tracking-[0.8em] shadow-[0_0_30px_rgba(106,13,173,0.2)]">
+               <Sparkles size={14} className="animate-pulse" />
+               Global Consultation Link Active
+             </div>
+             <h2 className="text-6xl md:text-9xl font-display text-white uppercase tracking-tighter leading-none">Initiate <br /><span className="purple-text-glow text-neon-purple italic font-serif">Strategic Link.</span></h2>
+             <p className="text-white/20 text-xl font-light tracking-[1em] uppercase">( MORVEX / JAMALULLAIL / MINCO / LUXAVYA )</p>
+          </div>
+
+          <div className="max-w-5xl mx-auto bg-dark-charcoal p-16 md:p-24 rounded-[4.5rem] border border-white/5 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-16 opacity-5 rotate-12">
+               <Mail size={400} className="text-neon-purple" />
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-16 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="space-y-6">
+                  <label className="text-[11px] font-bold uppercase tracking-[0.5em] text-white/30 flex items-center gap-3">
+                     <MousePointer2 size={14} className="text-neon-purple" /> Executive Identity
+                  </label>
+                  <input 
+                    name="name"
+                    required
+                    type="text" 
+                    placeholder="Your Full Name"
+                    className="w-full bg-transparent border-b border-white/10 px-0 py-8 text-white placeholder:text-white/10 focus:outline-none focus:border-neon-purple transition-all font-light text-2xl"
+                  />
+                </div>
+                <div className="space-y-6">
+                  <label className="text-[11px] font-bold uppercase tracking-[0.5em] text-white/30 flex items-center gap-3">
+                     <Mail size={14} className="text-neon-purple" /> Organizational Email
+                  </label>
+                  <input 
+                    name="email"
+                    required
+                    type="email" 
+                    placeholder="name@company.com"
+                    className="w-full bg-transparent border-b border-white/10 px-0 py-8 text-white placeholder:text-white/10 focus:outline-none focus:border-neon-purple transition-all font-light text-2xl"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="space-y-6">
+                    <label className="text-[11px] font-bold uppercase tracking-[0.5em] text-white/30 flex items-center gap-3">
+                       <Target size={14} className="text-neon-purple" /> Global Target Node
+                    </label>
+                    <select 
+                      name="market"
+                      className="w-full bg-transparent border-b border-white/10 px-0 py-8 text-white focus:outline-none focus:border-neon-purple transition-all font-light text-xl appearance-none cursor-pointer"
+                    >
+                      <option className="bg-obsidian">Morvex Fragrance Branding</option>
+                      <option className="bg-obsidian">Jamalullail Academy Nodes</option>
+                      <option className="bg-obsidian">Minco Kids E-com Expansion</option>
+                      <option className="bg-obsidian">Luxavya Social Dominance</option>
+                      <option className="bg-obsidian">Global Custom Enterprise Link</option>
+                    </select>
+                </div>
+                <div className="space-y-6">
+                    <label className="text-[11px] font-bold uppercase tracking-[0.5em] text-white/30 flex items-center gap-3">
+                       <BarChart3 size={14} className="text-neon-purple" /> Strategy Objective
+                    </label>
+                    <select 
+                      name="objective"
+                      className="w-full bg-transparent border-b border-white/10 px-0 py-8 text-white focus:outline-none focus:border-neon-purple transition-all font-light text-xl appearance-none cursor-pointer"
+                    >
+                      <option className="bg-obsidian">Algorithmic SEO Supremacy</option>
+                      <option className="bg-obsidian">High-Fidelity UI Engineering</option>
+                      <option className="bg-obsidian">Growth Scaling Protocol</option>
+                      <option className="bg-obsidian">Institutional Roadmap</option>
+                    </select>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <label className="text-[11px] font-bold uppercase tracking-[0.5em] text-white/30 flex items-center gap-3">
+                   <Activity size={14} className="text-neon-purple" /> Contextual Growth Roadmap
+                </label>
+                <textarea 
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Describe your current commercial roadblocks and expansion intent..."
+                  className="w-full bg-transparent border-b border-white/10 px-0 py-8 text-white placeholder:text-white/10 focus:outline-none focus:border-neon-purple transition-all font-light text-2xl resize-none"
+                />
+              </div>
+
+              <MagneticButton>
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-10 purple-gradient-bg text-white font-bold rounded-[2.5rem] transition-all text-[12px] uppercase tracking-[0.8em] flex items-center justify-center gap-6 shadow-[0_30px_60px_rgba(106,13,173,0.3)] disabled:opacity-50 group active:scale-95 relative overflow-hidden"
+                >
+                  <span className="relative z-10">{isSubmitting ? "Syncing Deployment..." : "Initiate Global Link"}</span>
+                  <ArrowRight size={22} className="group-hover:translate-x-3 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                </button>
+              </MagneticButton>
+
+              <AnimatePresence>
+                {submitStatus === 'success' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-accent-purple text-[12px] font-bold uppercase tracking-[0.5em] text-center italic"
+                  >
+                    Transmission Complete. Strategic Briefing Pending Analysis.
+                  </motion.p>
+                )}
+                {submitStatus === 'error' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-neon-pink text-[12px] font-bold uppercase tracking-[0.5em] text-center"
+                  >
+                    Uplink Intersection Failed. Re-route via Encrypted Signal.
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </form>
+          </div>
+        </section>
+
+        {/* Global Node Branding Accent */}
+        <div className="pt-40 text-center space-y-10">
+           <div className="h-[0.5px] w-24 bg-white/10 mx-auto" />
+           <p className="text-white/10 text-[10px] uppercase tracking-[1em] font-display font-medium">
+             Muhammed Sinan VK // Institutional Growth Architecture // KERALA - GLOBAL
+           </p>
+           <Link to="/" className="text-white/5 hover:text-white/20 transition-all text-[8px] uppercase tracking-[0.5em] block">
+              Protocol v4.4 // Authorized Operational Access
+           </Link>
+        </div>
+      </div>
+      
+      <div className="bg-obsidian relative z-20 mt-40">
+         <FAQ />
+      </div>
     </motion.main>
   );
 }
+

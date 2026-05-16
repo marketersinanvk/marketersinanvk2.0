@@ -33,8 +33,8 @@ function LogoCard({ logo }: LogoCardProps) {
        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       className={`relative w-[180px] md:w-[240px] h-[90px] md:h-[120px] flex items-center justify-center glass-2 rounded-xl border border-white/5 group cursor-pointer transition-all duration-500 hover:border-vibrant-indigo/50 shrink-0 ${
         logo.isMeta 
-          ? "shadow-[0_0_30px_rgba(99,102,241,0.2)] border-vibrant-indigo/30 hover:shadow-[0_0_60px_rgba(99,102,241,0.6)]" 
-          : "shadow-[0_0_20px_rgba(99,102,241,0.1)] hover:shadow-[0_0_50px_rgba(99,102,241,0.4)]"
+          ? "shadow-[0_0_30px_rgba(255,255,255,0.1)] border-vibrant-indigo/30 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]" 
+          : "shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_50px_rgba(255,255,255,0.2)]"
       }`}
     >
       {/* Meta Specific Active Glow */}
@@ -49,8 +49,8 @@ function LogoCard({ logo }: LogoCardProps) {
           onError={() => setIsError(true)}
           className={`max-w-[100px] md:max-w-[140px] max-h-[40px] md:max-h-[60px] object-contain transition-all duration-500 opacity-100 grayscale-0 ${
             logo.isMeta 
-              ? "drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]" 
-              : "drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+              ? "drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]" 
+              : "drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.25)]"
           }`}
           referrerPolicy="no-referrer"
           loading="lazy"
@@ -136,7 +136,7 @@ export default function CinemaReel({
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="glass-2 p-6 rounded-full border border-vibrant-indigo/30 flex flex-col items-center gap-2 shadow-[0_0_40px_rgba(99,102,241,0.2)] animate-pulse"
+            className="glass-2 p-6 rounded-full border border-vibrant-indigo/30 flex flex-col items-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.1)] animate-pulse"
           >
             <CheckCircle className="text-vibrant-indigo w-8 h-8" />
             <p className="text-vibrant-indigo text-[7px] font-bold uppercase tracking-[0.3em] text-center leading-tight">

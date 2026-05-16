@@ -24,50 +24,29 @@ export default function ContactForm() {
     message: ""
   });
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorHeader(null);
 
-    const data = {
-      ...formData,
-      access_key: "3cc20a0b-fe19-45c1-87bd-28dc3a71d0ed",
-      from_name: "MSVK Elite Portfolio",
-      subject: `New Inquiry from ${formData.name}`
-    };
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setIsSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          mobile: "",
-          service: "",
-          message: ""
-        });
-        setTimeout(() => setIsSuccess(false), 5000);
-      } else {
-        throw new Error(result.message || "Something went wrong.");
-      }
-    } catch (error) {
-      console.error("Web3Forms Error:", error);
-      setErrorHeader(error instanceof Error ? error.message : "Failed to transmit message. Please try again.");
-      setTimeout(() => setErrorHeader(null), 5000);
-    } finally {
+    const whatsappNumber = "918590181381";
+    const text = `*New Inquiry via MSVK Elite Portfolio*%0A%0A*Name:* ${formData.name}%0A*Mobile:* ${formData.mobile}%0A*Email:* ${formData.email}%0A*Service:* ${formData.service || "Not Specified"}%0A*Message:* ${formData.message}`;
+    
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    
+    // Simulate a brief loading state for UX
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
       setIsSubmitting(false);
-    }
+      setIsSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        mobile: "",
+        service: "",
+        message: ""
+      });
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1000);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

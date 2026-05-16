@@ -12,7 +12,7 @@ const caseStudies = [
     strategy: "As the Best SEO Expert in Kerala, I architected a multi-layered keyword cluster maps and neural linking structure. This project utilized my proprietary Best AI Digital Marketing Agency framework to outpace competitors within 120 days.",
     result: "#1 Rankings for 250+ Keywords",
     metrics: "20,000+ Monthly Organic Traffic",
-    image: "https://picsum.photos/seed/digisinans-seo/800/600",
+    image: "https://i.ibb.co/s7k15Sm/Screenshot-2026-05-16-224324.png",
     alt: "Best SEO Expert in Kerala - Digisinans case study by Muhammed Sinan VK",
     links: [
       { text: "Visit Live Site", url: "https://digisinans.in", icon: ExternalLink }
@@ -23,7 +23,7 @@ const caseStudies = [
       "name": "Digisinans SEO Victory by Best SEO Expert in Kerala",
       "description": "Architecting organic search dominance for Digisinans using AI-driven SEO clusters.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://picsum.photos/seed/digisinans-seo/800/600"
+      "image": "https://i.ibb.co/s7k15Sm/Screenshot-2026-05-16-224324.png"
     }
   },
   {
@@ -35,7 +35,7 @@ const caseStudies = [
     strategy: "I functioned as the SMM Expert Kerala for this launch, engineering a Professional SMM Operating system. We utilized visual prestige and high-end influencer synthesis to anchor Luxavya as a lifestyle leader.",
     result: "7x ROI on Paid Campaigns",
     metrics: "Elite Brand Status Achieved",
-    image: "https://picsum.photos/seed/luxavya-fragrance/800/600",
+    image: "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png",
     alt: "SMM Expert Kerala - Luxavya professional SMM operations by Freelance Digital Marketer Sinan VK",
     links: [
       { text: "Visit Archive", url: "https://instagram.com/luxavya", icon: Instagram }
@@ -46,7 +46,7 @@ const caseStudies = [
       "name": "Luxavya Luxury SMM by SMM Expert Kerala",
       "description": "Luxury branding and SMM operations for fashion/lifestyle label Luxavya.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://picsum.photos/seed/luxavya-fragrance/800/600"
+      "image": "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png"
     }
   },
   {
@@ -58,7 +58,7 @@ const caseStudies = [
     strategy: "Leveraging my status as a Freelance Digital Marketer in Kerala, I implemented a community-first SMM protocol. By focusing on parent-child visual storytelling, we achieved viral reach within target demographics across Kerala.",
     result: "4.5x ROAS & 200% Growth",
     metrics: "Market Dominance Secured",
-    image: "https://picsum.photos/seed/mincokids-growth/800/600",
+    image: "https://i.ibb.co/k2GvTWj4/Screenshot-2026-05-16-224448.png",
     alt: "Freelance Digital Marketer in Kerala - Minco Kids SMM growth case study",
     links: [
       { text: "Visit Archive", url: "https://instagram.com/mincokids", icon: Instagram }
@@ -69,7 +69,7 @@ const caseStudies = [
       "name": "Minco Kids SMM Growth by Freelance Digital Marketer Kerala",
       "description": "High-engagement SMM strategy for kids wear and educational brand Minco Kids.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://picsum.photos/seed/mincokids-growth/800/600"
+      "image": "https://i.ibb.co/k2GvTWj4/Screenshot-2026-05-16-224448.png"
     }
   },
   {
@@ -81,7 +81,7 @@ const caseStudies = [
     strategy: "Provided Local SEO Services in Palakkad to capture high-intent 'near me' traffic. As a Web Development Specialist Kerala, I architected their digital infrastructure for frictionless lead capture and inventory syncing.",
     result: "300% Increase in Local Leads",
     metrics: "Digital Transformation Complete",
-    image: "https://picsum.photos/seed/gadjenix-electronics/800/600",
+    image: "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png",
     alt: "Local SEO Services in Palakkad - KL Gadjenix transformation by Web Development Specialist Kerala",
     links: [
       { text: "Operational Hub", url: "https://instagram.com/kl_gadjenix", icon: Instagram }
@@ -92,7 +92,30 @@ const caseStudies = [
       "name": "KL Gadjenix Digital Transition by Digital Growth Strategist",
       "description": "Electronics retail digital transformation involving Local SEO and Web Development.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://picsum.photos/seed/gadjenix-electronics/800/600"
+      "image": "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png"
+    }
+  },
+  {
+    title: "Jamalullail Academy: Global Node",
+    client: "Jamalullail Academy",
+    subtitle: "Educational Architecture",
+    location: "Global Retrieval Node",
+    challenge: "Engineering a high-performance educational platform for spiritual and academic retrieval.",
+    strategy: "Unified technical web architecture with global SEO nodes, ensuring a seamless retrieval system for Islamic courses. Architected for 0.4s response times and high-density content retrieval.",
+    result: "Institutional-Grade Digital Authority",
+    metrics: "Global Spiritual Audience Reached",
+    image: "https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png",
+    alt: "Educational Web Infrastructure - Jamalullail Academy by Digital Growth Strategist Sinan VK",
+    links: [
+      { text: "Visit Academy", url: "https://jamalullail.in", icon: ExternalLink }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "Jamalullail Academy Educational Node by Web Development Specialist",
+      "description": "Unified technical web architecture with global SEO nodes for Jamalullail Academy.",
+      "url": "https://marketersinanvk.in/portfolio",
+      "image": "https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png"
     }
   }
 ];
@@ -149,7 +172,7 @@ export default function CaseStudies() {
             "https://twitter.com/sinan246810"
           ],
           "jobTitle": "Digital Marketing Expert",
-          "description": "Muhammed Sinan VK is the best digital marketer in Kerala & Bahrain, providing AI-driven growth strategies and premium branding services."
+          "description": "Muhammed Sinan VK is the best digital marketer in Kerala, providing AI-driven growth strategies and premium branding services."
         })}
       </script>
 
@@ -167,11 +190,11 @@ export default function CaseStudies() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl lg:text-7xl font-serif tracking-tighter text-white leading-tight max-w-full uppercase"
           >
-            Best Digital Marketer in Kerala & Bahrain — <br />
+            Best Digital Marketer in Kerala — <br />
             <span className="italic text-vibrant-indigo" style={{ filter: "drop-shadow(0 0 15px rgba(99, 102, 241, 0.3))" }}>Proven Success.</span>
           </motion.h2>
           <p className="text-sm font-light tracking-wide max-w-2xl" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
-            Delivering <span className="text-white font-medium text-indigo-glow">Top Digital Marketing Results in Kerala & Bahrain</span> through <span className="text-white font-medium">Leading AI Marketing Strategies</span> for brands like Luxavya, Minco Kids, and KL Gadjenix.
+            Delivering <span className="text-white font-medium text-indigo-glow">Top Digital Marketing Results in Kerala</span> through <span className="text-white font-medium">Leading AI Marketing Strategies</span> for brands like Luxavya, Minco Kids, and KL Gadjenix.
           </p>
         </div>
 

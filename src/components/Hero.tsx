@@ -66,7 +66,7 @@ export default function Hero() {
             <Link 
               to="/contact" 
               aria-label="Start Mission"
-              className="group relative px-10 py-5 bg-vibrant-indigo text-white font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-105 shadow-[0_0_40px_rgba(99,102,241,0.3)] w-full sm:w-auto border-b-4 border-vibrant-indigo/30 active:border-b-0 active:translate-y-1 magnetic flex items-center justify-center"
+              className="group relative px-10 py-5 bg-vibrant-indigo text-black font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.2)] w-full sm:w-auto border-b-4 border-vibrant-indigo/30 active:border-b-0 active:translate-y-1 magnetic flex items-center justify-center"
             >
               <span className="relative z-10 flex items-center justify-center gap-3 uppercase tracking-[0.2em] text-[10px]">
                 Start Mission <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -88,7 +88,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="relative hidden lg:block min-h-[600px] w-full max-w-[480px] mx-auto aspect-[4/5]"
         >
-          <div className="relative z-10 w-full h-full glass-2 rounded-[60px] overflow-hidden group shadow-[0_0_60px_rgba(99,102,241,0.2)] border border-vibrant-indigo/10">
+          <div className="relative z-10 w-full h-full glass-2 rounded-[60px] overflow-hidden group shadow-[0_0_60px_rgba(255,255,255,0.1)] border border-vibrant-indigo/10">
             {heroData?.imageUrl ? (
               <img 
                 src={heroData.imageUrl} 

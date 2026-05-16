@@ -85,9 +85,9 @@ export default function Layout({ children }: LayoutProps) {
       
       {/* Background Glows */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-deep-violet/10 blur-[150px] rounded-full opacity-30" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-vibrant-indigo/5 blur-[120px] rounded-full opacity-20" />
-        <div className="absolute top-[40%] right-[-5%] w-[30%] h-[30%] bg-deep-violet/5 blur-[100px] rounded-full opacity-20" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/5 blur-[150px] rounded-full opacity-30" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/5 blur-[120px] rounded-full opacity-20" />
+        <div className="absolute top-[40%] right-[-5%] w-[30%] h-[30%] bg-white/5 blur-[100px] rounded-full opacity-20" />
       </div>
 
       <main className="container-main relative z-10 overflow-hidden">

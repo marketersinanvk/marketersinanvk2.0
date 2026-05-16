@@ -38,7 +38,7 @@ export default function Login() {
         className="max-w-md w-full"
       >
         <div className="text-center mb-12 space-y-4">
-          <div className="w-16 h-16 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
+          <div className="w-16 h-16 bg-vibrant-indigo/10 border border-vibrant-indigo/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
             <Lock className="text-vibrant-indigo w-6 h-6" />
           </div>
           <h1 className="text-4xl font-serif italic text-white tracking-tight">Master Admin <span className="text-vibrant-indigo not-italic font-sans font-black">OS</span></h1>
@@ -90,7 +90,7 @@ export default function Login() {
 
           <button 
             disabled={loading}
-            className="w-full group relative px-10 py-5 bg-vibrant-indigo text-white font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_rgba(99,102,241,0.3)] disabled:opacity-50"
+            className="w-full group relative px-10 py-5 bg-vibrant-indigo text-black font-bold rounded-full overflow-hidden transition-all duration-700 hover:scale-[1.02] shadow-[0_0_40px_rgba(255,255,255,0.2)] disabled:opacity-50"
           >
             <span className="relative z-10 flex items-center justify-center gap-3 uppercase tracking-[0.2em] text-[10px]">
               {loading ? 'Decrypting...' : 'Establish Link'} 

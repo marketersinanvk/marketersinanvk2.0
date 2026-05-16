@@ -1,33 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-midnight: #030303;
-  --color-matte-black: #010101;
-  --color-vibrant-indigo: #6366f1;
-  --color-soft-magenta: #d946ef;
-  --color-indigo-dim: rgba(99, 102, 241, 0.1);
-  --color-magenta-dim: rgba(217, 70, 239, 0.05);
-  --color-titanium: #B4B4B4;
-  --color-silver: #C0C0C0;
+  --color-obsidian: #020617;
+  --color-dark-charcoal: #0f172a;
+  --color-neon-purple: #3b82f6;
+  --color-deep-purple: #1e293b;
+  --color-muted-purple: #1d4ed8;
+  --color-accent-purple: #bfdbfe;
+  --color-ghost-white: #f8fafc;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
 }
 
 @layer base {
-  html {
-    scroll-behavior: initial;
-    font-display: swap;
-    background-color: var(--color-midnight);
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+    font-display: swap;
+    background-color: var(--color-obsidian);
+    overflow-x: hidden;
+  }
+  
   html, body {
-    @apply text-silver/60 antialiased min-h-screen overflow-x-hidden selection:bg-vibrant-indigo selection:text-midnight;
+    @apply text-white/90 antialiased min-h-screen selection:bg-neon-purple selection:text-white;
     font-family: var(--font-sans);
     letter-spacing: -0.01em;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--color-obsidian);
   }
   
-  /* Strict Container and Grid Protection */
   main, section {
     @apply max-w-full overflow-hidden;
   }
@@ -37,15 +46,14 @@
     @apply tracking-tighter text-white uppercase font-bold text-balance max-w-full;
   }
   
-  /* Fluid Typography scaling using clamp - No Cropping Protocol */
-  h1 { font-size: clamp(2.2rem, 8vw, 7.5rem); line-height: 0.95; }
-  h2 { font-size: clamp(1.8rem, 5.5vw, 4.5rem); line-height: 1; }
-  h3 { font-size: clamp(1.4rem, 4vw, 2.8rem); line-height: 1.1; }
+  h1 { font-size: clamp(3rem, 10vw, 8.5rem); line-height: 0.85; }
+  h2 { font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 0.95; }
+  h3 { font-size: clamp(1.8rem, 5vw, 3.5rem); line-height: 1.1; }
 }
 
 @layer utilities {
-  .container-main {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-hidden relative;
+  .strict-container {
+    @apply max-w-6xl mx-auto px-6 overflow-hidden relative;
   }
 
   .bento-grid {
@@ -53,61 +61,37 @@
   }
 
   .bento-card {
-    @apply relative bg-white/[0.02] backdrop-blur-2xl border border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 p-8 md:p-12 break-inside-avoid shadow-2xl flex flex-col h-full;
-    box-shadow: inset 0 0 60px rgba(99, 102, 241, 0.02);
+    @apply relative bg-dark-charcoal border border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-700 p-8 md:p-12 shadow-2xl flex flex-col h-full;
   }
   
-  .bento-card-hover {
-    @apply hover:border-vibrant-indigo/40 hover:bg-white/[0.04] hover:shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_30px_rgba(99,102,241,0.1)];
+  .bento-card-glow {
+    @apply hover:border-neon-purple/50 hover:shadow-[0_0_40px_rgba(157,39,176,0.2)] hover:-translate-y-1;
   }
 
-  .text-indigo-glow {
-    text-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+  .purple-gradient-bg {
+    background: linear-gradient(135deg, var(--color-neon-purple), var(--color-muted-purple));
   }
 
-  .text-magenta-glow {
-    text-shadow: 0 0 30px rgba(217, 70, 239, 0.4);
+  .purple-text-glow {
+    text-shadow: 0 0 20px rgba(157, 39, 176, 0.5);
   }
-  
-  .section-padding {
-    @apply py-20 md:py-32;
+
+  .vibrant-purple-text {
+    color: var(--color-neon-purple);
   }
 }
 
-/* Cinematic Grain */
-.cinematic-grain {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.015;
-  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  mix-blend-mode: overlay;
-}
-
-/* Custom scrollbar - Vibrant Indigo Glassmorphism */
+/* Custom scrollbar - Dark Neon Purple */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-midnight);
+  background: var(--color-obsidian);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(106, 13, 173, 0.2);
   border-radius: 100px;
-  border: 3px solid var(--color-midnight);
-  background-clip: padding-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.3);
-}
-
-/* Typography Overrides */
-.italic-serif {
-  font-family: var(--font-display);
-  font-style: italic;
-}
-
-.font-plus {
-  font-family: var(--font-sans);
+  background: rgba(106, 13, 173, 0.5);
 }
