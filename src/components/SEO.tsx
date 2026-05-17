@@ -78,25 +78,32 @@ export default function SEO({ title, description, image, article, keywords }: SE
         {
           "@type": "ProfessionalService",
           "@id": "https://marketersinanvk.in/#service",
-          "name": "Marketer Sinan VK | Best SEO Expert in Kerala",
-          "alternateName": "Freelance Digital Marketer in Kerala",
-          "url": "https://marketersinanvk.in",
-          "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
-          "description": "Premium Digital Marketing Agency in Kerala specializing in Local SEO Services in Palakkad, Custom Website Development Kerala, and high-ROI Lead Generation.",
+          "name": "Digital Hug & Marketer Sinan VK",
+          "url": "https://marketersinanvk.in/",
           "telephone": "+918590181381",
-          "priceRange": "$$$",
+          "email": "klgadjenix@gmail.com",
+          "priceRange": "$$",
+          "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+          "description": "Muhammed Sinan VK is an elite digital marketing strategist and SEO expert in Kerala, specializing in performance marketing, technical SEO, and high-converting web development.",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Palakkad",
             "addressLocality": "Palakkad",
             "addressRegion": "Kerala",
-            "postalCode": "678001",
             "addressCountry": "IN"
           },
           "geo": {
             "@type": "GeoCoordinates",
             "latitude": 10.7867,
-            "longitude": 76.6547
+            "longitude": 76.6548
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "India" },
+            { "@type": "AdministrativeArea", "name": "Kerala" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "founder": {
+            "@id": "https://marketersinanvk.in/#person"
           },
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -106,47 +113,89 @@ export default function SEO({ title, description, image, article, keywords }: SE
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Digital Marketing & Development Services",
+            "name": "Marketer Sinan VK Service Catalog",
             "itemListElement": [
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Best SEO Services in Kerala",
-                  "description": "Surgical search engine optimization to dominate local rankings."
+                  "name": "Search Engine Optimization (Technical & Local SEO)",
+                  "description": "Surgical search engine optimization to dominate local and global rankings through technical excellence and semantic authority."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Custom Website Development Kerala",
-                  "description": "High-performance Next.js web applications for modern brands."
+                  "name": "Performance Marketing (Meta Ads & Google Ads Management)",
+                  "description": "High-ROI paid acquisition strategies leveraging AI-driven bidding and precision audience targeting for maximum conversion depth."
                 }
               },
               {
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Lead Generation for Real Estate & Retail",
-                  "description": "High-intent lead acquisition funnels for maximum ROI."
+                  "name": "Full-Stack Web Development (Next.js & Tailwind CSS)",
+                  "description": "Premium, high-performance web applications engineered for speed, SEO durability, and elite user experiences."
                 }
               }
             ]
           }
         },
         {
-          "@type": "LocalBusiness",
-          "@id": "https://marketersinanvk.in/#business",
-          "name": "Marketer Sinan VK",
-          "image": "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Palakkad",
-            "addressRegion": "Kerala",
-            "addressCountry": "IN"
+          "@type": "Person",
+          "@id": "https://marketersinanvk.in/#person",
+          "name": "Muhammed Sinan VK",
+          "jobTitle": "Founder & CEO",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Digital Hug"
           },
-          "url": "https://marketersinanvk.in"
+          "url": "https://marketersinanvk.in/",
+          "sameAs": [
+            "https://www.linkedin.com/in/sinan-vk",
+            "https://www.instagram.com/muhammed_sinan_vk_85",
+            "https://twitter.com/sinan246810",
+            "https://www.youtube.com/@DigitalMark-l3q"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who is the best SEO expert in Kerala for small business growth?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Muhammed Sinan VK is a leading SEO expert in Kerala, specializing in AI-integrated strategies that help small businesses outrank competitors with high ROI."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I find local SEO services in Palakkad that actually work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Look for specialists with technical expertise. Marketer Sinan VK provides tailored local SEO in Palakkad to boost map rankings and organic traffic."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Product",
+          "name": "Starter Deployment / 1-on-1 Strategic Retrieval",
+          "image": "https://marketersinanvk.in/starter-service.png",
+          "description": "A definitive 1-on-1 strategic retrieval with Muhammed Sinan VK for brand ascension.",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://marketersinanvk.in/",
+            "price": "3500",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Marketer Sinan VK"
+            }
+          }
         }
       ]
     };
