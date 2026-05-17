@@ -6,6 +6,7 @@ import SEO from "../components/SEO";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import CaseStudies from "../components/CaseStudies";
 import { locationConfigs } from "../data/locations";
+import SemanticFooterLinks from "../components/SemanticFooterLinks";
 
 export default function LocationLanding() {
   const { location } = useParams<{ location: string }>();
@@ -185,8 +186,11 @@ export default function LocationLanding() {
         </div>
       </section>
 
+      {/* Semantic Silk-Route Link Matrix */}
+      <SemanticFooterLinks currentLocation={location} />
+
       {/* Global Bridge Node */}
-      <footer className="py-24 text-center border-t border-white/5">
+      <footer className="py-24 text-center border-t border-white/5 bg-midnight">
          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[1em]">Absolute Digital Superiority / 2026</p>
       </footer>
     </motion.main>

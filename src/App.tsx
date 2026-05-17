@@ -22,6 +22,8 @@ const Login = lazy(() => import("./pages/Login"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const LocationLanding = lazy(() => import("./pages/LocationLanding"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ComparisonHub = lazy(() => import("./pages/ComparisonHub"));
+const ProgrammaticGate = lazy(() => import("./pages/ProgrammaticGate"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -63,10 +65,13 @@ function AppContent() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/posts" element={<Blog />} />
+            <Route path="/posts/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/:location" element={<LocationLanding />} />
+            <Route path="/top-digital-marketing-agencies-kerala" element={<ComparisonHub />} />
+            <Route path="/:slug" element={<ProgrammaticGate />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

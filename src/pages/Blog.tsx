@@ -1,41 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { ArrowUpRight, Clock, User, Share2, Search, Brain, Target, TrendingUp, Cpu, Code, Zap } from "lucide-react";
+import { ArrowUpRight, Clock, User, Search, Brain, Target, TrendingUp, Cpu, Code, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import { collection, onSnapshot, query, orderBy, limit } from 'firebase/firestore';
-import { db } from '../lib/firebase';
-import { BentoGrid, BentoCard } from "../components/BentoGrid";
+import { BentoGrid } from "../components/BentoGrid";
 import { NeuralBackground } from "../components/NeuralBackground";
-import { blogPosts } from "../data/posts";
-
-// Map data icons for the UI
-const iconMap: Record<string, React.ReactNode> = {
-  "SEO": <Search className="text-neon-purple" />,
-  "Local SEO": <Brain className="text-neon-purple" />,
-  "SMM": <TrendingUp className="text-neon-purple" />,
-  "Meta Ads": <Target className="text-neon-purple" />,
-  "Web Dev": <Code className="text-neon-purple" />,
-  "Strategy": <Zap className="text-neon-purple" />,
-  "AI & Tech": <Cpu className="text-neon-purple" />
-};
+import { getSortedPostsData, PostData } from "../lib/posts";
 
 export default function Blog() {
-  const [dynamicPosts, setDynamicPosts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState<PostData[]>([]);
 
   useEffect(() => {
-    const q = query(collection(db, 'blog'), orderBy('createdAt', 'desc'), limit(12));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setDynamicPosts(items);
-      setLoading(false);
-    });
-    return () => unsubscribe();
+    setPosts(getSortedPostsData());
   }, []);
-
-  // Use local blogPosts as the base
-  const allPosts = [...blogPosts, ...dynamicPosts.filter(dp => !blogPosts.some(sp => sp.id === dp.id))];
 
   return (
     <motion.main 
@@ -72,7 +49,7 @@ export default function Blog() {
                 className="flex items-center gap-4"
               >
                 <div className="w-12 h-[1px] bg-neon-purple/50" />
-                <span className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.6em]">Premium Case Studies // 2026 Edition</span>
+                <span className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.6em]">Premium Journal // 2026 Edition</span>
               </motion.div>
 
               <div className="space-y-4">
@@ -96,25 +73,18 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* Decorative Edge */}
             <div className="absolute bottom-0 right-0 p-12 hidden md:block">
                <div className="flex flex-col items-end gap-2">
                  <span className="text-white/10 text-[8px] uppercase tracking-[0.5em] font-bold">Protocol Status</span>
-                 <span className="text-neon-purple text-[10px] uppercase tracking-[0.3em] font-bold">Operational // Verified</span>
+                 <span className="text-neon-purple text-[10px] uppercase tracking-[0.3em] font-bold">In-Depth Retrieval // Active</span>
                </div>
             </div>
           </header>
 
-          {loading && dynamicPosts.length === 0 && (
-             <div className="h-96 flex items-center justify-center">
-              <div className="w-12 h-12 border-2 border-neon-purple/20 border-t-neon-purple rounded-full animate-spin" />
-            </div>
-          )}
-
           <BentoGrid className="grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
-            {allPosts.map((post, i) => (
+            {posts.map((post, i) => (
               <motion.div
-                key={post.id}
+                key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -123,27 +93,27 @@ export default function Blog() {
                   i % 3 === 0 ? "md:col-span-12" : "md:col-span-6"
                 }`}
               >
-                <Link to={`/blog/${post.id}`} className="absolute inset-0 z-20" />
+                <Link to={`/posts/${post.slug}`} className="absolute inset-0 z-20" />
                 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-                  {/* Image Frame */}
                   <div className={`md:col-span-6 overflow-hidden rounded-[2.5rem] border border-white/5 relative aspect-[16/10] ${
                     i % 3 !== 0 ? "md:order-1" : i % 2 === 0 ? "md:order-1" : "md:order-2"
                   }`}>
                     <img 
-                      src={post.image || post.imageUrl} 
+                      src={post.coverImage} 
                       alt={post.title}
                       className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight/40 to-transparent" />
-                    <div className="absolute top-6 left-6">
-                      <span className="px-4 py-1.5 bg-midnight/60 backdrop-blur-xl border border-white/10 rounded-full text-neon-purple text-[8px] font-bold uppercase tracking-[0.3em]">
-                        {post.category}
-                      </span>
+                    <div className="absolute top-6 left-6 flex flex-wrap gap-2">
+                      {post.tags.map(tag => (
+                        <span key={tag} className="px-4 py-1.5 bg-midnight/60 backdrop-blur-xl border border-white/10 rounded-full text-neon-purple text-[8px] font-bold uppercase tracking-[0.3em]">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Content Node */}
                   <div className={`md:col-span-6 space-y-8 ${
                     i % 3 !== 0 ? "md:order-2" : i % 2 === 0 ? "md:order-2" : "md:order-1"
                   }`}>
@@ -152,17 +122,17 @@ export default function Blog() {
                         {post.title}
                       </h2>
                       <p className="text-slate-400 text-lg font-light leading-relaxed line-clamp-3 md:line-clamp-none">
-                        {post.excerpt}
+                        {post.description}
                       </p>
                     </div>
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-8">
                         <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500">
-                           <Clock size={12} className="text-neon-purple/60" /> {post.readTime || '8 min'}
+                           <Clock size={12} className="text-neon-purple/60" /> {post.readingTime}
                         </div>
                         <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.3em] text-slate-500">
-                           <User size={12} className="text-neon-purple/60" /> Sinan VK
+                           <User size={12} className="text-neon-purple/60" /> {post.author || 'Sinan VK'}
                         </div>
                       </div>
                       
@@ -186,3 +156,4 @@ export default function Blog() {
     </motion.main>
   );
 }
+

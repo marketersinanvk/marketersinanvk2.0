@@ -1,63 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Hub Nodes -->
   <url>
     <loc>https://marketersinanvk.in/</loc>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://marketersinanvk.in/about</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://marketersinanvk.in/top-digital-marketing-agencies-kerala</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://marketersinanvk.in/services</loc>
-    <lastmod>2026-05-16</lastmod>
-    <priority>0.9</priority>
+    <loc>https://marketersinanvk.in/posts</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marketersinanvk.in/portfolio</loc>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marketersinanvk.in/blog</loc>
-    <lastmod>2026-05-16</lastmod>
+    <loc>https://marketersinanvk.in/about</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marketersinanvk.in/certificate</loc>
-    <lastmod>2026-05-16</lastmod>
-    <priority>0.7</priority>
+    <loc>https://marketersinanvk.in/services</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://marketersinanvk.in/contact</loc>
-    <lastmod>2026-05-16</lastmod>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Dynamic Geo-Targeted Sectors -->
   <url>
     <loc>https://marketersinanvk.in/kochi</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marketersinanvk.in/dubai</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marketersinanvk.in/calicut</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marketersinanvk.in/bangalore</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marketersinanvk.in/london</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Technical Deployment Nodes -->
+  <url>
+    <loc>https://marketersinanvk.in/nextjs-developer-kerala</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marketersinanvk.in/tailwind-css-expert</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marketersinanvk.in/supabase-developer</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Programmatic Journal Entries -->
+  <url>
+    <loc>https://marketersinanvk.in/posts/best-seo-expert-kerala</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -1,61 +1,77 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { ArrowLeft, Calendar, User, Share2, Globe, ArrowRight, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, User, ArrowRight, Clock } from "lucide-react";
 import SEO from "../components/SEO";
 import Markdown from "react-markdown";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { NeuralBackground } from "../components/NeuralBackground";
 import { blogPosts } from "../data/posts";
+import { getPostData, PostData } from "../lib/posts";
+import SemanticFooterLinks from "../components/SemanticFooterLinks";
 
 export default function BlogPost() {
-  const { id } = useParams();
-  const [post, setPost] = useState<any | null>(null);
+  const { id, slug } = useParams();
+  const [post, setPost] = useState<any | PostData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return;
-    
-    // Check local static posts first
-    const staticPost = blogPosts.find(p => p.id === id);
-    
-    if (staticPost) {
-      setPost({
-        ...staticPost,
-        imageUrl: staticPost.image, // normalization
-        createdAt: isNaN(new Date(staticPost.date).getTime()) ? Date.now() : new Date(staticPost.date).getTime()
-      });
-      setLoading(false);
-      window.scrollTo(0, 0);
-      return;
+    // 1. Check for Programmatic Slug first
+    if (slug) {
+      const programmaticPost = getPostData(slug);
+      if (programmaticPost) {
+        setPost(programmaticPost);
+        setLoading(false);
+        window.scrollTo(0, 0);
+        return;
+      }
     }
 
-    // Otherwise try Firestore
-    const unsubscribe = onSnapshot(doc(db, "blog", id), (doc) => {
-      if (doc.exists()) {
-        setPost({ id: doc.id, ...doc.data() });
+    // 2. Check for legacy ID (static data)
+    if (id) {
+      const staticPost = blogPosts.find(p => p.id === id);
+      if (staticPost) {
+        setPost({
+          ...staticPost,
+          imageUrl: staticPost.image,
+          date: staticPost.date,
+          readingTime: (staticPost as any).readTime || '8 min read',
+          content: staticPost.content,
+          description: staticPost.excerpt,
+          slug: staticPost.id
+        });
+        setLoading(false);
+        window.scrollTo(0, 0);
+        return;
       }
-      setLoading(false);
-    });
-    
-    window.scrollTo(0, 0);
-    return () => unsubscribe();
-  }, [id]);
+
+      // 3. Try Firebase for dynamic posts
+      const unsubscribe = onSnapshot(doc(db, "blog", id), (docSnapshot) => {
+        if (docSnapshot.exists()) {
+          const data = docSnapshot.data();
+          setPost({ 
+            id: docSnapshot.id, 
+            ...data,
+            slug: docSnapshot.id,
+            description: data.excerpt || data.description,
+            imageUrl: data.imageUrl || data.image,
+            readingTime: data.readTime || '5 min read'
+          });
+        }
+        setLoading(false);
+      });
+      
+      window.scrollTo(0, 0);
+      return () => unsubscribe();
+    }
+
+    setLoading(false);
+  }, [id, slug]);
 
   const handleConsultation = () => {
     const message = encodeURIComponent(`Hello Sinan, I just finished reading "${post?.title}" and I'm ready to discuss a strategic integration.`);
     window.open(`https://wa.me/918590181381?text=${message}`, "_blank");
-  };
-
-  const sharePost = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: post?.title,
-        text: post?.excerpt,
-        url: window.location.href,
-      });
-    }
   };
 
   if (loading) {
@@ -78,6 +94,34 @@ export default function BlogPost() {
     );
   }
 
+  // JSON-LD Schema
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "image": post.coverImage || post.imageUrl || post.image,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Person",
+      "name": "Muhammed Sinan VK",
+      "jobTitle": "Best Digital Marketer in Kerala",
+      "url": "https://marketersinanvk.in"
+    },
+    "description": post.description,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Marketer Sinan VK",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.ibb.co/tPXVB1Lp/about.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": window.location.href
+    }
+  };
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -89,9 +133,14 @@ export default function BlogPost() {
       
       <SEO 
         title={`${post.title} | Best Digital Marketer in Kerala`}
-        description={post.seoMeta || post.excerpt}
-        image={post.imageUrl || post.image}
+        description={post.description}
+        image={post.coverImage || post.imageUrl || post.image}
       />
+
+      {/* JSON-LD Schema Injection */}
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </script>
       
       <article className="max-w-5xl mx-auto px-6 sm:px-12 relative z-10">
         {/* Navigation & Context */}
@@ -107,7 +156,7 @@ export default function BlogPost() {
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <span className="text-white/5 text-[9px] uppercase tracking-[0.5em] font-bold">Protocol ID: MSVK-{post.id?.slice(0, 4).toUpperCase()}</span>
+            <span className="text-white/5 text-[9px] uppercase tracking-[0.5em] font-bold">Protocol ID: MSVK-{post.slug?.slice(0, 6).toUpperCase()}</span>
             <div className="w-2 h-2 rounded-full bg-neon-purple animate-pulse" />
           </div>
         </div>
@@ -121,7 +170,7 @@ export default function BlogPost() {
           >
             <div className="inline-flex items-center gap-4 bg-white/[0.02] border border-white/5 px-6 py-2 rounded-full backdrop-blur-md">
               <span className="text-neon-purple text-[8px] font-bold uppercase tracking-[0.4em]">
-                {post.category || 'Strategic Insight'}
+                {post.tags?.[0] || 'Strategic Insight'}
               </span>
               <div className="w-[1px] h-3 bg-white/10" />
               <div className="flex items-center gap-2 text-slate-500 text-[8px] font-bold uppercase tracking-[0.2em]">
@@ -134,7 +183,7 @@ export default function BlogPost() {
             </h1>
             
             <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto border-l border-neon-purple/20 pl-8 ml-auto mr-auto md:ml-0 md:mr-0 text-left">
-              {post.excerpt}
+              {post.description}
             </p>
           </motion.div>
 
@@ -158,7 +207,7 @@ export default function BlogPost() {
                 <Calendar size={12} className="text-neon-purple/40" /> {post.date}
               </div>
               <div className="flex items-center gap-2 text-slate-500 text-[8px] font-bold uppercase tracking-[0.2em]">
-                <Clock size={12} className="text-neon-purple/40" /> {post.readTime || '8 min read'}
+                <Clock size={12} className="text-neon-purple/40" /> {post.readingTime}
               </div>
             </div>
           </div>
@@ -169,7 +218,7 @@ export default function BlogPost() {
           <div className="absolute inset-0 bg-neon-purple/20 blur-[150px] opacity-0 group-hover:opacity-20 transition-opacity duration-1000 -z-10" />
           <div className="aspect-[16/9] md:aspect-[21/9] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden border border-white/10 shadow-2xl relative">
             <img 
-              src={post.imageUrl || post.image} 
+              src={post.coverImage || post.imageUrl || post.image} 
               alt={`${post.title} - Case Study by Best Digital Marketer in Kerala`}
               className="w-full h-full object-cover grayscale transition-all duration-[3000ms] group-hover:grayscale-0 group-hover:scale-105"
               referrerPolicy="no-referrer"
@@ -232,6 +281,12 @@ export default function BlogPost() {
           </div>
         </footer>
       </article>
+
+      {/* Semantic Silk-Route Link Matrix */}
+      <div className="mt-40 border-t border-white/5">
+        <SemanticFooterLinks />
+      </div>
     </motion.main>
   );
 }
+

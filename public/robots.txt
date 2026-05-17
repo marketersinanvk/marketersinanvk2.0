@@ -1,4 +1,24 @@
+# Absolute Digital Governance for Marketer Sinan VK
 User-agent: *
-Allow: /
 
+# Allow Crawling of Core Engagement Nodes
+Allow: /
+Allow: /posts/
+Allow: /kochi
+Allow: /dubai
+Allow: /calicut
+Allow: /bangalore
+Allow: /london
+Allow: /nextjs-developer-kerala
+Allow: /tailwind-css-expert
+Allow: /supabase-developer
+Allow: /top-digital-marketing-agencies-kerala
+
+# Disallow Internal & Infrastructure Layers
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /login
+
+# Global Sitemap Pointer
 Sitemap: https://marketersinanvk.in/sitemap.xml
