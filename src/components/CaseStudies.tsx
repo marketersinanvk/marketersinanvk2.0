@@ -27,6 +27,29 @@ const caseStudies = [
     }
   },
   {
+    title: "Morvex: Global Fragrance Scaling",
+    client: "Morvex Global",
+    subtitle: "Luxury E-commerce Performance",
+    location: "London / Dubai / New York",
+    challenge: "Scaling a niche luxury perfume brand across three continents with precise ROI tracking.",
+    strategy: "Implemented high-ticket technical SEO and surgical Meta/Google Ads protocols. Optimized for Middle Eastern and European market nuances using AI-driven audience synthesis.",
+    result: "570% Revenue Increase",
+    metrics: "Global Market Authority",
+    image: "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+    alt: "Global Fragrance Scaling case study by Marketer Sinan VK",
+    links: [
+      { text: "Operational Audit", url: "#", icon: ExternalLink }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "Morvex Global Scaling by SEO Expert Sinan VK",
+      "description": "Cross-continent luxury e-commerce scaling for Morvex Global.",
+      "url": "https://marketersinanvk.in/portfolio",
+      "image": "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png"
+    }
+  },
+  {
     title: "Luxavya: Luxury SMM Operations",
     client: "Luxavya",
     subtitle: "Fashion & Lifestyle Branding",
@@ -120,11 +143,41 @@ const caseStudies = [
   }
 ];
 
-export default function CaseStudies() {
+interface CaseStudiesProps {
+  highlightLocation?: string;
+  region?: "internal" | "global";
+}
+
+export default function CaseStudies({ highlightLocation, region }: CaseStudiesProps) {
+  const filteredStudies = [...caseStudies].sort((a, b) => {
+    // 1. Regional Prioritization (User requirement)
+    if (region === "global") {
+      const aIsGlobal = a.client.includes("Morvex") || a.client.includes("Luxavya");
+      const bIsGlobal = b.client.includes("Morvex") || b.client.includes("Luxavya");
+      if (aIsGlobal && !bIsGlobal) return -1;
+      if (!aIsGlobal && bIsGlobal) return 1;
+    } else if (region === "internal") {
+      const aIsInternal = a.client.includes("Gadjenix") || a.client.includes("Jamalullail") || a.client.includes("Digisinans");
+      const bIsInternal = b.client.includes("Gadjenix") || b.client.includes("Jamalullail") || b.client.includes("Digisinans");
+      if (aIsInternal && !bIsInternal) return -1;
+      if (!aIsInternal && bIsInternal) return 1;
+    }
+
+    // 2. Exact Location Match
+    if (highlightLocation) {
+      const aMatch = a.location.toLowerCase().includes(highlightLocation.toLowerCase());
+      const bMatch = b.location.toLowerCase().includes(highlightLocation.toLowerCase());
+      if (aMatch && !bMatch) return -1;
+      if (!aMatch && bMatch) return 1;
+    }
+
+    return 0;
+  });
+
   return (
     <section className="py-16 md:py-24 px-6 md:px-8 relative overflow-hidden border-t" style={{ borderColor: "rgba(99, 102, 241, 0.05)" }}>
       {/* SEO Schema Injection */}
-      {caseStudies.map((study, idx) => (
+      {filteredStudies.map((study, idx) => (
         <script key={idx} type="application/ld+json">
           {JSON.stringify(study.schema)}
         </script>
@@ -183,23 +236,23 @@ export default function CaseStudies() {
             whileInView={{ opacity: 1 }}
             className="text-vibrant-indigo text-[9px] font-bold uppercase tracking-[0.5em]"
           >
-            The Evidence
+            {highlightLocation ? `Evidence for ${highlightLocation}` : "The Evidence"}
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-5xl lg:text-7xl font-serif tracking-tighter text-white leading-tight max-w-full uppercase"
           >
-            Best Digital Marketer in Kerala — <br />
+            {highlightLocation ? `${highlightLocation} Excellence —` : "Best Digital Marketer in Kerala —"} <br />
             <span className="italic text-vibrant-indigo" style={{ filter: "drop-shadow(0 0 15px rgba(99, 102, 241, 0.3))" }}>Proven Success.</span>
           </motion.h2>
           <p className="text-sm font-light tracking-wide max-w-2xl" style={{ color: "rgba(192, 192, 192, 0.4)" }}>
-            Delivering <span className="text-white font-medium text-indigo-glow">Top Digital Marketing Results in Kerala</span> through <span className="text-white font-medium">Leading AI Marketing Strategies</span> for brands like Luxavya, Minco Kids, and KL Gadjenix.
+            Delivering <span className="text-white font-medium text-indigo-glow">Top Digital Marketing Results</span> through <span className="text-white font-medium">Leading AI Marketing Strategies</span> for clients globally.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full overflow-hidden">
-          {caseStudies.map((study, i) => (
+          {filteredStudies.map((study, i) => (
             <BentoCard
               key={i}
               delay={i * 0.2}
