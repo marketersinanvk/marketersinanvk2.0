@@ -1,25 +1,46 @@
 import React from "react";
-import { qaData } from "./QABlock";
 
+/**
+ * QASchema: Google-Validated FAQPage Structured Data.
+ * Fixed to resolve Search Console warnings and errors.
+ */
 export default function QASchema() {
-  const schema = {
+  const schemaData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": "https://marketersinanvk.in/#faq",
-    "mainEntity": qaData.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best digital marketer in Palakkad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Muhammed Sinan VK is an elite performance marketing strategist and the founder of Digital Hug, based in Palakkad, Kerala, specializing in Meta Ads and high-converting growth funnels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What services does Marketer Sinan VK provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "He provides end-to-end performance marketing, Meta and Google Ads management, server-side tracking via Conversion API (CAPI), and scalable technical SEO architectures using Next.js."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to contact Digital Hug for business scaling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can initiate a strategic retrieval session by contacting Muhammed Sinan VK directly at +918590181381 or via email at klgadjenix@gmail.com."
+        }
       }
-    }))
+    ]
   };
 
   return (
-    <script 
+    <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
     />
   );
 }

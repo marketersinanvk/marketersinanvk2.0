@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import { AuthProvider } from "./context/AuthContext";
 import { ErrorBoundary } from "./components/ErrorBoundary";
@@ -62,6 +62,7 @@ function AppContent() {
       <Suspense fallback={<PageLoader />}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
+            <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/certificate" element={<Certificate />} />
