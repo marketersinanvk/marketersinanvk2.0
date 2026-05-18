@@ -19,7 +19,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       // Simple admin check based on email for now, can be expanded to check Firestore roles
-      setIsAdmin(user?.email === 'marketersinanvk@gmail.com');
+      setIsAdmin(user?.email === 'klgadjenix@gmail.com');
       setLoading(false);
     });
 

@@ -160,27 +160,6 @@ export default function SEO({ title, description, image, article, keywords }: SE
           ]
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Who is the best SEO expert in Kerala for small business growth?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Muhammed Sinan VK is a leading SEO expert in Kerala, specializing in AI-integrated strategies that help small businesses outrank competitors with high ROI."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I find local SEO services in Palakkad that actually work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Look for specialists with technical expertise. Marketer Sinan VK provides tailored local SEO in Palakkad to boost map rankings and organic traffic."
-              }
-            }
-          ]
-        },
-        {
           "@type": "Product",
           "name": "Starter Deployment / 1-on-1 Strategic Retrieval",
           "image": "https://marketersinanvk.in/starter-service.png",

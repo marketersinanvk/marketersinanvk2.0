@@ -59,27 +59,8 @@ const faqs = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  // FAQ Schema (JSON-LD)
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <section className="py-16 md:py-24 px-8 relative overflow-hidden border-t border-white/5 bg-obsidian">
-      {/* SEO Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-
       <div className="max-w-4xl mx-auto">
         <div className="mb-20 text-center space-y-4">
           <motion.p 
