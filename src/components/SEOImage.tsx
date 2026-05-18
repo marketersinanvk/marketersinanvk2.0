@@ -46,13 +46,14 @@ export default function SEOImage({
     },
     "license": `${baseUrl}/license`,
     "acquireLicensePage": `${baseUrl}/#contact`,
+    "creditText": "Marketer Sinan VK",
     "creditLine": "Marketer Sinan VK - Performance Marketing Agency",
     "creator": {
       "@type": "Organization",
       "name": "Digital Hug",
       "url": "https://marketersinanvk.in"
     },
-    "copyrightNotice": "Marketer Sinan VK"
+    "copyrightNotice": "Copyright 2026 Digital Hug. All Rights Reserved."
   };
 
   return (

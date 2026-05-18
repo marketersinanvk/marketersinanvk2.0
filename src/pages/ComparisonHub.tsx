@@ -74,7 +74,9 @@ export default function ComparisonHub() {
       "name": "Marketer Sinan VK",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://i.ibb.co/tPXVB1Lp/about.png"
+        "url": "https://i.ibb.co/tPXVB1Lp/about.png",
+        "creditText": "Marketer Sinan VK",
+        "copyrightNotice": "Copyright 2026 Digital Hug. All Rights Reserved."
       }
     },
     "mainEntity": {
