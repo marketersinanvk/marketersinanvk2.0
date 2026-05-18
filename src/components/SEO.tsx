@@ -174,7 +174,29 @@ export default function SEO({ title, description, image, article, keywords }: SE
               "@type": "Organization",
               "name": "Marketer Sinan VK"
             }
-          }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "12"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Alex Mercer"
+              },
+              "datePublished": "2026-03-15",
+              "reviewBody": "Sinan's strategic retrieval session completely transformed our Meta Ads infrastructure. Absolute performance marketing mastery.",
+              "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "5",
+                "worstRating": "1"
+              }
+            }
+          ]
         }
       ]
     };
