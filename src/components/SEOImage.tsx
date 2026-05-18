@@ -36,12 +36,21 @@ export default function SEOImage({
     "url": absoluteUrl,
     "name": title || alt,
     "description": alt,
+    "width": {
+      "@type": "QuantitativeValue",
+      "value": typeof width === 'number' ? width : 1200
+    },
+    "height": {
+      "@type": "QuantitativeValue",
+      "value": typeof height === 'number' ? height : 630
+    },
     "license": `${baseUrl}/license`,
     "acquireLicensePage": `${baseUrl}/#contact`,
     "creditLine": "Marketer Sinan VK - Performance Marketing Agency",
     "creator": {
       "@type": "Organization",
-      "name": "Digital Hug"
+      "name": "Digital Hug",
+      "url": "https://marketersinanvk.in"
     },
     "copyrightNotice": "Marketer Sinan VK"
   };

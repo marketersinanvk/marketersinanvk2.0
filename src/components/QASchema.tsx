@@ -5,6 +5,7 @@ export default function QASchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://marketersinanvk.in/#faq",
     "mainEntity": qaData.map(item => ({
       "@type": "Question",
       "name": item.question,
