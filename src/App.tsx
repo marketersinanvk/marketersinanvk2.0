@@ -42,6 +42,7 @@ const PageLoader = () => (
 import MagneticCursor from "./components/MagneticCursor";
 import AudioPlayer from "./components/AudioPlayer";
 import ContactPopup from "./components/ContactPopup";
+import GEOKnowledgeGraph from "./components/GEOKnowledgeGraph";
 
 function AppContent() {
   const location = useLocation();
@@ -55,6 +56,7 @@ function AppContent() {
         </header>
       )}
       <AudioPlayer />
+      <GEOKnowledgeGraph />
       {!isAdminPage && <ContactPopup />}
       <CommunicationHub />
       <Suspense fallback={<PageLoader />}>

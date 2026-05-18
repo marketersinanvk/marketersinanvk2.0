@@ -62,6 +62,38 @@ export default function LocationLanding() {
     );
   }
 
+  // EEAT ProfilePage & Person Schema for Google's Trust Algorithm
+  const eeatSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Muhammed Sinan VK",
+      "jobTitle": "Founder & CEO of Digital Hug | Elite Performance Marketing Strategist",
+      "description": "Professional performance marketer specialized in Meta Ads, CAPI integration, and Technical SEO architectures for high-tier brands in Kerala.",
+      "telephone": "+918590181381",
+      "email": "klgadjenix@gmail.com",
+      "url": "https://marketersinanvk.in",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": config.name,
+        "addressRegion": "Kerala",
+        "addressCountry": "India"
+      },
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "Oxdu Media School, Kondotty" },
+        { "@type": "EducationalOrganization", "name": "YES VHSS, Mogam" }
+      ],
+      "knowsAbout": [
+        "Meta Ads", 
+        "Server-Side Tracking via Conversion API (CAPI)", 
+        "Technical SEO", 
+        "Next.js Scalable Development",
+        "E-commerce Growth Frameworks"
+      ]
+    }
+  };
+
   return (
     <motion.main 
       initial={{ opacity: 0 }}
@@ -72,6 +104,12 @@ export default function LocationLanding() {
         title={`${config.metaTitle} | Best Digital Marketer in Kerala`}
         description={optimizeMetadataSnippet(config.metaDescription, config.name)}
         keywords={[...config.primaryKeywords, "Best Digital Marketer in Kerala", "Muhammed Sinan VK", "AI Marketing Strategy"]}
+      />
+
+      {/* EEAT Schema Injection */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eeatSchema) }}
       />
 
       {/* Hero Section: Zero-Latency Retrieval */}
@@ -104,6 +142,25 @@ export default function LocationLanding() {
         >
           {config.subheading}
         </motion.p>
+
+        {config.marketInsight && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+            className="max-w-xl mx-auto p-6 bg-neon-purple/5 border border-neon-purple/20 rounded-3xl backdrop-blur-md"
+          >
+            <div className="flex items-start gap-4 text-left">
+              <div className="mt-1 p-2 bg-neon-purple/10 rounded-xl text-neon-purple">
+                <TrendingUp size={16} />
+              </div>
+              <div>
+                <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-1">Local Market Intelligence</h4>
+                <p className="text-slate-400 text-[13px] leading-relaxed font-light">{config.marketInsight}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
