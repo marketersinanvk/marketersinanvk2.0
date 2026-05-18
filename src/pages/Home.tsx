@@ -32,6 +32,12 @@ import SEO from "../components/SEO";
 import ContactForm from "../components/ContactForm";
 import FAQ from "../components/FAQ";
 import { NeuralBackground } from "../components/NeuralBackground";
+import SEOImage from "../components/SEOImage";
+
+import QABlock from "../components/QABlock";
+import QASchema from "../components/QASchema";
+import SemanticFooterLinks from "../components/SemanticFooterLinks";
+import SemanticWordCloud from "../components/SemanticWordCloud";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -303,22 +309,24 @@ export default function Home() {
             </motion.a>
 
             {/* 4. Minco Kids */}
-            <motion.a 
-               href="https://www.mincokids.com/"
-               target="_blank"
-               rel="noopener noreferrer"
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.4 }}
-               className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-white/5 bg-gradient-to-br from-dark-charcoal to-obsidian block"
-            >
-               <img 
-                 src="https://i.ibb.co/k2GvTWj4/Screenshot-2026-05-16-224448.png" 
-                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
-                 alt="Minco Kids E-commerce"
-               />
-               <div className="relative h-full flex flex-col justify-between z-10">
+             <motion.a 
+                href="https://www.mincokids.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-white/5 bg-gradient-to-br from-dark-charcoal to-obsidian block overflow-hidden"
+             >
+                <div className="absolute inset-0 z-0">
+                  <SEOImage 
+                    src="https://i.ibb.co/k2GvTWj4/Screenshot-2026-05-16-224448.png" 
+                    alt="Minco Kids E-commerce - Growth marketing protocol by Best Digital Marketer in Kerala"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="space-y-4">
                      <div className="flex items-center gap-2">
                         <div className="w-10 h-[1px] bg-accent-purple" />
@@ -338,19 +346,20 @@ export default function Home() {
                </div>
             </motion.a>
 
-            {/* 5. Morvex */}
             <motion.div 
                initial={{ opacity: 0, scale: 0.95 }}
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
                transition={{ delay: 0.5 }}
-               className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-accent-purple/10"
+               className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-accent-purple/10 overflow-hidden"
             >
-               <img 
-                 src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" 
-                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
-                 alt="Morvex Perfume Branding"
-               />
+               <div className="absolute inset-0 z-0">
+                 <SEOImage 
+                   src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" 
+                   alt="Morvex Perfume Branding - International marketing expansion by Best SEO Expert in Kerala"
+                   className="w-full h-full"
+                 />
+               </div>
                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="flex justify-between items-start">
                     <span className="px-5 py-2 bg-accent-purple/20 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">Premium Branding</span>
@@ -365,24 +374,25 @@ export default function Home() {
                </div>
             </motion.div>
 
-            {/* 6. Jamalullail Academy */}
-            <motion.a 
-               href="https://jamalullail.vercel.app/"
-               target="_blank"
-               rel="noopener noreferrer"
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               transition={{ delay: 0.6 }}
-               className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-neon-purple/10 bg-dark-charcoal block"
-            >
-               <img 
-                 src="https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png" 
-                 className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
-                 alt="Jamalullail Academy Portfolio"
-               />
-               <div className="absolute inset-0 bg-gradient-to-tr from-neon-purple/5 to-transparent" />
-               <div className="relative h-full flex flex-col justify-between z-10">
+             <motion.a 
+                href="https://jamalullail.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="md:col-span-6 bento-card bento-card-glow group cursor-pointer border-neon-purple/10 bg-dark-charcoal block overflow-hidden"
+             >
+                <div className="absolute inset-0 z-0">
+                  <SEOImage 
+                    src="https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png" 
+                    alt="Jamalullail Academy Portfolio - Web engineering and SEO retrieval by Muhammed Sinan VK"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-neon-purple/5 to-transparent z-[1]" />
+                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="flex items-center gap-4">
                      <div className="w-12 h-12 bg-neon-purple/10 rounded-xl flex items-center justify-center text-neon-purple border border-neon-purple/20">
                         <Code size={24} />
@@ -464,7 +474,11 @@ export default function Home() {
            </div>
         </section>
 
-        {/* ELITE FOOTER: THE OBSERVATORY */}
+        {/* AI SGE Optimized QA Section */}
+      <QASchema />
+      <QABlock />
+
+      {/* ELITE FOOTER: THE OBSERVATORY */}
         <footer className="py-24 border-t border-white/5 space-y-24 bg-dark-charcoal/20 -mx-6 px-6">
            <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
               <div className="lg:col-span-4 space-y-10">
@@ -517,8 +531,9 @@ export default function Home() {
         </footer>
       </div>
 
-      <div className="bg-obsidian relative z-20">
-         <FAQ />
+      <div className="bg-obsidian relative z-20 px-6 md:px-8 max-w-7xl mx-auto">
+         <SemanticWordCloud category="default" className="pt-24" />
+         <SemanticFooterLinks />
       </div>
     </motion.main>
   );

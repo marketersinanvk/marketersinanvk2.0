@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowUpRight, CheckCircle2, TrendingUp, Cpu, Zap, Shield, Target, Award, Star } from "lucide-react";
 import SEO from "../components/SEO";
+import SEOImage from "../components/SEOImage";
 
 const competitors = [
   {
@@ -180,15 +181,15 @@ export default function ComparisonHub() {
           
           <div className="md:col-span-6 relative group">
             <div className="absolute inset-0 bg-neon-purple/20 blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity" />
-            <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-              <img 
+            <div className="relative">
+              <SEOImage 
                 src="https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png" 
-                alt="Comparison chart of elite digital marketing strategists in Kerala and UAE including DMirsha, Sumayya Latheef, Tangible Difference, Unlock Health, and Marketer Sinan VK" 
-                className="w-full h-auto grayscale opacity-80 group-hover:grayscale-0 transition-all duration-[2s]"
-                referrerPolicy="no-referrer"
+                alt="Comparison chart of elite digital marketing strategists in Kerala and UAE including DMirsha, Sumayya Latheef, Tangible Difference, Unlock Health, and Marketer Sinan VK"
+                caption="Strategic Efficiency Scorecard 2026: Marketer Sinan VK vs Legacy Competitors"
+                className="w-full"
               />
             </div>
-            <div className="absolute top-8 left-8">
+            <div className="absolute top-8 left-8 z-20">
                <div className="px-6 py-2 bg-midnight/80 backdrop-blur-xl border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-white italic">
                   Image Search Optimized Protocol_01
                </div>

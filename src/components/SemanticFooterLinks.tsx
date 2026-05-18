@@ -4,6 +4,8 @@ import { MoveRight, Globe, Code2, Database, ShieldCheck } from "lucide-react";
 import { locationConfigs } from "../data/locations";
 import { techConfigs } from "../data/tech";
 
+import { normalizeSlug } from "../lib/seo-utils";
+
 interface SemanticFooterLinksProps {
   currentLocation?: string;
   currentTech?: string;
@@ -17,12 +19,12 @@ export default function SemanticFooterLinks({
 }: SemanticFooterLinksProps) {
   
   const locations = Object.keys(locationConfigs).map(slug => ({
-    slug,
+    slug: normalizeSlug(slug),
     name: locationConfigs[slug].name
   }));
 
   const techs = Object.keys(techConfigs).map(slug => ({
-    slug,
+    slug: normalizeSlug(slug),
     name: techConfigs[slug].displayName
   }));
 

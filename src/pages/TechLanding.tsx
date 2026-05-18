@@ -6,10 +6,16 @@ import SEO from "../components/SEO";
 import { techConfigs } from "../data/tech";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import SemanticFooterLinks from "../components/SemanticFooterLinks";
+import SemanticWordCloud from "../components/SemanticWordCloud";
+
+import QABlock from "../components/QABlock";
+import QASchema from "../components/QASchema";
+
+import { normalizeSlug, optimizeMetadataSnippet } from "../lib/seo-utils";
 
 export default function TechLanding() {
   const { tech } = useParams<{ tech: string }>();
-  const config = tech ? techConfigs[tech.toLowerCase()] : null;
+  const config = tech ? techConfigs[normalizeSlug(tech)] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,14 +25,14 @@ export default function TechLanding() {
     return (
       <div className="min-h-screen bg-midnight flex flex-col items-center justify-center p-6 text-center space-y-12">
         <SEO 
-          title="Protocol Not Found | Terminal"
-          description="Technology protocol not supported."
+          title="Protocol Not Found | MSVK Technical Hub"
+          description="Technology protocol not supported by the best digital marketer in Kerala."
         />
         <div className="w-24 h-24 rounded-[2rem] bg-neon-purple/5 border border-neon-purple/20 flex items-center justify-center text-neon-purple animate-pulse">
           <Layers size={40} />
         </div>
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-serif italic text-white tracking-tighter uppercase">Technology Protocol Not Supported</h1>
+          <h1 className="text-4xl md:text-6xl font-serif italic text-white tracking-tighter uppercase">Protocol Not Supported</h1>
           <p className="text-slate-400 max-w-md mx-auto font-light leading-relaxed">This stack is currently outside our high-performance optimization matrix. The requested architecture node retrieval failed.</p>
         </div>
         <Link to="/" className="group relative px-10 py-4 bg-transparent border border-neon-purple/50 rounded-full overflow-hidden transition-all">
@@ -44,9 +50,9 @@ export default function TechLanding() {
       className="bg-midnight min-h-screen selection:bg-neon-purple selection:text-white"
     >
       <SEO 
-        title={config.metaTitle}
-        description={config.metaDescription}
-        keywords={[tech || "", "Technical SEO", "Next.js", "Performance Engineering"]}
+        title={`${config.metaTitle} | Technical SEO Expert`}
+        description={optimizeMetadataSnippet(config.metaDescription, config.displayName)}
+        keywords={[tech || "", "Technical SEO", "Next.js", "Performance Engineering", "Best SEO Expert in Kerala"]}
       />
 
       {/* Hero: Architecture Node */}
@@ -164,6 +170,14 @@ export default function TechLanding() {
           </div>
         </div>
       </section>
+
+      {/* AI SGE Optimized QA Section */}
+      <QASchema />
+      <QABlock />
+
+      <div className="px-6 md:px-8 max-w-7xl mx-auto border-t border-white/5">
+        <SemanticWordCloud category="seo" className="py-24" />
+      </div>
 
       {/* Semantic Silk-Route Link Matrix */}
       <SemanticFooterLinks currentTech={tech} />

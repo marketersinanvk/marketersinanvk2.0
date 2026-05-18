@@ -10,6 +10,10 @@ import { NeuralBackground } from "../components/NeuralBackground";
 import { blogPosts } from "../data/posts";
 import { getPostData, PostData } from "../lib/posts";
 import SemanticFooterLinks from "../components/SemanticFooterLinks";
+import TableOfContents from "../components/TableOfContents";
+import SemanticWordCloud from "../components/SemanticWordCloud";
+import SEOImage from "../components/SEOImage";
+import { normalizeSlug } from "../lib/seo-utils";
 
 export default function BlogPost() {
   const { id, slug } = useParams();
@@ -17,9 +21,10 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Check for Programmatic Slug first
+    // 1. Check for Programmatic Slug first (Normalized)
     if (slug) {
-      const programmaticPost = getPostData(slug);
+      const normalizedSlug = normalizeSlug(slug);
+      const programmaticPost = getPostData(normalizedSlug);
       if (programmaticPost) {
         setPost(programmaticPost);
         setLoading(false);
@@ -72,6 +77,63 @@ export default function BlogPost() {
   const handleConsultation = () => {
     const message = encodeURIComponent(`Hello Sinan, I just finished reading "${post?.title}" and I'm ready to discuss a strategic integration.`);
     window.open(`https://wa.me/918590181381?text=${message}`, "_blank");
+  };
+
+  // Programmatically extract headings for TOC
+  const extractHeadings = (markdown: string) => {
+    const lines = markdown.split("\n");
+    const headings: { id: string; text: string; level: number }[] = [];
+    
+    lines.forEach((line) => {
+      const match = line.match(/^(#{2,3})\s+(.+)$/);
+      if (match) {
+        const text = match[2].trim();
+        headings.push({
+          id: normalizeSlug(text),
+          text: text,
+          level: match[1].length
+        });
+      }
+    });
+    
+    return headings;
+  };
+
+  const tocHeadings = post?.content ? extractHeadings(post.content) : [];
+
+  const MarkdownComponents = {
+    h1: ({ children }: any) => {
+      // RULE 2: H1 is reserved for Page Title. Downgrade any internal H1s to H2.
+      const text = React.Children.toArray(children).join("");
+      const id = normalizeSlug(text);
+      return <h2 id={id} className="text-3xl md:text-5xl font-serif italic text-white tracking-tighter mt-20 mb-8">{children}</h2>;
+    },
+    h2: ({ children }: any) => {
+      const text = React.Children.toArray(children).join("");
+      const id = normalizeSlug(text);
+      return <h2 id={id} className="group flex items-center gap-4 text-2xl md:text-4xl text-white font-medium mt-16 mb-6">
+        {children}
+        <a href={`#${id}`} className="opacity-0 group-hover:opacity-40 text-neon-purple transition-opacity text-sm font-mono">#</a>
+      </h2>;
+    },
+    h3: ({ children }: any) => {
+      const text = React.Children.toArray(children).join("");
+      const id = normalizeSlug(text);
+      return <h3 id={id} className="group flex items-center gap-3 text-xl md:text-2xl text-slate-200 mt-12 mb-4">
+        {children}
+        <a href={`#${id}`} className="opacity-0 group-hover:opacity-40 text-neon-purple transition-opacity text-xs font-mono">#</a>
+      </h3>;
+    },
+    img: ({ src, alt }: any) => {
+      return (
+        <SEOImage 
+          src={src || ""} 
+          alt={alt || "Strategic Digital Marketing Visualization"} 
+          caption={alt}
+          className="my-16" 
+        />
+      );
+    }
   };
 
   if (loading) {
@@ -216,23 +278,24 @@ export default function BlogPost() {
         {/* Feature Image Frame */}
         <div className="relative mb-24 md:mb-32 group px-4 md:px-0">
           <div className="absolute inset-0 bg-neon-purple/20 blur-[150px] opacity-0 group-hover:opacity-20 transition-opacity duration-1000 -z-10" />
-          <div className="aspect-[16/9] md:aspect-[21/9] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden border border-white/10 shadow-2xl relative">
-            <img 
-              src={post.coverImage || post.imageUrl || post.image} 
-              alt={`${post.title} - Case Study by Best Digital Marketer in Kerala`}
-              className="w-full h-full object-cover grayscale transition-all duration-[3000ms] group-hover:grayscale-0 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-60" />
-          </div>
+          <SEOImage 
+            src={(post.coverImage || post.imageUrl || post.image) as string} 
+            alt={`${post.title} - Case Study by Best Digital Marketer in Kerala`}
+            caption={`${post.title} // Performance Analysis Matrix`}
+            priority={true}
+          />
         </div>
 
         {/* Post Content with Premium Proportions */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20">
-          <div className="lg:col-span-12">
+          <aside className="lg:col-span-3 order-2 lg:order-1 pt-12">
+            <TableOfContents headings={tocHeadings} />
+          </aside>
+          
+          <div className="lg:col-span-9 order-1 lg:order-2">
             <div className="blog-content prose prose-invert prose-neon-purple max-w-4xl mx-auto">
               <div className="text-slate-400 text-lg md:text-xl font-light leading-relaxed space-y-12 tracking-wide font-sans">
-                <Markdown>{post.content}</Markdown>
+                <Markdown components={MarkdownComponents}>{post.content}</Markdown>
               </div>
             </div>
 
@@ -283,7 +346,8 @@ export default function BlogPost() {
       </article>
 
       {/* Semantic Silk-Route Link Matrix */}
-      <div className="mt-40 border-t border-white/5">
+      <div className="mt-40 border-t border-white/5 px-6 md:px-8 max-w-7xl mx-auto">
+        <SemanticWordCloud category="seo" className="py-24" />
         <SemanticFooterLinks />
       </div>
     </motion.main>

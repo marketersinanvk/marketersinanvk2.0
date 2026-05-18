@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { locationConfigs } from "../data/locations";
 import { techConfigs } from "../data/tech";
 import { Cpu } from "lucide-react";
+import { normalizeSlug } from "../lib/seo-utils";
 
 const LocationLanding = lazy(() => import("./LocationLanding"));
 const TechLanding = lazy(() => import("./TechLanding"));
@@ -10,7 +11,7 @@ const NotFound = lazy(() => import("./NotFound"));
 
 export default function ProgrammaticGate() {
   const { slug } = useParams<{ slug: string }>();
-  const normalizedSlug = slug?.toLowerCase() || "";
+  const normalizedSlug = slug ? normalizeSlug(slug) : "";
 
   const isLocation = !!locationConfigs[normalizedSlug];
   const isTech = !!techConfigs[normalizedSlug];

@@ -7,15 +7,21 @@ import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import CaseStudies from "../components/CaseStudies";
 import { locationConfigs } from "../data/locations";
 import SemanticFooterLinks from "../components/SemanticFooterLinks";
+import SemanticWordCloud from "../components/SemanticWordCloud";
+
+import QABlock from "../components/QABlock";
+import QASchema from "../components/QASchema";
+
+import { normalizeSlug, optimizeMetadataSnippet } from "../lib/seo-utils";
 
 export default function LocationLanding() {
   const { location } = useParams<{ location: string }>();
   const navigate = useNavigate();
-  const config = location ? locationConfigs[location.toLowerCase()] : null;
+  const config = location ? locationConfigs[normalizeSlug(location)] : null;
 
   // Next.js like notFound() simulation
   useEffect(() => {
-    if (location && !locationConfigs[location.toLowerCase()]) {
+    if (location && !locationConfigs[normalizeSlug(location)]) {
       // In a real SPA we might redirect or show a 404 state
       // For this build, we'll render the 404 state within the component if !config
     }
@@ -45,8 +51,8 @@ export default function LocationLanding() {
       className="bg-midnight min-h-screen selection:bg-neon-purple selection:text-white"
     >
       <SEO 
-        title={config.metaTitle}
-        description={config.metaDescription}
+        title={`${config.metaTitle} | Best Digital Marketer in Kerala`}
+        description={optimizeMetadataSnippet(config.metaDescription, config.name)}
         keywords={[...config.primaryKeywords, "Best Digital Marketer in Kerala", "Muhammed Sinan VK", "AI Marketing Strategy"]}
       />
 
@@ -185,6 +191,14 @@ export default function LocationLanding() {
           </div>
         </div>
       </section>
+
+      {/* AI SGE Optimized QA Section */}
+      <QASchema />
+      <QABlock />
+
+      <div className="px-6 md:px-8 max-w-7xl mx-auto border-t border-white/5">
+        <SemanticWordCloud category="meta-ads" className="py-24" />
+      </div>
 
       {/* Semantic Silk-Route Link Matrix */}
       <SemanticFooterLinks currentLocation={location} />
