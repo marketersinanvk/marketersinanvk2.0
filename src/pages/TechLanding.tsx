@@ -14,12 +14,34 @@ import QASchema from "../components/QASchema";
 import { normalizeSlug, optimizeMetadataSnippet } from "../lib/seo-utils";
 
 export default function TechLanding() {
-  const { tech } = useParams<{ tech: string }>();
-  const config = tech ? techConfigs[normalizeSlug(tech)] : null;
+  const params = useParams<{ slug: string }>();
+  const [config, setConfig] = React.useState<any>(null);
+  const [loading, setLoading] = React.useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [config]);
+    const resolveParams = async () => {
+      const { slug } = params;
+      if (slug) {
+        const normalized = normalizeSlug(slug);
+        const data = techConfigs[normalized];
+        if (data) {
+          setConfig(data);
+        }
+      }
+      setLoading(false);
+      window.scrollTo(0, 0);
+    };
+
+    resolveParams();
+  }, [params]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-midnight flex items-center justify-center">
+        <Cpu className="text-neon-purple animate-spin" size={48} />
+      </div>
+    );
+  }
 
   if (!config) {
     return (
@@ -52,7 +74,7 @@ export default function TechLanding() {
       <SEO 
         title={`${config.metaTitle} | Technical SEO Expert`}
         description={optimizeMetadataSnippet(config.metaDescription, config.displayName)}
-        keywords={[tech || "", "Technical SEO", "Next.js", "Performance Engineering", "Best SEO Expert in Kerala"]}
+        keywords={[params.slug || "", "Technical SEO", "Next.js", "Performance Engineering", "Best SEO Expert in Kerala"]}
       />
 
       {/* Hero: Architecture Node */}
@@ -180,7 +202,7 @@ export default function TechLanding() {
       </div>
 
       {/* Semantic Silk-Route Link Matrix */}
-      <SemanticFooterLinks currentTech={tech} />
+      <SemanticFooterLinks currentTech={params.slug} />
 
       <footer className="py-24 text-center border-t border-white/5 opacity-40 bg-midnight">
          <p className="text-slate-600 text-[10px] font-bold uppercase tracking-[1em]">Absolute Digital Superiority / Terminal / 2026</p>

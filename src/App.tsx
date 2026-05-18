@@ -41,6 +41,7 @@ const PageLoader = () => (
 
 import MagneticCursor from "./components/MagneticCursor";
 import AudioPlayer from "./components/AudioPlayer";
+import ContactPopup from "./components/ContactPopup";
 
 function AppContent() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function AppContent() {
         </header>
       )}
       <AudioPlayer />
+      {!isAdminPage && <ContactPopup />}
       <CommunicationHub />
       <Suspense fallback={<PageLoader />}>
         <AnimatePresence mode="wait">

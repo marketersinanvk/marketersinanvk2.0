@@ -16,63 +16,74 @@ import SEOImage from "../components/SEOImage";
 import { normalizeSlug } from "../lib/seo-utils";
 
 export default function BlogPost() {
-  const { id, slug } = useParams();
+  const params = useParams();
   const [post, setPost] = useState<any | PostData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Check for Programmatic Slug first (Normalized)
-    if (slug) {
-      const normalizedSlug = normalizeSlug(slug);
-      const programmaticPost = getPostData(normalizedSlug);
-      if (programmaticPost) {
-        setPost(programmaticPost);
-        setLoading(false);
-        window.scrollTo(0, 0);
-        return;
-      }
-    }
-
-    // 2. Check for legacy ID (static data)
-    if (id) {
-      const staticPost = blogPosts.find(p => p.id === id);
-      if (staticPost) {
-        setPost({
-          ...staticPost,
-          imageUrl: staticPost.image,
-          date: staticPost.date,
-          readingTime: (staticPost as any).readTime || '8 min read',
-          content: staticPost.content,
-          description: staticPost.excerpt,
-          slug: staticPost.id
-        });
-        setLoading(false);
-        window.scrollTo(0, 0);
-        return;
-      }
-
-      // 3. Try Firebase for dynamic posts
-      const unsubscribe = onSnapshot(doc(db, "blog", id), (docSnapshot) => {
-        if (docSnapshot.exists()) {
-          const data = docSnapshot.data();
-          setPost({ 
-            id: docSnapshot.id, 
-            ...data,
-            slug: docSnapshot.id,
-            description: data.excerpt || data.description,
-            imageUrl: data.imageUrl || data.image,
-            readingTime: data.readTime || '5 min read'
-          });
-        }
-        setLoading(false);
-      });
+    const resolveParams = async () => {
+      // In Next.js 15, params is a Promise. We simulate a safe retrieval here.
+      const { id, slug } = params;
       
-      window.scrollTo(0, 0);
-      return () => unsubscribe();
-    }
+      try {
+        // 1. Check for Programmatic Slug first (Normalized)
+        if (slug) {
+          const normalizedSlug = normalizeSlug(slug);
+          const programmaticPost = getPostData(normalizedSlug);
+          if (programmaticPost) {
+            setPost(programmaticPost);
+            setLoading(false);
+            window.scrollTo(0, 0);
+            return;
+          }
+        }
 
-    setLoading(false);
-  }, [id, slug]);
+        // 2. Check for legacy ID (static data)
+        if (id) {
+          const staticPost = blogPosts.find(p => p.id === id);
+          if (staticPost) {
+            setPost({
+              ...staticPost,
+              imageUrl: staticPost.image,
+              date: staticPost.date,
+              readingTime: (staticPost as any).readTime || '8 min read',
+              content: staticPost.content,
+              description: staticPost.excerpt,
+              slug: staticPost.id
+            });
+            setLoading(false);
+            window.scrollTo(0, 0);
+            return;
+          }
+
+          // 3. Try Firebase for dynamic posts
+          const unsubscribe = onSnapshot(doc(db, "blog", id), (docSnapshot) => {
+            if (docSnapshot.exists()) {
+              const data = docSnapshot.data();
+              setPost({ 
+                id: docSnapshot.id, 
+                ...data,
+                slug: docSnapshot.id,
+                description: data.excerpt || data.description,
+                imageUrl: data.imageUrl || data.image,
+                readingTime: data.readTime || '5 min read'
+              });
+            }
+            setLoading(false);
+          });
+          
+          window.scrollTo(0, 0);
+          return () => unsubscribe();
+        }
+      } catch (err) {
+        console.error("Critical Parameter Resolution Failure:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    resolveParams();
+  }, [params]);
 
   const handleConsultation = () => {
     const message = encodeURIComponent(`Hello Sinan, I just finished reading "${post?.title}" and I'm ready to discuss a strategic integration.`);

@@ -15,18 +15,36 @@ import QASchema from "../components/QASchema";
 import { normalizeSlug, optimizeMetadataSnippet } from "../lib/seo-utils";
 
 export default function LocationLanding() {
-  const { location } = useParams<{ location: string }>();
+  const params = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const config = location ? locationConfigs[normalizeSlug(location)] : null;
+  const [config, setConfig] = React.useState<any>(null);
+  const [loading, setLoading] = React.useState(true);
 
-  // Next.js like notFound() simulation
+  // Next.js like notFound() simulation + Async Params Resolution
   useEffect(() => {
-    if (location && !locationConfigs[normalizeSlug(location)]) {
-      // In a real SPA we might redirect or show a 404 state
-      // For this build, we'll render the 404 state within the component if !config
-    }
-    window.scrollTo(0, 0);
-  }, [location, config, navigate]);
+    const resolveParams = async () => {
+      const { slug } = params;
+      if (slug) {
+        const normalized = normalizeSlug(slug);
+        const data = locationConfigs[normalized];
+        if (data) {
+          setConfig(data);
+        }
+      }
+      setLoading(false);
+      window.scrollTo(0, 0);
+    };
+
+    resolveParams();
+  }, [params, navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-midnight flex items-center justify-center">
+        <Cpu className="text-neon-purple animate-spin" size={48} />
+      </div>
+    );
+  }
 
   if (!config) {
     return (
@@ -201,7 +219,7 @@ export default function LocationLanding() {
       </div>
 
       {/* Semantic Silk-Route Link Matrix */}
-      <SemanticFooterLinks currentLocation={location} />
+      <SemanticFooterLinks currentLocation={params.slug} />
 
       {/* Global Bridge Node */}
       <footer className="py-24 text-center border-t border-white/5 bg-midnight">
