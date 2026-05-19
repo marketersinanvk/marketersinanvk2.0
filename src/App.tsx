@@ -59,9 +59,9 @@ function AppContent() {
       <GEOKnowledgeGraph />
       {!isAdminPage && <ContactPopup />}
       <CommunicationHub />
-      <Suspense fallback={<PageLoader />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
+      <AnimatePresence mode="wait">
+        <Suspense fallback={<PageLoader />} key={location.pathname}>
+          <Routes location={location}>
             <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -79,8 +79,8 @@ function AppContent() {
             <Route path="/:slug" element={<ProgrammaticGate />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </AnimatePresence>
-      </Suspense>
+        </Suspense>
+      </AnimatePresence>
       {!isAdminPage && <Footer />}
     </div>
   );
