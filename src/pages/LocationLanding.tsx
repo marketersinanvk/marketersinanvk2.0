@@ -72,7 +72,7 @@ export default function LocationLanding() {
       "jobTitle": "Founder & CEO of Digital Hug | Elite Performance Marketing Strategist",
       "description": "Professional performance marketer specialized in Meta Ads, CAPI integration, and Technical SEO architectures for high-tier brands in Kerala.",
       "telephone": "+918590181381",
-      "email": "klgadjenix@gmail.com",
+      "email": "marketermarginalsinanvk@gmail.com",
       "url": "https://marketersinanvk.in",
       "address": {
         "@type": "PostalAddress",

@@ -81,7 +81,7 @@ export default function SEO({ title, description, image, article, keywords }: SE
           "name": "Digital Hug & Marketer Sinan VK",
           "url": "https://marketersinanvk.in/",
           "telephone": "+918590181381",
-          "email": "klgadjenix@gmail.com",
+          "email": "marketermarginalsinanvk@gmail.com",
           "priceRange": "$$",
           "image": image || "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
           "description": "Muhammed Sinan VK is an elite digital marketing strategist and SEO expert in Kerala, specializing in performance marketing, technical SEO, and high-converting web development.",

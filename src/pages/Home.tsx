@@ -81,19 +81,19 @@ export default function Home() {
               </div>
             </div>
             
-            <h1 className="text-white font-display leading-[0.85] tracking-[-0.07em]">
-              Digital Marketing <br />
-              <span className="purple-text-glow font-serif italic bg-gradient-to-r from-neon-purple to-accent-purple bg-clip-text text-transparent">Agency.</span>
+            <h1 className="text-white font-display leading-[0.85] tracking-[-0.07em] uppercase">
+              Dominate Dubai's <br />
+              <span className="purple-text-glow font-serif italic bg-gradient-to-r from-neon-purple to-accent-purple bg-clip-text text-transparent">Digital Skyline.</span>
             </h1>
 
             <div className="max-w-4xl space-y-12">
               <p className="text-white/60 text-xl md:text-2xl font-light leading-relaxed">
-                Architecting digital supremacy. We deploy high-performance SEO protocols to ensure absolute market dominance for elite brands in <span className="text-accent-purple font-bold">India</span>, the <span className="text-accent-purple font-bold">Middle East</span>, and <span className="text-accent-purple font-bold">Europe</span>.
+                Muhammed Sinan VK: The Elite Growth Strategist bridging <span className="text-accent-purple font-bold">Next.js Technical Architecture</span> with <span className="text-accent-purple font-bold">Aggressive Performance Marketing</span>. We don't just optimize; we conquer.
               </p>
               
               <div className="flex flex-wrap gap-8 pt-6">
                 <Link to="/contact" className="group relative px-12 py-6 purple-gradient-bg text-white font-bold rounded-2xl transition-all overflow-hidden shadow-[0_20px_60px_rgba(106,13,173,0.4)] hover:scale-105 active:scale-95">
-                  <span className="relative z-10 flex items-center gap-4 uppercase tracking-[0.4em] text-[11px]">Initiate Deployment <ArrowUpRight size={18} /></span>
+                  <span className="relative z-10 flex items-center gap-4 uppercase tracking-[0.4em] text-[11px]">Initiate Strategic Alignment <ArrowUpRight size={18} /></span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </Link>
                 <Link to="/portfolio" className="px-12 py-6 bg-dark-charcoal border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all uppercase tracking-[0.4em] text-[11px] flex items-center gap-4 shadow-xl border-l-[0.5px] border-l-neon-purple/20">
@@ -124,7 +124,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INSTITUTIONAL CORE: NICHE SEO DOMINANCE */}
+        {/* THE DUBAI GAP: PROBLEM / SOLUTION */}
+        <section className="py-32 px-6 md:px-8 max-w-5xl mx-auto text-center space-y-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-neon-purple/20 text-neon-purple text-[10px] font-bold uppercase tracking-widest"
+          >
+            The Structural Gap
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-display uppercase leading-tight"
+          >
+            Why Legacy SEO <br/> 
+            <span className="text-neon-purple italic">Fails in Dubai.</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-white/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto"
+          >
+            The Dubai market is saturated with sluggish WordPress-bound agencies delivering vanity metrics on slow architectures. In a world of millisecond-latency demands, your brand cannot survive on legacy SEO. We bridge this gap by engineering <span className="text-white font-medium">high-performance Next.js architectures</span> that out-crawl, out-rank, and out-convert everyone. Combined with server-side CAPI tracking and aggressive Meta Ads, we build absolute conversion pipelines for high-ticket Dubai enterprises.
+          </motion.p>
+        </section>
+
+        {/* CORE SERVICES: ARCHITECTURAL DOMINANCE */}
         <section className="py-40 border-t border-white/5 relative bg-dark-charcoal/30 -mx-6 px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             <div className="lg:col-span-12 space-y-24">
@@ -132,75 +163,61 @@ export default function Home() {
                 <div className="space-y-6">
                    <div className="flex items-center gap-3">
                       <div className="h-[1px] w-12 bg-accent-purple" />
-                      <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Precision Operations</p>
+                      <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Core Service Spectrum</p>
                    </div>
-                   <h2 className="text-white">The <span className="text-neon-purple font-serif italic">Expert Node.</span></h2>
+                   <h2 className="text-white">Commercial <span className="text-neon-purple font-serif italic">Superiority.</span></h2>
                 </div>
-                <p className="text-white/20 font-mono text-[10px] uppercase tracking-[0.5em] leading-loose max-w-sm hidden md:block text-right">
-                   Best SEO Expert in Kerala // Performance Marketing Specialist // Global Growth Protocol.
-                </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                 {/* ELITE SEO BLOCK 1: GADJENIX */}
+                 {/* SERVICE 1 */}
                  <div className="space-y-8 p-10 bg-dark-charcoal border border-white/5 shadow-2xl rounded-[3rem] hover:border-neon-purple/20 transition-all group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
-                       <ShoppingCart size={80} className="text-neon-purple" />
-                    </div>
-                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20 group-hover:scale-110 transition-transform">
-                       <ShoppingCart size={28} />
+                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20">
+                       <Code size={28} />
                     </div>
                     <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Gadjenix <br /><span className="text-neon-purple">E-com Growth.</span></h3>
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Next.js Technical <br /><span className="text-neon-purple">Architecture.</span></h3>
                        <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Full-stack marketing for Gadjenix. We engineered technical SEO and SMM strategies that scaled this Kerala-based gadget shop to a national audience.
+                         Zero-latency, server-side rendered infrastructures engineered for Google's most elite crawlers. Absolute speed, absolute ranking potential.
                        </p>
                     </div>
                  </div>
 
-                 {/* ELITE SEO BLOCK 2: MORVEX */}
+                 {/* SERVICE 2 */}
                  <div className="space-y-8 p-10 bg-dark-charcoal border border-white/5 shadow-2xl rounded-[3rem] bento-card-glow transition-all group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
-                       <Sparkles size={80} className="text-neon-purple" />
+                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20">
+                       <TrendingUp size={28} />
                     </div>
-                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20 group-hover:scale-110 transition-transform">
+                    <div className="space-y-6 relative z-10">
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">ROI-Driven <br /><span className="text-neon-purple">Performance Marketing.</span></h3>
+                       <p className="text-white/40 text-sm leading-relaxed font-light">
+                         Aggressive Meta and Google Ads management backed by server-side Conversion API (CAPI) for absolute data accuracy and high-ROI scaling.
+                       </p>
+                    </div>
+                 </div>
+
+                 {/* SERVICE 3 */}
+                 <div className="space-y-8 p-10 bg-dark-charcoal border border-white/5 shadow-2xl rounded-[3rem] hover:border-neon-purple/20 transition-all group relative overflow-hidden">
+                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20">
                        <Globe size={28} />
                     </div>
                     <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Morvex <br /><span className="text-neon-purple">Global Node.</span></h3>
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Global & Local <br /><span className="text-neon-purple">Search Dominance.</span></h3>
                        <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Scaling Morvex perfumes across the UK, US, and Middle East. We deployed architectural SEO and prestige branding to dominate the global fragrance market.
-                       </p>
-                    </div>
-                 </div>
-
-                 {/* ELITE SEO BLOCK 3: JAMALULLAIL */}
-                 <div className="space-y-8 p-10 bg-dark-charcoal border border-white/5 shadow-2xl rounded-[3rem] hover:border-neon-purple/20 transition-all group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-30 transition-opacity">
-                       <GraduationCap size={80} className="text-neon-purple" />
-                    </div>
-                    <div className="w-14 h-14 bg-neon-purple/10 rounded-2xl flex items-center justify-center text-neon-purple border border-neon-purple/20 group-hover:scale-110 transition-transform">
-                       <GraduationCap size={28} />
-                    </div>
-                    <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Jamalullail <br /><span className="text-neon-purple">Education Hub.</span></h3>
-                       <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Local SEO and digital transformation for Jamalullail Academy. Establishing digital authority for Islamic studies through strategic search and SMM.
+                         Strategic pSEO and semantic retrieval to dominate high-intent Dubai search quadrants and global markets with surgical precision.
                        </p>
                     </div>
                  </div>
               </div>
 
-              {/* Extended SEO Narrative for Institutional Positioning */}
-              <div className="space-y-12 max-w-5xl mx-auto pt-24 border-t border-white/5">
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-white/30 text-base font-light font-sans leading-loose tracking-wide">
-                    <p className="italic border-l-2 border-neon-purple/30 pl-10">
-                       Success in 2026 requires more than optimization; it demands absolute digital dominance. As an SEO specialist, I deliver high-ROI strategies and technical supremacy.
-                    </p>
-                    <p className="border-l-2 border-neon-purple/30 pl-10">
-                       Our focus on performance frameworks allows brands to bypass the noise of saturated markets. We provide the roadmap to digital supremacy for ambitious firms.
-                    </p>
-                 </div>
+              {/* WHY ME / BIO SECTION */}
+              <div className="space-y-16 max-w-5xl mx-auto pt-24 border-t border-white/5">
+                <div className="text-center space-y-6">
+                  <h3 className="text-3xl md:text-5xl font-display uppercase">Muhammed Sinan VK // <span className="text-neon-purple">The Growth Engineer.</span></h3>
+                  <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mt-8">
+                    Muhammed Sinan VK is a 19-year-old growth engineer who rejects standard marketing fluff. Specialized in high-ticket scaling, I operate at the intersection of <span className="text-white">web engineering</span> and <span className="text-white">conversion psychology</span>. My mission is simple: Absolute commercial growth and definitive market authority for my clients.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -447,28 +464,26 @@ export default function Home() {
               <div className="lg:col-span-6 relative">
                  <div className="absolute inset-0 bg-neon-purple/5 blur-[120px] rounded-full" />
                  <div className="p-16 md:p-20 bg-dark-charcoal border-[0.5px] border-accent-purple/30 rounded-[3.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.5)] group relative z-10 hover:border-accent-purple transition-all duration-700">
-                    <div className="space-y-12">
-                       <div className="flex justify-between items-start">
-                          <div className="space-y-3">
-                             <span className="text-[11px] font-bold text-white/30 uppercase tracking-[0.8em]">Deployment Investment</span>
-                             <div className="flex items-baseline gap-4">
-                                <p className="text-8xl md:text-9xl font-display font-bold text-white tracking-tighter">₹3,500</p>
-                                <span className="text-accent-purple font-bold text-2xl uppercase tracking-[0.3em] italic">/Init</span>
-                             </div>
-                          </div>
-                          <div className="w-16 h-16 bg-accent-purple/10 rounded-2xl flex items-center justify-center border border-accent-purple/20">
-                             <Command size={32} className="text-accent-purple" />
-                          </div>
-                       </div>
-                       <p className="text-white/50 text-xl leading-relaxed font-light italic border-l-2 border-white/10 pl-8">
-                         A definitive 1-on-1 strategic retrieval with Muhammed Sinan VK. Absolute clarity for your brand's digital ascension.
-                       </p>
-                       <Link to="/contact" className="w-full py-8 purple-gradient-bg text-white font-bold uppercase tracking-[0.6em] text-[12px] rounded-[2.5rem] flex items-center justify-center gap-5 hover:scale-[1.02] transition-all shadow-[0_20px_50px_rgba(106,13,173,0.4)] group relative overflow-hidden">
-                         <span className="relative z-10">Initiate Signature Protocol</span>
-                         <ArrowUpRight size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform relative z-10" />
-                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                       </Link>
-                    </div>
+                  <div className="space-y-12">
+                     <div className="flex flex-col gap-6">
+                        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-accent-purple/10 border border-accent-purple/20 text-accent-purple text-[10px] font-bold uppercase tracking-widest w-fit">
+                          Strategic Alignment Session
+                        </div>
+                        <h3 className="text-3xl md:text-5xl font-display uppercase text-white leading-tight">Ready to Scale? <br/> <span className="text-accent-purple italic">Initiate Retrieval.</span></h3>
+                     </div>
+                     <div className="space-y-6 pt-6 border-t border-white/5">
+                        <p className="text-white/50 text-base font-light">Contact Muhammed Sinan VK directly:</p>
+                        <div className="flex flex-col gap-4">
+                           <a href="mailto:marketermarginalsinanvk@gmail.com" className="text-xl text-white hover:text-accent-purple transition-all font-light tracking-wide">marketermarginalsinanvk@gmail.com</a>
+                           <a href="https://wa.me/918590181381" className="text-xl text-white hover:text-accent-purple transition-all font-light tracking-wide">+91 8590181381</a>
+                        </div>
+                     </div>
+                     <Link to="/contact" className="w-full py-8 purple-gradient-bg text-white font-bold uppercase tracking-[0.6em] text-[12px] rounded-[2.5rem] flex items-center justify-center gap-5 hover:scale-[1.02] transition-all shadow-[0_20px_50px_rgba(106,13,173,0.4)] group relative overflow-hidden mt-10">
+                       <span className="relative z-10">Lock In Session</span>
+                       <ArrowUpRight size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform relative z-10" />
+                       <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                     </Link>
+                  </div>
                  </div>
               </div>
            </div>

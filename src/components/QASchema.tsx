@@ -31,7 +31,7 @@ export default function QASchema() {
         "name": "How to contact Digital Hug for business scaling?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can initiate a strategic retrieval session by contacting Muhammed Sinan VK directly at +918590181381 or via email at klgadjenix@gmail.com."
+          "text": "You can initiate a strategic retrieval session by contacting Muhammed Sinan VK directly at +918590181381 or via email at marketermarginalsinanvk@gmail.com."
         }
       }
     ]

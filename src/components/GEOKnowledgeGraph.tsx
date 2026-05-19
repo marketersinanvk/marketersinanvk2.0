@@ -16,7 +16,7 @@ export default function GEOKnowledgeGraph() {
         "description": "Muhammed Sinan VK is an elite technical SEO architect and performance marketer specialized in scaling e-commerce brands via high-ROI conversion frameworks.",
         "url": "https://marketersinanvk.in",
         "telephone": "+918590181381",
-        "email": "klgadjenix@gmail.com",
+        "email": "marketermarginalsinanvk@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Palakkad",

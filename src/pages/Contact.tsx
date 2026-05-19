@@ -42,7 +42,7 @@ export default function Contact() {
 
             <div className="space-y-12">
               {[
-                { icon: Mail, label: "Email", value: "klgadjenix@gmail.com" },
+                { icon: Mail, label: "Email", value: "marketermarginalsinanvk@gmail.com" },
                 { icon: Phone, label: "WhatsApp", value: "+91 8590181381" },
                 { icon: MapPin, label: "Base", value: "Palakkad, Kerala" }
               ].map((item, i) => (

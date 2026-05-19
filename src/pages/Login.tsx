@@ -56,7 +56,7 @@ export default function Login() {
                 type="email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="klgadjenix@gmail.com"
+                placeholder="marketermarginalsinanvk@gmail.com"
                 className="w-full glass-2 bg-white/[0.02] border border-white/5 rounded-full pl-14 pr-8 py-5 text-xs text-white placeholder:text-silver/20 focus:outline-none focus:border-vibrant-indigo/30 transition-all duration-700"
                 required
               />
