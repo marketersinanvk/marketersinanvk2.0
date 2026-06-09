@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, X, ExternalLink, Filter, Search, Award, Layers, TrendingUp, Video } from "lucide-react";
 import SEO from "../components/SEO";
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import { NeuralBackground } from "../components/NeuralBackground";
 
@@ -19,7 +19,15 @@ const successStories = [
     tags: ["Best SEO Expert", "SEO Specialist in Kerala", "AI Digital Marketing"],
     link: "https://digisinans.in",
     isCaseStudy: true,
-    meta: "Case Study: Digisinans SEO Victory"
+    meta: "Case Study: Digisinans SEO Victory",
+    metrics: [
+      { label: "Organic Search Lift", value: "+1,200%" },
+      { label: "High-Intent Keywords Captured", value: "250+" },
+      { label: "Monthly Lead Volume Growth", value: "3.5X" }
+    ],
+    technologies: ["SEMrush", "Google Search Console", "Neural Clustering", "Screaming Frog"],
+    beforeState: "Low search footprint, stagnant keyword rankings, and invisible on regional search strings.",
+    afterState: "#1 ranking on regional searches, high-authority domain rating, and massive direct organic customer acquisition."
   },
   {
     id: "gadjenix-fullstack",
@@ -31,7 +39,15 @@ const successStories = [
     tags: ["Freelance Marketer", "Web Development Specialist", "Local SEO Palakkad"],
     link: "https://gadjenix-mr95.vercel.app/",
     isCaseStudy: true,
-    meta: "Gadjenix Full-Scale Management"
+    meta: "Gadjenix Full-Scale Management",
+    metrics: [
+      { label: "Core Web Vitals Score", value: "99/100" },
+      { label: "Palakkad Footfall Lift", value: "+180%" },
+      { label: "Mobile Bounce Rate Reduc", value: "-45%" }
+    ],
+    technologies: ["React 19", "Tailwind CSS", "Ahrefs", "Google Tag Manager", "Vercel Node"],
+    beforeState: "Unresponsive legacy website, slow mobile loading speeds, and zero localized map pack rankings in Palakkad.",
+    afterState: "Server-optimized zero-hydration website loading in 0.4s and dominating GMB/Map Pack search vectors."
   },
   {
     id: "luxavya-smm",
@@ -43,7 +59,15 @@ const successStories = [
     tags: ["SMM Expert Kerala", "Content Marketing Expert", "Luxury Branding"],
     link: "https://www.luxavya.com/",
     isCaseStudy: true,
-    meta: "Luxavya Professional SMM Operations"
+    meta: "Luxavya Professional SMM Operations",
+    metrics: [
+      { label: "Instagram Conversion Rate", value: "+340%" },
+      { label: "Direct Message Sales Inq", value: "3.2X" },
+      { label: "High-Quality Video Views", value: "1.2M+" }
+    ],
+    technologies: ["Cinematic Video Sequencing", "Meta Ads Manager", "Target Audience Funneling", "Insta Business CAPI"],
+    beforeState: "Low engagement, disjointed grid layout, and generic stock imagery lack prestige authority.",
+    afterState: "Visual-first lifestyle storytelling with high engagement, cohesive elite formatting and direct attribution."
   },
   {
     id: "morvex-perfumes",
@@ -54,7 +78,15 @@ const successStories = [
     description: "Architected a premium visual identity for Morvex. Engineered a conversion-optimized e-commerce landscape that captures the essence of luxury fragrances for the global market.",
     tags: ["Brand Strategy", "Luxury Marketing", "E-commerce Growth"],
     isCaseStudy: true,
-    meta: "Morvex Premium Perfume Branding"
+    meta: "Morvex Premium Perfume Branding",
+    metrics: [
+      { label: "International ROAS", value: "4.8X" },
+      { label: "Add-to-Cart Completion Rate", value: "+60%" },
+      { label: "Direct Checkout Speed Lift", value: "2.8X" }
+    ],
+    technologies: ["Shopify Headless", "Meta CAPI (Server)", "Facebook Pixel", "Next.js Image Optimisation"],
+    beforeState: "High basket abandonment and low brand differentiation in highly competitive international perfume lists.",
+    afterState: "Attribution-heavy global social media campaigns delivering consistent high-ROAS sales globally."
   },
   {
     id: "jamalullail-node",
@@ -66,7 +98,15 @@ const successStories = [
     tags: ["Educational Platform", "Scalable Web Dev", "SEO Architecture"],
     link: "https://jamalullail.vercel.app/",
     isCaseStudy: true,
-    meta: "Jamalullail: Educational Infrastructure"
+    meta: "Jamalullail: Educational Infrastructure",
+    metrics: [
+      { label: "Global Spiritual Traffic", value: "+280%" },
+      { label: "Frictionless Course Register", value: "5.2X" },
+      { label: "Search Indexing Completion", value: "100%" }
+    ],
+    technologies: ["React Router DOM", "Structured JSON-LD", "Tailwind CSS", "Firebase Auth / DB"],
+    beforeState: "Text-heavy pages, slow database query resolution, and manual course signups with massive dropoffs.",
+    afterState: "Highly robust structure, Google schema-validated queries, and instant secure course enrollment."
   },
   {
     id: "mincokids-smm",
@@ -78,7 +118,15 @@ const successStories = [
     tags: ["Digital Growth Strategist", "AI-Driven Marketing Consultant", "Reels Storytelling"],
     link: "https://www.mincokids.com/",
     isCaseStudy: true,
-    meta: "Minco Kids High-Engagement SMM"
+    meta: "Minco Kids High-Engagement SMM",
+    metrics: [
+      { label: "Follower Base Growth", value: "32,000+" },
+      { label: "Reels Viral Hit Ratio", value: "1 in 5" },
+      { label: "Direct Referral Sales", value: "+220%" }
+    ],
+    technologies: ["Mobile Shortform Video Hooks", "Instagram Graph API", "Meta Ads Retargeting Engine", "Dynamic Pixels"],
+    beforeState: "Low visual reach, low social validation, and reliance on static post shares yielding low engagement.",
+    afterState: "Highly interactive shortform catalog reels driving repeat business, building a devoted community."
   }
 ];
 
@@ -96,6 +144,8 @@ export default function Portfolio() {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setDynamicProjects(items);
       setLoading(false);
+    }, (error) => {
+      handleFirestoreError(error, OperationType.GET, "projects");
     });
     return () => unsubscribe();
   }, []);
@@ -283,30 +333,75 @@ export default function Portfolio() {
                 </div>
                 
                 <div className="space-y-8">
+                  {/* Strategic narrative */}
                   <div className="space-y-4">
                     <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold border-b border-white/5 pb-2">Strategic Narrative</p>
-                    <p className="text-white/60 text-lg font-light leading-relaxed italic">
+                    <p className="text-white/60 text-base font-light leading-relaxed">
                       {selectedProject.description}
                     </p>
                   </div>
+
+                  {/* Measurable metrics block */}
+                  {selectedProject.metrics && (
+                    <div className="space-y-4">
+                      <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold border-b border-white/5 pb-2">Measurable KPI Harvest</p>
+                      <div className="grid grid-cols-3 gap-4">
+                        {selectedProject.metrics.map((met: any, mIdx: number) => (
+                          <div key={mIdx} className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl text-center space-y-1">
+                            <p className="text-neon-purple font-display font-black text-lg md:text-xl leading-none">{met.value}</p>
+                            <p className="text-white/35 text-[8px] uppercase tracking-wider font-mono font-bold leading-normal">{met.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Before vs After Segment */}
+                  {selectedProject.beforeState && (
+                    <div className="space-y-4">
+                      <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold border-b border-white/5 pb-2">Systemic Pivot</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="bg-red-500/5 border border-red-500/10 p-5 rounded-2xl space-y-1.5">
+                          <p className="text-red-400 font-mono text-[8px] font-bold uppercase tracking-widest leading-none">⚠️ BEFORE STATE</p>
+                          <p className="text-white/50 text-[11px] leading-relaxed font-light">{selectedProject.beforeState}</p>
+                        </div>
+                        <div className="bg-green-500/5 border border-green-500/10 p-5 rounded-2xl space-y-1.5">
+                          <p className="text-green-400 font-mono text-[8px] font-bold uppercase tracking-widest leading-none">⚡ AFTER STATE</p>
+                          <p className="text-white/50 text-[11px] leading-relaxed font-light">{selectedProject.afterState}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Technologies utilized if any */}
+                  {selectedProject.technologies && (
+                    <div className="space-y-3">
+                      <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold border-b border-white/5 pb-1">Technologies Deployed</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map((tech: string) => (
+                          <span key={tech} className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-white/70 text-[9px] font-mono uppercase tracking-wider font-medium">{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="grid grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <p className="text-white/20 text-[9px] uppercase tracking-widest font-bold">Client</p>
+                    <div className="space-y-1">
+                      <p className="text-white/20 text-[9px] uppercase tracking-widest font-bold">Client Directive</p>
                       <p className="text-white font-medium text-sm">{selectedProject.title}</p>
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-white/20 text-[9px] uppercase tracking-widest font-bold">Nodes Secured</p>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="space-y-1">
+                      <p className="text-white/20 text-[9px] uppercase tracking-widest font-bold">Secured Keywords</p>
+                      <div className="flex flex-wrap gap-1.5">
                         {selectedProject.tags?.map((tag: string) => (
-                          <span key={tag} className="text-[10px] text-white/60">{tag}</span>
+                          <span key={tag} className="text-[10px] text-white/50 bg-white/[0.02] border border-white/5 px-2 py-0.5 rounded-lg">{tag}</span>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="pt-10 flex flex-col sm:flex-row gap-4">
+                <div className="pt-8 flex flex-col sm:flex-row gap-4">
                   {selectedProject.link && (
                     <a 
                       href={selectedProject.link} 

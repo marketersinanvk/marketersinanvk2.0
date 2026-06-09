@@ -49,7 +49,7 @@ function AppContent() {
   const isAdminPage = location.pathname.startsWith('/admin') || location.pathname === '/login';
 
   return (
-    <div className="min-h-screen selection:bg-white selection:text-black bg-obsidian">
+    <div className="min-h-screen selection:bg-white selection:text-black bg-obsidian relative">
       {!isAdminPage && (
         <header>
           <Navbar />
@@ -61,24 +61,32 @@ function AppContent() {
       <CommunicationHub />
       <AnimatePresence mode="wait">
         <Suspense fallback={<PageLoader />} key={location.pathname}>
-          <Routes location={location}>
-            <Route path="/home" element={<Navigate to="/" replace />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/certificate" element={<Certificate />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/posts" element={<Blog />} />
-            <Route path="/posts/:slug" element={<BlogPost />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/top-digital-marketing-agencies-kerala" element={<ComparisonHub />} />
-            <Route path="/:slug" element={<ProgrammaticGate />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          {!isAdminPage ? (
+            <Layout>
+              <Routes location={location}>
+                <Route path="/home" element={<Navigate to="/" replace />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/certificate" element={<Certificate />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/posts" element={<Blog />} />
+                <Route path="/posts/:slug" element={<BlogPost />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/top-digital-marketing-agencies-kerala" element={<ComparisonHub />} />
+                <Route path="/:slug" element={<ProgrammaticGate />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          ) : (
+            <Routes location={location}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          )}
         </Suspense>
       </AnimatePresence>
       {!isAdminPage && <Footer />}

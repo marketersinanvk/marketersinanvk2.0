@@ -39,6 +39,11 @@ import QASchema from "../components/QASchema";
 import SemanticFooterLinks from "../components/SemanticFooterLinks";
 import SemanticWordCloud from "../components/SemanticWordCloud";
 
+import CertificationsBadges from "../components/CertificationsBadges";
+import ToolsTechnologies from "../components/ToolsTechnologies";
+import ProcessTimeline from "../components/ProcessTimeline";
+import Testimonials from "../components/Testimonials";
+
 export default function Home() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -417,6 +422,18 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TRUST & AUTHORITY CLUSTER */}
+        <CertificationsBadges />
+
+        {/* TOOLS & STACK PROTOCOL */}
+        <ToolsTechnologies />
+
+        {/* TARGETED TIMELINE SYSTEM */}
+        <ProcessTimeline />
+
+        {/* VERIFIED CLIENT VERDICTS */}
+        <Testimonials />
+
         {/* ELITE ENTRY: THE ₹3,500 SIGNATURE OFFER (ACCENT ACCENTED) */}
         <section className="py-40 border-t border-white/5 relative overflow-hidden">
            <div className="absolute top-0 left-0 w-full h-full bg-neon-purple/[0.02] -z-10 blur-[150px] animate-pulse" />
@@ -472,6 +489,27 @@ export default function Home() {
                  </div>
               </div>
            </div>
+        </section>
+
+        {/* LEAD GENERATION ENGAGEMENT FORM (HIGH-CONVERTING) */}
+        <section id="contact-uplink" className="py-24 border-t border-white/5 relative bg-dark-charcoal/15 -mx-6 px-6">
+          <div className="max-w-4xl mx-auto space-y-16">
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-2">
+                <div className="h-[1px] w-8 bg-neon-purple" />
+                <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em]">Command Center</p>
+                <div className="h-[1px] w-8 bg-neon-purple" />
+              </div>
+              <h2 className="text-4xl md:text-6xl font-display uppercase tracking-tight text-white leading-tight">
+                Initiate <span className="text-neon-purple italic font-serif purple-text-glow">Deployment.</span>
+              </h2>
+              <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-lg mx-auto">
+                Ready to secure absolute search engine supremacy? Transmit your directory details below for an instant strategic retrieval.
+              </p>
+            </div>
+            
+            <ContactForm />
+          </div>
         </section>
 
         {/* AI SGE Optimized QA Section */}

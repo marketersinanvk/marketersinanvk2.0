@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, User, ArrowRight, Clock } from "lucide-react";
 import SEO from "../components/SEO";
 import Markdown from "react-markdown";
 import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import { db, handleFirestoreError, OperationType } from "../lib/firebase";
 import { NeuralBackground } from "../components/NeuralBackground";
 import { blogPosts } from "../data/posts";
 import { getPostData, PostData } from "../lib/posts";
@@ -70,6 +70,8 @@ export default function BlogPost() {
               });
             }
             setLoading(false);
+          }, (error) => {
+            handleFirestoreError(error, OperationType.GET, `blog/${id}`);
           });
           
           window.scrollTo(0, 0);

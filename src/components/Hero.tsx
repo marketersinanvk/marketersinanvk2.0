@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { collection, onSnapshot, query, limit } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import { db, handleFirestoreError, OperationType } from "../lib/firebase";
 import ServiceCards from "./ServiceCards";
 
 export default function Hero() {
@@ -15,6 +15,8 @@ export default function Hero() {
       if (!snapshot.empty) {
         setHeroData(snapshot.docs[0].data());
       }
+    }, (error) => {
+      handleFirestoreError(error, OperationType.GET, "hero");
     });
     return () => unsubscribe();
   }, []);

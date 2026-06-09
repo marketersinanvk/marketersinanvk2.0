@@ -22,12 +22,13 @@ export default function Layout({ children }: LayoutProps) {
       smoothWheel: true,
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // GSAP Magnetic Effect Helper
     const magneticElements = document.querySelectorAll(".magnetic");
@@ -57,24 +58,10 @@ export default function Layout({ children }: LayoutProps) {
       });
     });
 
-    // Staggered Entrance for all sections
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      gsap.from(section.children, {
-        y: 50,
-        opacity: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-        },
-      });
-    });
-
     return () => {
       lenis.destroy();
+      cancelAnimationFrame(rafId);
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
 

@@ -67,6 +67,28 @@
         "link": { "type": "string" }
       },
       "required": ["title", "issuer", "imageUrl"]
+    },
+    "hero": {
+      "title": "Hero Configuration",
+      "description": "Customizable homepage hero section metadata",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["imageUrl"]
+    },
+    "testimonial": {
+      "title": "Client Testimonial",
+      "description": "Elite client verdicts and strategic endorsements",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "review": { "type": "string" },
+        "brand": { "type": "string" },
+        "companyType": { "type": "string" }
+      },
+      "required": ["name", "review"]
     }
   },
   "firestore": {
@@ -93,6 +115,14 @@
     "/settings/{docId}": {
       "schema": "globalSettings",
       "description": "Global website configurations and CMS metadata"
+    },
+    "/hero/{docId}": {
+      "schema": "hero",
+      "description": "Main landing hero visuals and options"
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "testimonial",
+      "description": "Curated testimonials of high-impact strategic reviews"
     }
   }
 }

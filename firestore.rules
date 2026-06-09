@@ -12,7 +12,7 @@ service cloud.firestore {
     function isAdmin() { 
       return isSignedIn() && (
         exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
-        request.auth.token.email == "marketermarginalsinanvk@gmail.com"
+        request.auth.token.email == "marketersinanvk@gmail.com"
       );
     }
     function isEmailVerified() { return request.auth.token.email_verified == true; }
@@ -60,13 +60,27 @@ service cloud.firestore {
         data.imageUrl is string && data.imageUrl.size() <= 1000;
     }
 
+    function isValidHero(data) {
+      return data.keys().hasAll(['imageUrl']) &&
+        data.imageUrl is string && data.imageUrl.size() <= 1000 &&
+        (data.get('title', '') is string && data.get('title', '').size() <= 300);
+    }
+
+    function isValidTestimonial(data) {
+      return data.keys().hasAll(['name', 'review']) &&
+        data.name is string && data.name.size() <= 200 &&
+        data.review is string && data.review.size() <= 2000 &&
+        (data.get('brand', '') is string && data.get('brand', '').size() <= 200) &&
+        (data.get('companyType', '') is string && data.get('companyType', '').size() <= 200);
+    }
+
     // --- Collection Rules ---
 
     match /projects/{projectId} {
       allow read: if true;
       allow create: if isAdmin() && isValidProject(incoming()) && isValidId(projectId);
       allow update: if isAdmin() && isValidProject(incoming()) && (
-        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'category', 'description', 'imageUrl', 'link', 'tags'])
+        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'category', 'description', 'imageUrl', 'image', 'link', 'tags', 'updatedAt', 'createdAt'])
       );
       allow delete: if isAdmin();
     }
@@ -75,7 +89,7 @@ service cloud.firestore {
       allow read: if true;
       allow create: if isAdmin() && isValidBlogPost(incoming()) && isValidId(postId);
       allow update: if isAdmin() && isValidBlogPost(incoming()) && (
-        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'content', 'slug', 'excerpt', 'category', 'imageUrl'])
+        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'content', 'slug', 'excerpt', 'category', 'imageUrl', 'image', 'readTime', 'seoMeta', 'updatedAt', 'createdAt', 'date', 'author'])
       );
       allow delete: if isAdmin();
     }
@@ -84,7 +98,7 @@ service cloud.firestore {
       allow read: if true;
       allow create: if isAdmin() && isValidService(incoming()) && isValidId(serviceId);
       allow update: if isAdmin() && isValidService(incoming()) && (
-        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'description', 'keywords', 'icon'])
+        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'description', 'keywords', 'icon', 'imageUrl', 'image', 'updatedAt', 'createdAt'])
       );
       allow delete: if isAdmin();
     }
@@ -108,6 +122,24 @@ service cloud.firestore {
       allow create: if isAdmin() && isValidCertification(incoming()) && isValidId(certId);
       allow update: if isAdmin() && isValidCertification(incoming()) && (
         incoming().diff(existing()).affectedKeys().hasOnly(['title', 'issuer', 'imageUrl', 'date', 'link', 'updatedAt'])
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /hero/{docId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidHero(incoming()) && isValidId(docId);
+      allow update: if isAdmin() && isValidHero(incoming()) && (
+        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'imageUrl', 'updatedAt'])
+      );
+      allow delete: if isAdmin();
+    }
+
+    match /testimonials/{testimonialId} {
+      allow read: if true;
+      allow create: if isAdmin() && isValidTestimonial(incoming()) && isValidId(testimonialId);
+      allow update: if isAdmin() && isValidTestimonial(incoming()) && (
+        incoming().diff(existing()).affectedKeys().hasOnly(['name', 'review', 'brand', 'companyType', 'updatedAt'])
       );
       allow delete: if isAdmin();
     }

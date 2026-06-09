@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Quote } from "lucide-react";
 import { collection, onSnapshot, query } from "firebase/firestore";
-import { db } from "../lib/firebase";
+import { db, handleFirestoreError, OperationType } from "../lib/firebase";
 
 export default function Testimonials() {
   const [testimonials, setTestimonials] = useState<any[]>([]);
@@ -14,6 +14,8 @@ export default function Testimonials() {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setTestimonials(items);
       setLoading(false);
+    }, (error) => {
+      handleFirestoreError(error, OperationType.GET, "testimonials");
     });
     return unsubscribe;
   }, []);

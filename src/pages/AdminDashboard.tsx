@@ -38,6 +38,8 @@ export default function AdminDashboard() {
       if (snapshot.exists()) {
         setCmsData(snapshot.data());
       }
+    }, (error) => {
+      handleFirestoreError(error, OperationType.GET, "settings/cms");
     });
     return () => unsub();
   }, [user, isAdmin]);
@@ -53,6 +55,8 @@ export default function AdminDashboard() {
         const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setAllData(prev => ({ ...prev, [tab]: items }));
         if (tab === activeTab) setData(items);
+      }, (error) => {
+        handleFirestoreError(error, OperationType.GET, tab);
       });
     });
 

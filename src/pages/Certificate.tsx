@@ -4,7 +4,7 @@ import CinemaReel from "../components/CinemaReel";
 import SEO from "../components/SEO";
 import { BentoGrid, BentoCard } from "../components/BentoGrid";
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { Award, Globe, ExternalLink, Calendar } from "lucide-react";
 
 export default function Certificate() {
@@ -17,6 +17,8 @@ export default function Certificate() {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setCerts(items);
       setLoading(false);
+    }, (error) => {
+      handleFirestoreError(error, OperationType.GET, "certification");
     });
     return () => unsubscribe();
   }, []);
