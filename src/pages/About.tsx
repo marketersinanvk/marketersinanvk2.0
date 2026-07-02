@@ -65,8 +65,8 @@ export default function About() {
         {/* BENTO MILESTONES: EDUCATION & GLOBAL VISION */}
         <section className="space-y-16">
            <div className="space-y-4">
-              <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Operational Milestone Grid</p>
-              <h2 className="text-white">Architectural <span className="text-accent-purple font-serif italic">Chronicles.</span></h2>
+              <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Career Journey</p>
+              <h2 className="text-white">My Professional <span className="text-accent-purple font-serif italic">Background.</span></h2>
            </div>
 
            <BentoGrid className="auto-rows-[300px]">
@@ -91,9 +91,9 @@ export default function About() {
                  <div className="space-y-4">
                     <h3 className="text-2xl text-white font-display">Certified <br/>Expertise.</h3>
                     <ul className="text-slate-400/60 text-xs font-mono space-y-2">
-                       <li>// Google Search Ads Elite</li>
-                       <li>// Meta Blueprint Advanced</li>
-                       <li>// Technical SEO Professional</li>
+                       <li>// Google Search Ads Certified</li>
+                       <li>// Meta Blueprint Associate</li>
+                       <li>// Technical SEO Specialist</li>
                     </ul>
                  </div>
               </BentoCard>
@@ -104,7 +104,7 @@ export default function About() {
                     <Zap size={24} />
                  </div>
                  <div className="space-y-4">
-                    <h3 className="text-2xl text-white font-display">Growth <br/>Archives.</h3>
+                    <h3 className="text-2xl text-white font-display">Our <br/>Success.</h3>
                     <p className="text-slate-400 text-sm font-light">
                       Scaled 50+ regional projects into authoritative digital marketplaces with sustained growth.
                     </p>
@@ -117,25 +117,25 @@ export default function About() {
         {/* DETAILED CONTENT: VERTICAL SPECIALIZATIONS */}
         <section className="space-y-24">
            <div className="text-center space-y-6">
-              <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[1em]">Strategic Matrix</p>
-              <h2 className="text-white uppercase">Operational <span className="text-neon-purple italic font-serif">Authority.</span></h2>
+              <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[1em]">Focus Verticals</p>
+              <h2 className="text-white uppercase">What I Do <span className="text-neon-purple italic font-serif">Best.</span></h2>
            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-              {/* Vertical 1: Morvex Perfumes */}
+              {/* Vertical 1: Smart Supply Kitchen Gadgets */}
               <motion.div variants={itemVariants} className="space-y-8 p-4 md:p-10 group bg-dark-charcoal/50 rounded-[4rem] border border-white/5 overflow-hidden">
                  <div className="aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 mb-8">
                     <img 
-                      src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" 
-                      alt="Morvex Fragrances UI/UX" 
+                      src="https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png" 
+                      alt="Smart Supply Kitchen Gadgets E-commerce" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
                  </div>
                  <h2 className="text-4xl text-white font-display tracking-tight leading-none border-l-8 border-neon-purple pl-8">
-                    Luxury Branding for <span className="text-neon-purple font-bold">Morvex Fragrances.</span>
+                    E-commerce Growth for <span className="text-neon-purple font-bold">Smart Supply Kitchen Gadgets.</span>
                  </h2>
                  <p className="text-slate-400 text-lg font-light leading-relaxed text-justify px-4 md:px-8 border-x border-white/5 py-4">
-                    Architecting a premium visual identity for Morvex Perfumes. Engineered a conversion-optimized e-commerce landscape that captures the essence of luxury fragrances for a global audience.
+                    Building a conversion-optimized web store and Meta Ads marketing funnel for Smart Supply. We designed an engaging e-commerce experience that features smart kitchen gadgets and drives direct online sales.
                  </p>
               </motion.div>
 
@@ -152,15 +152,15 @@ export default function About() {
                     Web Infrastructure for <span className="text-white">Jamalullail Academy.</span>
                  </h2>
                  <p className="text-slate-400 text-lg font-normal leading-relaxed">
-                    Engineering specialized educational platforms for spiritual excellence. We unified technical web architecture with global SEO nodes, ensuring a seamless retrieval system for Islamic courses and scholarly content.
+                    Developing specialized educational platforms for academic and spiritual learning. We designed a clean, user-friendly website architecture combined with solid search optimization to make courses easily accessible online.
                  </p>
                  <div className="flex items-center gap-6 p-10 bg-dark-charcoal rounded-full shadow-lg border border-accent-purple/20">
                     <div className="w-16 h-16 bg-neon-purple/10 rounded-full flex items-center justify-center text-neon-purple shrink-0">
                        <Code size={32} />
                     </div>
                     <div>
-                       <p className="text-white/70 text-sm font-medium leading-tight">"Engineered a scalable node that serves a global spiritual audience with 0.4s response times."</p>
-                       <p className="text-accent-purple text-[10px] font-bold uppercase tracking-widest mt-2">Academic Success Protocol</p>
+                       <p className="text-white/70 text-sm font-medium leading-tight">"Designed a highly responsive and fast website that serves students worldwide with ease."</p>
+                       <p className="text-accent-purple text-[10px] font-bold uppercase tracking-widest mt-2">Academic Success Story</p>
                     </div>
                  </div>
               </motion.div>
@@ -171,7 +171,7 @@ export default function About() {
         <section className="max-w-4xl mx-auto space-y-16">
            <div className="space-y-12 text-slate-400 text-lg font-light leading-loose">
               <p>
-                MSVK is built on the principle that excellence is non-negotiable. As an SEO specialist in Kerala, I help businesses bridge the gap between technical infrastructure and commercial growth, delivering institutional-grade strategies for ambitious brands worldwide.
+                At MSVK, I believe that quality and commitment are key. As an experienced SEO specialist in Kerala, I help businesses bridge the gap between web technology and real marketing results, delivering high-value strategies that scale brands.
               </p>
            </div>
            
@@ -181,15 +181,15 @@ export default function About() {
                     <TrendingUp size={32} />
                  </div>
                  <div className="space-y-1">
-                    <p className="text-white font-bold uppercase tracking-widest text-xs">Trajectory: Upward</p>
-                    <p className="text-white/20 text-[9px] font-mono tracking-tighter">SINAN_VK_SYSTEMS_ACTIVE // 2026</p>
+                    <p className="text-white font-bold uppercase tracking-widest text-xs">Continuous Progress</p>
+                    <p className="text-white/20 text-[9px] font-mono tracking-tighter">ESTABLISHED & DRIVEN // 2026</p>
                  </div>
               </div>
               <motion.div 
                 whileHover={{ scale: 1.05 }}
                 className="px-10 py-5 bg-neon-purple text-white font-bold uppercase tracking-widest text-[10px] rounded-2xl flex items-center gap-4 cursor-pointer shadow-xl hover:bg-muted-purple transition-all"
               >
-                Download Credentials <ArrowUpRight size={16} />
+                Download Profile <ArrowUpRight size={16} />
               </motion.div>
            </div>
         </section>
@@ -198,20 +198,20 @@ export default function About() {
         <section className="space-y-16 pb-32">
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
-                 <h2 className="text-5xl text-white font-display">The Global Node <br/><span className="text-accent-purple font-serif italic">Centralized.</span></h2>
+                 <h2 className="text-5xl text-white font-display">Our Global <br/><span className="text-accent-purple font-serif italic">Reach.</span></h2>
                  <div className="space-y-6">
                     <div className="flex gap-6 items-start">
                        <MapPin className="text-accent-purple shrink-0" size={24} />
                        <div className="space-y-1">
-                          <p className="text-white font-bold uppercase tracking-widest text-xs">Primary Operations Base</p>
-                          <p className="text-slate-400 text-sm font-light">Palakkad, Kerala, India (Global Time Node: IST)</p>
+                          <p className="text-white font-bold uppercase tracking-widest text-xs">Main Office</p>
+                          <p className="text-slate-400 text-sm font-light">Palakkad, Kerala, India (Indian Standard Time)</p>
                        </div>
                     </div>
                     <div className="flex gap-6 items-start">
                        <Briefcase className="text-accent-purple shrink-0" size={24} />
                        <div className="space-y-1">
-                          <p className="text-white font-bold uppercase tracking-widest text-xs">Targeted Verticals</p>
-                          <p className="text-slate-400 text-sm font-light">Global Digital Marketing // Luxury Fragrances // Islamic Education // E-commerce Growth</p>
+                          <p className="text-white font-bold uppercase tracking-widest text-xs">Our Key Areas</p>
+                          <p className="text-slate-400 text-sm font-light">Digital Marketing // Luxury Brands // Educational Platforms // E-commerce Growth</p>
                        </div>
                     </div>
                  </div>
@@ -243,7 +243,7 @@ export default function About() {
               className="flex items-center justify-center gap-4"
             >
               <div className="h-[1px] w-8 bg-neon-purple" />
-              <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[1em]">Academic & Skill Clusters</p>
+              <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[1em]">Education & Certifications</p>
               <div className="h-[1px] w-8 bg-neon-purple" />
             </motion.div>
             <motion.h2 
@@ -251,7 +251,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-8xl font-display text-white uppercase tracking-tighter leading-none"
             >
-              Academic & Professional <br />
+              My Academic & Professional <br />
               <span className="italic font-serif text-accent-purple">Credentials.</span>
             </motion.h2>
           </div>
@@ -264,11 +264,11 @@ export default function About() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {[
-              { title: "Google Search Ads Certification", desc: "Expertise in high-ROI programmatic search strategies and algorithmic bid management.", icon: "G" },
-              { title: "Meta Blueprint Associate", desc: "Professional validation for scaling brands within the Meta ecosystem through social dominance.", icon: "M" },
-              { title: "HubSpot SEO Certification", desc: "Inbound authority masterclass focused on content entity mapping and search intent.", icon: "H" },
-              { title: "Oxdu Media School Diploma", desc: "The core digital marketing foundation, covering technical development and clinical growth.", icon: "O" },
-              { title: "Academic Background", desc: "Foundational higher secondary education supporting a logic-driven commercial mindset.", icon: "A" }
+              { title: "Google Search Ads Certification", desc: "Demonstrated expertise in managing Google Ads campaigns to drive qualified traffic and maximize return on ad spend.", icon: "G" },
+              { title: "Meta Blueprint Associate", desc: "Certified skills in building and managing effective social media advertising campaigns across Facebook and Instagram.", icon: "M" },
+              { title: "HubSpot SEO Certification", desc: "Certified knowledge in search engine optimization, content strategy, and matching user search intent.", icon: "H" },
+              { title: "Oxdu Media School Diploma", desc: "A comprehensive foundation in digital marketing, social media strategy, and web design fundamentals.", icon: "O" },
+              { title: "Academic Background", desc: "Higher secondary education that provided a strong foundation in analytical thinking and problem-solving.", icon: "A" }
             ].map((cert, idx) => (
               <motion.div
                 key={idx}
@@ -300,7 +300,7 @@ export default function About() {
 
                 <div className="pt-4 flex items-center gap-2">
                    <div className="h-[2px] w-0 bg-neon-purple group-hover:w-1/2 transition-all duration-700" />
-                   <span className="text-[8px] font-bold text-white/20 uppercase tracking-widest group-hover:text-neon-purple transition-colors">Verified Protocol</span>
+                   <span className="text-[8px] font-bold text-white/20 uppercase tracking-widest group-hover:text-neon-purple transition-colors">Verified Skill</span>
                 </div>
               </motion.div>
             ))}
@@ -404,7 +404,7 @@ function AuthorityPivot() {
               className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-accent-purple text-[9px] font-bold uppercase tracking-[0.5em]"
             >
               <div className="w-1.5 h-1.5 bg-neon-purple rounded-full animate-pulse" />
-              Institutional Protocol // 2026
+              Verified Professional // 2026
             </motion.div>
             
             <div className="space-y-2">
@@ -422,7 +422,7 @@ function AuthorityPivot() {
                 transition={{ delay: 0.2 }}
                 className="text-2xl md:text-3xl font-serif italic text-accent-purple"
               >
-                Global Digital Growth Architect
+                Experienced Digital Marketer & SEO Consultant
               </motion.p>
             </div>
           </div>
@@ -434,17 +434,17 @@ function AuthorityPivot() {
             className="space-y-8"
           >
             <p className="text-slate-400 text-xl font-light leading-relaxed max-w-xl">
-              Digital dominance is about more than visibility—it's about authority. I combine <span className="text-white font-medium italic">SEO Expertise</span> and high-fidelity engineering to scale brands globally.
+              A strong online presence is built on trust and visibility. I combine proven <span className="text-white font-medium italic">SEO techniques</span> with optimized web design to help brands reach new heights.
             </p>
             
             <div className="grid grid-cols-2 gap-10">
                <div className="space-y-1">
                   <p className="text-white text-3xl font-display font-bold tracking-tight text-accent-purple">1200%</p>
-                  <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">Growth Scaling</p>
+                  <p className="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">Organic Growth</p>
                </div>
                <div className="space-y-1">
                   <p className="text-white text-3xl font-display font-bold tracking-tight">50+</p>
-                  <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.3em]">Global Nodes</p>
+                  <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.3em]">Successful Projects</p>
                </div>
             </div>
           </motion.div>
@@ -456,7 +456,7 @@ function AuthorityPivot() {
             className="pt-8"
           >
              <button className="bg-neon-purple px-12 py-5 rounded-2xl text-white font-display font-bold uppercase tracking-widest text-[11px] shadow-[0_20px_50px_rgba(157,39,176,0.3)] hover:scale-105 transition-transform">
-                Initiate Uplink Protocol
+                Let's Work Together
              </button>
           </motion.div>
         </div>

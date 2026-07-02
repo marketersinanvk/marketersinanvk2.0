@@ -46,13 +46,13 @@ export default function Footer() {
           <h4 className="text-neon-purple font-display text-[10px] tracking-[0.5em] uppercase font-bold">Navigation</h4>
           <ul className="space-y-5">
             {[
-              { name: "Home Market", path: "/" },
-              { name: "Best Marketer Kerala", path: "/about" },
-              { name: "Expert Certificates", path: "/certificate" },
-              { name: "Global Growth Services", path: "/services" },
-              { name: "Elite Portfolio", path: "/portfolio" },
-              { name: "Strategic Insights", path: "/blog" },
-              { name: "Initiate Link", path: "/contact" },
+              { name: "Home", path: "/" },
+              { name: "About Me", path: "/about" },
+              { name: "Certifications", path: "/certificate" },
+              { name: "Services", path: "/services" },
+              { name: "My Portfolio", path: "/portfolio" },
+              { name: "Blog Posts", path: "/blog" },
+              { name: "Contact Me", path: "/contact" },
             ].map((item) => (
               <li key={item.name}>
                 <Link to={item.path} className="text-white/30 hover:text-neon-purple text-[10px] font-bold tracking-[0.3em] transition-colors duration-500 uppercase">
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         <div className="space-y-10">
-          <h4 className="text-neon-purple font-display text-[10px] tracking-[0.5em] uppercase font-bold">Strategic Base</h4>
+          <h4 className="text-neon-purple font-display text-[10px] tracking-[0.5em] uppercase font-bold">Our Location</h4>
           <ul className="space-y-6">
             <li className="flex items-start gap-4">
               <MapPin className="w-4 h-4 text-neon-purple shrink-0 mt-1" />
@@ -85,9 +85,9 @@ export default function Footer() {
         </div>
 
         <div className="space-y-10">
-          <h4 className="text-accent-purple font-display text-[10px] tracking-[0.5em] uppercase font-bold">The Manifesto</h4>
+          <h4 className="text-accent-purple font-display text-[10px] tracking-[0.5em] uppercase font-bold">Newsletter</h4>
           <p className="text-white/30 text-[10px] font-light leading-relaxed tracking-[0.2em] uppercase">
-            Subscribe for neural insights and <span className="text-white">Elite Retrieval</span> protocols.
+            Subscribe for helpful marketing insights and digital growth updates.
           </p>
           <div className="relative group">
             <input 
@@ -107,7 +107,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
         <p className="text-white/10 text-[9px] font-bold uppercase tracking-[0.8em]">
-          © 2026 MARKETER SINAN VK. ALL RIGHTS RESERVED. DOMINANCE SECURED.
+          © 2026 MARKETER SINAN VK. ALL RIGHTS RESERVED.
         </p>
         <div className="flex gap-12">
           <a href="#" className="text-white/10 hover:text-neon-purple text-[9px] font-bold uppercase tracking-[0.5em] transition-colors">Privacy</a>

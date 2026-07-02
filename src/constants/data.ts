@@ -76,12 +76,12 @@ export const PROJECTS = [
     link: "https://gadjenix-mr95.vercel.app/"
   },
   {
-    id: "morvex-perfumes",
-    title: "Morvex",
-    category: "Perfume Brand",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
-    description: "Global perfume brand scaling across India, Qatar, Dubai, US, and UK.",
-    caseStudy: "Architected a premium visual identity and high-performance web architecture. Deployed a full-marketing stack including SEO and SMM to dominate global fragrance markets."
+    id: "smart-supply",
+    title: "Smart Supply",
+    category: "Smart Kitchen Gadget Shop",
+    image: "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png",
+    description: "Premium kitchen gadgets brand scaling globally through high-converting Meta Ads.",
+    caseStudy: "Architected a premium digital store and optimized ad creatives for Smart Supply. Engineered high-converting Meta Ads and sales workflows designed for high-demand smart kitchen gadgets."
   },
   {
     id: "jamalullail-academy",
@@ -105,10 +105,19 @@ export const PROJECTS = [
     id: "luxavya",
     title: "Luxavya",
     category: "Luxury Perfume Brand",
-    image: "https://res.cloudinary.com/dam0azywj/image/upload/v1713511874/marketersinan/fashion.jpg",
+    image: "https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png",
     description: "Luxury perfume branding and SMM for Dubai, Qatar, and Indian markets.",
     caseStudy: "Engineered a prestige-driven SMM strategy that resonated with affluent demographics in the Middle East and India, driving high-value engagement.",
     link: "https://www.luxavya.com/"
+  },
+  {
+    id: "asna-packing",
+    title: "Asna Packing",
+    category: "Industrial Packing E-Shop",
+    image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop",
+    description: "Custom premium web development for an industrial packaging supplier on a highly optimized budget.",
+    caseStudy: "Developed a rapid-loading, modern, and highly engaging web solution for Asna Packing. Tailored precisely to budget limits while ensuring beautiful aesthetics, quick lead generation, and clean user experience.",
+    link: "https://www.asnapacking.shop/"
   }
 ];
 
@@ -138,12 +147,12 @@ export const BLOG_POSTS = [
     content: "Local search intent is skyrocketing. For businesses in Kerala, ranking for 'near me' searches is critical. We dive into the nuances of Malayalam keyword research, the importance of local citations, and how to optimize your Google Business Profile for maximum visibility in the Kerala market."
   },
   {
-    id: "morvex-growth",
-    title: "Morvex Fragrance Strategy",
+    id: "smart-supply-growth",
+    title: "Smart Supply Kitchen Gadget Ads Strategy",
     date: "April 15, 2026",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
-    excerpt: "Insights from our successful branding campaigns for premium perfume labels.",
-    content: "Luxury branding requires more than just aesthetics; it requires a deep understanding of sensory prestige. In this post, we showcase the roadmap we built for Morvex Fragrances, focusing on conversion-driven design and global search authority."
+    image: "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png",
+    excerpt: "Insights from our successful Meta Ads scaling campaign for modern kitchen gadget shops.",
+    content: "E-commerce success for specialized kitchen gadgets requires deep understanding of visual hooks and social funneling. In this post, we showcase the exact Meta Ads report and roadmap we built for Smart Supply to drive consistent high-converting sales and scaling."
   },
   {
     id: "personal-branding",

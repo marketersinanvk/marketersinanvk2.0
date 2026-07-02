@@ -39,7 +39,7 @@ With over 250 keywords now ranking on page #1, Digisinans stands as a testament 
     category: "Local SEO",
     author: "Sinan VK",
     date: "April 14, 2026",
-    image: "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png",
+    image: "https://i.ibb.co/2DTBnpn/Screenshot-2026-07-02-224443.png",
     tags: ["#LocalSEO", "#Palakkad", "#BestDigitalMarketerInKerala"],
     span: "md:col-span-1 md:row-span-1",
     content: `
@@ -56,7 +56,7 @@ We focused on localized schema markup and high-density citation clusters. This e
     category: "SMM",
     author: "Sinan VK",
     date: "April 15, 2026",
-    image: "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png",
+    image: "https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png",
     tags: ["#Luxavya", "#Branding", "#BestDigitalMarketerInKerala"],
     span: "md:col-span-1 md:row-span-1",
     content: `

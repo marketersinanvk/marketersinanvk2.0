@@ -34,7 +34,7 @@ const successStories = [
     title: "Gadjenix Core",
     result: "Full-Stack Brand Growth",
     category: "Web Development",
-    imageUrl: "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png",
+    imageUrl: "https://i.ibb.co/2DTBnpn/Screenshot-2026-07-02-224443.png",
     description: "Managed custom web development and technical SEO for Gadjenix. Optimized for local search in Palakkad, driving a significant increase in leads through a high-performance ecosystem.",
     tags: ["Freelance Marketer", "Web Development Specialist", "Local SEO Palakkad"],
     link: "https://gadjenix-mr95.vercel.app/",
@@ -54,7 +54,7 @@ const successStories = [
     title: "Luxavya Lifestyle",
     result: "Fashion SMM Prestige",
     category: "SMM",
-    imageUrl: "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png",
+    imageUrl: "https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png",
     description: "Conducted professional SMM operations for Luxavya. Engineered a visual narrative for high-end fashion branding, converting interest into loyal customer engagement.",
     tags: ["SMM Expert Kerala", "Content Marketing Expert", "Luxury Branding"],
     link: "https://www.luxavya.com/",
@@ -70,21 +70,21 @@ const successStories = [
     afterState: "Visual-first lifestyle storytelling with high engagement, cohesive elite formatting and direct attribution."
   },
   {
-    id: "morvex-perfumes",
-    title: "Morvex Perfumes",
-    result: "Luxury Branding & E-com Expansion",
+    id: "smart-supply",
+    title: "Smart Supply Shop",
+    result: "Kitchen E-com & Meta Ads Growth",
     category: "SMM",
-    imageUrl: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
-    description: "Architected a premium visual identity for Morvex. Engineered a conversion-optimized e-commerce landscape that captures the essence of luxury fragrances for the global market.",
-    tags: ["Brand Strategy", "Luxury Marketing", "E-commerce Growth"],
+    imageUrl: "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png",
+    description: "Architected a premium digital store and optimized ad creatives for Smart Supply. Engineered high-converting Meta Ads and sales workflows designed for high-demand smart kitchen gadgets.",
+    tags: ["E-commerce", "Meta Ads Specialist", "Smart Kitchen Shop"],
     isCaseStudy: true,
-    meta: "Morvex Premium Perfume Branding",
+    meta: "Smart Supply Kitchen Gadgets Meta Ads Proof",
     metrics: [
       { label: "International ROAS", value: "4.8X" },
       { label: "Add-to-Cart Completion Rate", value: "+60%" },
       { label: "Direct Checkout Speed Lift", value: "2.8X" }
     ],
-    technologies: ["Shopify Headless", "Meta CAPI (Server)", "Facebook Pixel", "Next.js Image Optimisation"],
+    technologies: ["Meta Ads Manager", "E-commerce Conversion Funnel", "Pixel Setup", "Video Ads Creatives"],
     beforeState: "High basket abandonment and low brand differentiation in highly competitive international perfume lists.",
     afterState: "Attribution-heavy global social media campaigns delivering consistent high-ROAS sales globally."
   },
@@ -127,6 +127,26 @@ const successStories = [
     technologies: ["Mobile Shortform Video Hooks", "Instagram Graph API", "Meta Ads Retargeting Engine", "Dynamic Pixels"],
     beforeState: "Low visual reach, low social validation, and reliance on static post shares yielding low engagement.",
     afterState: "Highly interactive shortform catalog reels driving repeat business, building a devoted community."
+  },
+  {
+    id: "asna-packing",
+    title: "Asna Packing",
+    result: "Budget-Friendly Premium Web",
+    category: "Web Development",
+    imageUrl: "https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop",
+    description: "Developed a premium-grade web presence for Asna Packing. Designed to be highly budget-friendly while offering superb visual aesthetics, seamless inquiry pathways, and quick page performance.",
+    tags: ["Affordable Premium Web", "Speed Optimization", "Clean E-commerce Showcase"],
+    link: "https://www.asnapacking.shop/",
+    isCaseStudy: true,
+    meta: "Asna Packing Web Development Success",
+    metrics: [
+      { label: "Load Velocity", value: "0.5s" },
+      { label: "Budget Efficiency", value: "100%" },
+      { label: "Conversion Readiness", value: "Premium" }
+    ],
+    technologies: ["React 19", "Tailwind CSS", "Vite Server", "JSON-LD Schema"],
+    beforeState: "No existing online presence, budget constraints, and missing out on high-intent packaging customer queries.",
+    afterState: "An elegant, fast loading, high-conversion business showcase on a pocket-friendly budget, converting visitors instantly."
   }
 ];
 

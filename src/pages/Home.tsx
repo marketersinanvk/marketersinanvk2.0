@@ -79,10 +79,10 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 items-center">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-neon-purple/10 border border-neon-purple/20 text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em] shadow-[0_0_20px_rgba(106,13,173,0.2)]">
                 <Sparkles size={12} className="animate-pulse" />
-                Elite Retrieval Node Active
+                Results-Driven SEO Expert
               </div>
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-accent-purple/30 text-accent-purple text-[10px] font-bold uppercase tracking-[0.4em]">
-                Global Dominance Protocol
+                Global Digital Growth & Visibility
               </div>
             </div>
             
@@ -93,16 +93,16 @@ export default function Home() {
 
             <div className="max-w-4xl space-y-12">
               <p className="text-white/60 text-xl md:text-2xl font-light leading-relaxed">
-                Architecting digital supremacy. We deploy high-performance SEO protocols to ensure absolute market dominance for elite brands in <span className="text-accent-purple font-bold">India</span>, the <span className="text-accent-purple font-bold">Middle East</span>, and <span className="text-accent-purple font-bold">Europe</span>.
+                Growing your brand's digital presence. We deliver tailored, high-performance SEO and marketing campaigns to help ambitious businesses in <span className="text-accent-purple font-bold">India</span>, the <span className="text-accent-purple font-bold">Middle East</span>, and <span className="text-accent-purple font-bold">Europe</span> thrive online.
               </p>
               
               <div className="flex flex-wrap gap-8 pt-6">
                 <Link to="/contact" className="group relative px-12 py-6 purple-gradient-bg text-white font-bold rounded-2xl transition-all overflow-hidden shadow-[0_20px_60px_rgba(106,13,173,0.4)] hover:scale-105 active:scale-95">
-                  <span className="relative z-10 flex items-center gap-4 uppercase tracking-[0.4em] text-[11px]">Initiate Deployment <ArrowUpRight size={18} /></span>
+                  <span className="relative z-10 flex items-center gap-4 uppercase tracking-[0.4em] text-[11px]">Get in Touch <ArrowUpRight size={18} /></span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </Link>
                 <Link to="/portfolio" className="px-12 py-6 bg-dark-charcoal border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all uppercase tracking-[0.4em] text-[11px] flex items-center gap-4 shadow-xl border-l-[0.5px] border-l-neon-purple/20">
-                  Case Archives <Layers size={16} />
+                  Our Projects <Layers size={16} />
                 </Link>
               </div>
             </div>
@@ -111,9 +111,9 @@ export default function Home() {
           {/* Floating Elite Stats */}
           <div className="absolute right-0 bottom-20 hidden xl:flex flex-col gap-8">
              {[
-               { l: "Global Expansion", v: "Institutional" },
-               { l: "Target Scaling", v: "1200% ROI" },
-               { l: "Status Code", v: "DOMINANT" }
+               { l: "Global Outreach", v: "Trusted" },
+               { l: "Targeted Growth", v: "Real Results" },
+               { l: "Client Support", v: "Dedicated" }
              ].map((s, i) => (
                <motion.div 
                  key={i}
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INSTITUTIONAL CORE: NICHE SEO DOMINANCE */}
+        {/* EXPERT SERVICES & CLIENT RESULTS */}
         <section className="py-40 border-t border-white/5 relative bg-dark-charcoal/30 -mx-6 px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             <div className="lg:col-span-12 space-y-24">
@@ -137,12 +137,12 @@ export default function Home() {
                 <div className="space-y-6">
                    <div className="flex items-center gap-3">
                       <div className="h-[1px] w-12 bg-accent-purple" />
-                      <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Precision Operations</p>
+                      <p className="text-accent-purple text-[10px] font-bold uppercase tracking-[0.8em]">Results-Driven Marketing</p>
                    </div>
-                   <h2 className="text-white">The <span className="text-neon-purple font-serif italic">Expert Node.</span></h2>
+                   <h2 className="text-white">Meet the <span className="text-neon-purple font-serif italic">Expert.</span></h2>
                 </div>
                 <p className="text-white/20 font-mono text-[10px] uppercase tracking-[0.5em] leading-loose max-w-sm hidden md:block text-right">
-                   Best SEO Expert in Kerala // Performance Marketing Specialist // Global Growth Protocol.
+                   Best SEO Expert in Kerala // Performance Marketing Specialist // Real Business Growth.
                 </p>
               </div>
 
@@ -156,9 +156,9 @@ export default function Home() {
                        <ShoppingCart size={28} />
                     </div>
                     <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Gadjenix <br /><span className="text-neon-purple">E-com Growth.</span></h3>
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Gadjenix <br /><span className="text-neon-purple">E-commerce Scaling.</span></h3>
                        <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Full-stack marketing for Gadjenix. We engineered technical SEO and SMM strategies that scaled this Kerala-based gadget shop to a national audience.
+                         Full-stack marketing for Gadjenix. We crafted a custom SEO and social media strategy that helped this Kerala-based gadget shop expand its reach to a national audience.
                        </p>
                     </div>
                  </div>
@@ -172,9 +172,9 @@ export default function Home() {
                        <Globe size={28} />
                     </div>
                     <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Morvex <br /><span className="text-neon-purple">Global Node.</span></h3>
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Smart Supply <br /><span className="text-neon-purple">E-commerce Scaling.</span></h3>
                        <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Scaling Morvex perfumes across the UK, US, and Middle East. We deployed architectural SEO and prestige branding to dominate the global fragrance market.
+                         Supporting Smart Supply with optimized web design and powerful Meta Ads marketing, achieving sustained ROI for high-demand kitchen gadgets.
                        </p>
                     </div>
                  </div>
@@ -188,9 +188,9 @@ export default function Home() {
                        <GraduationCap size={28} />
                     </div>
                     <div className="space-y-6 relative z-10">
-                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Jamalullail <br /><span className="text-neon-purple">Education Hub.</span></h3>
+                       <h3 className="text-white text-2xl font-display uppercase tracking-tighter">Jamalullail <br /><span className="text-neon-purple">Academy Platform.</span></h3>
                        <p className="text-white/40 text-sm leading-relaxed font-light">
-                         Local SEO and digital transformation for Jamalullail Academy. Establishing digital authority for Islamic studies through strategic search and SMM.
+                         Local SEO and digital design for Jamalullail Academy. Building a reliable online learning space and community engagement through strategic search optimization and SMM.
                        </p>
                     </div>
                  </div>
@@ -200,10 +200,10 @@ export default function Home() {
               <div className="space-y-12 max-w-5xl mx-auto pt-24 border-t border-white/5">
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-20 text-white/30 text-base font-light font-sans leading-loose tracking-wide">
                     <p className="italic border-l-2 border-neon-purple/30 pl-10">
-                       Success in 2026 requires more than optimization; it demands absolute digital dominance. As an SEO specialist, I deliver high-ROI strategies and technical supremacy.
+                       Success in today's digital world starts with visibility. As an SEO specialist, I focus on building real credibility and long-term search value that grows your business.
                     </p>
                     <p className="border-l-2 border-neon-purple/30 pl-10">
-                       Our focus on performance frameworks allows brands to bypass the noise of saturated markets. We provide the roadmap to digital supremacy for ambitious firms.
+                       By focusing on custom marketing strategies, we help brands stand out in crowded markets. We provide a clear, step-by-step roadmap to growth for ambitious businesses.
                     </p>
                  </div>
               </div>
@@ -215,9 +215,9 @@ export default function Home() {
         <section className="py-40 space-y-32">
           <div className="text-center space-y-8">
              <div className="inline-flex items-center gap-4 text-accent-purple/60 text-[10px] font-bold uppercase tracking-[1.5em]">
-               The Archive // Elite Tier
+               Featured Work // Key Case Studies
              </div>
-             <h2 className="text-white uppercase leading-[0.8] tracking-[-0.05em]">Success <br /><span className="purple-text-glow font-serif italic text-neon-purple">Link.</span></h2>
+             <h2 className="text-white uppercase leading-[0.8] tracking-[-0.05em]">Proven <br /><span className="purple-text-glow font-serif italic text-neon-purple">Results.</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 auto-rows-[400px] md:auto-rows-[500px]">
@@ -239,7 +239,7 @@ export default function Home() {
                />
                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="flex justify-between items-start">
-                    <span className="px-6 py-2 bg-neon-purple text-white text-[9px] font-bold uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(106,13,173,0.5)]">Digisinans CNS // Elite Rank</span>
+                    <span className="px-6 py-2 bg-neon-purple text-white text-[9px] font-bold uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(106,13,173,0.5)]">Digisinans // Brand Marketing</span>
                     <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 backdrop-blur-3xl">
                        <ArrowUpRight size={24} className="text-white group-hover:text-neon-purple group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                     </div>
@@ -247,7 +247,7 @@ export default function Home() {
                   <div className="space-y-6">
                     <h3 className="text-5xl md:text-7xl text-white font-display tracking-tighter">Digisinans.</h3>
                     <p className="text-white/40 text-xl font-light leading-relaxed max-w-lg">
-                      Surgically dominant search protocol for the Digisinans enterprise. #1 Placement achieved across 14 global nodes.
+                      Tailored digital marketing and search strategy for the Digisinans enterprise, achieving top organic visibility across target regional markets.
                     </p>
                   </div>
                </div>
@@ -266,19 +266,19 @@ export default function Home() {
                className="md:col-span-4 bento-card bento-card-glow group cursor-pointer border-accent-purple/10 block"
             >
                <img 
-                 src="https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png" 
+                 src="https://i.ibb.co/2DTBnpn/Screenshot-2026-07-02-224443.png" 
                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                  alt="Gadjenix Technical Superiority"
                />
                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="flex flex-col items-end gap-2">
-                     <span className="px-5 py-2 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">Elite Web Hub</span>
+                     <span className="px-5 py-2 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">E-commerce Web Development</span>
                      <div className="w-2 h-2 rounded-full bg-accent-purple animate-pulse" />
                   </div>
                   <div className="space-y-4">
                     <h3 className="text-4xl text-white font-display">Gadjenix.</h3>
                     <p className="text-white/30 text-sm font-light leading-relaxed">
-                      Deploying zero-latency web environments for high-tier tech conglomerates in Kerala and beyond.
+                      Creating high-performance, fast-loading online store environments for growing retail and tech businesses in Kerala and beyond.
                     </p>
                   </div>
                </div>
@@ -296,7 +296,7 @@ export default function Home() {
                className="md:col-span-6 bento-card bento-card-glow group cursor-pointer bg-neon-purple/5 border-neon-purple/10 block"
             >
                <img 
-                 src="https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png" 
+                 src="https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png" 
                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                  alt="Luxavya Brand Authority"
                />
@@ -335,13 +335,13 @@ export default function Home() {
                   <div className="space-y-4">
                      <div className="flex items-center gap-2">
                         <div className="w-10 h-[1px] bg-accent-purple" />
-                        <p className="text-[10px] text-accent-purple font-bold uppercase tracking-[0.5em]">Education Node</p>
+                        <p className="text-[10px] text-accent-purple font-bold uppercase tracking-[0.5em]">Creative Education</p>
                      </div>
                      <h3 className="text-5xl text-white font-display tracking-tighter">Minco Kids.</h3>
                   </div>
                   <div className="flex items-center gap-8 pt-8 border-t border-white/5">
                      <div className="space-y-1">
-                        <p className="text-white/20 text-[9px] uppercase font-bold tracking-widest italic font-sans">Growth Factor</p>
+                        <p className="text-white/20 text-[9px] uppercase font-bold tracking-widest italic font-sans">Growth Metric</p>
                         <p className="text-white text-3xl font-bold font-display purple-text-glow text-neon-purple">4.2X</p>
                      </div>
                      <p className="text-white/50 text-base font-light leading-relaxed flex-1 italic">
@@ -360,20 +360,19 @@ export default function Home() {
             >
                <div className="absolute inset-0 z-0">
                  <SEOImage 
-                   src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop" 
-                   alt="Morvex Perfume Branding - International marketing expansion by Best SEO Expert in Kerala"
+                   src="https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png" alt="Smart Supply - Smart Kitchen Gadget Shop - Meta Ads Report and Campaign scaling"
                    className="w-full h-full"
                  />
                </div>
                <div className="relative h-full flex flex-col justify-between z-10">
                   <div className="flex justify-between items-start">
-                    <span className="px-5 py-2 bg-accent-purple/20 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">Premium Branding</span>
+                    <span className="px-5 py-2 bg-accent-purple/20 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">Smart Kitchen Gadgets</span>
                     <ArrowUpRight size={20} className="text-white/20 group-hover:text-neon-purple transition-all" />
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-5xl text-white font-display">Morvex.</h3>
+                    <h3 className="text-5xl text-white font-display">Smart Supply.</h3>
                     <p className="text-white/40 text-lg font-light leading-relaxed">
-                      Global perfume brand scaling across India, Qatar, Dubai, US, and UK with full-stack marketing.
+                      A premium smart kitchen gadget e-shop scaling globally with high-converting Meta Ads setup and optimization.
                     </p>
                   </div>
                </div>
@@ -403,8 +402,8 @@ export default function Home() {
                         <Code size={24} />
                      </div>
                      <div className="space-y-1">
-                        <p className="text-neon-purple text-[9px] font-bold uppercase tracking-widest leading-none">Education Infrastructure</p>
-                        <p className="text-white/20 text-[7px] font-bold uppercase tracking-[0.4em]">Islamic Studies Node</p>
+                        <p className="text-neon-purple text-[9px] font-bold uppercase tracking-widest leading-none">Academic Platform</p>
+                        <p className="text-white/20 text-[7px] font-bold uppercase tracking-[0.4em]">Islamic Studies Platform</p>
                      </div>
                   </div>
                   <div className="space-y-6 pt-10">
@@ -414,9 +413,47 @@ export default function Home() {
                     </p>
                     <div className="pt-4 flex items-center gap-2">
                        <div className="h-[1px] w-12 bg-white/10" />
-                       <span className="text-[10px] text-white/20 uppercase tracking-[0.3em]">Audit Live Node</span>
+                       <span className="text-[10px] text-white/20 uppercase tracking-[0.3em]">Visit Website</span>
                     </div>
                   </div>
+               </div>
+            </motion.a>
+
+            <motion.a 
+               href="https://www.asnapacking.shop/"
+               target="_blank"
+               rel="noopener noreferrer"
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.7 }}
+               className="md:col-span-12 bento-card bento-card-glow group cursor-pointer border-white/5 bg-gradient-to-br from-dark-charcoal to-obsidian block overflow-hidden"
+            >
+               <div className="absolute inset-0 z-0">
+                 <SEOImage 
+                   src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop" 
+                   alt="Asna Packing Portfolio - Budget Premium web development by Muhammed Sinan VK"
+                   className="w-full h-full object-cover grayscale opacity-10 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-[2000ms] scale-110 group-hover:scale-100"
+                 />
+               </div>
+               <div className="relative h-full flex flex-col justify-between z-10 p-8 md:p-12">
+                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <span className="px-5 py-2 bg-accent-purple/20 border border-accent-purple/30 text-accent-purple text-[8px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md">Budget-Friendly Premium Web</span>
+                    <div className="flex items-center gap-2">
+                       <span className="text-[10px] text-white/30 uppercase tracking-[0.3em]">Status: Live & Optimized</span>
+                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    </div>
+                 </div>
+                 <div className="space-y-6 pt-10">
+                   <h3 className="text-5xl text-white font-serif italic">Asna <span className="text-neon-purple">Packing.</span></h3>
+                   <p className="text-white/40 text-lg font-light leading-relaxed max-w-3xl">
+                     Their requirement was high-quality web presence on a constrained budget. We delivered a premium digital storefront featuring seamless speed, robust query pathways, and elite-level visual execution.
+                   </p>
+                   <div className="flex items-center gap-2 pt-4">
+                      <div className="h-[1px] w-12 bg-white/10" />
+                      <span className="text-[10px] text-white/20 uppercase tracking-[0.3em]">Audit Live Site</span>
+                   </div>
+                 </div>
                </div>
             </motion.a>
           </div>
@@ -441,18 +478,18 @@ export default function Home() {
               <div className="lg:col-span-6 space-y-12">
                  <div className="flex items-center gap-4">
                    <div className="w-12 h-[1px] bg-accent-purple" />
-                   <p className="text-accent-purple text-[11px] font-bold uppercase tracking-[1em]">Starter Deployment LINK</p>
+                   <p className="text-accent-purple text-[11px] font-bold uppercase tracking-[1em]">Getting Started</p>
                  </div>
-                 <h2 className="text-white leading-[0.9] text-6xl md:text-8xl">Elite <br/><span className="bg-gradient-to-r from-neon-purple to-accent-purple bg-clip-text text-transparent italic font-serif">Activation.</span></h2>
+                 <h2 className="text-white leading-[0.9] text-6xl md:text-8xl">Kickstart Your <br/><span className="bg-gradient-to-r from-neon-purple to-accent-purple bg-clip-text text-transparent italic font-serif">Growth.</span></h2>
                  <p className="text-white/40 text-2xl font-light leading-relaxed max-w-xl">
-                    Secure your fundamental search architecture. Designed for ambitious pioneers requiring the vision of the <strong>Best SEO Expert in Kerala</strong> without full institutional commitment.
+                    Secure your search foundation. Designed for growing businesses that need the expert guidance of the Best SEO Expert in Kerala with an approachable entry point.
                  </p>
                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12 pt-8">
                     {[
-                      "Neural Intelligence Audit",
-                      "Core Vital Stabilization",
-                      "Authority Node Blueprint",
-                      "Conversion SMM Strategy"
+                      "Comprehensive SEO Audit",
+                      "Page Speed & Web Vitals Optimization",
+                      "Keyword & Competitor Analysis",
+                      "Social Media Marketing Strategy"
                     ].map(item => (
                        <li key={item} className="flex items-center gap-4 text-white/70 text-[11px] uppercase tracking-[0.4em] font-bold">
                           <Zap size={16} className="text-accent-purple" />
@@ -467,10 +504,10 @@ export default function Home() {
                  <div className="space-y-12">
                        <div className="flex justify-between items-start">
                           <div className="space-y-3">
-                             <span className="text-[11px] font-bold text-white/30 uppercase tracking-[0.8em]">Deployment Investment</span>
+                             <span className="text-[11px] font-bold text-white/30 uppercase tracking-[0.8em]">Session Investment</span>
                              <div className="flex items-baseline gap-4">
                                 <p className="text-8xl md:text-9xl font-display font-bold text-white tracking-tighter">₹3,500</p>
-                                <span className="text-accent-purple font-bold text-2xl uppercase tracking-[0.3em] italic">/Init</span>
+                                <span className="text-accent-purple font-bold text-2xl uppercase tracking-[0.3em] italic">/Session</span>
                              </div>
                           </div>
                           <div className="w-16 h-16 bg-accent-purple/10 rounded-2xl flex items-center justify-center border border-accent-purple/20">
@@ -478,10 +515,10 @@ export default function Home() {
                           </div>
                        </div>
                        <p className="text-white/50 text-xl leading-relaxed font-light italic border-l-2 border-white/10 pl-8">
-                         A definitive 1-on-1 strategic retrieval with Muhammed Sinan VK. Absolute clarity for your brand's digital ascension.
+                         A personal, high-value 1-on-1 strategy session with Muhammed Sinan VK. Get absolute clarity and actionable steps for your brand's online growth.
                        </p>
                        <Link to="/contact" className="w-full py-8 purple-gradient-bg text-white font-bold uppercase tracking-[0.6em] text-[12px] rounded-[2.5rem] flex items-center justify-center gap-5 hover:scale-[1.02] transition-all shadow-[0_20px_50px_rgba(106,13,173,0.4)] group relative overflow-hidden">
-                         <span className="relative z-10">Initiate Signature Protocol</span>
+                         <span className="relative z-10">Book Your Strategy Session</span>
                          <ArrowUpRight size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform relative z-10" />
                          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                        </Link>
@@ -497,14 +534,14 @@ export default function Home() {
             <div className="text-center space-y-4">
               <div className="inline-flex items-center gap-2">
                 <div className="h-[1px] w-8 bg-neon-purple" />
-                <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em]">Command Center</p>
+                <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em]">Get in Touch</p>
                 <div className="h-[1px] w-8 bg-neon-purple" />
               </div>
               <h2 className="text-4xl md:text-6xl font-display uppercase tracking-tight text-white leading-tight">
-                Initiate <span className="text-neon-purple italic font-serif purple-text-glow">Deployment.</span>
+                Start Your <br className="md:hidden" /> <span className="text-neon-purple italic font-serif purple-text-glow">Journey.</span>
               </h2>
               <p className="text-white/40 text-sm md:text-base font-light leading-relaxed max-w-lg mx-auto">
-                Ready to secure absolute search engine supremacy? Transmit your directory details below for an instant strategic retrieval.
+                Ready to grow your search visibility and reach new customers? Leave a message below to schedule a direct consultation with us.
               </p>
             </div>
             
@@ -524,7 +561,7 @@ export default function Home() {
                     <Command className="text-neon-purple purple-text-glow" /> MSVK<span className="text-neon-purple">.</span>
                  </Link>
                  <p className="text-white/30 text-base leading-loose font-light max-w-sm italic">
-                   Elite Neural Marketing Observatory. Directing commercial trajectory through absolute search dominance and visual prestige. Authorized in India, UAE, Qatar, US, and UK.
+                   Dedicated digital marketing & SEO services helping brands reach their full potential. Scaling regional and global businesses across India, UAE, Qatar, US, and UK.
                  </p>
                  <div className="flex gap-8">
                     {[Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
@@ -547,9 +584,9 @@ export default function Home() {
                       loading="lazy" 
                     />
                     <div className="absolute top-12 left-12 p-10 bg-obsidian/90 backdrop-blur-2xl rounded-[2.5rem] border border-white/10 z-20 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-10 group-hover:translate-y-0 shadow-[0_30px_60px_rgba(0,0,0,1)] border-l-4 border-l-neon-purple">
-                       <p className="text-neon-purple text-[11px] font-bold uppercase tracking-[1em] mb-3">Observatory CNS Core</p>
+                       <p className="text-neon-purple text-[11px] font-bold uppercase tracking-[1em] mb-3">Headquarters</p>
                        <p className="text-white text-xl font-serif italic mb-1 uppercase tracking-tighter">Muhammed Sinan VK HQ</p>
-                       <p className="text-white/20 text-[9px] font-bold uppercase tracking-widest">Authorized Operations Zone // 2026</p>
+                       <p className="text-white/20 text-[9px] font-bold uppercase tracking-widest">Palakkad Office // Kerala, India</p>
                     </div>
                  </div>
               </div>
@@ -557,13 +594,13 @@ export default function Home() {
 
            <div className="flex flex-col md:flex-row justify-between items-center gap-10 pt-16 border-t border-white/5">
               <div className="flex flex-col gap-2">
-                 <p className="text-white/10 text-[11px] font-bold uppercase tracking-[0.5em]">© 2026 Marketer Sinan VK // Elite Mixed Protocol v4.4</p>
+                 <p className="text-white/10 text-[11px] font-bold uppercase tracking-[0.5em]">© 2026 Marketer Sinan VK // Professional Digital Marketing & SEO</p>
                  <p className="text-white/5 text-[9px] font-mono uppercase tracking-widest">Obsidian // Charcoal // Neon Purple // Accent Purple</p>
               </div>
               <div className="flex gap-12 text-white/20 text-[11px] font-bold uppercase tracking-[0.3em]">
                  <Link to="/services" className="hover:text-neon-purple hover:purple-text-glow transition-all">Services Spectrum</Link>
                  <Link to="/portfolio" className="hover:text-neon-purple hover:purple-text-glow transition-all">Case Library</Link>
-                 <Link to="/contact" className="hover:text-neon-purple hover:purple-text-glow transition-all">Command Link</Link>
+                 <Link to="/contact" className="hover:text-neon-purple hover:purple-text-glow transition-all">Contact</Link>
               </div>
            </div>
         </footer>

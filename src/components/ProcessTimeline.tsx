@@ -27,62 +27,62 @@ const processSteps: Step[] = [
   {
     id: "audit",
     number: "01",
-    title: "Tactical Diagnostic",
-    headline: "Deconstruct your digital shadow and architectural blockers.",
-    description: "We execute deep diagnostic crawling utilizing Screaming Frog, perform semantic keyword opportunity indexing, and audit payload sizes. This exposes hidden crawl-rate blockages and indexing lag.",
+    title: "SEO & Tech Audit",
+    headline: "Identify your current technical blocks and search opportunities.",
+    description: "We perform a thorough SEO crawl, analyze competitor keywords, and review site loading performance. This exposes hidden search blockages and opportunities for better ranking.",
     outputs: [
       "Dynamic Keyword Gap Ledger",
       "Core Web Vitals & Hydration Audit",
       "Attribution & Pixel Diagnostics",
-      "Strategic Local SEO Node Mapping"
+      "Local SEO Strategy Map"
     ],
     icon: Compass,
-    metric: "48-Hour Isolation"
+    metric: "In-Depth Audit"
   },
   {
     id: "architect",
     number: "02",
-    title: "Blueprint Mapping",
-    headline: "Systematize content clusters and high-attribution models.",
-    description: "We configure semantic cluster models and programmatic SEO page architectures. On the performance marketing front, we configure Meta Conversions API (CAPI) on server instances to guarantee 100% cookie capture.",
+    title: "Strategy & Planning",
+    headline: "Structure your website content and search marketing plans.",
+    description: "We design optimized content structures, plan page architectures, and configure analytics tools to ensure you can measure and track your sales funnel accurately.",
     outputs: [
       "Custom Programmatic SEO Architecture",
       "Local Map Pack Strategy Plan",
       "Server-side CAPI Infrastructure Map",
-      "High-converting Landing Page Copy wireframes"
+      "High-converting Landing Page Wireframes"
     ],
     icon: Settings,
-    metric: "100% Attribution Plan"
+    metric: "Custom Roadmap"
   },
   {
     id: "deploy",
     number: "03",
-    title: "Active Retrieval",
-    headline: "Code deployment and server activation with zero hydration noise.",
-    description: "We build ultra-fast React frameworks or deploy optimized assets, index programmatic pages, publish premium localized articles, and push aggressive pixel triggers live to drive qualified leads.",
+    title: "Implementation",
+    headline: "Fast web design and optimized content creation.",
+    description: "We build high-speed pages, deploy customized web architectures, index search assets, and launch optimized social media campaigns to drive leads.",
     outputs: [
       "Headless Speed Optimised Deployments",
       "Programmatic Pages Indexed",
-      "Active Meta Campaigns & Scaling Protocol",
+      "Active Social Campaigns",
       "Google Business Profile optimization"
     ],
     icon: Activity,
-    metric: "0.4s Payload Speed"
+    metric: "Fast Launch"
   },
   {
     id: "scale",
     number: "04",
-    title: "Sustained Supremacy",
-    headline: "Scale marketing budgets while guarding acquisition cost stability.",
-    description: "We optimize campaigns using smart-bidding scripts, refresh keyword hierarchies based on search console reports, write strategic blogs, and scale regional reach to dominate markets.",
+    title: "Growth & Optimization",
+    headline: "Scale your reach while maintaining steady marketing efficiency.",
+    description: "We monitor keyword performance closely, publish informative blog content, and refine social media targeting to steadily increase your organic traffic.",
     outputs: [
       "Weekly Keyword Position Audits",
       "Smart-bidding Performance Scaling",
       "Reconstructive Video Hook adjustments",
-      "Consolidated Multi-market Dominance reports"
+      "Comprehensive Traffic Reports"
     ],
     icon: TrendingUp,
-    metric: "Sustained +1200% ROI"
+    metric: "Sustained Growth"
   }
 ];
 
@@ -99,13 +99,13 @@ export default function ProcessTimeline() {
         <div className="mb-20 space-y-4">
           <div className="flex items-center gap-2">
             <div className="h-[1.5px] w-8 bg-neon-purple" />
-            <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em]">The Execution Pipeline</p>
+            <p className="text-neon-purple text-[10px] font-bold uppercase tracking-[0.5em]">Our Development Pipeline</p>
           </div>
           <h2 className="text-4xl md:text-6xl font-display uppercase tracking-tight text-white leading-tight">
             The Growth <span className="text-neon-purple italic font-serif purple-text-glow">Process.</span>
           </h2>
           <p className="text-white/40 text-base md:text-lg font-light leading-relaxed max-w-2xl">
-            A battle-tested 4-phase technical marketing loop designed to transition regional brands into worldwide market authorities.
+            A battle-tested 4-phase optimization workflow designed to elevate regional brands into market leaders.
           </p>
         </div>
 
@@ -203,10 +203,10 @@ export default function ProcessTimeline() {
                 </div>
 
                 <div className="pt-10 border-t border-white/5 relative z-10 flex items-center justify-between text-[10px] text-white/35 font-mono uppercase tracking-[0.3em]">
-                  <span>Protocol // Muhammed Sinan VK</span>
+                  <span>SEO & Marketing // Muhammed Sinan VK</span>
                   <div className="flex items-center gap-2 text-neon-purple">
                     <Zap size={12} />
-                    <span>Real-Time Optimization Active</span>
+                    <span>Continuous Optimization</span>
                   </div>
                 </div>
               </motion.div>

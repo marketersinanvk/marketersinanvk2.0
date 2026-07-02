@@ -69,59 +69,72 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-obsidian/98 backdrop-blur-3xl md:hidden flex flex-col items-center justify-center gap-8 p-8"
+            className="fixed inset-0 z-[60] bg-obsidian/98 backdrop-blur-3xl md:hidden overflow-y-auto flex flex-col items-center justify-start p-8 pt-28 pb-16"
           >
+            {/* Mobile Close Button */}
             <button 
-              className="absolute top-10 right-10 text-neon-purple hover:scale-110 transition-transform"
+              className="fixed top-10 right-10 text-neon-purple hover:scale-110 transition-transform p-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md z-[70]"
               onClick={() => setIsOpen(false)}
+              aria-label="Close Menu"
             >
-              <X size={32} />
+              <X size={24} />
             </button>
 
-            <div className="flex flex-col items-center gap-8">
+            {/* Navigation Links List */}
+            <div className="flex flex-col items-center gap-6 w-full max-w-sm my-auto">
               {[
                 { name: "Home", path: "/" },
                 { name: "About", path: "/about" },
                 { name: "Certificate", path: "/certificate" },
                 { name: "Services", path: "/services" },
-                { name: "Portfolio", path: "/portfolio" },
-                { name: "Posts", path: "/blog" },
+                { name: "Portfolio", path: "/portfolio", badge: "NEW" },
+                { name: "Posts", path: "/blog", badge: "TRENDING" },
                 { name: "Contact", path: "/contact" },
               ].map((item, i) => (
                 <motion.div
                   key={item.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.08 }}
+                  className="w-full relative text-center"
                 >
                   <Link 
                     to={item.path}
-                    className="text-white text-3xl font-display tracking-[0.2em] uppercase hover:text-neon-purple transition-colors py-4 px-8 block text-center"
+                    className="text-white text-2xl font-display tracking-[0.2em] uppercase hover:text-neon-purple transition-all duration-300 py-3 px-6 block relative inline-block mx-auto"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
+                    {item.badge && (
+                      <span className="absolute -top-1 -right-8 bg-neon-purple text-white text-[5px] px-1.5 py-0.5 rounded-full font-bold animate-pulse shadow-[0_0_8px_rgba(106,13,173,0.5)] tracking-normal">
+                        {item.badge}
+                      </span>
+                    )}
                   </Link>
                 </motion.div>
               ))}
             </div>
 
-            <div className="absolute bottom-20 flex gap-8">
-              {[
-                { label: "IG", href: "https://www.instagram.com/muhammed_sinan_vk_85", aria: "Instagram" },
-                { label: "LI", href: "https://www.linkedin.com/in/sinan-vk", aria: "LinkedIn" },
-                { label: "X", href: "https://twitter.com/sinan246810", aria: "Twitter" }
-              ].map((social) => (
-                <a 
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.aria}
-                  className="w-12 h-12 bg-neon-purple/5 rounded-full flex items-center justify-center text-neon-purple/60 hover:text-neon-purple hover:border-neon-purple/30 transition-all duration-500 border border-neon-purple/10"
-                >
-                  <span className="text-[10px] font-bold">{social.label}</span>
-                </a>
-              ))}
+            {/* Social Icons at the bottom - padded within scroll flow */}
+            <div className="flex flex-col items-center gap-6 mt-12 w-full max-w-sm pt-8 border-t border-white/5">
+              <span className="text-[9px] text-white/30 uppercase tracking-[0.3em] font-mono">Connect With Sinan</span>
+              <div className="flex gap-6">
+                {[
+                  { label: "IG", href: "https://www.instagram.com/muhammed_sinan_vk_85", aria: "Instagram" },
+                  { label: "LI", href: "https://www.linkedin.com/in/sinan-vk", aria: "LinkedIn" },
+                  { label: "X", href: "https://twitter.com/sinan246810", aria: "Twitter" }
+                ].map((social) => (
+                  <a 
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.aria}
+                    className="w-10 h-10 bg-neon-purple/5 rounded-full flex items-center justify-center text-neon-purple/60 hover:text-neon-purple hover:border-neon-purple/30 transition-all duration-500 border border-neon-purple/10"
+                  >
+                    <span className="text-[9px] font-bold">{social.label}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

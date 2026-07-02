@@ -16,7 +16,7 @@ const faqs = [
     question: "How do I find local SEO services in Palakkad that actually work?",
     answer: "Effective local SEO in Palakkad relies on understanding regional search patterns and Google Map Pack algorithms. I provide targeted strategies that optimize your GMB profile and resolve indexing delays, ensuring your business stays highly visible to local customers.",
     links: [
-      { text: "Local SEO Elite", path: "/services" }
+      { text: "Local SEO Services", path: "/services" }
     ]
   },
   {
@@ -30,7 +30,7 @@ const faqs = [
     question: "How can a social media manager for small business help my brand scale?",
     answer: "As a social media manager, I use Meta Ads and cinematic storytelling to create high-converting funnels. By focusing on 'scroll-stopping' content and viral-hook psychology, I build communities and drive measurable sales growth for your brand.",
     links: [
-      { text: "Social Media Elite", path: "/services" }
+      { text: "Social Media Services", path: "/services" }
     ]
   },
   {
@@ -68,7 +68,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1 }}
             className="text-accent-purple text-[9px] font-bold uppercase tracking-[0.5em]"
           >
-            Tactical Intelligence
+            Common Questions
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function FAQ() {
             Curated <span className="italic text-neon-purple purple-text-glow">Knowledge.</span>
           </motion.h2>
           <p className="text-sm font-light tracking-wide max-w-lg mx-auto text-white/30 italic">
-            Insights from the <span className="text-white font-medium">Best AI Digital Marketer in Palakkad</span> on engineering digital dominance.
+            Insights on SEO, web development, and digital marketing from an experienced freelance specialist.
           </p>
         </div>
 

@@ -27,26 +27,26 @@ const caseStudies = [
     }
   },
   {
-    title: "Morvex: Global Fragrance Scaling",
-    client: "Morvex Global",
-    subtitle: "Luxury E-commerce Performance",
-    location: "London / Dubai / New York",
-    challenge: "Scaling a niche luxury perfume brand across three continents with precise ROI tracking.",
-    strategy: "Implemented high-ticket technical SEO and surgical Meta/Google Ads protocols. Optimized for Middle Eastern and European market nuances using AI-driven audience synthesis.",
-    result: "570% Revenue Increase",
-    metrics: "Global Market Authority",
-    image: "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+    title: "Smart Supply: Smart Kitchen Gadgets",
+    client: "Smart Supply",
+    subtitle: "Meta Ads & E-commerce Scaling",
+    location: "Global E-shop",
+    challenge: "Scaling a premium kitchen gadgets online shop using highly targeted, high-ROAS social media campaigns.",
+    strategy: "Engineered surgical Meta Ads campaign structures, refined pixel event triggers, and designed high-converting creative hooks focusing on home chefs and modern homeowners.",
+    result: "Sustained High-ROAS Growth",
+    metrics: "E-shop Meta Ads Success",
+    image: "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png",
     alt: "Global Fragrance Scaling case study by Marketer Sinan VK",
     links: [
-      { text: "Operational Audit", url: "#", icon: ExternalLink }
+      { text: "View Ads Report", url: "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png", icon: ExternalLink }
     ],
     schema: {
       "@context": "https://schema.org",
       "@type": "Project",
-      "name": "Morvex Global Scaling by SEO Expert Sinan VK",
-      "description": "Cross-continent luxury e-commerce scaling for Morvex Global.",
+      "name": "Smart Supply Ads Campaign Scaling by Marketer Sinan VK",
+      "description": "Scalable high-converting Meta Ads campaigns for Smart Supply kitchen gadget shop.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png"
+      "image": "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png"
     }
   },
   {
@@ -58,7 +58,7 @@ const caseStudies = [
     strategy: "I functioned as the SMM Expert Kerala for this launch, engineering a Professional SMM Operating system. We utilized visual prestige and high-end influencer synthesis to anchor Luxavya as a lifestyle leader.",
     result: "7x ROI on Paid Campaigns",
     metrics: "Elite Brand Status Achieved",
-    image: "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png",
+    image: "https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png",
     alt: "SMM Expert Kerala - Luxavya professional SMM operations by Freelance Digital Marketer Sinan VK",
     links: [
       { text: "Visit Archive", url: "https://instagram.com/luxavya", icon: Instagram }
@@ -69,7 +69,7 @@ const caseStudies = [
       "name": "Luxavya Luxury SMM by SMM Expert Kerala",
       "description": "Luxury branding and SMM operations for fashion/lifestyle label Luxavya.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://i.ibb.co/dsHxr4xV/Screenshot-2026-05-16-224538.png"
+      "image": "https://i.ibb.co/7tcDv92K/Screenshot-2026-06-30-144005.png"
     }
   },
   {
@@ -104,7 +104,7 @@ const caseStudies = [
     strategy: "Provided Local SEO Services in Palakkad to capture high-intent 'near me' traffic. As a Web Development Specialist Kerala, I architected their digital infrastructure for frictionless lead capture and inventory syncing.",
     result: "300% Increase in Local Leads",
     metrics: "Digital Transformation Complete",
-    image: "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png",
+    image: "https://i.ibb.co/2DTBnpn/Screenshot-2026-07-02-224443.png",
     alt: "Local SEO Services in Palakkad - KL Gadjenix transformation by Web Development Specialist Kerala",
     links: [
       { text: "Operational Hub", url: "https://instagram.com/kl_gadjenix", icon: Instagram }
@@ -115,7 +115,7 @@ const caseStudies = [
       "name": "KL Gadjenix Digital Transition by Digital Growth Strategist",
       "description": "Electronics retail digital transformation involving Local SEO and Web Development.",
       "url": "https://marketersinanvk.in/portfolio",
-      "image": "https://i.ibb.co/fmhc291/Screenshot-2026-05-16-224940.png"
+      "image": "https://i.ibb.co/2DTBnpn/Screenshot-2026-07-02-224443.png"
     }
   },
   {
@@ -140,6 +140,29 @@ const caseStudies = [
       "url": "https://marketersinanvk.in/portfolio",
       "image": "https://i.ibb.co/d4Jt8R8r/Screenshot-2026-05-16-224812.png"
     }
+  },
+  {
+    title: "Asna Packing: Budget Premium Web",
+    client: "Asna Packing",
+    subtitle: "High-End E-commerce Showcase",
+    location: "Kerala / Palakkad",
+    challenge: "Developing a highly professional web presence on a tight budget while maintaining an elegant, premium look and feel.",
+    strategy: "Engineered a fast, lightweight, and conversion-focused web architecture. Used standard clean modern design principles, optimized static asset loading, and integrated direct messaging pathways, proving premium quality doesn't require massive budgets.",
+    result: "Premium Website on an Optimized Budget",
+    metrics: "100% Client Satisfaction",
+    image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop",
+    alt: "Affordable Web Development Services Kerala - Asna Packing web showcase by Muhammed Sinan VK",
+    links: [
+      { text: "Visit Live Site", url: "https://www.asnapacking.shop/", icon: ExternalLink }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Project",
+      "name": "Asna Packing Web Development by Sinan VK",
+      "description": "Budget-optimized premium website development for Asna Packing by freelance specialist in Kerala.",
+      "url": "https://www.asnapacking.shop/",
+      "image": "https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop"
+    }
   }
 ];
 
@@ -152,13 +175,13 @@ export default function CaseStudies({ highlightLocation, region }: CaseStudiesPr
   const filteredStudies = [...caseStudies].sort((a, b) => {
     // 1. Regional Prioritization (User requirement)
     if (region === "global") {
-      const aIsGlobal = a.client.includes("Morvex") || a.client.includes("Luxavya");
-      const bIsGlobal = b.client.includes("Morvex") || b.client.includes("Luxavya");
+      const aIsGlobal = a.client.includes("Smart Supply") || a.client.includes("Luxavya");
+      const bIsGlobal = b.client.includes("Smart Supply") || b.client.includes("Luxavya");
       if (aIsGlobal && !bIsGlobal) return -1;
       if (!aIsGlobal && bIsGlobal) return 1;
     } else if (region === "internal") {
-      const aIsInternal = a.client.includes("Gadjenix") || a.client.includes("Jamalullail") || a.client.includes("Digisinans");
-      const bIsInternal = b.client.includes("Gadjenix") || b.client.includes("Jamalullail") || b.client.includes("Digisinans");
+      const aIsInternal = a.client.includes("Gadjenix") || a.client.includes("Jamalullail") || a.client.includes("Digisinans") || a.client.includes("Asna Packing");
+      const bIsInternal = b.client.includes("Gadjenix") || b.client.includes("Jamalullail") || b.client.includes("Digisinans") || b.client.includes("Asna Packing");
       if (aIsInternal && !bIsInternal) return -1;
       if (!aIsInternal && bIsInternal) return 1;
     }
@@ -189,7 +212,7 @@ export default function CaseStudies({ highlightLocation, region }: CaseStudiesPr
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": "Marketer Sinan VK",
-          "image": "https://i.ibb.co/Lhbqr2Sz/41aecd83-4559-408c-b5fd-380658eed52f.png",
+          "image": "https://i.ibb.co/1JPgNFLZ/Screenshot-2026-07-02-225232.png",
           "@id": "https://marketersinanvk.in",
           "url": "https://marketersinanvk.in",
           "telephone": "+918590181381",
