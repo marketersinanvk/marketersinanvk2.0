@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Target, Cpu, TrendingUp, ExternalLink, Instagram } from "lucide-react";
+import { Target, Cpu, TrendingUp, ExternalLink, Instagram, Code } from "lucide-react";
 import { BentoGrid, BentoCard } from "./BentoGrid";
 
 const caseStudies = [
@@ -153,7 +153,8 @@ const caseStudies = [
     image: "https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1000&auto=format&fit=crop",
     alt: "Affordable Web Development Services Kerala - Asna Packing web showcase by Muhammed Sinan VK",
     links: [
-      { text: "Visit Live Site", url: "https://www.asnapacking.shop/", icon: ExternalLink }
+      { text: "Visit Live Site", url: "https://www.asnapacking.shop/", icon: ExternalLink },
+      { text: "Code Proof Verification", url: "https://i.ibb.co/FLFvwsfw/Screenshot-2026-07-03-055918.png", icon: Code }
     ],
     schema: {
       "@context": "https://schema.org",

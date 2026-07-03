@@ -1,24 +1,54 @@
-# Absolute Digital Governance for Marketer Sinan VK
-User-agent: *
+# ==============================================================================
+#                      S I T E M A P  &  R O B O T S  C O N F I G
+#        Technical SEO Governance - Muhammed Sinan VK (Marketer Sinan)
+# ==============================================================================
 
-# Allow Crawling of Core Engagement Nodes
+# Global Crawler Access Protocol
+User-agent: *
 Allow: /
+Allow: /about
+Allow: /services
+Allow: /portfolio
+Allow: /certificate
+Allow: /blog
 Allow: /posts/
+Allow: /contact
+
+# Geo-Targeted Local SEO Quadrants
 Allow: /kochi
-Allow: /dubai
 Allow: /calicut
+Allow: /palakkad
+Allow: /thrissur
+Allow: /trivandrum
+Allow: /dubai
 Allow: /bangalore
 Allow: /london
+
+# Technical Stack Deployment Hubs
 Allow: /nextjs-developer-kerala
 Allow: /tailwind-css-expert
 Allow: /supabase-developer
 Allow: /top-digital-marketing-agencies-kerala
 
-# Disallow Internal & Infrastructure Layers
+# Avoid Indexing Sensitive Administrative or Security Layers
+Disallow: /admin/
+Disallow: /login
 Disallow: /api/
 Disallow: /_next/
+Disallow: /static/
+
+# Optimize Crawl Budget on Search Engines
+User-agent: Googlebot
+Allow: /
+Allow: /posts/
 Disallow: /admin/
 Disallow: /login
 
-# Global Sitemap Pointer
+User-agent: Bingbot
+Allow: /
+Allow: /posts/
+Disallow: /admin/
+Disallow: /login
+
+# Global XML Sitemap Entrypoint
 Sitemap: https://marketersinanvk.in/sitemap.xml

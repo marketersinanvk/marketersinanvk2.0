@@ -21,7 +21,24 @@ const campaignReports = [
       { label: "Funnel Strategy", value: "Conversion Ads" },
       { label: "Niche Focus", value: "Modern Kitchen" },
       { label: "Ad Creatives", value: "Video Hooks" }
-    ]
+    ],
+    reportType: "campaign"
+  },
+  {
+    id: "asna-packing-code",
+    title: "Asna Packing - Modern E-com Web Engineering",
+    client: "Asna Packing",
+    metric: "Source Code & Architecture Proof",
+    results: "Clean React / Tailwind Node",
+    description: "Full implementation of the Asna Packing storefront. Designed with premium high-end aesthetics, direct-response contact pathways, and exceptional speed, proving elite grade doesn't require a high budget.",
+    imageUrl: "https://i.ibb.co/FLFvwsfw/Screenshot-2026-07-03-055918.png",
+    tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    stats: [
+      { label: "Performance", value: "0.5s Loadtime" },
+      { label: "Stack Node", value: "Vite + Tailwind" },
+      { label: "UX Quality", value: "Premium Grade" }
+    ],
+    reportType: "code"
   },
   {
     id: "gadjenix",
@@ -36,7 +53,8 @@ const campaignReports = [
       { label: "Targeting Mode", value: "Lookalike Pools" },
       { label: "Event Analytics", value: "CAPI Linked" },
       { label: "Growth Lift", value: "Consistent Leads" }
-    ]
+    ],
+    reportType: "campaign"
   },
   {
     id: "luxavya",
@@ -51,7 +69,8 @@ const campaignReports = [
       { label: "Niche Focus", value: "Luxury Lifestyle" },
       { label: "Aesthetics", value: "Prestige Reels" },
       { label: "Geography", value: "Global / GCC" }
-    ]
+    ],
+    reportType: "campaign"
   }
 ];
 
@@ -119,21 +138,21 @@ export default function Certificate() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/5 pb-8">
             <div className="space-y-4">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-mono tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">
-                <ShieldCheck size={12} className="animate-pulse" /> Verified Campaign Success Reports
+                <ShieldCheck size={12} className="animate-pulse" /> Verified Campaign & Web Dev Proofs
               </span>
               <h2 className="text-white text-4xl md:text-5xl font-serif italic tracking-tight">
-                Meta Ads <span className="text-neon-purple">Performance Proofs.</span>
+                Empirical <span className="text-neon-purple">Performance Proofs.</span>
               </h2>
               <p className="text-slate-400 text-sm font-light max-w-xl">
-                Real, unedited campaign performance screenshots showing target tracking, budget optimizations, and direct ROAS results. Click any report to view in full resolution.
+                Real, unedited campaign performance metrics, analytics, and software source code proofs confirming absolute transparent validation. Click any proof to view.
               </p>
             </div>
             <div className="text-slate-500 text-xs font-mono uppercase tracking-widest hidden md:block">
-              Empirical ROI Evidence
+              Empirical ROI & Engineering Evidence
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {campaignReports.map((report, index) => (
               <motion.div
                 key={report.id}
@@ -155,8 +174,9 @@ export default function Certificate() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                      <span className="text-[10px] text-white/50 font-mono flex items-center gap-1">
-                        <Calendar size={10} /> Active Campaign Report
+                      <span className="text-[10px] text-white/50 font-mono flex items-center gap-1.5">
+                        {report.reportType === "code" ? <Zap size={10} className="text-amber-400" /> : <Calendar size={10} />}
+                        {report.reportType === "code" ? "Source Code Proof" : "Active Campaign Report"}
                       </span>
                       <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all">
                         <Maximize2 size={12} />

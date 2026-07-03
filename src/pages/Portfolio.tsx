@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowUpRight, X, ExternalLink, Filter, Search, Award, Layers, TrendingUp, Video } from "lucide-react";
+import { ArrowUpRight, X, ExternalLink, Filter, Search, Award, Layers, TrendingUp, Video, Code } from "lucide-react";
 import SEO from "../components/SEO";
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db, handleFirestoreError, OperationType } from '../lib/firebase';
@@ -137,6 +137,7 @@ const successStories = [
     description: "Developed a premium-grade web presence for Asna Packing. Designed to be highly budget-friendly while offering superb visual aesthetics, seamless inquiry pathways, and quick page performance.",
     tags: ["Affordable Premium Web", "Speed Optimization", "Clean E-commerce Showcase"],
     link: "https://www.asnapacking.shop/",
+    proofUrl: "https://i.ibb.co/FLFvwsfw/Screenshot-2026-07-03-055918.png",
     isCaseStudy: true,
     meta: "Asna Packing Web Development Success",
     metrics: [
@@ -427,9 +428,19 @@ export default function Portfolio() {
                       href={selectedProject.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 py-4 bg-neon-purple text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-muted-purple transition-all flex items-center justify-center gap-3 shadow-xl"
+                      className="flex-1 py-4 bg-neon-purple text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-muted-purple transition-all flex items-center justify-center gap-3 shadow-xl text-center"
                     >
                       Audit Live Node <ExternalLink size={14} />
+                    </a>
+                  )}
+                  {selectedProject.proofUrl && (
+                    <a 
+                      href={selectedProject.proofUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 py-4 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11px] font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-amber-500/20 transition-all flex items-center justify-center gap-3 shadow-xl text-center"
+                    >
+                      Source Code Proof <Code size={14} />
                     </a>
                   )}
                   <button 
